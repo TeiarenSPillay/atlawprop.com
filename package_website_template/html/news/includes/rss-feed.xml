@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+<channel>
+<title>Team Remax 7</title>
+<link>http://www.teamremax7.com/</link>
+<description>10 Houses For Sale in Amanzimtoti, South Coast, KwaZulu Natal</description>
+<lastBuildDate>Mon, 12 Sep 2005 18:37:00 GMT</lastBuildDate>
+<language>en-us</language>
+<item>
+<title>Title of an item</title>
+<link>http://example.com/item/123</link>
+<guid>http://example.com/item/123</guid>
+<pubDate>Mon, 12 Sep 2005 18:37:00 GMT</pubDate>
+<description>[CDATA[ This is the description. ]]</description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,43 @@
+<!--[Custom Header]-->
+<table cellpadding="0" cellspacing="0" width="100%" border="0">
+    <tr>
+        <td><a href="{{ site_url }}?utm_source={{ source }}&utm_medium={{ format }}&utm_campaign={{ campaign|slugify }}{% if content %}&content={{ content }}{% endif %}"><img src="{{ site_url }}/assets/img/custom/layout/pfv-logo.gif" border="0" /></a></td>
+    </tr>
+</table>
+<!--[/Custom Header]-->
+<!--[Css]-->
+{% block css %}
+<style type="text/css">
+<!--
+body,td,th   { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #000000; }
+body         { margin: 0px; }
+p           { margin: 0 0 1em; line-height:21px; }
+p.last      { margin-bottom: 0; }
+
+a:focus, 
+a:hover     { color: #000000; }
+a           { color: #CF000F; text-decoration: none; }
+
+.padding     { padding-top:33px; padding-left:36px; padding-right:36px; }
+.border-0 { border:0px; }
+.border-bottom1 { border-bottom:1px dotted #AEC2D0; margin-bottom:15px;}
+.border-bottom2 { border-bottom:1px dotted #AEC2D0; margin-bottom:15px; padding-bottom:15px;}
+.border-bottom3 { border-bottom:1px dotted #AEC2D0; padding-bottom:5px; padding-top:5px;}
+h1 { font-family:Arial, Helvetica, sans-serif; font-size:19px; font-weight:normal; color:#072E5F; margin-bottom:15px; }
+h2 { font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; color:#072E5F;}
+h3 { font-family:Arial, Helvetica, sans-serif; font-size:17px; font-weight:bold; color:#CF000F; margin-top:0px; padding-top:0px; margin-bottom:0px;}
+h4 { font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; color:#CF000F; margin-bottom:0px!important; padding-bottom:0px!important;}
+.blue {color:#999999;}
+.padding-top5 { padding-top:5px;}
+.margin-bottom5 {margin-bottom:5px;}
+.margin-top10 {margin-top:10px;}
+.name        { font-size:20px; color:#1B5083; font-family:Arial, Helvetica, sans-serif; }
+.sub         { font-size:16px; color:#000666; font-family: "Times New Roman", Times, serif; }
+.comments { color:#999999;}
+.heading { font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:bold; color:#072E5F; margin-bottom:5px;}
+table {line-height: 20px;}
+.width340 {width:340px;}
+-->
+</style>
+<!--[/Css]-->
+{% endblock css %}
