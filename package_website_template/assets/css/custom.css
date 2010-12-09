@@ -14,7 +14,6 @@
 
 /* 1. Main Background */
 body { background-color:#FFFFFF;}
-/*.container { background-image:url(/assets/img/custom/layout/main-bg.jpg); background-repeat:repeat-x;} Insert if background does have a tiled background image */
 .container {min-height:153px; width:100%;}
 
 /* 2. Header & Navigation */
@@ -30,6 +29,7 @@ body { background-color:#FFFFFF;}
 .menu li a.general { color:#FFFFFF; padding-top:10px; padding-bottom:9px; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; padding-left:17px; padding-right:16px; float:left;}
 .menu a:hover.general { color:#FFFFFF;  background-color:#990000;}
 .menu a.active { color:#FFFFFF; border-left:1px solid #FFFFFF; padding-top:10px; padding-bottom:9px; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; padding-left:17px; padding-right:16px; float:left;}
+.menu a:hover.active { color:#FFFFFF;  background-color:#990000;}
 .menu a.active-rollover { color:#FFFFFF; background-color:#990000; padding-top:10px; padding-bottom:9px; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; padding-left:17px; padding-right:16px; float:left;}
 .menu ul ul {visibility:hidden;position:absolute; height:0; top:36px; left:0;}
 .menu table {position:absolute; top:0; left:0; border-collapse:collapse;}
