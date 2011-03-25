@@ -45,6 +45,8 @@ else:
     DATABASE_HOST = '196.37.205.41'         # Set to empty string for localhost. Not used with sqlite3.
     DATABASE_PORT = ''                      # Set to empty string for default. Not used with sqlite3.
     GMAPS_KEY  = "unconfigured" # unconfigured.co.za
+    #RECAPTCHA_PUBLIC_KEY = 'unconfigured'
+    #RECAPTCHA_PRIVATE_KEY = 'unconfigured'
 
 TIME_ZONE = 'Africa/Johannesburg'
 SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'

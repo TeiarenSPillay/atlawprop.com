@@ -78,6 +78,7 @@ package_website_template/html/contact_us.html -text
 package_website_template/html/emails/email.css -text
 package_website_template/html/emails/email_base.html -text
 package_website_template/html/emails/listing_details.html -text
+package_website_template/html/emails/news_comments.html -text
 package_website_template/html/emails/news_details.html -text
 package_website_template/html/emails/newsletter.html -text
 package_website_template/html/emails/region_profiles_details.html -text
