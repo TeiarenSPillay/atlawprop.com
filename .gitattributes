@@ -67,6 +67,7 @@ package_website_template/assets/img/custom/property-search/results/new-listings.
 package_website_template/assets/img/custom/property-search/results/on-show.png -text
 package_website_template/assets/img/custom/property-search/results/sold.png -text
 package_website_template/assets/img/custom/property-search/results/sole-mandate.png -text
+package_website_template/dev_settings.py -text
 package_website_template/html/404.html -text
 package_website_template/html/500.html -text
 package_website_template/html/about-us/additional-page.html -text
