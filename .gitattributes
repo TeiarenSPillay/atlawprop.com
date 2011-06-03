@@ -43,6 +43,7 @@ package_website_template/assets/img/custom/layout/search.jpg -text
 package_website_template/assets/img/custom/layout/spacer.gif -text
 package_website_template/assets/img/custom/list-your-property/house.jpg -text
 package_website_template/assets/img/custom/make-an-offer/make-an-offer-now.jpg -text
+package_website_template/assets/img/custom/make-an-offer/my-offer.jpg -text
 package_website_template/assets/img/custom/news/comments-icon.jpg -text
 package_website_template/assets/img/custom/news/issue-bubble.png -text
 package_website_template/assets/img/custom/news/past-newsletter-icon.jpg -text
@@ -61,6 +62,7 @@ package_website_template/assets/img/custom/property-search/details/appointment-i
 package_website_template/assets/img/custom/property-search/details/contact-icon.jpg -text
 package_website_template/assets/img/custom/property-search/details/features-icon.jpg -text
 package_website_template/assets/img/custom/property-search/details/finance-icon.jpg -text
+package_website_template/assets/img/custom/property-search/details/make-an-offer.jpg -text
 package_website_template/assets/img/custom/property-search/details/notes-icon.jpg -text
 package_website_template/assets/img/custom/property-search/details/on-show-icon.jpg -text
 package_website_template/assets/img/custom/property-search/details/photo-gallery-icon.jpg -text
