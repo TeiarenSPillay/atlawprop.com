@@ -12,6 +12,8 @@
 9. Calculators
 10. Popups
 11. Tabs
+12. Holiday letting
+
 /*
 
 /* 1. Main Background */
@@ -149,3 +151,6 @@ a:hover.bond-repayment        { color:#C90D1B; background-image:url(/eos/img/cal
 .currency-converter           { color:#C90D1B; display:block; width:128px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/currency-converter-over.jpg);}
 a.currency-converter          { color:#2B5084; display:block; width:128px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/currency-converter.jpg); }
 a:hover.currency-converter    { color:#C90D1B; background-image:url(/eos/img/calculators/navigation/currency-converter-over.jpg); }
+
+/* 12. Holiday letting */
+.heading { font-family:Arial, Helvetica, sans-serif; font-size:19px; font-weight:normal; color:#013667; }

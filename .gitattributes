@@ -19,6 +19,10 @@ package_website_template/assets/img/custom/emails/stationery/tile.gif -text
 package_website_template/assets/img/custom/flash/call-now.fla -text
 package_website_template/assets/img/custom/flash/call-now.swf -text
 package_website_template/assets/img/custom/flash/header.swf -text
+package_website_template/assets/img/custom/holiday-letting/no.png -text
+package_website_template/assets/img/custom/holiday-letting/rates.jpg -text
+package_website_template/assets/img/custom/holiday-letting/special-offer.jpg -text
+package_website_template/assets/img/custom/holiday-letting/yes.png -text
 package_website_template/assets/img/custom/homepage/featured-property-icon.jpg -text
 package_website_template/assets/img/custom/homepage/new-listing-alerts.jpg -text
 package_website_template/assets/img/custom/homepage/on-show-banner.jpg -text
@@ -38,6 +42,7 @@ package_website_template/assets/img/custom/layout/search-icon.png -text
 package_website_template/assets/img/custom/layout/search.jpg -text
 package_website_template/assets/img/custom/layout/spacer.gif -text
 package_website_template/assets/img/custom/list-your-property/house.jpg -text
+package_website_template/assets/img/custom/make-an-offer/make-an-offer-now.jpg -text
 package_website_template/assets/img/custom/news/comments-icon.jpg -text
 package_website_template/assets/img/custom/news/issue-bubble.png -text
 package_website_template/assets/img/custom/news/past-newsletter-icon.jpg -text
@@ -46,6 +51,10 @@ package_website_template/assets/img/custom/property-brochure/brochure_forsale.jp
 package_website_template/assets/img/custom/property-brochure/brochure_forsale.png -text
 package_website_template/assets/img/custom/property-brochure/brochure_forsale_onshow.jpg -text
 package_website_template/assets/img/custom/property-brochure/brochure_forsale_onshow.png -text
+package_website_template/assets/img/custom/property-brochure/brochure_holiday.jpg -text
+package_website_template/assets/img/custom/property-brochure/brochure_holiday.png -text
+package_website_template/assets/img/custom/property-brochure/brochure_holiday_special.jpg -text
+package_website_template/assets/img/custom/property-brochure/brochure_holiday_special.png -text
 package_website_template/assets/img/custom/property-brochure/brochure_tolet.jpg -text
 package_website_template/assets/img/custom/property-brochure/brochure_tolet.png -text
 package_website_template/assets/img/custom/property-search/details/appointment-icon.jpg -text
@@ -63,6 +72,8 @@ package_website_template/assets/img/custom/property-search/map/normal-listing.pn
 package_website_template/assets/img/custom/property-search/map/on-show.png -text
 package_website_template/assets/img/custom/property-search/navigation/favourites-over.jpg -text
 package_website_template/assets/img/custom/property-search/navigation/favourites.jpg -text
+package_website_template/assets/img/custom/property-search/results/bank-repo.png -text
+package_website_template/assets/img/custom/property-search/results/distressed.png -text
 package_website_template/assets/img/custom/property-search/results/new-listings.png -text
 package_website_template/assets/img/custom/property-search/results/on-show.png -text
 package_website_template/assets/img/custom/property-search/results/sold.png -text
