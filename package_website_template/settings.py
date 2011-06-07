@@ -27,6 +27,7 @@ COMMERCIAL_ADDON = True
 NEW_DEVELOPMENT_ADDON = True
 REGION_PROFILES_ADDON = True
 BRANCH_LEVEL_ACCESS_ADDON = True
+OFFERS_ADDON = True
 
 ### Database details ###
 if DEV_MODE:
@@ -39,12 +40,12 @@ if DEV_MODE:
     GMAPS_KEY  = "ABQIAAAAkzGFPn2aXs-JhTpG4AIIORRpp2cC2FsRFUfKRDdI-3JIXl2s9BRxtJbBjImxjaIlIespam7WOi-8ag" # localhost
 else:
     DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-    DATABASE_NAME = 'unconfigured'          # Or path to database file if using sqlite3.
-    DATABASE_USER = 'unconfigured'          # Not used with sqlite3.
-    DATABASE_PASSWORD = 'unconfigured'      # Not used with sqlite3.
-    DATABASE_HOST = '196.37.205.41'         # Set to empty string for localhost. Not used with sqlite3.
+    DATABASE_NAME = 'abc_staging'          # Or path to database file if using sqlite3.
+    DATABASE_USER = 'abcrealestate'          # Not used with sqlite3.
+    DATABASE_PASSWORD = 'kkuyvYUVUk8'      # Not used with sqlite3.
+    DATABASE_HOST = 'localhost'         # Set to empty string for localhost. Not used with sqlite3.
     DATABASE_PORT = ''                      # Set to empty string for default. Not used with sqlite3.
-    GMAPS_KEY  = "unconfigured" # unconfigured.co.za
+    #GMAPS_KEY  = "unconfigured" # unconfigured.co.za
     #RECAPTCHA_PUBLIC_KEY = 'unconfigured'
     #RECAPTCHA_PRIVATE_KEY = 'unconfigured'
 
@@ -58,7 +59,7 @@ SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
 #    )
 
 MEDIA_ROOT = '%s/assets' % CURRENT_DIRECTORY
-ROOT_URLCONF = 'unconfigured.urls'
+ROOT_URLCONF = 'package_website_template.urls'
 
 TEMPLATE_DIRS += (
     '%s/html' % CURRENT_DIRECTORY,
