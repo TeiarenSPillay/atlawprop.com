@@ -97,6 +97,7 @@ package_website_template/html/emails/news_comments.html -text
 package_website_template/html/emails/news_details.html -text
 package_website_template/html/emails/newsletter.html -text
 package_website_template/html/emails/offer_details.html -text
+package_website_template/html/emails/offer_notification.html -text
 package_website_template/html/emails/region_profiles_details.html -text
 package_website_template/html/emails/region_profiles_summary.html -text
 package_website_template/html/emails/results.html -text
