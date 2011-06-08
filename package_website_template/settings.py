@@ -12,7 +12,7 @@ CURRENT_DIRECTORY = path.abspath(path.dirname(__file__))
 ### Site specifics ###
 SERVER_EMAIL = 'unconfigured@propdata.net'
 WEB_STATS    = "http://ws01.umh.propdata.net/cgi-bin/awstats.pl?config=unconfigured.co.za"
-WEBSITE_URL  = "http://www.unconfigured.co.za"
+WEBSITE_URL  = "http://abc.staging.propdata.net"
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]   # Top heading - first part
@@ -32,7 +32,7 @@ OFFERS_ADDON = True
 ### Database details ###
 if DEV_MODE:
     DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-    DATABASE_NAME = 'unconfigured'          # Or path to database file if using sqlite3.
+    DATABASE_NAME = 'only_rentals'          # Or path to database file if using sqlite3.
     DATABASE_USER = 'root'                  # Not used with sqlite3.
     DATABASE_PASSWORD = ''                  # Not used with sqlite3.
     DATABASE_HOST = '192.168.0.10'          # Set to empty string for localhost. Not used with sqlite3.
