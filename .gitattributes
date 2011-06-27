@@ -90,6 +90,7 @@ package_website_template/html/about-us/company_profile.html -text
 package_website_template/html/base.html -text
 package_website_template/html/confirmation.html -text
 package_website_template/html/contact_us.html -text
+package_website_template/html/emails/email-footer.html -text
 package_website_template/html/emails/email.css -text
 package_website_template/html/emails/email_base.html -text
 package_website_template/html/emails/listing_details.html -text
