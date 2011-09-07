@@ -122,6 +122,10 @@ package_website_template/html/property-search/includes/email_friend_form.html -t
 package_website_template/html/property-search/includes/rss-feed.xml -text
 package_website_template/html/property-search/includes/video.html -text
 package_website_template/html/property-search/results.html -text
+package_website_template/html/region_profiles_details.html -text
+package_website_template/html/region_profiles_map_results.html -text
+package_website_template/html/region_profiles_summary.html -text
+package_website_template/html/robots.txt -text
 package_website_template/html/secure/base.html -text
 package_website_template/html/secure/login.html -text
 package_website_template/html/secure/pfv_base.html -text
