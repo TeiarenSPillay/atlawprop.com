@@ -11,8 +11,8 @@ CURRENT_DIRECTORY = path.abspath(path.dirname(__file__))
 
 ### Site specifics ###
 SERVER_EMAIL = 'unconfigured@propdata.net'
-WEB_STATS    = "http://ws01.umh.propdata.net/cgi-bin/awstats.pl?config=unconfigured.co.za"
-WEBSITE_URL  = "http://abc.staging.propdata.net"
+WEB_STATS    = "http://unconfigured.propdata.net/cgi-bin/awstats.pl?config=unconfigured.co.za"
+WEBSITE_URL  = "http://unconfigured.propdata.net"
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]   # Top heading - first part
@@ -29,31 +29,24 @@ REGION_PROFILES_ADDON = True
 BRANCH_LEVEL_ACCESS_ADDON = True
 OFFERS_ADDON = True
 
-### Database details ###
-if DEV_MODE:
-    DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-    DATABASE_NAME = 'only_rentals'          # Or path to database file if using sqlite3.
-    DATABASE_USER = 'root'                  # Not used with sqlite3.
-    DATABASE_PASSWORD = ''                  # Not used with sqlite3.
-    DATABASE_HOST = '192.168.0.10'          # Set to empty string for localhost. Not used with sqlite3.
-    DATABASE_PORT = ''                      # Set to empty string for default. Not used with sqlite3.
-    GMAPS_KEY  = "ABQIAAAAkzGFPn2aXs-JhTpG4AIIORRpp2cC2FsRFUfKRDdI-3JIXl2s9BRxtJbBjImxjaIlIespam7WOi-8ag" # localhost
-else:
-    DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-    DATABASE_NAME = 'abc_staging'          # Or path to database file if using sqlite3.
-    DATABASE_USER = 'abcrealestate'          # Not used with sqlite3.
-    DATABASE_PASSWORD = 'kkuyvYUVUk8'      # Not used with sqlite3.
-    DATABASE_HOST = 'localhost'         # Set to empty string for localhost. Not used with sqlite3.
-    DATABASE_PORT = ''                      # Set to empty string for default. Not used with sqlite3.
-    #GMAPS_KEY  = "unconfigured" # unconfigured.co.za
-    #RECAPTCHA_PUBLIC_KEY = 'unconfigured'
-    #RECAPTCHA_PRIVATE_KEY = 'unconfigured'
+# Production DB Settings
+DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+DATABASE_NAME = 'unconfigured'          # Or path to database file if using sqlite3.
+DATABASE_USER = 'unconfigured'          # Not used with sqlite3.
+DATABASE_PASSWORD = 'unconfigured'      # Not used with sqlite3.
+DATABASE_HOST = 'localhost'         # Set to empty string for localhost. Not used with sqlite3.
+DATABASE_PORT = ''                      # Set to empty string for default. Not used with sqlite3.
+
+# Production API Keys
+#GMAPS_KEY  = "unconfigured"  # mydomain.co.za
+#RECAPTCHA_PUBLIC_KEY = 'unconfigured'  # mydomain.co.za
+#RECAPTCHA_PRIVATE_KEY = 'unconfigured'  # mydomain.co.za
 
 TIME_ZONE = 'Africa/Johannesburg'
 SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
 
 #if not DEV_MODE:
-#    ANALYTICS_ID = 'UA-13148074-26'
+#    ANALYTICS_ID = 'UA-XXXX-XX'
 #    MIDDLEWARE_CLASSES += (
 #        'eos.lib.analytics.GoogleAnalyticsMiddleware',
 #    )
