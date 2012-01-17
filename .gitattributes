@@ -1,6 +1,8 @@
 * text=auto !eol
 package_website_template/__init__.py -text
 package_website_template/assets/css/custom.css -text
+package_website_template/assets/favicon.ico -text
+package_website_template/assets/favicon.png -text
 package_website_template/assets/img/custom/about-us/agent-icon.jpg -text
 package_website_template/assets/img/custom/area-profile/details/map.jpg -text
 package_website_template/assets/img/custom/area-profile/details/suburbs.jpg -text
@@ -124,11 +126,19 @@ package_website_template/html/news/includes/rss-feed.xml -text
 package_website_template/html/news/news_details.html -text
 package_website_template/html/news/news_summary.html -text
 package_website_template/html/property-search/details.html -text
+package_website_template/html/property-search/details_commercial_for_sale.html -text
+package_website_template/html/property-search/details_commercial_new_development.html -text
+package_website_template/html/property-search/details_commercial_to_let.html -text
+package_website_template/html/property-search/details_holiday_letting.html -text
 package_website_template/html/property-search/details_map.html -text
+package_website_template/html/property-search/details_residential_for_sale.html -text
+package_website_template/html/property-search/details_residential_new_development.html -text
+package_website_template/html/property-search/details_residential_to_let.html -text
 package_website_template/html/property-search/includes/bookmark-share.html -text
 package_website_template/html/property-search/includes/email_friend_form.html -text
 package_website_template/html/property-search/includes/rss-feed.xml -text
 package_website_template/html/property-search/includes/video.html -text
+package_website_template/html/property-search/listings_details_base.html -text
 package_website_template/html/property-search/results.html -text
 package_website_template/html/region_profiles_details.html -text
 package_website_template/html/region_profiles_map_results.html -text
