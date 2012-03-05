@@ -38,7 +38,7 @@ body       { background-color:#FFFFFF;}
 .menu a.active                               { color:#FFFFFF; padding-top:10px; padding-bottom:9px; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; padding-left:17px; padding-right:16px; float:left;}
 .menu a:hover.active                         { color:#FFFFFF; background-color:#990000;}
 .menu a.active-rollover                      { color:#FFFFFF; padding-top:10px; padding-bottom:9px; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; padding-left:17px; padding-right:16px; float:left; background-color:#990000;}
-.menu ul ul                                  { visibility:hidden; position:absolute; height:0; top:36px; left:0;}
+.menu ul ul                                  { visibility:hidden; position:absolute; height:0; top:36px; left:0; z-index:9999;}
 .menu table                                  { position:absolute; top:0; left:0; border-collapse:collapse;}
 .menu ul ul a, .menu ul ul a:visited         { color:#FFFFFF; background-color:#990000; height:23px; display:block; padding-left:17px; padding-right:16px;  padding-top:8px; border-bottom: 1px solid #AD3333;}
 .menu ul ul a:hover, .menu ul ul a:hover     { color:#FFFFFF; background:#B0000D;}
@@ -107,7 +107,7 @@ a.more-info, a.more-info2, a.gallery, a.favourites, a.bookmark, a.share, a.favou
 .footer-content a:hover       { color:#FFFFFF;}
 .footer-float                 { width:100%; background-image:url(/assets/img/custom/layout/footer-bg.jpg); background-repeat:repeat-x; background-color:#225C96; background-position:top; float:left; }
 .footer-float2                { width:917px; margin:0 auto; }
-.footer-spacing-top           { margin-top:40px;}
+.footer-spacing-top           { margin-top:50px;}
 
 /* 9. Calculators */
 .calctable input              { margin-left:5px; background-color:#09314E; border:1px solid #09314E; padding:2px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFF;}
@@ -157,14 +157,14 @@ a:hover.currency-converter    { color:#C90D1B; background-image:url(/eos/img/cal
 
 
 /* FACEBOOK  */
-.facebook-search {background: url(/assets/img/custom/facebook/search-icon.gif) no-repeat left #e90b7a; height:33px; line-height:33px;}
+.facebook-search {background: url(/assets/img/custom/facebook/search-icon.gif) no-repeat left #0076bb; height:33px; line-height:33px;}
 .facebook-search-container {padding:17px 13px 16px 14px; background:#f2f2f2; width:470px; color:#545158;}
 .padding-left-11 {padding-left:11px;}
 .padding-left-34 {padding-left:34px;}
 .facebook-heading {font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#FFFFFF;}
 .padding-bottom-25 { padding-bottom: 25px;}
 ul.as-selections { background-color: #FFFFFF; border: 1px solid #809DB9; float: left; margin: 0; overflow: auto; width:auto;}
-.facebook-listings {background: #56555b; height:33px; line-height:33px;}
+.facebook-listings {background: #0076bb; height:33px; line-height:33px;}
 .facebook-latest-listings-container {padding:17px 13px 16px 14px; width:470px;}
 .facebook-width120     { width:120px;}
 .facebook-width215     { width:215px;}
@@ -174,3 +174,8 @@ ul.as-selections { background-color: #FFFFFF; border: 1px solid #809DB9; float: 
 
 .facebook-more-info { background:url(/assets/img/custom/facebook/more-info.gif) no-repeat; width:52px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left; margin-right:5px;}
 .facebook-map-property { background:url(/assets/img/custom/facebook/map-property.gif) no-repeat; width:71px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left;}
+
+
+#appointmet-send { border:none;}
+#call-now { padding-left:10px;}
+.heading-margin { padding-left:25px;}
