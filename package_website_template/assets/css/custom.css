@@ -171,20 +171,22 @@ a:hover.currency-converter    { color:#C90D1B; background-image:url(/eos/img/cal
 
 /* FACEBOOK
 ------------------------------------------------------------ */
-.facebook-search {background: url(/assets/img/custom/facebook/search-icon.gif) no-repeat left #0076bb; height:33px; line-height:33px;}
-.facebook-search-container {padding:17px 13px 16px 14px; background:#f2f2f2; width:470px; color:#545158;}
-.facebook-heading {font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#FFFFFF;}
-ul.as-selections { background-color: #FFFFFF; border: 1px solid #809DB9; float: left; margin: 0; overflow: auto; width:auto;}
-.facebook-listings {background: #0076bb; height:33px; line-height:33px;}
-.facebook-latest-listings-container {padding:17px 13px 16px 14px; width:470px;}
-.facebook-width120     { width:120px;}
-.facebook-width215     { width:215px;}
-.listed {color:#666666;}
-.facebook-brows-suburb {padding:17px 13px 16px 14px; width:215px;}
-.call {font-family:Arial, Helvetica, sans-serif; color:#000; font-size:15px;}
-.facebook-more-info { background:url(/assets/img/custom/facebook/more-info.gif) no-repeat; width:52px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left; margin-right:5px;}
-.facebook-map-property { background:url(/assets/img/custom/facebook/map-property.gif) no-repeat; width:71px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left;}
-#appointmet-send { border:none;}
+.facebook-search                        {background: url(/assets/img/custom/facebook/search-icon.gif) no-repeat left #e90b7a; height:33px; line-height:33px;}
+.facebook-search-container              {padding:17px 13px 16px 14px; background:#f2f2f2; width:470px; color:#545158;}
+.padding-left-11                        {padding-left:11px;}
+.padding-left-34                        {padding-left:34px;}
+.facebook-heading                       {font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#FFFFFF;}
+.padding-bottom-25                      {padding-bottom: 25px;}
+ul.as-selections                        {background-color: #FFFFFF; border: 1px solid #809DB9; float: left; margin: 0; overflow: auto; width:550px;}
+.facebook-listings                      {background: #56555b; height:33px; line-height:33px;}
+.facebook-latest-listings-container     {padding:17px 13px 16px 14px; width:470px;}
+.facebook-width120                      {width:120px;}
+.facebook-width215                      {width:215px;}
+.listed                                 {color:#666666;}
+.facebook-brows-suburb                  {padding:17px 13px 16px 14px; width:215px;}
+.call                                   {font-family:Arial, Helvetica, sans-serif; color:#000; font-size:15px;}
+.facebook-more-info                     {background:url(/assets/img/custom/facebook/more-info.gif) no-repeat; width:52px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left; margin-right:5px;}
+.facebook-map-property                  {background:url(/assets/img/custom/facebook/map-property.gif) no-repeat; width:71px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left;}
 
 
 
