@@ -96,6 +96,7 @@ package_website_template/assets/img/custom/property-search/results/public-tender
 package_website_template/assets/img/custom/property-search/results/rented.png -text
 package_website_template/assets/img/custom/property-search/results/sold.png -text
 package_website_template/assets/img/custom/property-search/results/sole-mandate.png -text
+package_website_template/assets/img/custom/property-search/results/virtual-tour.png -text
 package_website_template/dev_settings.py -text
 package_website_template/html/404.html -text
 package_website_template/html/500.html -text
