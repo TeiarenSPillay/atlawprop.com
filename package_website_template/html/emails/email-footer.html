@@ -1,4 +1,4 @@
-<table width="" bordercolor="#FFFFFF" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0">
+<table bordercolor="#FFFFFF" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0">
     <tr>
         <td class="border-bottom3">
             <p class="last"><strong>Regards</strong><br />
@@ -10,8 +10,8 @@
         <td class="border-bottom3">
             <table cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF">
                 <tr>
-                    {% if head_office_contact_number %}<td width="120"><b>Tel</b> {{ head_office_contact_number }}</td>{% endif %}
-                    <td width="15"></td>
+                    {% if head_office_contact_number %}<td><b>Tel</b> {{ head_office_contact_number }}</td>{% endif %}
+                    <td width="25"></td>
                     {% if head_office_fax_number %}<td><b>Fax</b> {{ head_office_fax_number }}</td>{% endif %}
                 </tr>
             </table>
@@ -22,8 +22,8 @@
         <td class="border-bottom3">
             <table cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF">
                 <tr>
-                    <td width=""><b>Web</b>&nbsp;<a href="{{ site_url }}?utm_source={{ source }}&utm_medium={{ format }}&utm_campaign={{ campaign|slugify }}{% if content %}&content={{ content }}{% endif %}">{{ site_url|cut:"http://" }}&nbsp;&nbsp;</a></td>
-                    <td width="15"></td>
+                    <td><b>Web</b>&nbsp;<a href="{{ site_url }}?utm_source={{ source }}&utm_medium={{ format }}&utm_campaign={{ campaign|slugify }}{% if content %}&content={{ content }}{% endif %}">{{ site_url|cut:"http://" }}&nbsp;&nbsp;</a></td>
+                    <td width="25"></td>
                     <td><b>Email</b>&nbsp;<a href="mailto:{{ default_email_from }}">{{ default_email_from }}</a></td>
                 </tr>
             </table>

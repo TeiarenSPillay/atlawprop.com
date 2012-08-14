@@ -1,7 +1,26 @@
 <!-- Header -->
-<div class="header print-hide">
-	<div class="header-content"><img src="/assets/img/custom/layout/logo.jpg" /></div>
-</div>
+<span style="display:none" id="id_flash_header">
+    <div class="header print-hide">
+        <div class="header-content"><img src="/assets/img/custom/layout/logo.jpg" /></div>
+    </div>
+</span>
+<span id="id_static_header" style="display:none">
+    <div class="header print-hide">
+        <div class="header-content"><img src="/assets/img/custom/layout/logo.jpg" /></div>
+    </div>
+</span>
+{% block js %}
+<script type="text/javascript">
+$(document).ready(function(){
+  if(flash_detect().notSupported()) { //Static header
+    $('#id_static_header').toggle();
+	$('#id_flash_header').hide();
+  } else { //flash header
+	$('#id_flash_header').toggle();   
+  }
+});
+</script>
+{% endblock js %}
 <!-- Header 
 <div class="header print-hide">
 	<div class="header-content">
@@ -21,6 +40,7 @@
 
 <!-- Navigation -->
 {% include 'includes/eos_navigation.html' %}
+
 
 
 
