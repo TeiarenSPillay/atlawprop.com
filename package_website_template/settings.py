@@ -22,12 +22,7 @@ BROCHURE_HEADINGS = [0.0, 0.0, 0.0]     # Section headings
 BROCHURE_PRICE    = [0.0, 0.0, 0.0]     # Price
 BROCHURE_WEBSITE  = [0.82, 0.55, 0.0]   # Website address (bottom)
 
-# This controls the clients add-ons
-COMMERCIAL_ADDON = True
-NEW_DEVELOPMENT_ADDON = True
-REGION_PROFILES_ADDON = True
-BRANCH_LEVEL_ACCESS_ADDON = True
-OFFERS_ADDON = True
+# Client add-ons
 
 # Production DB Settings
 DATABASE_ENGINE = 'postgresql_psycopg2' # 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
