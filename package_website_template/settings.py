@@ -1,7 +1,7 @@
 from eos.core_settings import *
 from os import path
 
-DEV_MODE = True
+DEV_MODE = False
 
 if DEV_MODE:
     DEBUG = True
@@ -10,7 +10,7 @@ TEMPLATE_DEBUG = DEBUG
 CURRENT_DIRECTORY = path.abspath(path.dirname(__file__))
 
 ### Site specifics ###
-SERVER_EMAIL = 'unconfigured@propdata.net'
+SERVER_EMAIL = 'django@propdata.net'
 WEB_STATS    = "http://unconfigured.propdata.net/cgi-bin/awstats.pl?config=unconfigured.co.za"
 WEBSITE_URL  = "http://unconfigured.propdata.net"
 
