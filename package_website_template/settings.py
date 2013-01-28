@@ -33,7 +33,7 @@ DATABASE_HOST = 'localhost'         # Set to empty string for localhost. Not use
 DATABASE_PORT = ''                      # Set to empty string for default. Not used with sqlite3.
 
 # Production API Keys
-#GMAPS_KEY  = "unconfigured"  # mydomain.co.za
+#GMAPS_KEY  = "AIzaSyANw9tbKWc_eQUKnlU6eNnNSs10q8KePOM"  # mydomain.co.za
 #RECAPTCHA_PUBLIC_KEY = 'unconfigured'  # mydomain.co.za
 #RECAPTCHA_PRIVATE_KEY = 'unconfigured'  # mydomain.co.za
 
