@@ -105,7 +105,7 @@ a.image-border                { border:1px solid #FFFFFF; padding:1px; display:b
 .footer-content h1            { color:#FFFFFF;}
 .footer-content a             { color:#7A98B2;}
 .footer-content a:hover       { color:#FFFFFF;}
-.footer-float                 { width:100%; background-image:url(/assets/img/custom/layout/footer-bg.jpg); background-repeat:repeat-x; background-color:#225C96; background-position:top; float:left; }
+.footer-float                 { width:100%; background: #5e6a70; background-position:top; float:left; }
 .footer-float2                { width:917px; margin:0 auto; }
 .footer-spacing-top           { margin-top:50px;}
 

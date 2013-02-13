@@ -1,0 +1,116 @@
+{% load property_counts %}
+{% load humanize %}
+<div id="id_menu" class="menu print-hide">
+<div id="id_menu_content" class="menu-content">
+<div id="id_menu_bg" class="column menu-bg last">
+<ul id="id_navigation_bar" class="print-hide">
+<li id="id_home_listitem"><a href="/" class="general" id="id_home_tab"><span class="right-section">Home</span></a></li>
+<li id="id_property_search_listitem"><a href="#1" class="general" id="id_property_search_tab"><span class="right-section">Property Search</span></a>
+<ul id='id_property_search_sublist' onmouseover="javascript:changeClass('id_property_search_sublist', 'active-rollover')" onmouseout="javascript:changeClass('id_property_search_sublist', 'general')">
+{% set_property_count 'on-show' %}
+{% ifnotequal on_show_count 0 %}
+<li id="id_on_show_sublistitem" class="width146"><a id="id_on_show" href="/results/on-show/">On Show</a></li>
+{% endifnotequal %}
+{% set_property_count 'residential-for-sale' %}
+{% ifnotequal residential_for_sale_count 0 %}
+<li id="id_residential_for_sale_sublistitem" class="width146"><a id="id_residential_for_sale" href="/results/residential/for-sale/">Residential For Sale ({{ residential_for_sale_count|intcomma }})</a></li>
+{% endifnotequal %}
+{% set_property_count 'residential-to-let' %}
+{% ifnotequal residential_to_let_count 0 %}
+<li id="id_residential_to_let_sublistitem" class="width146"><a id="id_residential_to_let" href="/results/residential/to-let/">Residential To Let ({{ residential_to_let_count|intcomma }})</a></li>
+{% endifnotequal %}
+{% set_property_count 'commercial-for-sale' %}
+{% ifnotequal commercial_for_sale_count 0 %}
+{% if commercial_addon %}
+<li id="id_commercial_for_sale_sublistitem" class="width146"><a id="id_commercial_for_sale" href="/results/commercial/for-sale/">Commercial For Sale ({{ commercial_for_sale_count|intcomma }})</a></li>
+{% endif %}
+{% endifnotequal %}
+{% set_property_count 'commercial-to-let' %}
+{% ifnotequal commercial_to_let_count 0 %}
+{% if commercial_addon %}
+<li id="id_commercial_to_let_sublistitem" class="width146"><a id="id_commercial_to_let" href="/results/commercial/to-let/">Commercial To Let ({{ commercial_to_let_count|intcomma }})</a></li>
+{% endif %}
+{% endifnotequal %}
+{% set_property_count 'residential-new-development' %}
+{% ifnotequal residential_new_development_count 0 %}
+{% if new_development_addon %}
+<li id="id_residential_new_developments_sublistitem" class="width146"><a id="id_residential_new_developments" href="/results/new-development/residential/">Residential New Developments ({{ residential_new_development_count|intcomma }})</a></li>
+{% endif %}
+{% endifnotequal %}
+{% set_property_count 'commercial-new-development' %}
+{% ifnotequal commercial_new_development_count 0 %}
+{% if new_development_addon %}
+<li id="id_commercial_new_developments_sublistitem" class="width146"><a id="id_commercial_new_developments" href="/results/new-development/commercial/">Commercial New Developments ({{ commercial_new_development_count|intcomma }})</a></li>
+{% endif %}
+{% endifnotequal %}
+{% set_property_count 'vacant-land' %}
+{% ifnotequal vacant_land_count 0 %}
+<li id="id_vacant_land_sublistitem" class="width146"><a id="id_vacant_land" href="/results/vacant-land/">Vacant Land ({{ vacant_land_count|intcomma }})</a></li>
+{% endifnotequal %}
+{% set_property_count 'farm' %}
+{% ifnotequal farm_and_small_holdings_count 0 %}
+<li id="id_farms_amp_small_holdings_sublistitem" class="width146"><a id="id_farms_amp_small_holdings" href="/results/farms-and-small-holdings/">Farms &amp; Small Holdings ({{ farm_and_small_holdings_count|intcomma }})</a></li>
+{% endifnotequal %}
+{% set_property_count 'holiday-letting' %}
+{% ifnotequal holiday_letting_count 0 %}
+{% if holiday_addon %}
+<li id="id_holiday_letting_sublistitem" class="width146"><a id="id_holiday_letting" href="/results/holiday/to-let/">Holiday Letting ({{ holiday_letting_count|intcomma }})</a></li>
+{% endif %}
+{% endifnotequal %}
+{% set_property_count 'bank-reposessed' %}
+{% ifnotequal bank_reposessed_count 0 %}
+{% if offers_addon %}
+<li id="id_bank_reposessed_sublistitem" class="width146"><a id="id_bank_reposessed" href="/results/bank-reposessed/">Bank Reposessed ({{ bank_reposessed_count|intcomma }})</a></li>
+{% endif %}
+{% endifnotequal %}
+{% set_property_count 'distressed' %}
+{% ifnotequal distressed_count 0 %}
+{% if offers_addon %}
+<li id="id_distressed_sales_sublistitem" class="width146"><a id="id_distressed_sales" href="/results/distressed/">Distressed Sales ({{ distressed_count|intcomma }})</a></li>
+{% endif %}
+{% endifnotequal %}
+{% set_property_count 'tender' %}
+{% ifnotequal tender_count 0 %}
+<li id="id_tenders_sublistitem" class="width146"><a id="id_tenders" href="/results/tenders/">Tenders ({{ tender_count|intcomma }})</a></li>
+{% endifnotequal %}
+{% set_property_count 'student-accommodation' %}
+{% ifnotequal student_accommodation_count 0 %}
+<li id="id_student_accommodation_sublistitem" class="width146"><a id="id_student_accommodation" href="/results/student-accommodation/">Student Accommodation ({{ student_accommodation_count|intcomma }})</a></li>
+{% endifnotequal %}
+</ul></li>
+<li id="id_tools_listitem"><a href="#1" class="general" id="id_tools_tab"><span class="right-section">Tools</span></a>
+<ul id='id_tools_sublist' onmouseover="javascript:changeClass('id_tools_sublist', 'active-rollover')" onmouseout="javascript:changeClass('id_tools_sublist', 'general')">
+<li id="id_property_email_alerts_sublistitem" class="width146"><a id="id_property_email_alerts" href="/property-email-alerts/">Property Email Alerts</a></li>
+<li id="id_calculators_sublistitem" class="width146"><a id="id_calculators" href="/bond-transfer-cost-calculator/">Calculators</a></li>
+</ul></li>
+{% if region_profiles_addon %}
+<li id="id_area_profiles_listitem"><a href="/area-profiles/" class="general" id="id_area_profiles_tab"><span class="right-section">Area Profiles</span></a></li>
+{% endif %}
+{% if list_your_property_display %}
+<li id="id_list_your_property_listitem"><a href="/list-your-property/" class="general" id="id_list_your_property_tab"><span class="right-section">List Your Property</span></a></li>
+{% endif %}
+<li id="id_news_listitem"><a href="#1" class="general" id="id_news_tab"><span class="right-section">News</span></a>
+<ul id='id_news_sublist' onmouseover="javascript:changeClass('id_news_sublist', 'active-rollover')" onmouseout="javascript:changeClass('id_news_sublist', 'general')">
+<li id="id_latest_news_sublistitem" class="width146"><a id="id_latest_news" href="/news/">Latest News</a></li>
+{% if has_general_advice %}
+<li id="id_general_advice_sublistitem" class="width146"><a id="id_general_advice" href="/news/category/general-advice/">General Advice</a></li>
+{% endif %}
+<li id="id_email_newsletter_sublistitem" class="width146"><a id="id_email_newsletter" href="/newsletter/">Email Newsletter</a></li>
+</ul></li>
+<li id="id_about_us_listitem"><a href="#1" class="general" id="id_about_us_tab"><span class="right-section">About Us</span></a>
+<ul id='id_about_us_sublist' onmouseover="javascript:changeClass('id_about_us_sublist', 'active-rollover')" onmouseout="javascript:changeClass('id_about_us_sublist', 'general')">
+<li id="id_company_profile_sublistitem" class="width146"><a id="id_company_profile" href="/profile/">Company Profile</a></li>
+<li id="id_agent_search_sublistitem" class="width146"><a id="id_agent_search" href="/agents/">Agent Search</a></li>
+{% load additional_pages %}
+{% get_additional_pages %}
+{% for page in additional_pages %}
+{% if page.live %}
+<li id="id_pagemenu_title_sublistitem" class="width146"><a id="id_pagemenu_title" href="/{{ page.menu_slug }}/">{{ page.menu_title }}</a></li>
+{% endif %}
+{% endfor %}
+</ul></li>
+<li id="id_contact_us_listitem"><a href="/contact/" class="general" id="id_contact_us_tab"><span class="right-section">Contact Us</span></a></li>
+</ul>
+</div>
+</div>
+</div>

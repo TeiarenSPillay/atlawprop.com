@@ -97,6 +97,7 @@ package_website_template/assets/img/custom/property-search/results/public-tender
 package_website_template/assets/img/custom/property-search/results/rented.png -text
 package_website_template/assets/img/custom/property-search/results/sold.png -text
 package_website_template/assets/img/custom/property-search/results/sole-mandate.png -text
+package_website_template/assets/img/custom/property-search/results/student-accom.png -text
 package_website_template/assets/img/custom/property-search/results/virtual-tour.png -text
 package_website_template/dev_settings.py -text
 package_website_template/html/404.html -text
@@ -123,6 +124,9 @@ package_website_template/html/header.html -text
 package_website_template/html/index.html -text
 package_website_template/html/lightbox_confirmation.html -text
 package_website_template/html/list_your_property.html -text
+package_website_template/html/navigation/base_footer_navigation.html -text
+package_website_template/html/navigation/navigation.html -text
+package_website_template/html/navigation/website_map_navigation.html -text
 package_website_template/html/new_listing_alerts.html -text
 package_website_template/html/news/email_newsletter.html -text
 package_website_template/html/news/general-advice.html -text
