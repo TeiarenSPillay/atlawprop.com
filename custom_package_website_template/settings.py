@@ -47,7 +47,7 @@ SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
 #    )
 
 MEDIA_ROOT = '%s/assets' % CURRENT_DIRECTORY
-ROOT_URLCONF = 'package_website_template.urls'
+ROOT_URLCONF = 'custom_package_website_template.urls'
 
 TEMPLATE_DIRS += (
     '%s/html' % CURRENT_DIRECTORY,
