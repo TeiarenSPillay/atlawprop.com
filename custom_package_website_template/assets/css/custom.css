@@ -1,0 +1,202 @@
+/* Main Background
+------------------------------------------------------------ */
+body              { background-color:#FFFFFF;}
+.container        { min-height:153px; width:100%;}
+.heading-margin   { padding-left:25px;}
+
+
+/* Header
+------------------------------------------------------------ */
+.header         { width:100%; margin:0 auto; height:90px; background-image:url(/assets/img/custom/layout/header-bg.jpg); background-repeat:repeat-x;}
+.header-content { width:877px; margin:0 auto;}
+.margin-top44   { margin-top:44px;} /* This changes according to the height of your logo, however if header is in flash, remove */
+
+
+
+/* Navigation
+------------------------------------------------------------ */
+.menu-content                                { width:877px; margin:0 auto;}
+.menu-borders                                { border-right:1px solid #CE0D1A; border-left:1px solid #9E0A16}
+.menu                                        { width:100%; background-color:#AF0D18; margin:0 auto; height:36px; float:left;}
+.menu ul                                     { margin:0 0 0 0; padding:0; list-style:none;}
+.menu li                                     { display:inline; padding:0; float:left; }
+.menu li                                     { float:left; position:relative; text-transform:uppercase; font-size:11px; font-weight:bold;}
+.menu li a.general                           { color:#FFFFFF; padding-top:10px; padding-bottom:9px; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; padding-left:17px; padding-right:16px; float:left;}
+.menu a:hover.general                        { color:#FFFFFF; background-color:#990000;}
+.menu a.active                               { color:#FFFFFF; padding-top:10px; padding-bottom:9px; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; padding-left:17px; padding-right:16px; float:left;}
+.menu a:hover.active                         { color:#FFFFFF; background-color:#990000;}
+.menu a.active-rollover                      { color:#FFFFFF; padding-top:10px; padding-bottom:9px; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; padding-left:17px; padding-right:16px; float:left; background-color:#990000;}
+.menu ul ul                                  { visibility:hidden; position:absolute; height:0; top:36px; left:0; z-index:9999;}
+.menu table                                  { position:absolute; top:0; left:0; border-collapse:collapse;}
+.menu ul ul a, .menu ul ul a:visited         { color:#FFFFFF; background-color:#990000; height:23px; display:block; padding-left:17px; padding-right:16px;  padding-top:8px; border-bottom: 1px solid #AD3333;}
+.menu ul ul a:hover, .menu ul ul a:hover     { color:#FFFFFF; background:#B0000D;}
+.menu ul li:hover ul, .menu ul a:hover ul    { visibility:visible; }/* make the second level visible when hover on first level list OR link */
+.menu ul :hover ul ul                        { visibility:hidden;}/* keep the third level hidden when you hover on first level list OR link */
+.menu ul :hover ul :hover ul                 { visibility:visible;}/* make the third level visible when you hover over second level list OR link */
+
+
+
+/* Width's Of Navigation Dropdowns
+------------------------------------------------------------ */
+.width64      { width:74px;}
+.width130     { width:130px;}
+.width146     { width:240px;}
+.width180     { width:200px;}
+.width200     { width:200px;}
+.width210     { width:210px;}
+.width213     { width:270px;}
+
+
+
+/* Search
+------------------------------------------------------------ */
+.search                       { background:url(/assets/img/custom/layout/search.jpg); background-repeat:repeat-x; background-color:#CCCCCC; width:100%; float:left; padding-bottom:25px; padding-top:17px;}
+.search-button                { background-color:#09314E; border:1px solid #09314E; padding:2px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFF;}
+.search-content               { width:877px; margin:0 auto; float:none; font-size:11px; color:#666666;  padding-bottom:15px; padding-top:0px;}
+#call-now                     { padding-left:10px;}
+
+
+
+/* Headings
+------------------------------------------------------------ */
+h1                            { font-family:Arial, Helvetica, sans-serif; font-size:19px; color:#072E5F; font-weight:normal; }
+h2                            { font-family:Arial, Helvetica, sans-serif; font-size:15px; color:#072E5F; font-weight:bold; text-transform: uppercase;}
+h3                            { font-family:Arial, Helvetica, sans-serif; font-size:16px; color:#CF000F; font-weight:bold; margin-top:0px; padding-top:0px; margin-bottom:10px;}
+
+
+
+/* text
+------------------------------------------------------------ */
+.breadcrumbs-dark             { color:#56646E;}
+.breadcrumbs-light            { color:#8EA4B4;}
+.quote                        { font-family:Arial, Helvetica, sans-serif; font-size:16px; font-weight:bold; color:#AF0D18; } /* Slogan Text */
+
+
+
+/* Links
+------------------------------------------------------------ */
+a:hover.more-info, a:hover.more-info2, a:hover.gallery, a:hover.favourites, a:hover.bookmark, a:hover.share, a:hover.favourites-remove, a:hover.brochure, a:hover.print, a:hover.email, a:hover.feed, a:hover.floor-plans, a:hover.virtual-tour, a:hover.video, a:hover.map-property, a:hover.add-property-favourites, a:hover.previous, a:hover.next { color: #072E5F;}
+a.more-info, a.more-info2, a.gallery, a.favourites, a.bookmark, a.share, a.favourites-remove, a.brochure, a.print, a.email, a.feed, a.floor-plans, a.virtual-tour, a.video, a.map-property, a.add-property-favourites, a.previous, a.next { color: #C90D1B;}
+
+a:focus, a:hover              { color: #072E5F; }
+a                             { color: #C90D1B; text-decoration: none; }
+
+a.homepage                    { background-image:url(/assets/img/custom/navigation/property-search.png); display:block; height:34px; width:146px;}
+a:hover.homepage              { background-image:url(/assets/img/custom/navigation/property-search-over.png); display:block;}
+
+a:hover.other                 { color: #666666; }
+a.other                       { color: #666666; text-decoration: none; }
+
+.blue a:hover                 { color: #C90D1B; }
+.blue a                       { color: #072E5F; text-decoration: none; }
+
+a:hover.news-heading-link     { color: #C90D1B; }
+a.news-heading-link           { color: #000000; text-decoration: none; }
+
+a:hover.image-border          { border:1px solid #8EA4B4; padding:1px;}
+a.image-border                { border:1px solid #FFFFFF; padding:1px; display:block;}
+
+
+
+/* Footer
+------------------------------------------------------------ */
+.footer-bg2                   { width:917px; color:#7A98B2; display:block; font-size:11px;}
+.footer-content               { width:877px; margin:0 auto; margin-top:20px;  }
+.footer-content h1            { color:#FFFFFF;}
+.footer-content a             { color:#7A98B2;}
+.footer-content a:hover       { color:#FFFFFF;}
+.footer-float                 { width:100%; background: #5e6a70; background-position:top; float:left; }
+.footer-float2                { width:917px; margin:0 auto; }
+.footer-spacing-top           { margin-top:50px;}
+
+
+
+/* Calculators
+------------------------------------------------------------ */
+.calctable input              { margin-left:5px; background-color:#09314E; border:1px solid #09314E; padding:2px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFF;}
+
+
+
+/* Popups
+------------------------------------------------------------ */
+.search-button-popup          { background-color:#09314E; border:1px solid #09314E; padding:2px; margin-top:10px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFF;}
+
+
+
+/* TABS
+------------------------------------------------------------ */
+.search-results               { color:#C90D1B; display:block; width:104px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/search-results-over.jpg);}
+a.search-results              { color:#2B5084; display:block; width:104px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/search-results.jpg);}
+a:hover.search-results        { color:#C90D1B; background-image:url(/eos/img/property-search/navigation/search-results-over.jpg); }
+
+.map                          { color:#C90D1B; display:block; width:37px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/map-over.jpg);}
+a.map                         { color:#2B5084; display:block; width:37px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/map.jpg);}
+a:hover.map                   { color:#C90D1B; background-image:url(/eos/img/property-search/navigation/map-over.jpg); }
+
+.details                      { color:#C90D1B; display:block; width:50px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/details-over.jpg);}
+a.details                     { color:#2B5084; display:block; width:50px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/details.jpg);}
+a:hover.details               { color:#C90D1B; background-image:url(/eos/img/property-search/navigation/details-over.jpg); }
+
+.my-favourites                { color:#C90D1B; display:block; width:109px; height:25px; font-size:12px; font-weight:bold; padding-left:30px; padding-top:7px; float:left; margin-right:3px; background-image:url(/assets/img/custom/property-search/navigation/favourites-over.jpg);}
+a.my-favourites               { color:#2B5084; display:block; width:109px; height:25px; font-size:12px; font-weight:bold; padding-left:30px; padding-top:7px; float:left; margin-right:3px; background-image:url(/assets/img/custom/property-search/navigation/favourites.jpg);}
+a:hover.my-favourites         { color:#C90D1B; background-image:url(/assets/img/custom/property-search/navigation/favourites-over.jpg);}
+
+.bond-transfer-cost           { color:#C90D1B; display:block; width:195px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/bond-transfer-cost-over.jpg);}
+a.bond-transfer-cost          { color:#2B5084; display:block; width:195px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/bond-transfer-cost.jpg);}
+a:hover.bond-transfer-cost    { color:#C90D1B; background-image:url(/eos/img/calculators/navigation/bond-transfer-cost-over.jpg); }
+
+.area-profile                 { color:#C90D1B; display:block; width:80px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/area-profile-over.jpg);}
+a.area-profile                { color:#2B5084; display:block; width:80px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/area-profile.jpg);}
+a:hover.area-profile          { color:#C90D1B; background-image:url(/eos/img/property-search/navigation/area-profile-over.jpg); }
+
+.bond-affordability           { color:#C90D1B; display:block; width:175px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/bond-affordability-over.jpg);}
+a.bond-affordability          { color:#2B5084; display:block; width:175px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/bond-affordability.jpg);}
+a:hover.bond-affordability    { color:#C90D1B; background-image:url(/eos/img/calculators/navigation/bond-affordability-over.jpg); }
+
+.bond-repayment               { color:#C90D1B; display:block; width:169px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/bond-repayment-over.jpg);}
+a.bond-repayment              { color:#2B5084; display:block; width:169px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/bond-repayment.jpg);}
+a:hover.bond-repayment        { color:#C90D1B; background-image:url(/eos/img/calculators/navigation/bond-repayment-over.jpg);}
+
+.currency-converter           { color:#C90D1B; display:block; width:128px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/currency-converter-over.jpg);}
+a.currency-converter          { color:#2B5084; display:block; width:128px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/currency-converter.jpg); }
+a:hover.currency-converter    { color:#C90D1B; background-image:url(/eos/img/calculators/navigation/currency-converter-over.jpg); }
+
+
+
+/* Holiday letting
+------------------------------------------------------------ */
+.heading { font-family:Arial, Helvetica, sans-serif; font-size:19px; font-weight:normal; color:#013667; }
+
+
+
+/* FACEBOOK
+------------------------------------------------------------ */
+.facebook-search                        {background: url(/assets/img/custom/facebook/search-icon.gif) no-repeat left #e90b7a; height:33px; line-height:33px;}
+.facebook-search-container              {padding:17px 13px 16px 14px; background:#f2f2f2; width:470px; color:#545158;}
+.padding-left-11                        {padding-left:11px;}
+.padding-left-34                        {padding-left:34px;}
+.facebook-heading                       {font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#FFFFFF;}
+.padding-bottom-25                      {padding-bottom: 25px;}
+ul.as-selections                        {background-color: #FFFFFF; border: 1px solid #809DB9; float: left; margin: 0; overflow: auto; width:550px;}
+.facebook-listings                      {background: #56555b; height:33px; line-height:33px;}
+.facebook-latest-listings-container     {padding:17px 13px 16px 14px; width:470px;}
+.facebook-width120                      {width:120px;}
+.facebook-width215                      {width:215px;}
+.listed                                 {color:#666666;}
+.facebook-brows-suburb                  {padding:17px 13px 16px 14px; width:215px;}
+.call                                   {font-family:Arial, Helvetica, sans-serif; color:#000; font-size:15px;}
+.facebook-more-info                     {background:url(/assets/img/custom/facebook/more-info.gif) no-repeat; width:52px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left; margin-right:5px;}
+.facebook-map-property                  {background:url(/assets/img/custom/facebook/map-property.gif) no-repeat; width:71px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left;}
+
+
+
+/* Padding / Margins
+------------------------------------------------------------ */
+.padding-left-11 {padding-left:11px;}
+.padding-left-34 {padding-left:34px;}
+
+.padding-bottom-25 { padding-bottom: 25px;}
+
+
+
+
