@@ -1,1 +1,25 @@
 {% extends "eos_news_summary.html" %}
+
+{% block custom_theme_news-summary %}
+    <div id="news-summary-breadcrumbs" class="column span-22 last">
+        <div id="news-summary-breadcrumbs-navigation">
+            <p class="last font-size11"><span class="breadcrumbs-dark">You are here:</span> <span class="breadcrumbs-light"><a href="/" class="other">{{ site_name }}</a> / <a href="/news/" class="other">Latest News</a></span></p>
+        </div>
+        <div id="news-summary-breadcrumbs-heading">
+            <h1 class="last">Latest News</h1>
+        </div>
+    </div>
+    
+    {% include 'includes/eos_news_main_navigation.html' %}
+    
+    <div id="news-summary-navigation" class="column font-size11 span-22 border-bottom1 print-hide last">
+        {% include 'includes/eos_news_summary_navigation.html' %}
+    </div>
+    
+    <!-- -->
+        {% include 'includes/eos_news_summary_article.html' %}
+    <!-- -->
+    <div class="column font-size11 border-top1 span-22 print-hide last">
+        {% include 'includes/eos_news_summary_navigation.html' %}
+    </div>
+{% endblock custom_theme_news-summary %}

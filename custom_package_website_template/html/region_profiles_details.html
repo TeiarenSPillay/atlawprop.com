@@ -1,1 +1,316 @@
 {% extends "eos_region_profiles_details.html" %}
+
+{% load humanize %}
+{% load property_cart %}
+{% load new_development_helpers %}
+
+{% block content %}
+    <form method="POST" id="hack_results" action="/results/">
+        <input type="hidden" name="listing_type" id="hack_listing_type" value="">
+        <input type="hidden" name="area" id="hack_area" value="">
+        <input type="hidden" name="suburb" id="hack_suburb" value="">
+    </form>
+
+    <div id="area-profile-details-breadcrumbs" class="column span-22 print-hide last">
+        <div id="area-profile-details-breadcrumbs-navigation">
+            <p class="last font-size11 print-hide"><span class="breadcrumbs-dark">You are here:</span> <span class="breadcrumbs-light"><a href="/" class="other">{{ site_name }}</a> / <a href="/area-profiles/" class="other">Area Profiles</a> / {{ obj.location.region }}</span></p>
+        </div>
+        <div id="area-profile-details-breadcrumbs-heading">
+            <h1>{{ obj.location.region }}, {{ obj.location.province }}</h1>		
+        </div>
+    </div>
+    
+    {% if has_listings_navigation %}
+        {% include 'includes/eos_listings_main_navigation.html' %}
+    {% else %}
+        {% include 'includes/eos_region_profiles_main_navigation.html' %}
+    {% endif %}
+
+    <div id="area-profile-details-navigation" class="column font-size11 span-22 border-bottom1 print-hide last">
+        {% include 'includes/eos_area_details_navigation.html' %}
+    </div>
+    
+	<!-- START: Print -->
+    <div class="column last border-bottom1 print-show">
+        <table width="100%">
+            <tr class="border-bottom1">
+                <td width="215" valign="top"><img src="{% if obj.imagegallery_set.values.0.image %}{{ site_url }}/resize/208/156/{{ obj.imagegallery_set.values.0.image }}{% else %}{{ site_url }}/eos/img/property-search/results/no-img.jpg{% endif %}" class="wrap-left" /></td>
+                <td valign="top"><p>{{ obj.region_description|safe|linebreaksbr }}</p></td>
+            </tr>
+        </table>
+    </div>
+    <!-- END: Print -->
+   
+    <!-- START: Photo Gallery -->
+    <div id="area-profile-details-photo-gallery" class="column last photo-gallery-bg print-hide">
+        <div class="column margin-bottom5 span-9 last">
+            <div class="column heading-icon print-hide margin-bottom-none">
+                <img src="/assets/img/custom/property-search/details/photo-gallery-icon.jpg" />
+            </div>
+            <h2>PHOTO GALLERY</h2>
+        </div>
+        {% include 'includes/eos_region_profiles_details_photo_gallery.html' %}
+    </div>
+    <!-- END: Photo Gallery -->
+    
+    <!-- START: Map -->
+    <div id="area-profile-details-map" class="columnRight area-map-bg">
+        <div class="column margin-bottom5 span-9 last">
+            <div class="column heading-icon print-hide margin-bottom-none">
+                <img src="/assets/img/custom/area-profile/details/map.jpg" />
+            </div>
+            <h2>MAP</h2>
+        </div>
+        <div id="map_canvas" style="width:435px; height:295px;">
+            <span id="maploading">Loading Map</span>
+        </div>
+    </div>
+    <!-- END: Map -->
+    
+    <!-- START: At a Glance -->
+    <a name="{{ obj.location.region|slugify }}" id="{{ obj.location.region|slugify }}"></a>
+    <div id="area-profile-details-at_a_glance" class="column last downloads-bg print-hide">
+        <div class="column last">
+            <div class="column span-21 last">
+                <div class="column heading-icon margin-bottom-none"><img src="/assets/img/custom/property-search/details/property-details-icon.jpg" /></div>
+                <h2>{{ obj.location.region }} at a glance</h2>
+            </div>
+            <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-finance-divider.gif" /></div>
+            <div class="column last">
+                <p class="last">{{ obj.region_description|safe }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="column print-hide last">
+        <img src="/eos/img/property-search/details/downloads-bottom-bg.jpg" />
+    </div>
+    <!-- END: At a Glance -->
+	
+    <!-- START: Weather -->
+    {% if weather_forecast %}
+        <div id="area-profile-details-weather_corecast" class="column last downloads-bg  print-hide">
+            <div class="column last">
+                <div class="column span-18 last">
+                    <div class="column heading-icon margin-bottom-none"><img src="/assets/img/custom/area-profile/details/weather.jpg" /></div>
+                    <h2>WEATHER FORECAST</h2>
+                </div>
+                <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-finance-divider.gif" /></div>
+                <div id="area-profile-details-weather_corecast_content" class="column last">
+                    {% include 'includes/eos_region_profiles_details_weather_forecast.html' %}
+                </div>
+            </div>
+        </div>
+        <div class="column print-hide last">
+            <img src="/eos/img/property-search/details/downloads-bottom-bg.jpg" />
+        </div>
+	{% endif %}
+	<!-- END: Weather -->
+    
+    <!-- START: Properties -->
+    {% for division, list in obj.listing_info.items %}
+        {% for listings in list %}
+            <div id="area-profile-details-property-for-sale" class="column last area-property-bg print-hide">
+                <div class="column span-35 last">
+                    <div class="column heading-icon"><img src="/assets/img/custom/homepage/featured-property-icon.jpg" /></div>
+                    <div id="area-profile-details-property-for-sale-heading-container">
+                        <div class="column">            
+                            <div id="area-profile-details-property-for-sale-heading">
+                                <h2 class="heading-last">
+                                    {% include 'includes/eos_region_profiles_details_for_sale_heading_1.html' %}
+                                </h2>
+                            </div>                    
+                            <div id="area-profile-details-property-for-sale-price-from">
+                                <p class="last"><b>FROM {{ currency_symbol }}{{ listings.min|intcomma }} {% ifnotequal listings.min listings.max %} to {{ currency_symbol }}{{ listings.max|intcomma }}{% endifnotequal %}</b></p>
+                            </div>
+                        </div>
+                        <div id="area-profile-details-property-for-sale-view" class="columnRight font-size11 margin-top3">
+                            {% include 'includes/eos_region_profiles_details_for_sale_heading_2.html' %}
+                        </div>
+                    </div>		
+                </div>        
+                <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-finance-divider.gif" /></div>
+                {% include 'includes/eos_region_profiles_details_for_sale_content.html' %}
+            </div>
+	        <div class="column last"><img class="print-hide" src="/eos/img/area-profiles/details/main-property-bg-bottom.jpg" /></div>
+	    {% endfor %}
+	{% endfor %}
+    <!-- END: Properties -->
+    
+    <!-- START: Speak to the Specialist -->
+    <div id="area-profile-details-speak" class="column last downloads-bg print-hide">
+        <div class="column last">
+            <div class="column span-21 last">
+                <div class="column heading-icon margin-bottom-none"><img src="/assets/img/custom/property-search/details/contact-icon.jpg" /></div>
+                <h2>SPEAK TO THE {{ obj.location.region|upper }} REAL ESTATE SPECIALISTS</h2>
+                <a name="speak-to-the-{{ obj.location.region|slugify }}-real-estate-specialist" id="speak-to-the-{{ obj.location.region|slugify }}-real-estate-specialist"></a>
+            </div>
+            <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-finance-divider.gif" /></div>
+            {% include 'includes/eos_region_profiles_details_speak.html' %}
+        </div>
+    </div>
+    <div class="column print-hide last">
+        <img src="/eos/img/property-search/details/downloads-bottom-bg.jpg" />
+    </div>
+    <!-- END: Speak to the Specialist -->
+
+    <br />
+    {% for division, list in obj.listing_info.items %}
+        {% for listings in list %}	
+            <div class="column last border-bottom1 print-show">
+                <h2 class="last">
+                    {% ifequal division 'commercial' %}
+                        {% ifequal listings.listing_type 'New Development' %}
+                            {{ listings.count }} {{ division|upper }} {{ listings.listing_type|upper }}S IN {{ obj.location.region|upper }}
+                        {% else %}
+                            {{ listings.count }} {{ division|upper }} PROPERTIES {{ listings.listing_type|upper }} IN {{ obj.location.region|upper }}
+                        {% endifequal %}
+                    {% else %}
+                        {% ifequal listings.listing_type 'New Development' %}
+                            {{ listings.count }} {{ division|upper }} {{ listings.listing_type|upper }}S IN {{ obj.location.region|upper }}
+                        {% else %}
+                            {{ listings.count }} {{ division|upper }} HOMES {{ listings.listing_type|upper }} IN {{ obj.location.region|upper }}
+                        {% endifequal %}
+                    {% endifequal %}		
+                </h2>
+
+                <p><b>FROM {{ currency_symbol }}{{ listings.min|intcomma }} to {{ currency_symbol }}{{ listings.max|intcomma }}</b></p>
+
+                {% for listing in listings.latest_listings %}
+                    <table cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td width="218" height="176" valign="top"><a href="{{ site_url }}{{ listing.get_absolute_url }}" class="image-border">{% if listing.imagegallery_set.values.0.image %}<img src="{{ site_url }}/resize/208/156/{{ listing.imagegallery_set.values.0.image }}" />{% else %}<img src="{{ site_url }}/eos/img/property-search/results/no-img.jpg" />{% endif %}</a></td>
+                            <td valign="top">
+                                {% ifequal listing.get_main_type 'NewDevelopment' %}
+                                    <h3 class="margin-bottom0">From {{ currency_symbol }}{% get_cheapest_type listing %}</h3>
+                                {% else %}
+                                    <h3 class="margin-bottom0">{{ currency_symbol }}{{ listing.price|floatformat:"0"|intcomma }} {% ifequal listing.listing_type 'Residential To Let' %}pm{% endifequal %}{% ifequal listing.listing_type 'Commercial To Let' %}per m&sup2;{% endifequal %}</h3>
+                                {% endifequal %}
+
+                                {% ifequal listing.get_main_type 'NewDevelopment' %}
+                                    <p class="last margin-bottom5"><strong>{{ listing.development_name }}</strong></p>
+                                {% endifequal %}
+
+                                <p class="last margin-bottom5"><b>{{ listing.get_heading }}</b></p>
+                   
+                                {% ifequal listing.get_main_type 'NewDevelopment' %}
+                                    <p>Property Types:<br />{% for type in  listing.newdevelopmentproperty_set.values %}{{ type.property_type }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                                {% endifequal %}
+
+                                <table class="line-height15" cellpadding="0" cellspacing="0">
+                                    {% ifequal listing.get_main_type 'Residential' %}
+
+                                        {% ifnotequal listing.property_type_slug 'vacant-land' %}
+                                            <tr>
+                                                <td width="85">Bedrooms</td>
+                                                <td>{{ listing.bedrooms|default:"-"|floatformat }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Bathrooms</td>
+                                                <td>{{ listing.bathrooms|default:"-"|floatformat }}</td>
+                                            </tr>
+                                            {% if listing.garages %}
+                                                <tr>
+                                                    <td>Garages</td>
+                                                    <td>{{ listing.garages|floatformat }}</td>
+                                                </tr>
+                                            {% endif %}
+                                            {% if listing.building_size %}
+                                                <tr>
+                                                    <td>Building Size</td>
+                                                    <td>{{ listing.building_size|intcomma }}m&sup2;</td>
+                                                </tr>
+                                            {% endif %}
+                                        {% endifnotequal %}
+
+                                        {% if listing.land_size %}
+                                            <tr>
+                                                <td width="85">Land Size</td>
+                                                <td>{{ listing.land_size|intcomma }}m&sup2;</td>
+                                            </tr>
+                                        {% endif %}
+
+                                    {% endifequal %}
+
+                                    {% ifequal listing.get_main_type 'Commercial' %}
+                                        {% if listing.zoning %}
+                                            <tr>
+                                                <td width="105">Zoning</td>
+                                                <td>{{ listing.zoning }}</td>
+                                            </tr>
+                                        {% endif %}
+
+                                        {% if listing.building_size %}
+                                            <tr>
+                                                <td>Building Size</td>
+                                                <td>{{ listing.building_size|intcomma }}m&sup2;</td>
+                                            </tr>
+                                        {% endif %}
+
+                                        {% if listing.land_size %}
+                                            <tr>
+                                                <td>Land Size</td>
+                                                <td>{{ listing.land_size|intcomma }}m&sup2;</td>
+                                            </tr>
+                                        {% endif %}
+
+                                        {% if listing.open_parking_bays %}
+                                            <tr>
+                                                <td>Open Parkings</td>
+                                                <td>{{ listing.open_parking_bays|floatformat }}</td>
+                                            </tr>
+                                        {% endif %}
+
+                                        {% if listing.covered_parking_bays %}
+                                            <tr>
+                                                <td>Covered Parkings</td>
+                                                <td>{{ listing.covered_parking_bays|floatformat }}</td>
+                                            </tr>
+                                        {% endif %}                                        
+                                    {% endifequal %}
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                {% endfor %}
+
+                <p>
+                    {% ifequal division 'commercial' %}
+                        {% ifequal listings.listing_type 'New Development' %}
+                            <b>{{ listings.listing_type }}s in {{ obj.location.region }} by Suburb [{{ listings.count }}]:</b>{% for suburb in listings.suburb_list %} <a href="{{ site_url }}/results/{{ listings.listing_type|slugify }}/commercial/{{ obj.location.region_slug }}/{{ suburb.suburb|slugify }}/">{{ suburb.suburb }} [{{ suburb.count }}]</a>{% if not forloop.last %} |{% endif %}{% endfor %}
+                        {% else %}
+                            <b>Properties {{ listings.listing_type }} in {{ obj.location.region }} by Suburb [{{ listings.count }}]:</b>{% for suburb in listings.suburb_list %} <a href="{{ site_url }}/results/commercial/{{ listings.listing_type|slugify }}/{{ obj.location.region_slug }}/{{ suburb.suburb|slugify }}/">{{ suburb.suburb }} [{{ suburb.count }}]</a>{% if not forloop.last %} |{% endif %}{% endfor %}
+                        {% endifequal %}
+                    {% else %}
+                        {% ifequal listings.listing_type 'New Development' %}
+                            <b>{{ listings.listing_type }}s in {{ obj.location.region }} by Suburb [{{ listings.count }}]:</b>{% for suburb in listings.suburb_list %} <a href="{{ site_url }}/results/{{ listings.listing_type|slugify }}/residential/{{ obj.location.region_slug }}/{{ suburb.suburb|slugify }}/">{{ suburb.suburb }} [{{ suburb.count }}]</a>{% if not forloop.last %} |{% endif %}{% endfor %}
+                        {% else %}
+                            <b>Homes {{ listings.listing_type }} in {{ obj.location.region }} by Suburb [{{ listings.count }}]:</b>{% for suburb in listings.suburb_list %} <a href="{{ site_url }}/results/residential/{{ listings.listing_type|slugify }}/{{ obj.location.region_slug }}/{{ suburb.suburb|slugify }}/">{{ suburb.suburb }} [{{ suburb.count }}]</a>{% if not forloop.last %} |{% endif %}{% endfor %}
+                        {% endifequal %}
+                    {% endifequal %}		
+                </p>
+            </div>
+
+            <table class="print-show">
+                <tr>
+                    <td height="10"></td>
+                </tr>
+            </table>
+        {% endfor %}
+	{% endfor %}	
+
+    <br class="print-show" />
+    <h2 class="print-show">SPEAK TO THE {{ obj.location.region|upper }} REAL ESTATE SPECIALISTS</h2>
+    {% for branch in obj.branches.select_related %}
+        <h3 class="last print-show">{{ branch.branch_name|upper }}</h3>
+        <table class="print-show" width="410">
+            <tr>
+                <td width="110"><b>Office Number</b></td>
+                <td>{{ branch.get_telephone_number }}</td>
+            </tr>
+            <tr>
+                <td valign="top"><b>Physical Address</b></td>
+                <td><p>{{ branch.physical_address }}</p></td>
+            </tr>
+        </table>
+    {% endfor %}	
+{% endblock content %}

@@ -1,1 +1,117 @@
 {% extends "eos_listings_details_residential_for_sale.html" %}
+
+{% block res-for-sale %}
+<!-- PHOTO GALLERY -->
+<div id="photo-gallery" class="column last photo-gallery-bg print-hide">
+    <div id="photo-gallery-heading" class="column margin-bottom5 span-9 last">
+        <div class="column heading-icon print-hide margin-bottom-none"><img src="/assets/img/custom/property-search/details/photo-gallery-icon.jpg" /></div>
+        <div class="column last"><h2>PHOTO GALLERY</h2></div>
+    </div>
+    {% include 'includes/eos_listings_details_photo_gallery.html' %}   
+</div>
+<!-- // PHOTO GALLERY -->
+
+<!-- PROPERTY DETAILS -->
+<div id="property-details" class="columnRight span-29 last">
+    <div id="property-details-bg" class="column property-details-bg print-hide"><!-- This div is closed in the include -->
+        <div id="property-details-heading" class="column span-9 last">
+            <div class="column heading-icon print-hide margin-bottom-none"><img src="/assets/img/custom/property-search/details/property-details-icon.jpg" /></div>
+            <div class="column last"><h2>PROPERTY DETAILS</h2></div>
+        </div>
+        <div class="column margin-top5 margin-bottom5 last"><img src="/eos/img/property-search/details/property-details-divider.gif" /></div>
+        {% include 'includes/eos_listings_details_property_details.html' %}
+</div>
+<!-- // PROPERTY DETAILS -->
+
+<!-- NOTES -->
+<div id="notes-bg-top" class="columnRight notes-bg print-hide">
+    <div id="notes-heading" class="column span-9 last">
+        <div class="column heading-icon margin-bottom-none"><img src="/assets/img/custom/property-search/details/notes-icon.jpg" /></div>
+        <div class="column last"><h2>NOTES</h2></div>
+    </div>
+        <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-details-divider.gif" /></div>
+        {% include 'includes/eos_listings_details_notes.html' %}
+</div>
+<!-- -->
+
+<!-- KEY FEATURES / AMENITIES -->
+    <div id="property-features" class="column property-features-bg print-hide last">
+        <div id="property-features-heading" class="column span-9 last">
+            <div class="column heading-icon print-hide margin-bottom-none"><img src="/assets/img/custom/property-search/details/features-icon.jpg" /></div>
+            <div class="column last"><h2>FEATURES</h2></div>
+        </div>        
+        <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-features-divider.jpg" /></div>
+        {% ifequal listing.get_main_type 'Residential' %}
+        	{% include 'includes/eos_listings_details_residential_features.html' %}
+        {% endifequal %}
+    </div>
+<!-- // KEY FEATURES / AMENITIES -->
+ 
+<!-- MAKE AN OFFER --> 
+{% if make_an_offer_form %}
+    <div class="column last make-an-offer-bg print-hide"> <!-- closed in the include -->
+        <div class="column last margin-bottom10"> <!-- closed in the include -->
+            <div id="id_make_an_offer" class="column span-9 last">
+                <div class="column heading-icon margin-bottom-none"><img src="/assets/img/custom/property-search/details/make-an-offer.jpg" /></div>
+                <div class="column last"><h2>MAKE AN OFFER</h2></div>
+            </div>
+            <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-finance-divider.gif" /></div>
+			{% include 'includes/eos_listings_details_make_offer.html' %}
+{% endif %} 
+<!-- // MAKE AN OFFER --> 
+
+<!-- PROPERTY FINANCE -->
+{% if show_calculators %}
+    <div id="property-finance" class="column last property-finance-bg print-hide">
+        <div class="column last">
+            <div id="property-finance-heading" class="column span-9 last">
+                <div class="column heading-icon margin-bottom-none"><img src="/assets/img/custom/property-search/details/finance-icon.jpg" /></div>
+                <div class="column last"><h2>PROPERTY FINANCE</h2></div>
+            </div>
+            <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-finance-divider.gif" /></div>
+        </div>
+       {% include 'includes/eos_listings_details_calculators.html' %}
+    </div>
+{% endif %}
+<!-- // PROPERTY FINANCE -->
+
+<!-- ON SHOW -->
+{% if listing.on_show %}
+    <div id="on-show" class="column last on-show-bg print-hide">
+        <div id="on-show-heading" class="column span-9 last">
+            <div class="column heading-icon print-hide margin-bottom-none"><img src="/assets/img/custom/property-search/details/on-show-icon.jpg" /></div>
+            <div class="column last"><h2>ON SHOW</h2></div>
+        </div>
+        <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-finance-divider.gif" /></div>
+        {% include 'includes/eos_listings_details_on_show.html' %}
+    </div>
+{% endif %}
+<!-- // ON SHOW --> 
+
+<!-- BOOKING ENQUIRIES / APPOINTMENT TO VIEW -->
+    <div class="columnRight margin-top20 appointment-bg print-hide">
+        <form name="enquiry_form" id="id_enquiry_form" method="post" action="#id_enquiry_form">
+            <div class="column last">
+                <div class="column span-9 last">
+                    <div class="column heading-icon margin-bottom-none"><img src="/assets/img/custom/property-search/details/appointment-icon.jpg" /></div>
+                    <div class="column last"><h2>MAKE AN ENQUIRY</h2></div>
+                </div>
+                <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-details-divider.gif" /></div>
+            </div>
+            {% include 'includes/eos_listings_details_appointment_bookings.html' %}
+        </form>
+    </div>
+<!-- // BOOKING ENQUIRIES / APPOINTMENT TO VIEW -->
+
+<!-- CONTACT THE AGENT --> 
+    <div class="column contact-bg print-hide last">
+        <div class="column span-9 last">
+            <div class="column heading-icon print-hide margin-bottom-none"><img src="/assets/img/custom/property-search/details/contact-icon.jpg" /></div>
+            <div class="column last"><h2>CONTACT THE AGENT</h2></div>
+        </div>
+        <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-features-divider.jpg" /></div>
+        {% include 'includes/eos_listings_details_contact_agent.html' %}
+    </div>
+<!-- // CONTACT THE AGENT -->
+
+{% endblock res-for-sale %}

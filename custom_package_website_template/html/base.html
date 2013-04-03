@@ -18,3 +18,80 @@ Step 4: specify what you want the script to replace-->
     Cufon.replace('h1');
 </script>
 {% endblock js-headings %}
+
+
+{% block base-page %}
+<div class="column last container">
+    <form method="POST" id="nav_results" action="/results/">
+        <input type="hidden" name="listing_type" id="nav_results_input" value="">
+    </form>
+
+    {% include 'header.html' %}
+
+    <!-- Print Header -->    
+    <table width="100%" class="print-show print-header">
+        <tr>
+            <td class=""><img src="/assets/img/custom/layout/pfv-logo.gif" /></td>
+            <td width="400" style="text-align:right;">
+                <h1>{{ site_name }}<br>{{ site_url|cut:"http://" }}</h1>
+                <h2 class="last">{% block print-heading %}LATEST NEWS{% endblock print-heading %}</h2>
+                <p>Printed on {% now "d M Y" %} | {% now "H:i:s" %}</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+    </table>
+    <!-- -->
+
+    <!-- Content -->
+    <div class="content-width">
+        <div class="column last content">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+    {% block banner-footer %}{% endblock banner-footer %}
+    <!-- -->
+    
+    <!-- Footer -->
+    <div id="footer-float" class="footer-float print-hide">
+        <div id="footer-float2" class="footer-float2">
+            <div id="footer-bg" class="column last footer-bg">
+                <div id="footer-bg2" class="column last footer-bg2">
+                    <div id="footer-content" class="footer-content">
+                    
+                       {% include 'includes/eos_base_footer_logos.html' %}
+                        
+                        <div id="footer-logos" class="columnRight footer-logos">
+                        {% block social %}
+                            {% if twitter or facebook or linkedin or youtube %}
+                                <p class="last"><b>Follow us on...</b></p>
+                                {% if twitter %}<div class="column margin-top5 last append-2"><a href="{{ twitter }}" target="_blank"><img src="/eos/img/layout/twitter.jpg" /></a></div>{% endif %}
+                                {% if facebook %}<div class="column margin-top5 last append-2"><a href="{{ facebook }}" target="_blank"><img src="/eos/img/layout/facebook.jpg" /></a></div>{% endif %}
+                                {% if linkedin %}<div class="column margin-top5 last append-2"><a href="{{ linkedin }}" target="_blank"><img src="/eos/img/layout/linked-in.jpg" /></a></div>{% endif %}
+                                {% if youtube %}<div class="column margin-top5 last"><a href="{{ youtube }}" target="_blank"><img src="/eos/img/layout/you-tube.jpg" class="white-bg" /></a></div>{% endif %}
+                            {% endif %}
+                        {% endblock social %}
+                        </div>
+                        
+                        {% block footer_extra %}{% endblock footer_extra %}
+                        
+                        {% include 'includes/eos_base_footer_links.html' %}                        
+                        
+                        <!-- Prop Data footer -->
+                        {% block prop_data_footer %}
+                            <div id="pd-footer" class="column last span-22">
+                                <a href="http://www.propdata.net" target="_blank">{% if show_search_related_areas or show_listing_related_areas %}<br>{% endif %}Real Estate Office Website Package Powered by Prop Data</a> | Copyright &copy; {% now "Y" %} {{ site_name }}
+                                <div class="clear">&nbsp;</div>
+                                <a href="http://www.propdata.net/" target="_blank"><img src="/eos/img/layout/real-estate-package.png" class="png" /></a>
+                                <div class="clear">&nbsp;</div>
+                            </div>
+                        {% endblock prop_data_footer %}
+                        <!-- -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock base-page %}

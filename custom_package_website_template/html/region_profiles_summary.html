@@ -1,1 +1,74 @@
 {% extends 'eos_region_profiles_summary.html' %}
+
+{% block content %}
+    {% load humanize %}
+    <div id="area-profile-summary-breadcrumbs" class="column span-22 print-hide last">
+        <div id="area-profile-summary-breadcrumbs-navigation">
+            <p class="last font-size11 print-hide"><span class="breadcrumbs-dark">You are here:</span> <span class="breadcrumbs-light"><a href="/" class="other">{{ site_name }}</a> / <a href="/area-profiles/" class="other">Area Profiles</a></span></p>
+        </div>
+        <div id="area-profile-summary-breadcrumbs-heading">
+            <h1>Area Profiles</h1>
+        </div>		
+    </div>
+
+    <form method="POST" id="hack_results" action="/results/">
+        <input type="hidden" name="listing_type" id="hack_listing_type" value="">
+        <input type="hidden" name="area" id="hack_area" value="">
+    </form>
+
+    {% include 'includes/eos_region_profiles_main_navigation.html' %}
+
+    <div id="area-profile-results-navigation" class="column font-size11 span-22 border-bottom1 print-hide last">
+        {% include 'includes/eos_area_results_navigation.html' %}
+    </div>
+
+    {% include 'includes/eos_region_profiles_quick_search.html' %}
+
+    {% regroup obj_list.object_list by location.province as province_list %}
+        {% for province in province_list %}
+            <div id="area-profile-results-province-heading">
+                <h1>{{ province.grouper }}</h1>
+            </div>
+            {% for obj in province.list %}
+                <div id="area-profile-results-details-bg" class="column area-summary print-hide last">
+                    <div id="area-profile-results-region-heading">
+                        <h3><a href="{{ obj.get_absolute_url }}">{{ obj.location.region }}</a></h3>
+                    </div>
+                    {% include 'includes/eos_region_profiles_details.html' %}
+                </div>
+
+                <!-- Print -->	
+                <table width="660" cellpadding="0" cellspacing="0" class="print-show">
+                    <tr>
+                        <td colspan="2"><h3 >{{ obj.location.region }}</h3></td>
+                    </tr>
+                    <tr>
+                        <td width="230" valign="top">
+                            <img src="{% if obj.imagegallery_set.values.0.image %}/resize/208/156/{{ obj.imagegallery_set.values.0.image }}{% else %}/eos/img/property-search/results/no-img.jpg{% endif %}" />
+                        </td>
+                        <td valign="top" class="font-size11">
+                            {% for division, list in obj.listing_info.items %}
+                                {% if list|length %}
+                                    <p>
+                                    <b>{{ division|upper }} PROPERTY</b><br /> 
+                                    <span class="font-size11">
+                                        {% for listings in list %}
+                                            {% if listings.count %}<a href="{% ifequal listings.listing_type|slugify 'new-development' %}/results/{{ listings.listing_type|slugify }}/{{ division }}/{{ obj.location.region_slug }}/{% else %}/results/{{ division }}/{{ listings.listing_type|slugify }}/{{ obj.location.region_slug }}/{% endifequal %}"><b>{{ listings.listing_type }} ({{ listings.count }})</b></a>  From {{ currency_symbol }}{{ listings.min|intcomma }}{% ifnotequal listings.min listings.max %} to {{ currency_symbol }}{{ listings.max|intcomma }}{% endifnotequal %}<br />{% endif %}
+                                        {% endfor %}
+                                    </span>
+                                    </p>
+                                {% endif %}
+                            {% endfor %}
+                            &nbsp;
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><p>{{ obj.region_description|linebreaksbr|truncatewords:30 }}</p></td>
+                    </tr>
+                </table>
+            {% endfor %}
+        {% endfor %}	
+{% endblock content %}
