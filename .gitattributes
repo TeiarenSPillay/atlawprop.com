@@ -8,6 +8,10 @@ custom_package_website_template/assets/img/custom/area-profile/details/map.jpg -
 custom_package_website_template/assets/img/custom/area-profile/details/suburbs.jpg -text
 custom_package_website_template/assets/img/custom/area-profile/details/weather.jpg -text
 custom_package_website_template/assets/img/custom/calculator/currency-converter.jpg -text
+custom_package_website_template/assets/img/custom/custom-theme/area-profile/area-icon.png -text
+custom_package_website_template/assets/img/custom/custom-theme/area-profile/my-favourite-properties.png -text
+custom_package_website_template/assets/img/custom/custom-theme/area-profile/normal-listing.png -text
+custom_package_website_template/assets/img/custom/custom-theme/area-profile/on-show.png -text
 custom_package_website_template/assets/img/custom/custom-theme/button-set-1/add-to-favourites.gif -text
 custom_package_website_template/assets/img/custom/custom-theme/button-set-1/bookmark.jpg -text
 custom_package_website_template/assets/img/custom/custom-theme/button-set-1/email.jpg -text
@@ -61,6 +65,10 @@ custom_package_website_template/assets/img/custom/custom-theme/section-backgroun
 custom_package_website_template/assets/img/custom/custom-theme/section-backgrounds/registration-bg-bottom.jpg -text
 custom_package_website_template/assets/img/custom/custom-theme/section-backgrounds/registration-bg-top.jpg -text
 custom_package_website_template/assets/img/custom/custom-theme/section-backgrounds/summary-bg.jpg -text
+custom_package_website_template/assets/img/custom/custom-theme/social/facebook.jpg -text
+custom_package_website_template/assets/img/custom/custom-theme/social/linked-in.jpg -text
+custom_package_website_template/assets/img/custom/custom-theme/social/twitter.jpg -text
+custom_package_website_template/assets/img/custom/custom-theme/social/you-tube.jpg -text
 custom_package_website_template/assets/img/custom/custom-theme/tabs/area-profile-over.jpg -text
 custom_package_website_template/assets/img/custom/custom-theme/tabs/area-profile.jpg -text
 custom_package_website_template/assets/img/custom/custom-theme/tabs/bg-tile.jpg -text

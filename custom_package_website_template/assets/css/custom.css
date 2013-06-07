@@ -51,10 +51,12 @@ body              { background-color:#FFFFFF;}
 
 /* Search
 ------------------------------------------------------------ */
-.search                       { background:url(/assets/img/custom/layout/search.jpg); background-repeat:repeat-x; background-color:#CCCCCC; width:100%; float:left; padding-bottom:25px; padding-top:17px;}
-.search-button                { background-color:#09314E; border:1px solid #09314E; padding:2px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFF;}
-.search-content               { width:877px; margin:0 auto; float:none; font-size:11px; color:#666666;  padding-bottom:15px; padding-top:0px;}
-#call-now                     { padding-left:10px;}
+.search                           { background:url(/assets/img/custom/layout/search.jpg); background-repeat:repeat-x; background-color:#CCCCCC; width:100%; float:left; padding-bottom:25px; padding-top:17px;}
+.search-button                    { background-color:#09314E; border:1px solid #09314E; padding:2px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFF;}
+.search-content                   { width:877px; margin:0 auto; float:none; font-size:11px; color:#666666;  padding-bottom:15px; padding-top:0px;}
+#call-now                         { padding-left:10px;}
+
+#appointmet-send, .form-style input   {border: none;!important;}
 
 
 
@@ -440,4 +442,7 @@ ul.as-selections                        {background-color: #FFFFFF; border: 1px 
 			    background: url(/assets/img/custom/custom-theme/section-backgrounds/gallery-bg.jpg) repeat scroll 0 0 transparent;
 			    height: 179px; margin-top: 20px; padding: 6px 13px 13px; width: 851px;}	
 	/* END: Backgrounds */
+
+	.heading-icon {position:relative; margin-top:-13px;}
+
 
