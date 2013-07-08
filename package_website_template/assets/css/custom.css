@@ -45,7 +45,7 @@ body              { background-color:#FFFFFF;}
 .width200     { width:200px;}
 .width210     { width:210px;}
 .width213     { width:270px;}
-
+.span-230  { width: 230px;} /* Used */
 
 
 /* Search
@@ -53,10 +53,101 @@ body              { background-color:#FFFFFF;}
 .search                       { background:url(/assets/img/custom/layout/search.jpg); background-repeat:repeat-x; background-color:#CCCCCC; width:100%; float:left; padding-bottom:25px; padding-top:17px;}
 .search-button                { background-color:#09314E; border:1px solid #09314E; padding:2px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFF;}
 .search-content               { width:877px; margin:0 auto; float:none; font-size:11px; color:#666666;  padding-bottom:15px; padding-top:0px;}
-#call-now                     { padding-left:10px;}
+#call-now                     { padding-left:10px; display: none;}
+#web-search-button         { display:none;}
 
+#search-submit-button { 
+    background:url(/assets/img/custom/advanced-search/search-button.gif) left top no-repeat #ff0000;
+	color:#FFF; border: none; height: 25px; padding:0px 5px 0px 23px; margin:0px;
+	font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:25px;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px;
+}
+#search-submit-button-map { 
+    background:url(/assets/img/custom/advanced-search/search-map.gif) left top no-repeat #ff0000;
+	color:#FFF; border: none; height: 25px; padding:0px 5px 0px 23px;
+	margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:12px; line-height:25px;
+	-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; -khtml-border-radius: 5px;
+}
 
+#show_more_less       { font-weight:bold;}
+#adv-serch-webref     { width:280px; background:#bfc2c8; height:30px; padding:10px;}
+#adv-serch-webref-txt { font-size:13px; color:#001f52;}
+#ref_num              { height: 25px; border:#d6d6d6; padding:0px 3px 0px 3px;}
 
+#adv-serch-mid { width:877px; margin-bottom:20px;}
+
+#as_priced_to, #as_priced_from { height:30px; line-height:30px; width:290px; padding:0px 5px 0px 5px;}
+
+#as_priced_from_label       { font-family:Arial, Helvetica, sans-serif; font-size:13px!important;}
+#as_priced_to_label         { font-family:Arial, Helvetica, sans-serif; font-size:13px!important;}
+#as_only_display_properties { font-family:Arial, Helvetica, sans-serif; font-size:13px!important; padding-bottom:5px;}
+#as_property_types          { font-family:Arial, Helvetica, sans-serif; font-size:13px!important;}
+#as_neighbouring_suburbs    { font-family:Arial, Helvetica, sans-serif; font-size:13px!important; color:#001F52; margin:0; padding: 0px 0px 10px 0px;}
+
+.as-text { font-size:13px; color:#011F52;}
+
+.chzn-container-multi .chzn-choices .search-field .default {
+    color: #999999; width:160px!important;
+}
+.chzn-container-multi .chzn-choices {
+    background-color: #FFFFFF;
+    background-image: -moz-linear-gradient(center bottom , white 85%, #EEEEEE 99%);
+    border: 1px solid #d6d6d6; cursor: text; height: auto !important; margin: 0; 
+    overflow: hidden; padding: 0; position: relative; width: 620px;
+}
+
+#qs_buy_rent, #qs_type { height:30px;}
+#qs_location { height:28px; padding-left:5px;}
+
+.vSelectField2 {
+    border: 1px solid #d6d6d6!important;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+}
+#as-selections-qs_location2 ul.as-selections {background-color: #FFFFFF; border: 1px solid #d6d6d6; float: left; margin: 0; overflow: auto; width:540px!important;}
+
+div.styled {
+    overflow:hidden;
+    background: white url(/assets/img/custom/advanced-search/arrow.gif) no-repeat bottom right;
+    width:65px;
+    border: solid 1px #ccc;
+}
+div.styled select {
+    width:88px;
+    background-color:transparent;
+    background-image:none;
+    -webkit-appearance: none;
+    border:none;
+    box-shadow:none;
+	font-size:11px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+div.styled2 {
+    overflow:hidden;
+    padding:0; 
+    margin:0;
+    background: white url(/assets/img/custom/advanced-search/arrow.gif) no-repeat bottom right;
+    width:248px;
+    border: solid 1px #ccc;
+}
+div.styled2 select {
+    width:270px;
+    background-color:transparent;
+    background-image:none;
+    -webkit-appearance: none;
+    border:none;
+    box-shadow:none;
+	font-size:11px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+@-moz-document url-prefix() { 
+  div.styled2 select {
+	  padding:7px 2px 0px 2px;
+  }
+  div.styled select {
+	  padding:7px 2px 0px 2px;
+  }
+}
 /* Headings
 ------------------------------------------------------------ */
 h1                            { font-family:Arial, Helvetica, sans-serif; font-size:19px; color:#072E5F; font-weight:normal; }
@@ -181,7 +272,7 @@ a:hover.currency-converter    { color:#C90D1B; background-image:url(/eos/img/cal
 .facebook-heading                       {font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#FFFFFF;}
 .padding-bottom-25                      {padding-bottom: 25px;}
 /* Change Property Search field width to 'auto'  --> */																				 	  /* Here */
-ul.as-selections                        {background-color: #FFFFFF; border: 1px solid #809DB9; float: left; margin: 0; overflow: auto; width:550px;}
+ul.as-selections                        {background-color: #FFFFFF; border: 1px solid #d6d6d6; float: left; margin: 0; overflow: auto; width:550px;}
 
 /* Change Listing Background colour  --> */			/* Here */
 .facebook-listings                      {background: #56555b; height:33px; line-height:33px;}

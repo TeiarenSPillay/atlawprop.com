@@ -245,6 +245,9 @@ package_website_template/assets/css/custom.css -text
 package_website_template/assets/favicon.ico -text
 package_website_template/assets/favicon.png -text
 package_website_template/assets/img/custom/about-us/agent-icon.jpg -text
+package_website_template/assets/img/custom/advanced-search/arrow.gif -text
+package_website_template/assets/img/custom/advanced-search/search-button.gif -text
+package_website_template/assets/img/custom/advanced-search/search-map.gif -text
 package_website_template/assets/img/custom/area-profile/details/map.jpg -text
 package_website_template/assets/img/custom/area-profile/details/suburbs.jpg -text
 package_website_template/assets/img/custom/area-profile/details/weather.jpg -text
