@@ -53,7 +53,7 @@ DATABASES = {
         'PORT': '',                      # Set to empty string for default.
     }
 }
-GMAPS_KEY  = "ABQIAAAAZ7M1Fg4tth4J3zE3SdNNGhQopxaNlSGf-D4ne8JrgGl4on9aCxR8lLOa8U7yfvsm-aaXkQRoyD8rlw" # *.abcrealestate.co.za
+#GMAPS_KEY  = "ABQIAAAAZ7M1Fg4tth4J3zE3SdNNGhQopxaNlSGf-D4ne8JrgGl4on9aCxR8lLOa8U7yfvsm-aaXkQRoyD8rlw" # *.abcrealestate.co.za
 RECAPTCHA_PUBLIC_KEY = '6LfyycISAAAAAB2PddDRop69fIS3nmk9iqLltHIs'
 RECAPTCHA_PRIVATE_KEY = '6LfyycISAAAAAIuVa0HI-P6WH_uCp88MG_aJ7TmF'
 
@@ -76,6 +76,4 @@ TEMPLATE_DIRS += (
 )
 
 SENTRY_SITE = "abcrealestate.co.za"
-
-DEFAULT_SEARCH_TEXT = "Type Area, Suburb, Development, Estate or Complex Name"
 

@@ -246,8 +246,14 @@ package_website_template/assets/favicon.ico -text
 package_website_template/assets/favicon.png -text
 package_website_template/assets/img/custom/about-us/agent-icon.jpg -text
 package_website_template/assets/img/custom/advanced-search/arrow.gif -text
+package_website_template/assets/img/custom/advanced-search/bg_selecst.gif -text
+package_website_template/assets/img/custom/advanced-search/bg_select.gif -text
+package_website_template/assets/img/custom/advanced-search/bg_select2.gif -text
+package_website_template/assets/img/custom/advanced-search/less-arrow.png -text
+package_website_template/assets/img/custom/advanced-search/more-arrow.png -text
 package_website_template/assets/img/custom/advanced-search/search-button.gif -text
 package_website_template/assets/img/custom/advanced-search/search-map.gif -text
+package_website_template/assets/img/custom/advanced-search/x.png -text
 package_website_template/assets/img/custom/area-profile/details/map.jpg -text
 package_website_template/assets/img/custom/area-profile/details/suburbs.jpg -text
 package_website_template/assets/img/custom/area-profile/details/weather.jpg -text
@@ -282,6 +288,7 @@ package_website_template/assets/img/custom/homepage/on-show-banner.jpg -text
 package_website_template/assets/img/custom/homepage/property-worth.jpg -text
 package_website_template/assets/img/custom/layout/bullet.jpg -text
 package_website_template/assets/img/custom/layout/bullet.png -text
+package_website_template/assets/img/custom/layout/chosen-sprite.png -text
 package_website_template/assets/img/custom/layout/footer-bg-grey.jpg -text
 package_website_template/assets/img/custom/layout/footer-bg.gif -text
 package_website_template/assets/img/custom/layout/footer-bg.jpg -text
@@ -295,7 +302,10 @@ package_website_template/assets/img/custom/layout/new-dev-to-rent.jpg -text
 package_website_template/assets/img/custom/layout/pfv-logo.gif -text
 package_website_template/assets/img/custom/layout/search-icon.png -text
 package_website_template/assets/img/custom/layout/search.jpg -text
+package_website_template/assets/img/custom/layout/sides.png -text
 package_website_template/assets/img/custom/layout/spacer.gif -text
+package_website_template/assets/img/custom/layout/sprite.jpg -text
+package_website_template/assets/img/custom/layout/sprite.png -text
 package_website_template/assets/img/custom/list-your-property/house-commercial.jpg -text
 package_website_template/assets/img/custom/list-your-property/house.jpg -text
 package_website_template/assets/img/custom/make-an-offer/make-an-offer-now.jpg -text
@@ -402,5 +412,8 @@ package_website_template/html/secure/base.html -text
 package_website_template/html/secure/login.html -text
 package_website_template/html/secure/pfv_base.html -text
 package_website_template/manage.py -text
+package_website_template/package_website_template/__init__.py -text
+package_website_template/package_website_template/settings.py -text
+package_website_template/package_website_template/urls.py -text
 package_website_template/settings.py -text
 package_website_template/urls.py -text
