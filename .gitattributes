@@ -215,6 +215,7 @@ custom_package_website_template/html/news/includes/email.html -text
 custom_package_website_template/html/news/includes/rss-feed.xml -text
 custom_package_website_template/html/news/news_details.html -text
 custom_package_website_template/html/news/news_summary.html -text
+custom_package_website_template/html/privacy_policy.html -text
 custom_package_website_template/html/property-search/details.html -text
 custom_package_website_template/html/property-search/details_commercial_for_sale.html -text
 custom_package_website_template/html/property-search/details_commercial_new_development.html -text
@@ -398,6 +399,7 @@ package_website_template/html/news/includes/email.html -text
 package_website_template/html/news/includes/rss-feed.xml -text
 package_website_template/html/news/news_details.html -text
 package_website_template/html/news/news_summary.html -text
+package_website_template/html/privacy_policy.html -text
 package_website_template/html/property-search/details.html -text
 package_website_template/html/property-search/details_commercial_for_sale.html -text
 package_website_template/html/property-search/details_commercial_new_development.html -text
