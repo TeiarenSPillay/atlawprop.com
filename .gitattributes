@@ -447,6 +447,7 @@ package_website_template/html/secure/login.html -text
 package_website_template/html/secure/pfv_base.html -text
 package_website_template/manage.py -text
 package_website_template/package_website_template/__init__.py -text
+package_website_template/package_website_template/dev_settings.py -text
 package_website_template/package_website_template/settings.py -text
 package_website_template/package_website_template/urls.py -text
 package_website_template/settings.py -text
