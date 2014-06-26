@@ -1,4 +1,4 @@
-from django.conf.urls.defaults import *
+from django.conf.urls import *
 import settings
 
 from eos.urls import urlpatterns as eos_urlpatterns
