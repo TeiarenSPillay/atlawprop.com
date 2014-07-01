@@ -1,2 +1,55 @@
 {% extends "eos_email_alerts.html" %}
 
+{% block content %}
+    <!-- Page Header -->
+    <div id="email-alerts-breadcrumbs" class="column span-22 last border-bottom1">
+        <div id="email-alerts-breadcrumbs-navigation">
+            <p class="last font-size11"><span class="breadcrumbs-dark">You are here:</span> <span class="breadcrumbs-light"><a href="/" class="other">{{ site_name }}</a> / <a href="/property-email-alerts/" class="other">Property Email Alerts</a></span></p>
+        </div>
+        <div id="email-alerts-breadcrumbs-heading">
+            <h1 class="last">Property Email Alerts</h1>
+        </div>
+    </div>
+    <div class="column last span-22">
+        <div class="column last"><p class="quote">New Listing Email Notifications</p></div>
+        <div class="columnRight">
+            <div class="column last font-size11 append-2"><a href="javascript:bookmarksite(parent.window.document.title, parent.window.location)" title="Bookmark" class="bookmark">Bookmark</a></div>
+            <div class="column font-size11 last"><a href="/bookmark-share/" rel="iframe" rev="width:257 height:219 scrolling:no" class="share">Share</a></div>
+        </div>
+    </div>
+    
+    
+    <div class="column span-16 last margin-top20">
+        <div class="column span-15 last">
+            <p>Tell us what you are looking for and we will email you properties that meet your criteria. Simply complete the form on the right and specify your property requirements. We will then send you an email notification as soon as a new property matching your requirements is listed on our website.</p>
+            <br /><br />
+        </div>
+        <div class="column listing-eg last">
+            {% if residential_addon %}
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="442" height="200">
+                <param name="movie" value="/eos/img/flash/preview.swf" />
+                <param name="quality" value="high" />
+                <param name="allowScriptAccess" value="sameDomain" />
+                <embed src="/eos/img/flash/preview.swf" quality="high" allowScriptAccess="sameDomain" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="442" height="200"></embed>
+            </object>
+            {% else %}
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="442" height="200">
+                <param name="movie" value="/eos/img/flash/commercial-preview.swf" />
+                <param name="quality" value="high" />
+                <param name="allowScriptAccess" value="sameDomain" />
+                <embed src="/eos/img/flash/commercial-preview.swf" quality="high" allowScriptAccess="sameDomain" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="442" height="200"></embed>
+            </object>
+            {% endif %}
+        </div>
+    </div>
+    
+    <div class="columnRight span-24">
+        <div class="column last span-24 margin-top20">
+        <div class="column last headings">SIGN-UP NOW!</div>
+        <form method="POST" id="property-email-alerts"><!-- Closed in the eos_email_alerts include -->
+        <div class="column last registration-bg-top"> <!-- Closed in the eos_email_alerts include -->  
+            {% include 'includes/eos_email_alerts.html' %}
+        </div>    
+    </div>
+{% endblock content %}
+

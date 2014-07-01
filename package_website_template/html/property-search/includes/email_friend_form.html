@@ -1,1 +1,10 @@
 {% extends 'includes/eos_listings_email_friend_form.html' %}
+
+{% block email-page %}
+<div class="columnRight width460 margin-top30 popups-bg">
+    <div class="column last headings" style="margin-bottom:5px;">SEND TO A FRIEND</div>
+    <div id="email-friend" class="email-friend">
+        {% include 'includes/eos_email_friend.html' %}
+    </div>
+</div>
+{% endblock email-page %} 

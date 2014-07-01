@@ -1,1 +1,75 @@
 {% extends "eos_news_email_newsletter.html" %}
+
+{% block content %}
+    <div id="news-email-newsletter-breadcrumbs" class="column span-22 last border-bottom1">
+        <div id="news-email-newsletter-breadcrumbs-navigation">
+            <p class="last font-size11"><span class="breadcrumbs-dark">You are here:</span> <span class="breadcrumbs-light"><a href="/" class="other">{{ site_name }}</a> / <a href="/newsletter/" class="other">Email Newsletter</a></span></p>
+        </div>
+        <div id="news-email-newsletter-breadcrumbs-heading">
+            <h1 class="last">Email Newsletter</h1>
+        </div>
+    </div>
+    
+    <div class="column last span-22">
+    	<div class="column last"><p class="quote">Subscribe to the {{ site_name }} Newsletter</p></div>
+    	<div class="columnRight">
+    		<div class="column last font-size11 append-2"><a href="javascript:bookmarksite('{{ site_name }}', 'http://{{ site_url }}')" title="Bookmark" class="bookmark">Bookmark</a></div>
+    		<div class="column font-size11 last"><a href="/bookmark-share/" rel="iframe" rev="width:257 height:219 scrolling:no" class="share">Share</a></div>
+    	</div>
+    </div>
+    
+	<div id="subscribe" class="column span-15 last margin-top20">
+		<p>Sign-up for the {{ site_name }} monthly email newsletter and keep informed of:	</p>
+		<ul class="bullets">
+            <li>Featured Properties</li>
+            <li>Latest Listings</li>
+            {% if residential_addon %}
+                <li>Upcoming Showhouses</li>
+            {% endif %}
+            <li>Latest Property News and Advice Articles</li>
+            <li>Special Offers</li>
+            <li>... and much more!</li>
+		</ul>
+		<div class="clear">&nbsp;</div>
+		<p class="quote">Email Newsletter Archive</p>
+		{% for newsletter in newsletters %}
+            {% if forloop.first %}
+				<a href="/newsletter/{{ newsletter.id }}" target="_blank"><div class="column issue-bubble last">{{ newsletter.date_sent|date:"d N y" }}</div></a>
+		    {% endif %}
+        {% endfor %}
+		<div class="column last"><img src="/eos/img/newsletter/computer.jpg" /></div>
+	</div>
+    
+
+	<div id="sign-up" class="columnRight span-24">
+        <div class="column last span-24 margin-top20">
+        <div class="column last headings">SIGN-UP NOW!</div>
+		<form method="POST"><!-- closed in the include -->
+			<div class="columnRight past-newsletters-bg"><!-- closed in the include -->
+               {% include 'includes/eos_news_email_newsletter_sign_up.html' %}            
+		</form>
+        </div>
+    </div>
+        
+        
+    <div class="clear span-10">&nbsp;</div>        
+	{% if newsletters %}
+    <div class="columnRight span-24 margin-top20">
+        <div class="column last span-24 margin-top20">
+        <div class="column last headings">PAST NEWSLETTERS</div>
+    	<div class="columnRight past-newsletters-bg">
+	    	<table width="100%" class="font-size11" cellpadding="0" cellspacing="0">
+                {% for newsletter in newsletters %} 
+                    <tr>
+                        <td class="border-bottom2">Issue {{ newsletter.id }}</td>
+                        <td class="border-bottom2">Sent {{ newsletter.date_sent|date:"d N y" }}</td>
+                        <td class="border-bottom2"><img src="/eos/img/news/view-newsletter.png" class="wrap-left" /><a href="/newsletter/{{ newsletter.id }}/" target="_blank">View Newsletter</a></td>
+                        <td class="border-bottom2"><img src="/eos/img/news/send-to-a-friend.png" class="wrap-left" /><a href="/email-newsletter/{{ newsletter.id }}/" rel="iframe" rev="width:316 height:431 scrolling:no">Send to a Friend</a></td>
+                    </tr>
+               {% endfor %}
+            </table>
+        </div>
+        </div>    
+     </div>
+     {% endif %}   
+{% endblock content %}

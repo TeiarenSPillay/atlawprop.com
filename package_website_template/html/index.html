@@ -1,1 +1,70 @@
 {% extends "eos_index.html" %}
+
+
+{% block content %}
+
+
+    {% load humanize %}
+    {% load property_cart %}
+    {% load new_development_helpers %}
+    
+    <div id="home-breadcrumbs" class="column span-22 last border-bottom1">
+        <div id="home-breadcrumbs-navigation">
+        <p class="last font-size11"><span class="breadcrumbs-dark">You are here:</span> <span class="breadcrumbs-light"><a href="/" class="other">{{ site_name }}</a> / <a href="/" class="other">Homepage</a></span></p>
+        </div>
+        <div id="home-breadcrumbs-heading">
+        <h1 class="last">{{ site_name }}</h1>
+        </div>
+    </div>
+    
+    <div class="column last span-22">
+        <div class="column last"><p class="quote">{{ site_quote }}</p></div>
+    	<div class="columnRight">
+            <div class="column last font-size11 append-2"><a href="javascript:bookmarksite('{{ site_name }}: ', parent.window.location)"  title="Bookmark" class="bookmark">Bookmark</a></div>
+    		<div class="column font-size11 last"><a href="/bookmark-share/" rel="iframe" rev="width:257 height:219 scrolling:no" class="share">Share</a></div>
+    	</div>
+    </div>
+    {% if profile.live %}
+        <p>{{ profile.content|safe }}<a href="/profile/">More Info</a></p>
+	{% endif %}
+    
+    <div class="clear">&nbsp;</div>
+    
+    {% block banner %}{% endblock banner %}
+    
+    <!-- Featured Property / Use the settings file to determine the number of featured properties -->    
+	{% for listing in featured %}
+        {% if listing %}
+        <div class="{% cycle column,columnRight %} last width419">
+            <div class="column last headings margin-bottom10">FEATURED {% ifequal listing.listing_type 'Holiday Letting' %}Holiday {% endifequal %}{{ listing.property_type|upper }} {{ listing.listing_type|cut:"Residential"|cut:"Commercial"|cut:"Holiday Letting"|upper }}</div>
+            <div id="home-featured-property" class="featured-property-bg">
+                {% include 'includes/eos_home_featured_properties.html' %}
+            </div>
+        </div>    
+        {% endif %}
+    {% endfor %}
+    <!-- -->
+    
+    <!-- Property News -->
+<div class="column last span-22 margin-top20">
+    <div class="column last headings">
+        PROPERTY NEWS
+        <div class="columnRight span-26">
+				<div class="column last append-2"><a href="/news/feeds/atom/" class="font-size11 rss_button-icon" target="_blank">RSS Feed</a></div>
+        	</div>
+    </div>
+    <div id="home-property-news" class="column last featured-news-top"><!-- This div is closed in includes/eos_home_property-news.html -->
+        {% include 'includes/eos_home_property-news.html' %}
+</div>
+    <!-- -->
+    
+    <!-- On Show, New Listing Alerts & Property Assessment Banners  -->
+    <div class="column span-22 last margin-top10">
+        {% block onshow %}<div class="column append-1 last"><a href="/results/on-show/" class="opaque"><img src="/assets/img/custom/homepage/on-show-banner.jpg" alt="On Show Properties" title="On Show Properties" /></a></div>{% endblock onshow %}
+        {% block email-alerts %}<div class="column append-1 last"><a href="/property-email-alerts/" class="opaque"><img src="/assets/img/custom/homepage/new-listing-alerts.jpg" alt="Property Email Alerts" title="Property Email Alerts" /></a></div>{% endblock email-alerts %}
+        {% if list_your_property_display %}
+            {% block list-your-property %}<div class="column last"><a href="/list-your-property/" class="opaque"><img src="/assets/img/custom/homepage/property-worth.jpg" alt="{{ site_name }}" title="{{ site_name }}" /></a></div>{% endblock list-your-property %}
+        {% endif %}
+    </div>
+    <!-- -->
+{% endblock content %}

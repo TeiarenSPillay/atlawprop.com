@@ -1,1 +1,98 @@
 {% extends "eos_news_details.html" %}
+
+{% block content %}
+    <div id="news-details-breadcrumbs" class="column print-hide span-22 last">
+        <div id="news-details-breadcrumbs-navigation">
+            <p class="last font-size11"><span class="breadcrumbs-dark">You are here:</span> <span class="breadcrumbs-light"><a href="/" class="other">{{ site_name }}</a> / <a href="/news/{% ifequal obj.category.category "General Advice" %}category/general-advice/{% endifequal %}" class="other">{% ifequal obj.category.category "General Advice" %}General Advice{% else %}Latest News{% endifequal %}</a></span></p>
+        </div>
+        <div id="news-details-breadcrumbs-heading">
+            <h1 class="last">{% ifequal obj.category.category "General Advice" %}General Advice{% else %}Latest News{% endifequal %}</h1>
+        </div>
+    </div>
+    <div id="map-tabed-navigation" class="column span-22 print-hide main-property-nav last">
+
+    {% if obj %}
+        <div class="column details last">Article</div>
+    {% else %}
+        {% if obj_list.object_list %}
+            {% for objs in obj_list.object_list %}
+                {% if forloop.first %}
+                    <a href="/news/{{ objs.slug}}/{% if url_args %}?{% for x,y in url_args %}{{ x }}={{ y }}{% if not forloop.last %}&{% endif %}{% endfor %}{% endif %}" class="details{% if obj %}-over{% else %}{% endif %}">Article</a>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+        {% endif %}
+    {% endif %}
+    {% if obj %}
+    <a href="{% if obj %}/news/{% if category %}category/{{ category.slug }}/{% else %}{% for x,y in url_args %}{% ifequal x 'c' %}category/{{ y }}/{%endifequal %}{% endfor %}{% endif %}{% if url_args %}?{% for x,y in url_args %}{% ifequal x 'c' %}{% else %}{{ x }}={{ y }}{% endifequal %}{% if not forloop.last %}&{% endif %}{% endfor %}{% endif %}{% else %}/news/{% endif %}" class="search-results">Search Results</a>
+    {% else %}
+    <div class="column search-results last">Search Results</div>
+    {% endif %}
+</div>
+
+    <div id="news-details-navigation" class="column font-size11 span-22 border-bottom1 print-hide last">
+        {% include 'includes/eos_news_details_navigation.html' %}
+    </div>
+
+
+    <!-- -->
+        {% include 'includes/eos_news_details_article.html' %}
+    <!-- -->
+
+    <!-- Print -->
+    <table cellpadding="0" cellspacing="0" class="print-show" width="100%">
+        <tr>
+            {% if obj.photo %}
+            <td valign="top" width="200"><img src="/resize/200/200/{{ obj.photo }}" />
+                <div class="column last margin-top5"><p class="breadcrumbs-light">{{ obj.photo_caption }} </p></div>
+            </td>
+            <td width="15">&nbsp;</td>
+            <td id="p-news-photo"><h3>{{ obj.title }}</h3>
+                <p><b>Category</b> <a href="/news/category/{{ obj.category.slug }}/{% if url_args %}?{% for x,y in url_args %}{{ x }}={{ y }}{% if not forloop.last %}&{% endif %}{% endfor %}{% endif %}">{{ obj.category }}</a></p>
+                <p>{{ obj.body|safe }}</p>
+            </td>
+            {% else %}
+            <td id="p-news"><h3>{{ obj.title }}</h3>
+                <p><b>Category</b> <a href="/news/category/{{ obj.category.slug }}/{% if url_args %}?{% for x,y in url_args %}{{ x }}={{ y }}{% if not forloop.last %}&{% endif %}{% endfor %}{% endif %}">{{ obj.category|safe }}</a></p>
+                <p>{{ obj.body|safe }}</p>
+            </td>
+            {% endif %}
+        </tr>
+        <tr>
+            <td {% if obj.photo %}colspan="3"{% endif %}>&nbsp;</td>
+        </tr>
+    </table>
+    <!-- -->
+
+
+    {% if news_comments %}
+    <!-- Comments -->
+    {% if comments %}
+<div class="column last span-22 margin-top30">
+    <div class="column last headings">{{ comments|length }} COMMENTS</div>
+        <div id="news-details-comments" class="column details-top-bg last">
+            <a name="comments" id="comments"></a>
+            {% include 'includes/eos_news_details_article_comments.html' %}
+        </div>
+</div>    
+    {% endif %}
+    <!-- -->
+
+<div class="column last span-24 margin-top30">
+    <div class="column last headings">POST A COMMENT</div>
+    <div id="post-a-comment" class="column last print-hide span-24">
+        <span id="comment_form_id"></span>
+        <form method="POST" action="#comment_form_id">
+            {% csrf_token %}
+            <div class="column last registration-bg-top"><!-- This div is closed in the "eos_news_details_article_post_comments" -->
+            {% include 'includes/eos_news_details_article_post_comments.html' %}
+        </form>
+    </div>
+</div>        
+   {% endif %}
+
+    <div id="news-details-navigation-bottom" class="column font-size11 border-top1 span-22 print-hide last">
+        {% include 'includes/eos_news_details_navigation.html' %}
+    </div>
+
+{% endblock content %}

@@ -1,108 +1,148 @@
 {% load property_counts %}
 {% load humanize %}
 <div class="column last">
-<ul class="bullets"><li><a href="/"><b>Home</b></a></li>
-{% set_property_count 'on-show' %}
-{% ifnotequal on_show_count 0 %}
-<li><a href="/results/on-show/"><b>On Show</b></a></li>
+<ul class="bullets"><li><a href="/" ><b>Home</b></a></li>
+{% ifnotequal featured_properties 0 %}
+<li><a href="/results/featured-properties/" ><b>Featured Properties</b></a></li>
 {% endifnotequal %}
-{% set_property_count 'residential-for-sale' %}
+{% ifnotequal on_show_count 0 %}
+<li><a href="/results/on-show/" ><b>On Show</b></a></li>
+{% endifnotequal %}
 {% ifnotequal residential_for_sale_count 0 %}
-<li><a href="/results/residential/for-sale/"><b>Residential For Sale [{{ residential_for_sale_count }}]</b></a></li>
+<li><a href="/results/residential/for-sale/" ><b>Residential For Sale [{{ residential_for_sale_count }}]</b></a></li>
 <span class="blue font-size11">{% get_areas_counts 'residential-for-sale' %}</span>
 {% endifnotequal %}
-{% set_property_count 'residential-to-let' %}
 {% ifnotequal residential_to_let_count 0 %}
-<li><a href="/results/residential/to-let/"><b>Residential To Let [{{ residential_to_let_count }}]</b></a></li>
+<li><a href="/results/residential/to-let/" ><b>Residential To Let [{{ residential_to_let_count }}]</b></a></li>
 <span class="blue font-size11">{% get_areas_counts 'residential-to-let' %}</span>
 {% endifnotequal %}
-{% set_property_count 'commercial-for-sale' %}
 {% ifnotequal commercial_for_sale_count 0 %}
 {% if commercial_addon %}
-<li><a href="/results/commercial/for-sale/"><b>Commercial For Sale [{{ commercial_for_sale_count }}]</b></a></li>
+<li><a href="/results/commercial/for-sale/" ><b>Commercial For Sale [{{ commercial_for_sale_count }}]</b></a></li>
 <span class="blue font-size11">{% get_areas_counts 'commercial-for-sale' %}</span>
 {% endif %}
 {% endifnotequal %}
-{% set_property_count 'commercial-to-let' %}
+{% if commercial_addon %}
+{% ifnotequal industrial_for_sale_count 0 %}
+<li><a href="/results/industrial/for-sale/" ><b>Industrial For Sale [{{ industrial_for_sale_count }}]</b></a></li>
+<span class="blue font-size11">{% get_areas_counts 'industrial-for-sale' %}</span>
+{% endifnotequal %}
+{% endif %}
+{% if commercial_addon %}
+{% ifnotequal retail_for_sale_count 0 %}
+<li><a href="/results/retail/for-sale/" ><b>Retail For Sale [{{ retail_for_sale_count }}]</b></a></li>
+<span class="blue font-size11">{% get_areas_counts 'retail-for-sale' %}</span>
+{% endifnotequal %}
+{% endif %}
+{% if commercial_addon %}
+{% ifnotequal agricultural_for_sale_count 0 %}
+<li><a href="/results/agricultural/for-sale/" ><b>Agricultural For Sale [{{ agricultural_for_sale_count }}]</b></a></li>
+<span class="blue font-size11">{% get_areas_counts 'agricultural-for-sale' %}</span>
+{% endifnotequal %}
+{% endif %}
 {% ifnotequal commercial_to_let_count 0 %}
 {% if commercial_addon %}
-<li><a href="/results/commercial/to-let/"><b>Commercial To Let [{{ commercial_to_let_count }}]</b></a></li>
+<li><a href="/results/commercial/to-let/" ><b>Commercial To Let [{{ commercial_to_let_count }}]</b></a></li>
 <span class="blue font-size11">{% get_areas_counts 'commercial-to-let' %}</span>
 {% endif %}
 {% endifnotequal %}
-{% set_property_count 'residential-new-development' %}
+{% if commercial_addon %}
+{% ifnotequal industrial_to_let_count 0 %}
+<li><a href="/results/industrial/to-let/" ><b>Industrial To Let [{{ industrial_to_let_count }}]</b></a></li>
+<span class="blue font-size11">{% get_areas_counts 'industrial-to-let' %}</span>
+{% endifnotequal %}
+{% endif %}
+{% if commercial_addon %}
+{% ifnotequal retail_to_let_count 0 %}
+<li><a href="/results/retail/to-let/" ><b>Retail To Let [{{ retail_to_let_count }}]</b></a></li>
+<span class="blue font-size11">{% get_areas_counts 'retail-to-let' %}</span>
+{% endifnotequal %}
+{% endif %}
+{% if commercial_addon %}
+{% ifnotequal agricultural_to_let_count 0 %}
+<li><a href="/results/agricultural/to-let/" ><b>Agricultural To Let [{{ agricultural_to_let_count }}]</b></a></li>
+<span class="blue font-size11">{% get_areas_counts 'agricultural-to-let' %}</span>
+{% endifnotequal %}
+{% endif %}
 {% ifnotequal residential_new_development_count 0 %}
 {% if new_development_addon %}
-<li><a href="/results/new-development/residential/"><b>Residential New Developments [{{ residential_new_development_count }}]</b></a></li>
+<li><a href="/results/new-development/residential/" ><b>Residential New Developments [{{ residential_new_development_count }}]</b></a></li>
 <span class="blue font-size11">{% get_areas_counts 'residential-new-development' %}</span>
 {% endif %}
 {% endifnotequal %}
-{% set_property_count 'commercial-new-development' %}
+{% if new_development_addon %}
+{% ifnotequal residential_past_development_count 0 %}
+<li><a href="/results/past-development/residential/" ><b>Residential Past Developments [{{ residential_past_development_count }}]</b></a></li>
+<span class="blue font-size11">{% get_areas_counts 'residential-past-development' %}</span>
+{% endifnotequal %}
+{% endif %}
 {% ifnotequal commercial_new_development_count 0 %}
 {% if new_development_addon %}
-<li><a href="/results/new-development/commercial/"><b>Commercial New Developments [{{ commercial_new_development_count }}]</b></a></li>
+<li><a href="/results/new-development/commercial/" ><b>Commercial New Developments [{{ commercial_new_development_count }}]</b></a></li>
 <span class="blue font-size11">{% get_areas_counts 'commercial-new-development' %}</span>
 {% endif %}
 {% endifnotequal %}
-{% set_property_count 'vacant-land' %}
+{% if new_development_addon %}
+{% ifnotequal commercial_past_development_count 0 %}
+<li><a href="/results/past-development/commercial/" ><b>Commercial Past Developments [{{ commercial_past_development_count }}]</b></a></li>
+<span class="blue font-size11">{% get_areas_counts 'commercial-past-development' %}</span>
+{% endifnotequal %}
+{% endif %}
 {% ifnotequal vacant_land_count 0 %}
-<li><a href="/results/vacant-land/"><b>Vacant Land [{{ vacant_land_count }}]</b></a></li>
+<li><a href="/results/vacant-land/" ><b>Vacant Land [{{ vacant_land_count }}]</b></a></li>
 {% endifnotequal %}
-{% set_property_count 'farm' %}
 {% ifnotequal farm_and_small_holdings_count 0 %}
-<li><a href="/results/farms-and-small-holdings/"><b>Farms &amp; Small Holdings [{{ farm_and_small_holdings_count }}]</b></a></li>
+<li><a href="/results/farms-and-small-holdings/" ><b>Farms &amp; Small Holdings [{{ farm_and_small_holdings_count }}]</b></a></li>
 {% endifnotequal %}
-{% set_property_count 'holiday-letting' %}
 {% ifnotequal holiday_letting_count 0 %}
 {% if holiday_addon %}
-<li><a href="/results/holiday/to-let/"><b>Holiday Letting [{{ holiday_letting_count }}]</b></a></li>
+<li><a href="/results/holiday/to-let/" ><b>Holiday Letting [{{ holiday_letting_count }}]</b></a></li>
 {% endif %}
 {% endifnotequal %}
-{% set_property_count 'bank-reposessed' %}
 {% ifnotequal bank_reposessed_count 0 %}
 {% if offers_addon %}
-<li><a href="/results/bank-reposessed/"><b>Bank Reposessed [{{ bank_reposessed_count }}]</b></a></li>
+<li><a href="/results/bank-reposessed/" ><b>Bank Reposessed [{{ bank_reposessed_count }}]</b></a></li>
 {% endif %}
 {% endifnotequal %}
-{% set_property_count 'distressed' %}
 {% ifnotequal distressed_count 0 %}
 {% if offers_addon %}
-<li><a href="/results/distressed/"><b>Distressed Sales [{{ distressed_count }}]</b></a></li>
+<li><a href="/results/distressed/" ><b>Distressed Sales [{{ distressed_count }}]</b></a></li>
 {% endif %}
 {% endifnotequal %}
-{% set_property_count 'tender' %}
 {% ifnotequal tender_count 0 %}
-<li><a href="/results/tenders/"><b>Tenders [{{ tender_count }}]</b></a></li>
+<li><a href="/results/tenders/" ><b>Tenders [{{ tender_count }}]</b></a></li>
 {% endifnotequal %}
-{% set_property_count 'student-accommodation' %}
-{% ifnotequal student_accommodation_count 0 %}
-<li><a href="/results/student-accommodation/"><b>Student Accommodation [{{ student_accommodation_count }}]</b></a></li>
+{% ifnotequal auctions_count 0 %}
+<li><a href="/results/auctions/" ><b>Auctions [{{ auctions_count }}]</b></a></li>
 {% endifnotequal %}
-<li><a href="/property-email-alerts/"><b>Property Email Alerts</b></a></li>
-<li><a href="/bond-transfer-cost-calculator/"><b>Calculators</b></a></li>
 {% if region_profiles_addon %}
-<li><a href="/area-profiles/"><b>Area Profiles</b></a></li>
+<li><a href="/area-profiles/" ><b>Area Profiles</b></a></li>
 {% endif %}
+{% ifnotequal student_accommodation_count 0 %}
+<li><a href="/results/student-accommodation/" ><b>Student Accommodation [{{ student_accommodation_count }}]</b></a></li>
+{% endifnotequal %}
+<li><a href="/property-email-alerts/" ><b>Property Email Alerts</b></a></li>
 {% if list_your_property_display %}
-<li><a href="/list-your-property/"><b>List Your Property</b></a></li>
+<li><a href="/list-your-property/" ><b>List Your Property</b></a></li>
 {% endif %}
-<li><a href="/news/"><b>Latest News</b></a></li>
+<li><a href="/bond-transfer-cost-calculator/" ><b>Calculators</b></a></li>
+<li><a href="/news/" ><b>Latest News</b></a></li>
 {% if has_general_advice %}
-<li><a href="/news/category/general-advice/"><b>General Advice</b></a></li>
+<li><a href="/news/category/general-advice/" ><b>General Advice</b></a></li>
 {% endif %}
-<li><a href="/newsletter/"><b>Email Newsletter</b></a></li>
-<li><a href="/profile/"><b>Company Profile</b></a></li>
-<li><a href="/agents/"><b>Agent Search</b></a></li>
+<li><a href="/newsletter/" ><b>Email Newsletter</b></a></li>
+<li><a href="/profile/" ><b>Company Profile</b></a></li>
+<li><a href="/agents/" ><b>Agent Search</b></a></li>
 {% load additional_pages %}
 {% get_additional_pages %}
 {% for page in additional_pages %}
 {% if page.live %}
-<li><a href="/{{ page.menu_slug }}/"><b>{{ page.menu_title }}</b></a></li>
+<li><a href="/{{ page.menu_slug }}/" ><b>{{ page.menu_title }}</b></a></li>
 {% endif %}
 {% endfor %}
-<li><a href="/contact/"><b>Contact Us</b></a></li>
-<li><a href="/website-map/"><b>Website Map</b></a></li>
-<li><a href="/useful-links/"><b>Links</b></a></li>
-<li><a href="/privacy-policy/"><b>Privacy Policy</b></a></li>
+<li><a href="/contact/" ><b>Contact Us</b></a></li>
+<li><a href="/website-map/" ><b>Website Map</b></a></li>
+<li><a href="/useful-links/" ><b>Links</b></a></li>
+<li><a href="/privacy-policy/" ><b>Privacy Policy</b></a></li>
 </ul>
 </div>

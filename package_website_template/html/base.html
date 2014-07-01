@@ -6,14 +6,79 @@
 {% endblock favicon %}
 
 
-{% block js-headings %}
-<!--If your heading uses a font that is not compatible please follow the instrcutions below
-Step 1: Go to http://cufon.shoqolate.com/generate/ and generate your font.
-Step 2: Save the javascript file you recieved from the website above
-Step 3: Update the javascript link below, change 'Your Generated Font.js' with what your file is called.
-Step 4: specify what you want the script to replace-->
-<script type="text/javascript" src="/eos/js/cufon-yui.js"></script>
-<script type="text/javascript">
-    Cufon.replace('h1');
-</script>
-{% endblock js-headings %}
+{% block js-headings %}{% endblock js-headings %}
+
+       {% block base-page %}
+<div class="column last container">
+    <form method="POST" id="nav_results" action="/results/">
+        <input type="hidden" name="listing_type" id="nav_results_input" value="">
+    </form>
+        
+    {% include 'header.html' %}
+    <!-- Print Header -->    
+    <table width="100%" class="print-show print-header">
+        <tr>
+            <td class=""><img src="/assets/img/custom/layout/pfv-logo.gif" /></td>
+            <td width="400" style="text-align:right;">
+                <h1>{{ site_name }}<br>{{ site_url|cut:"http://" }}</h1>
+                <h2 class="last">{% block print-heading %}LATEST NEWS{% endblock print-heading %}</h2>
+                <p>Printed on {% now "d M Y" %} | {% now "H:i:s" %}</p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+    </table>
+    <!-- -->
+    
+    <!-- Content -->
+    <div class="content-width">
+        <div class="column last content">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+    {% block banner-footer %}{% endblock banner-footer %}
+    <!-- -->
+    
+    <!-- Footer -->
+    <div id="footer-float" class="footer-float print-hide">
+        <div id="footer-float2" class="footer-float2">
+            <div id="footer-bg" class="column last footer-bg">
+                <div id="footer-bg2" class="column last footer-bg2">
+                    <div id="footer-content" class="footer-content">
+                    
+                       {% include 'includes/eos_base_footer_logos.html' %}
+                        
+                        <div id="footer-logos" class="columnRight footer-logos">
+                        {% block social %}
+                            {% if twitter or facebook or linkedin or youtube %}
+                                <p class="last"><b>Follow us on...</b></p>
+                            {% if facebook %}<div class="column last append-2 margin-top5"><a href="{{ facebook }}" target="_blank" class="facebook_button-icon social"></a></div>{% endif %}    
+                            {% if twitter %}<div class="column last append-2 margin-top5"><a href="{{ twitter }}" target="_blank" class="twitter_button-icon social"></a></div>{% endif %}
+                            {% if linkedin %}<div class="column last append-2 margin-top5"><a href="{{ linkedin }}" target="_blank" class="linkedin_button-icon social"></a></div>{% endif %}
+                            {% if youtube %}<div class="column last margin-top5"><a href="{{ youtube }}" target="_blank" class="youtube_button-icon social"></a></div>{% endif %}
+                            {% endif %}
+                        {% endblock social %}
+                        </div>
+                        
+                        {% block footer_extra %}{% endblock footer_extra %}
+                        
+                        {% include 'includes/eos_base_footer_links.html' %}
+
+                         <!-- Prop Data footer -->
+                          {% block prop_data_footer %}
+                              <div id="pd-footer" class="column last span-22 margin-bottom20">
+                                  <div class="column last span-11">
+                                      <div class="column"><a href="http://www.propdata.net/" target="_blank" class="pd-icon"></a></div>
+                                      <div class="column margin-top2">Website Powered by <a href="http://www.propdata.net" target="_blank">Prop Data</a><br />Copyright &copy; {% now "Y" %} {{ site_name }}</div>
+                                  </div>                               
+                              </div>
+                          {% endblock prop_data_footer %}
+                        <!-- -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock base-page %} 

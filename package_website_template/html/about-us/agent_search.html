@@ -1,1 +1,57 @@
 {% extends "eos_agent_search.html" %}
+
+{% block content %}
+{% load agent_search %}
+    <div id="agent-search-breadcrumbs" class="column span-22 last border-bottom1">
+        <div id="agent-search-breadcrumbs-navigation">
+            <p class="last font-size11"><span class="breadcrumbs-dark">You are here:</span> <span class="breadcrumbs-light"><a href="/" class="other">{{ site_name }}</a> / <a href="/agents/" class="other">Agent Search</a></span></p>
+        </div>
+        <div id="agent-search-breadcrumbs-heading">
+            <h1 class="last">Agent Search</h1>
+        </div>
+    </div>
+    
+	<div class="column font-size11 span-22 border-bottom1 print-hide last">
+    {% include 'includes/eos_agent_quick_search.html' %}
+	</div>
+    
+	 <div class="column last span-22">
+        <div class="column last span-18"><p class="quote">{{ site_quote }}</p></div>
+        <div class="columnRight">
+            <div class="column last font-size11 append-2"><a href="javascript:bookmarksite('{{ site_name }}', 'http://{{ site_url }}')" title="Bookmark" class="bookmark">Bookmark</a></div>
+            <div class="column font-size11 last"><a href="/bookmark-share/" rel="iframe" rev="width:257 height:219 scrolling:no" class="share">Share</a></div>
+        </div>
+    </div>
+    {% for branch in branch_list %}
+		{% get_branch_agents branch.id %}
+        <div class="column last span-22 margin-top30"><h1>{{ branch.branch_name }}</h1></div>
+        {% for agent in agent_list %}
+				{# Left Side #}
+                <div class="column{% if forloop.counter|divisibleby:"2" %}Right{% endif %} last width419 margin-top20">
+                    <div class="column last headings">{{ agent.get_full_name|upper }}</div>
+                    <div id="agent-search-details-{% if not forloop.counter|divisibleby:"2" %}left{% else %}right{% endif %}" class="column{% if forloop.counter|divisibleby:"2" %}Right{% endif %} last agent-bg">
+                        {% include 'includes/eos_agent_details.html' %}
+                    </div>
+                </div>    
+                {% if forloop.last %}
+					{% if not forloop.counter|divisibleby:"2" %}
+                        <div class="height250">&nbsp;</div>
+					{% endif %}
+                {% endif %}
+				
+				{% if forloop.counter|divisibleby:"2" %}
+				{# Right Side #}
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+                <p>&nbsp;</p>
+				{% endif %}
+            
+        {% endfor %}
+    {% endfor %}
+    </div>
+{% endblock content %}

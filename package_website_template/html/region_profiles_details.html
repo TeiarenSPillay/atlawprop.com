@@ -1,1 +1,98 @@
 {% extends "eos_region_profiles_details.html" %}
+{% load humanize %}
+{% load property_cart %}
+{% load new_development_helpers %
+{% block area-profile-content %}
+<!-- -->
+<div class="column last width377 margin-top20">
+    <div class="column last headings">PHOTO GALLERY</div>
+	<div id="area-profile-details-photo-gallery" class="column last photo-gallery-bg print-hide">
+       {% include 'includes/eos_region_profiles_details_photo_gallery.html' %}
+    </div>
+</div>    
+<!-- -->
+    
+<!-- -->
+<div class="columnRight width460 margin-top20">
+    <div class="column last headings">MAP</div>
+	<div id="area-profile-details-map" class="columnRight area-map-bg">
+		<div id="map_canvas" style="width:435px; height:297px;">
+			<span id="maploading">Loading Map</span>
+		</div>
+	</div>
+</div>    
+<!-- -->
+    
+<!-- -->
+<div class="column last span-22 margin-top30">
+    <div class="column last headings">{{ obj.location.region }} at a glance</div>
+	<a name="{{ obj.location.region|slugify }}" id="{{ obj.location.region|slugify }}"></a>
+    <div id="area-profile-details-at_a_glance" class="column last downloads-bg print-hide">
+		<div class="column last">
+			<div class="column last">
+				<p class="last">{{ obj.region_description|safe }}</p>
+			</div>
+		</div>
+	</div>
+</div>    
+<!-- -->
+	
+<!-- -->
+{% if weather_forecast %}
+<div class="column last span-22 margin-top30">
+    <div class="column last headings">WEATHER FORECAST</div>
+	<div id="area-profile-details-weather_corecast" class="column last downloads-bg  print-hide">
+		<div class="column last">
+			<div id="area-profile-details-weather_corecast_content" class="column last">
+                {% include 'includes/eos_region_profiles_details_weather_forecast.html' %}
+			</div>
+		</div>
+	</div>
+</div>    
+{% endif %}
+<!-- -->
+
+<!-- -->
+    {% load region_profile_tags %}
+    {% for listing_type in area_listing_types %}
+      {% get_area_profile_listings obj.location listing_type %}
+            {% if listing_list %}
+<div class="column last span-22 margin-top30">
+    <div class="column last headings">{% include 'includes/eos_region_profiles_details_for_sale_heading_1.html' %}</div>
+            <div id="area-profile-details-property-for-sale" class="column last area-property-bg print-hide">
+                <div class="column span-35 last">
+                    <div class="column heading-icon"><img src="/assets/img/custom/homepage/featured-property-icon.jpg" /></div>
+                    <div id="area-profile-details-property-for-sale-heading-container">
+                        <div class="column">            
+                            <div id="area-profile-details-property-for-sale-price-from">
+                                <p class="last"><b>FROM {{ currency_symbol }}{{ listing_min_price|intcomma }} {% ifnotequal listing_min_price listing_max_price %} to {{ currency_symbol }}{{ listing_max_price|intcomma }}{% endifnotequal %}</b></p>
+                            </div>
+                        </div>
+                         <div id="area-profile-details-property-for-sale-view" class="columnRight font-size11 margin-top3">
+                           {% include 'includes/eos_region_profiles_details_for_sale_heading_2.html' %}
+                        </div>
+                        
+                    </div>      
+                </div>        
+                <div class="column margin-bottom5 margin-top5 last"><img src="/eos/img/property-search/details/property-finance-divider.gif" /></div>
+                <!-- -->
+                {% include 'includes/eos_region_profiles_details_for_sale_content.html' %}
+                <!-- -->
+                </div>
+</div>    
+                {% endif %}
+    {% endfor %}
+<!-- -->
+
+<!-- -->
+<div class="column last span-22 margin-top30">
+    <div class="column last headings">SPEAK TO THE {{ obj.location.region|upper }} REAL ESTATE SPECIALISTS</div>
+    <a name="speak-to-the-{{ obj.location.region|slugify }}-real-estate-specialist" id="speak-to-the-{{ obj.location.region|slugify }}-real-estate-specialist"></a>
+	<div id="area-profile-details-speak" class="column last downloads-bg print-hide">
+		<div class="column last">
+			{% include 'includes/eos_region_profiles_details_speak.html' %}
+		</div>
+	</div>
+</div>
+<!-- -->
+{% endblock area-profile-content %}

@@ -19,8 +19,9 @@ function bookmarksite(title,url){
         window.external.AddFavorite(url, title);
     }
 </script>
+    <link rel="stylesheet" href="/assets/css/custom.css?{% now "U" %}" type="text/css">
 <style>
-body            { padding:0px; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:12px; background-image:url(/assets/img/custom/property-search/includes/share-bg.jpg);}
+body            { padding:0px; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:12px; background-image:none;}
 .padding-middle { padding:15px;}
 a:focus, 
 a:hover         { color: #0081BD; }
@@ -30,39 +31,54 @@ a               { color: #00274A; text-decoration: none; }
 </head>
 
 <body>
-<table cellpadding="0" cellspacing="0" width="255">
-    <tr>
-        <td height="49">&nbsp;</td>
-    </tr>
-    <tr style="border:1px solid #CCCCCC;">
-        <td class="padding-middle">
-            <table width="100%" height="130" style=" border:0px;">
-                <tr>
-                    <td><img src="/eos/img/bookmark/live.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('windows')">Live</a></td>
-                    <td><img src="/eos/img/bookmark/twitter.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('twitter');"  >Twitter</a></td>
-                </tr>
-                <tr>
-                    <td><img src="/eos/img/bookmark/facebook.jpg" class="wrap-left" /><a  href="#1" onclick="bookmark('facebook')">Facebook</a></td>
-                    <td><img src="/eos/img/bookmark/digg.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('digg');">Digg</a></td>
-                </tr>
-                <tr>
-                    <td><img src="/eos/img/bookmark/stumble.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('stumbleupon')">Stumble Upon</a></td>
-                    <td><img src="/eos/img/bookmark/myspace.jpg" class="wrap-left" />
-                        <form id="myspacepostto" method="post" action="http://www.myspace.com/index.cfm?fuseaction=postto" target="_blank">
-                            <input type="hidden" name="t" value="javascript:parent.document.title;" />
-                            <input type="hidden" name="c" value="Propster RSA" />
-                            <input type="hidden" name="u" value="javascript:parent.window.location;" />
-                            <a href="#" onclick="document.getElementById('myspacepostto').submit();return false;">MySpace</a>
-                        </form>
-                    </td>
-                </tr>
-                <tr>
-                    <td><img src="/eos/img/bookmark/delicious.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('delicious');">Delicious</a></td>
-                    <td><img src="/eos/img/bookmark/google.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('google');">Google</a></td>
-                </tr>
-            </table>
-        </td>
-    </tr>
-</table>
+<div class="columnRight width460 margin-top30 popups-bg">
+    <div class="column last headings">SHARE</div>
+    <table cellpadding="0" cellspacing="0" width="255">
+        <tr style="border:1px solid #CCCCCC;">
+            <td class="padding-middle">
+                <table width="100%" height="130" style=" border:0px;">
+                    <tr>
+                        <td>
+                            <img src="/eos/img/bookmark/live.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('windows')">Live</a>
+                        </td>
+                        <td>
+                            <img src="/eos/img/bookmark/twitter.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('twitter');">Twitter</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="/eos/img/bookmark/facebook.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('facebook')">Facebook</a>
+                        </td>
+                        <td>
+                            <img src="/eos/img/bookmark/digg.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('digg');">Digg</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="/eos/img/bookmark/stumble.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('stumbleupon')">Stumble Upon</a>
+                        </td>
+                        <td>
+                            <img src="/eos/img/bookmark/myspace.jpg" class="wrap-left" />
+                            <form id="myspacepostto" method="post" action="http://www.myspace.com/index.cfm?fuseaction=postto" target="_blank">
+                                <input type="hidden" name="t" value="javascript:parent.document.title;" />
+                                <input type="hidden" name="c" value="Propster RSA" />
+                                <input type="hidden" name="u" value="javascript:parent.window.location;" />
+                                <a href="#" onclick="document.getElementById('myspacepostto').submit();return false;">MySpace</a>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="/eos/img/bookmark/delicious.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('delicious');">Delicious</a>
+                        </td>
+                        <td>
+                            <img src="/eos/img/bookmark/google.jpg" class="wrap-left" /><a href="#1" onclick="bookmark('google');">Google</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>
