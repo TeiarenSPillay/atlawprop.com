@@ -12,9 +12,9 @@ TEMPLATE_DEBUG = DEBUG
 CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__), '..'))
 
 ### Site specifics ###
-SERVER_EMAIL = 'root@tauron.propdata.net'
-WEB_STATS  = "http://tauron.propdata.net/cgi-bin/awstats.pl?config=abcrealestate.co.za"
-WEBSITE_URL = "http://staging.abcrealestate.co.za"
+SERVER_EMAIL = 'django@propdata.net'
+WEB_STATS    = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=site_url"
+WEBSITE_URL  = "http://site_url"
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0] # Top heading - first part
