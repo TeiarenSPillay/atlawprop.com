@@ -2,7 +2,7 @@
 
 {% block holiday-letting %}
 <!-- PHOTO GALLERY -->
-<div class="column last width377 margin-top20">
+<div class="column last width377 margin-top20 print-hide">
     <div class="column last headings">PHOTO GALLERY</div>
     <div id="photo-gallery" class="column last photo-gallery-bg print-hide">
         {% include 'includes/eos_listings_details_photo_gallery.html' %}   
@@ -11,7 +11,7 @@
 <!-- // PHOTO GALLERY -->
 
 <!-- PROPERTY DETAILS -->
-<div class="columnRight width460 margin-top20">
+<div class="columnRight width460 margin-top20 print-hide">
     <div class="column last headings">PROPERTY DETAILS</div>
     <div id="property-details" class="columnRight span-29 last">
         <div id="property-details-bg" class="column property-details-bg print-hide"><!-- This div is closed in the include -->
@@ -21,7 +21,7 @@
 <!-- // PROPERTY DETAILS -->
 
 <!-- NOTES -->
-<div class="columnRight width460 margin-top30">
+<div class="columnRight width460 margin-top30 print-hide">
     <div class="column last headings">NOTES</div>    
     <div id="notes-bg-top" class="columnRight notes-bg print-hide">
             {% include 'includes/eos_listings_details_notes.html' %}
@@ -30,7 +30,7 @@
 <!-- -->
 
 <!-- KEY FEATURES / AMENITIES -->
-<div class="column last width377 margin-top30">
+<div class="column last width377 margin-top30 print-hide">
     <div class="column last headings">FEATURES</div>    
     <div id="property-features-holiday-letting" class="column property-features-holiday-letting-bg print-hide last">
         {% ifequal listing.get_main_type 'Holiday' %}
@@ -41,7 +41,7 @@
 <!-- // KEY FEATURES / AMENITIES -->
 
 <!-- HOLIDAY LETTING RATES -->
-<div class="columnRight width460 margin-top30">
+<div class="columnRight width460 margin-top30 print-hide">
     <div class="column last headings">RATES</div>    
     <div id="hl-rates" class="columnRight notes-bg print-hide">
         {% include 'includes/eos_listings_details_holiday_letting_rates.html' %}
@@ -51,7 +51,7 @@
 
 <!-- HOLIDAY LETTING SPECIAL OFFER -->
     {% if listing.special_offer %}
-<div class="columnRight width460 margin-top30">
+<div class="columnRight width460 margin-top30 print-hide">
     <div class="column last headings">SPECIAL OFFER</div>
     <div id="special-offer" class="columnRight notes-bg print-hide">
             <div class="column last span-25">
@@ -64,7 +64,7 @@
 <!-- // HOLIDAY LETTING SPECIAL OFFER -->
 
 <!-- BOOKING ENQUIRIES / APPOINTMENT TO VIEW -->
-<div class="columnRight width460 margin-top30 margin-bottom30">
+<div class="columnRight width460 margin-top30 margin-bottom30 print-hide">
     <div class="column last headings">MAKE AN ENQUIRY</div>
     <div class="columnRight margin-top20 appointment-holiday-bg print-hide">
         <form name="enquiry_form" id="id_enquiry_form" method="post" action="#id_enquiry_form">
@@ -75,7 +75,7 @@
 <!-- // BOOKING ENQUIRIES / APPOINTMENT TO VIEW -->
 
 <!-- CONTACT THE AGENT -->
-<div class="column last width377 margin-top30 margin-bottom30">
+<div class="column last width377 margin-top30 margin-bottom30 print-hide">
     <div class="column last headings">CONTACT THE AGENT</div>
     <div class="column contact-holiday-bg print-hide last">
         {% include 'includes/eos_listings_details_contact_agent.html' %}

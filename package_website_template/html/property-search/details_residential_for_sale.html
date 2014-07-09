@@ -6,7 +6,7 @@
 
 {% block res-for-sale %}
 <!-- PHOTO GALLERY -->
-<div class="column last width377 margin-top20">
+<div class="column last width377 margin-top20 print-hide">
     <div class="column last headings">PHOTO GALLERY</div>
     <div id="photo-gallery" class="column last photo-gallery-bg print-hide">
         {% include 'includes/eos_listings_details_photo_gallery.html' %}   
@@ -15,7 +15,7 @@
 <!-- // PHOTO GALLERY -->
 
 <!-- PROPERTY DETAILS -->
-<div class="columnRight width460 margin-top20">
+<div class="columnRight width460 margin-top20 print-hide">
     <div class="column last headings">PROPERTY DETAILS</div>
     <div id="property-details" class="columnRight span-29 last">
         <div id="property-details-bg" class="column property-details-bg print-hide"><!-- This div is closed in the include -->
@@ -25,7 +25,7 @@
 <!-- // PROPERTY DETAILS -->
 
 <!-- NOTES -->
-<div class="columnRight width460 margin-top30">
+<div class="columnRight width460 margin-top30 print-hide">
     <div class="column last headings">NOTES</div>
     <div id="notes-bg-top" class="columnRight notes-bg print-hide">
         {% include 'includes/eos_listings_details_notes.html' %}
@@ -34,7 +34,7 @@
 <!-- -->
 
 <!-- KEY FEATURES / AMENITIES -->
-<div class="column last width377 margin-top30">
+<div class="column last width377 margin-top30 print-hide">
     <div class="column last headings">FEATURES</div>
     <div id="property-features" class="column property-features-bg print-hide last">      
         {% ifequal listing.get_main_type 'Residential' %}
@@ -46,7 +46,7 @@
  
 <!-- MAKE AN OFFER --> 
 {% if make_an_offer_form %}
-<div class="column last span-887 margin-top30">
+<div class="column last span-887 margin-top30 print-hide">
         <div class="column last headings">MAKE AN OFFER</div>
     <div class="column last make-an-offer-bg print-hide"> <!-- closed in the include -->
         <div class="column last margin-bottom10"> <!-- closed in the include -->
@@ -57,7 +57,7 @@
 
 <!-- PROPERTY FINANCE -->
 {% if show_calculators %}
-<div class="column last span-887 margin-top30">
+<div class="column last span-887 margin-top30 print-hide">
     <div class="column last headings">PROPERTY FINANCE</div>
     <div id="property-finance" class="column last property-finance-bg print-hide">
        {% include 'includes/eos_listings_details_calculators.html' %}
@@ -68,7 +68,7 @@
 
 <!-- ON SHOW -->
 {% if listing.on_show %}
-<div class="column last span-887 margin-top30">
+<div class="column last span-887 margin-top30 print-hide">
     <div class="column last headings">ON SHOW</div>
     <div id="on-show" class="column last on-show-bg print-hide">
         {% include 'includes/eos_listings_details_on_show.html' %}
@@ -79,7 +79,7 @@
  
 
 <!-- BOOKING ENQUIRIES / APPOINTMENT TO VIEW -->
-<div class="columnRight width460 margin-top30 margin-bottom30">
+<div class="columnRight width460 margin-top30 margin-bottom30 print-hide">
     <div class="column last headings">MAKE AN ENQUIRY</div>        
     <div class="columnRight margin-top20 appointment-bg print-hide">
         <form name="enquiry_form" id="id_enquiry_form" method="post" action="#id_enquiry_form">
@@ -90,7 +90,7 @@
 <!-- // BOOKING ENQUIRIES / APPOINTMENT TO VIEW -->
 
 <!-- CONTACT THE AGENT -->
-<div class="column last width377 margin-top30 margin-bottom30">
+<div class="column last width377 margin-top30 margin-bottom30 print-hide">
     <div class="column last headings">CONTACT THE AGENT</div>        
     <div class="column contact-bg print-hide last">
         {% include 'includes/eos_listings_details_contact_agent.html' %}
