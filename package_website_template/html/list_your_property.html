@@ -41,7 +41,7 @@
 
     <div id="list-property-form" class="columnRight span-24 margin-top20">
         <div class="column last span-24 ">
-        <div class="column last headings">{% if stock_for_sale %} SELLER {% if stock_to_rent %}{% endif %}{% endif %}{% if stock_to_rent %}LANDLORD {% endif %}REGISTRATION</div>
+        <div class="column last headings">{% if stock_for_sale %} SELLER {% if stock_to_rent %}/ {% endif %}{% endif %}{% if stock_to_rent %}LANDLORD {% endif %}REGISTRATION</div>
         <form method="POST"><!-- Cloesd in eos_list_your_property include -->
         <div class="column last registration-bg-top"><!-- Cloesd in eos_list_your_property include -->
             {% include 'includes/eos_list_your_property.html' %}
