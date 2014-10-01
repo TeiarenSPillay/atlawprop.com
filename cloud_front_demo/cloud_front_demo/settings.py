@@ -13,8 +13,8 @@ CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__), '..'))
 
 ### Site specifics ###
 SERVER_EMAIL = 'django@propdata.net'
-WEB_STATS    = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=site_url"
-WEBSITE_URL  = "http://site_url"
+WEB_STATS    = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=cloud_front_demo.us-staging.propdata.net"
+WEBSITE_URL  = "http://cloud_front_demo.us-staging.propdata.net"
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0] # Top heading - first part
@@ -45,10 +45,10 @@ FACEBOOK_BRANCH_IDS = [5376]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'abcrealestate_staging',                      # Or path to database file if using sqlite3.
+        'NAME': 'cloud_front_demo',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
-        'USER': 'muhammed',
-        'PASSWORD': '4b4dmuh4mm3d',
+        'USER': 'cloud_front_demo',
+        'PASSWORD': 'sdfsdfsdf',
         'HOST': 'localhost',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '',                      # Set to empty string for default.
     }
@@ -57,7 +57,7 @@ DATABASES = {
 RECAPTCHA_PUBLIC_KEY = '6LfyycISAAAAAB2PddDRop69fIS3nmk9iqLltHIs'
 RECAPTCHA_PRIVATE_KEY = '6LfyycISAAAAAIuVa0HI-P6WH_uCp88MG_aJ7TmF'
 
-ALLOWED_HOSTS = ['staging.abcrealestate.co.za']
+ALLOWED_HOSTS = ['.us-staging.propdata.net']
 
 TIME_ZONE = 'Africa/Johannesburg'
 SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
@@ -69,7 +69,7 @@ if not DEV_MODE:
     )
 
 MEDIA_ROOT = '%s/assets' % CURRENT_DIRECTORY
-ROOT_URLCONF = 'package_website_template.urls'
+ROOT_URLCONF = 'cloud_front_demo.urls'
 
 TEMPLATE_DIRS += (
     '%s/html' % CURRENT_DIRECTORY,
