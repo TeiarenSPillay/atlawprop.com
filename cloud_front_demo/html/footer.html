@@ -1,0 +1,46 @@
+<div id="footer-float" class="footer-content print-hide">
+  <div id="footer-top" class="padding-top20 padding-bottom20">
+    <div class=" container_12">
+      <div class="grid_8">&nbsp;
+     {# include 'includes/eos_base_footer_logos.html' #}
+      </div>
+      <div id="footer-logos" class="grid_4">
+      {% block social %}
+          {% if twitter or facebook or linkedin or youtube %}
+              <p class="last"><b>Follow us on...</b></p>
+              <ul class="footer-logos">
+                {% if facebook %}<li><a href="{{ facebook }}" target="_blank"><i class="social facebook_button-icon"></i></a></li>{% endif %}    
+          {% if twitter %}<li><a href="{{ twitter }}" target="_blank"><i class="social twitter_button-icon"></i></a></li>{% endif %}
+          {% if linkedin %}<li><a href="{{ linkedin }}" target="_blank"><i class="social linkedin_button-icon"></i></a></li>{% endif %}
+          {% if youtube %}<li><a href="{{ youtube }}" target="_blank"><i class="social youtube_button-icon"></i></a></li>{% endif %}
+              </ul>
+          {% endif %}
+      {% endblock social %}
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div id="footer-bottom">
+    <div class="container_12">
+    {% block footer_extra %}{% endblock footer_extra %}
+
+    {% include 'includes/eos_base_footer_links.html' %}
+    </div>
+  </div>
+  <div id="footer-copyright">
+    <div class="container_12">
+      <!-- Prop Data footer -->
+       {% block prop_data_footer %}
+      <div id="pd-footer" class="margin-bottom20">
+          <div class="grid_6">
+              <div class="grid_1 first last"><a href="http://www.propdata.net/" target="_blank" class="pd-icon"></a></div>
+              <div class="grid_5 first last margin-top5">Website Powered by <a href="http://www.propdata.net" target="_blank">Prop Data</a><br />Copyright &copy; {% now "Y" %} {{ site_name }}</div>
+          </div>
+          <div class="clearfix"></div>
+      </div>
+       {% endblock prop_data_footer %}
+      <!-- -->
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>

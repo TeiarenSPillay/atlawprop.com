@@ -112,20 +112,17 @@
 {% ifnotequal tender_count 0 %}
 <li><a href="/results/tenders/" ><b>Tenders [{{ tender_count }}]</b></a></li>
 {% endifnotequal %}
-{% ifnotequal auctions_count 0 %}
-<li><a href="/results/auctions/" ><b>Auctions [{{ auctions_count }}]</b></a></li>
-{% endifnotequal %}
-{% if region_profiles_addon %}
-<li><a href="/area-profiles/" ><b>Area Profiles</b></a></li>
-{% endif %}
 {% ifnotequal student_accommodation_count 0 %}
 <li><a href="/results/student-accommodation/" ><b>Student Accommodation [{{ student_accommodation_count }}]</b></a></li>
 {% endifnotequal %}
 <li><a href="/property-email-alerts/" ><b>Property Email Alerts</b></a></li>
+<li><a href="/bond-transfer-cost-calculator/" ><b>Calculators</b></a></li>
+{% if region_profiles_addon %}
+<li><a href="/area-profiles/" ><b>Area Profiles</b></a></li>
+{% endif %}
 {% if list_your_property_display %}
 <li><a href="/list-your-property/" ><b>List Your Property</b></a></li>
 {% endif %}
-<li><a href="/bond-transfer-cost-calculator/" ><b>Calculators</b></a></li>
 <li><a href="/news/" ><b>Latest News</b></a></li>
 {% if has_general_advice %}
 <li><a href="/news/category/general-advice/" ><b>General Advice</b></a></li>

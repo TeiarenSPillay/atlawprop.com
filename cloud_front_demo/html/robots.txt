@@ -1,2 +1,0 @@
-{% extends 'eos_robots.txt' %}
-{% block custom_urls %}{% endblock %}
