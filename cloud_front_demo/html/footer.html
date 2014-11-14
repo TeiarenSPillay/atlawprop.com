@@ -2,12 +2,14 @@
   <div id="footer-top" class="padding-top20 padding-bottom20">
     <div class=" container_12">
       <div class="grid_8">&nbsp;
-     {# include 'includes/eos_base_footer_logos.html' #}
+     {% include 'includes/eos_base_footer_logos.html' %}
       </div>
-      <div id="footer-logos" class="grid_4">
+      <div class="grid_4">
+        <div id="footer-logos">
       {% block social %}
           {% if twitter or facebook or linkedin or youtube %}
-              <p class="last"><b>Follow us on...</b></p>
+              <b>Follow us on...</b>
+              <div class="clearfix"></div>
               <ul class="footer-logos">
                 {% if facebook %}<li><a href="{{ facebook }}" target="_blank"><i class="social facebook_button-icon"></i></a></li>{% endif %}    
           {% if twitter %}<li><a href="{{ twitter }}" target="_blank"><i class="social twitter_button-icon"></i></a></li>{% endif %}
@@ -16,6 +18,7 @@
               </ul>
           {% endif %}
       {% endblock social %}
+      </div>
       </div>
     </div>
   </div>
