@@ -10,6 +10,7 @@
 @PrimaryColour: #c90d1b;
 @SecondaryColour: #215c96;
 @AccentColour: #c90d1b;
+@AltAccentColour: #333333;
 
 @ContentBlocksBG: #ffffff;
 @ContentBlocksText: #333333;
@@ -209,7 +210,7 @@ body                  { background:#FFFFFF;}
 
 
 
-.adv_search_container                                              { background: @SearchBg; .gradient(#ffffff, #e1e1e1); z-index:1100; position: relative;}
+.adv_search_container                                              { background: @SearchBg; font-size: @BaseFontSize; .gradient(#ffffff, #e1e1e1); z-index:1100; position: relative;}
 .adv_search_box1                                                   { background: @SearchBackBg;}
 .select2-container span,
 .select2-container input,
@@ -224,7 +225,7 @@ body                  { background:#FFFFFF;}
 .select2-container .select2-choice abbr                            { background: @SearchDropdownButtons}
 .select2-container .select2-choice .select2-arrow                  { border-left: none; width: 30px; line-height: 30px;}
 .select2-container .select2-choice .select2-arrow b                { background: @SearchDropdownButtons; text-align: center; font-size: 12px;}
-.select2-container .select2-choice .select2-arrow b:before         { color: @SearchDropdownTextColor; content:"\f107";  .icon-font; font-size: 18px; line-height:1; display: inline-block; vertical-align: middle; top:-1px;}
+.select2-container .select2-choice .select2-arrow b:before         { position: relative; color: @SearchDropdownTextColor; content:"\f107";  .icon-font; font-size: 18px; line-height:1; display: inline-block; vertical-align: middle; top:-1px;}
 .select2-search input                                              { background: #fff url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px; background: url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee)); background: url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%); background: url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%); background: url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;}
 .select2-search-choice-close                                       { background: none;}
 .select2-container-multi .select2-choices .select2-search-choice   { border: 1px solid #f0f0f0!important;}
@@ -507,7 +508,9 @@ h1.page-heading {
 .header-bordered .paging-total{
   font-size: 1.1em;
 }
-
+#results-filter{
+  font-size: @BaseFontSize;
+}
 #results-filter .vSelectField .select2-choice .select2-arrow b{
   background: @ActionFilterDropdownBG;
   line-height: 32px;
@@ -1128,6 +1131,47 @@ h1.page-heading {
   opacity: 1
 }
 
+#sidebar-agents{
+  .sidebar-agent-image{
+    width: 90px;
+    height: auto;
+    display: inline-block;
+    max-hieght: 120px;
+    vertical-align: top;
+  }
+  .show-number{
+    font-size: inherit;
+  }
+  .sidebar-agent-details{
+    width: 155px;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 8px;
+    font-size: 0.8em;
+    h4{
+      font-weight: 600;
+    }
+    a{
+      display: block;
+      color: inherit;
+      i{
+        margin-right: 8px;
+        display: inline-block;
+      }
+      .icon-agent-phone:before{
+        .icon-font();
+        color: @PrimaryColour;
+        content: "\f095";
+      }
+      .icon-agent-search:before{
+        .icon-font();
+        color: @PrimaryColour;
+        content: "\f002";
+      }
+    }
+  }
+}
+
 /* Results: Map Canvas */
 #results-map-container{
   overflow:hidden;
@@ -1432,7 +1476,7 @@ h1.page-heading {
 /* Results: Results List Extras - Disclaimer*/
 
 
-#disclaimer .disclaimer-text{
+.disclaimer-text{
   font-size: 0.7em;
 }
 
@@ -1622,8 +1666,12 @@ h1.page-heading {
   font-size:32px;
 }
 
-.tab-content{
+.tab-content, .tab-content.hide{
   top: -1px;
+  display: none;
+}
+.tab-content.open{
+  display: block;
 }
 
 .loader{
@@ -1989,6 +2037,7 @@ h1.page-heading {
   position:relative;
   top: 0px;
   font-size:18px;
+  color: #ffffff;
 }
 
 .listing-area-content{
@@ -2188,21 +2237,170 @@ a.link {
 #sticky-details .sticky-details-meta .property-list-land-size{
   line-height: 1em;
 }
-
-.pd_modal_close{
-  padding: 15px;
-  width: 23px;
-  height: 23px;
+#calculators{
+  .calculator-inputs{
+    width: 280px;
+    margin-right: 20px;
+    box-sizing: border-box;
+    position: relative;
+    &.expense-inputs, &.income-inputs{
+      width: 100%;
+      & input{
+        width:280px;
+      }
+    }
+    & label{
+      display: block;
+      width: 100%;
+      font-size: 0.8em;
+      margin: 0 0 10px;
+    }
+    & .currency-placeholder{
+      margin-right: 5px;
+      display: inline-block;
+      position: absolute;
+      left: 8px;
+      font-style:normal;
+      font-size: 0.8em;
+      line-height: 31px;
+    }
+    & .percentage-placeholder{
+      display: inline-block;
+      position: absolute;
+      left: 100px;
+      font-style:normal;
+      font-size: 0.8em;
+      line-height: 32px;
+    }
+    & .detail-more{
+      display: inline-block;
+      font-size: 0.8em;
+      line-height: 30px;
+      position: relative;
+      margin-left: 15px;
+      .icon-info-circle:before{
+        .icon-font();
+        content:"\f13a";
+        display: inline-block;
+        line-height: 1;
+        font-size: 17px;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+        margin-right: 10px;
+        color: @AltAccentColour;
+      }
+    }
+    & input{
+      width: 100%;
+      box-sizing: border-box;
+      background: @SidebarInputBG;
+      color: @SidebarInputText;
+      width: 100%;
+      border: 0;
+      box-sizing: border-box;
+      font-size: 0.8em;
+      padding: 4px 8px 3px 25px;
+      height: 30px;
+      &.price-input{
+        margin-bottom: 10px;
+      }
+      &.percentage-input{
+        margin-bottom: 10px;
+        margin-right: 40px;
+        padding: 4px 25px 3px 8px;
+        width: 120px;
+      }
+      &.years-input{
+        margin-bottom: 10px;
+        padding: 4px 8px 3px 8px;
+        width: 120px;
+      }
+    }
+    & .select{
+      width: 100%;
+    }
+    &.last{
+      margin-right: 0;
+    }
+  }
+  .income-table, .expense-table{
+    font-size: @BaseFontSize;
+    td{
+      padding: 3px;
+      position: relative;
+    }
+    input[type="text"]{
+      width: 100%;
+      box-sizing: border-box;
+      background: @SidebarInputBG;
+      color: @SidebarInputText;
+      border: 0;
+      padding: 4px 8px 3px 25px;
+      height: 30px;
+    }
+    
+    & .currency-placeholder{
+      margin-right: 5px;
+      display: inline-block;
+      position: absolute;
+      left: 8px;
+      font-style:normal;
+      line-height: 31px;
+      color: @SidebarInputText;
+    }
+  }
+  .calctable{
+    font-size: 0.8em;
+    .col1{
+      width: 230px;
+    }
+    .col2{
+      width: 150px;
+    }
+    .col3{
+      width: 150px;
+    }
+    th{
+      text-align: right;
+      white-space:nowrap;
+    }
+    td{
+      border-top: 1px solid #ececec;
+      text-align: right;
+      color: #999999;
+      &:nth-child(1){
+        text-align: left;
+      }
+      &.total{
+        color: #000000;
+        padding-top:  20px;
+        font-weight: 600;
+      }
+    }
+  }
+  .grand-total{
+    color: @PrimaryColour;
+    font-size: 1.1em;
+  }
+  .select2-chosen{
+    margin-right: 32px;
+  }
+  .select2-arrow b{
+    background: @ActionFilterDropdownBG;
+    line-height: 32px;
+    &:before{
+      .icon-font;
+      color: @ActionFilterDropdownIcon;
+      content: "\f0dc";
+      font-size: 17px;
+    }
+  }
 }
-.pd_modal_close:before{
-  .icon-font;
-  content:"\e60d";
-  color: #d6d6d6;
-  border: 1px solid #d6d6d6;
-  padding: 3px;
-  font-size: 20px;
+.divider{
+  border: @ContentBlocksBorder;
+  border-bottom: 0;
 }
-
 #calculator-tabs .action-button{
   
 }
@@ -2419,7 +2617,7 @@ div.email .search-button-popup        { margin-top: 5px;}
 #results-image-gallery .property-icons{ position: absolute; max-width: 192px; padding-right:6px; }
 #results-image-gallery           { position:relative;}
 
-.calctable input                 { background-color: @ButtonBgColor2; border:1px solid @ButtonBgColor2; margin-left:5px; padding:2px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFF;}
+//.calctable input                 { background-color: @ButtonBgColor2; border:1px solid @ButtonBgColor2; margin-left:5px; padding:2px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; color:#FFF;}
 .search-button-popup             { background-color: @ButtonBgColor2; border:1px solid @ButtonBgColor2; padding:2px; margin-top:10px; padding-right:3px; padding-left:3px; font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#FFF;}
 
 /* ----// END //---- */
