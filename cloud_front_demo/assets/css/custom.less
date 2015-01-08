@@ -511,11 +511,13 @@ h1.page-heading {
 #results-filter{
   font-size: @BaseFontSize;
 }
-#results-filter .vSelectField .select2-choice .select2-arrow b{
+#results-filter .vSelectField .select2-choice .select2-arrow b,
+#sidebar-contact-form .vSelectField .select2-choice .select2-arrow b{
   background: @ActionFilterDropdownBG;
   line-height: 32px;
 }
-#results-filter .vSelectField .select2-choice .select2-arrow b:before{
+#results-filter .vSelectField .select2-choice .select2-arrow b:before,
+#sidebar-contact-form .vSelectField .select2-choice .select2-arrow b{
   .icon-font;
   color: @ActionFilterDropdownIcon;
   content: "\f0dc";
@@ -1087,7 +1089,7 @@ h1.page-heading {
   font-size: 14px
 }
 
-.sidebar-input, .sidebar-textarea{
+.sidebar-input, .sidebar-textarea, .sidebar-date{
   background: @SidebarInputBG;
   color: @SidebarInputText;
   width: 100%;
@@ -1109,7 +1111,67 @@ h1.page-heading {
   font-size: 1em;
   line-height: 1em;
 }
-
+.date-input{
+  width: 120px;
+  position: relative;
+  float: left;
+  margin-right: 15px;
+  &.last{
+    margin-right: 0px;
+  }
+}
+.sidebar-date{
+  width: 120px;
+  padding: 4px 25px 3px 8px;
+  height: 30px;
+}
+.icon-sidebar-date{
+  position: absolute;
+  right: 0;
+  width: 25px;
+  text-align: center;
+  &:before{
+    .icon-font();
+    content: "\f133";
+    position: relative;
+    font-size: 20px;
+    top: 7px;
+  }
+}
+#sidebar-contact-form .vSelectField{
+  width: 120px;
+  margin-right: 15px;
+  height: 30px;
+  &.last{
+    margin-right: 0px;
+  }
+  .select2-choice{
+    background: @SidebarInputBG;
+    color: @SidebarInputText;
+    border: 0 !important;
+    min-height: 30px !important;
+  }
+  .select2-chosen{
+    line-height: 30px;
+  }
+  .select2-arrow b{
+    background: @SidebarInputBG !important;
+    color: @SidebarInputText !important;
+    line-height: 32px;
+    &:before{
+      color: @SidebarInputText !important;
+      content: "\f0dc";
+      line-height: 32px;
+    }
+  }
+}
+.sidebar-dropdown{
+    background: @SidebarInputBG !important;
+    color: @SidebarInputText !important;
+    .select2-results{
+      max-height: 162px
+    }
+}
 .sidebar-input::placeholder, .sidebar-textarea::placeholder, .full-input::placeholder{
   color: @SidebarInputPlaceholder !important;
   opacity: 1
@@ -1545,6 +1607,10 @@ h1.page-heading {
 
 .content-block .bond-assumptions{
   font-size: 0.8em;
+  color: #666666;
+  b{
+    color: #333333;
+  }
 }
 .content-block .property-list-meta{
   font-size: 0.8em;
@@ -1794,6 +1860,7 @@ h1.page-heading {
   font-size: 0.8em;
   line-height: 1.1em;
   margin: 0;
+  color: #666666;
 }
 .listing-features h5{
   margin-bottom: 0;
@@ -1803,9 +1870,11 @@ h1.page-heading {
   font-size: 0.8em;
   margin-top:0;
   line-height: 1em;
+  color: #666666;
 }
 .listing-features-content dt{
   font-weight: 600;
+  color: #333333;
 }
 .listing-features-content dt, .listing-features-content dd{
   display: inline-block;
@@ -2804,3 +2873,4 @@ ul.as-selections                        { background-color: #FFFFFF; border: 1px
   -o-transform:      @value;
   transform:         @value;
 }
+
