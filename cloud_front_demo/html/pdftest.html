@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      @page {
+        size: A4 portrait;
+        margin: 1cm;
+        @frame image_frame {
+            width: 255pt;
+            top: 50pt;
+            -pdf-frame-border: 1;    /* for debugging the layout */
+        }
+        @frame content_frame {
+            left: 1cm;
+            width: 255pt;
+            top: 50pt;
+            -pdf-frame-border: 1;    /* for debugging the layout */
+        }
+      }
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="image_frame">
+    <img src="/assets/img/custom/layout/pfv-logo.gif" />
+    </div>
+    <div id="image_frame">
+      <h1>This is a test heading</h1>
+      <p>This is some filler text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer mattis, nunc vel sagittis faucibus, tortor leo tincidunt enim, non finibus dui purus sed tortor. Phasellus vitae quam interdum, molestie purus ac, auctor ipsum. Praesent lobortis risus in commodo vulputate. Sed auctor purus quis varius fermentum.</p>
+    </div>
+  </body>
+</html>
