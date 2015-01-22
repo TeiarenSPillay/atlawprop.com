@@ -34,16 +34,14 @@
     <div class="container_12">
       <!-- Prop Data footer -->
        {% block prop_data_footer %}
-      <div id="pd-footer" class="margin-bottom20">
-          <div class="grid_6">
-              <div class="grid_1 first last"><a href="http://www.propdata.net/" target="_blank" class="pd-icon"></a></div>
-              <div class="grid_5 first last margin-top5">Website Powered by <a href="http://www.propdata.net" target="_blank">Prop Data</a><br />Copyright &copy; {% now "Y" %} {{ site_name }}</div>
+          <div id="pd-footer" class="margin-bottom20 clearfix">
+              <div class="grid_6">
+                  <div class="grid_1 first last"><a href="http://www.propdata.net/" target="_blank" class="pd-icon"></a></div>
+                  <div class="grid_5 first last margin-top5">Website Powered by <a href="http://www.propdata.net" target="_blank">Prop Data</a><br />Copyright &copy; {% now "Y" %} {{ site_name }}</div>
+              </div>
           </div>
-          <div class="clearfix"></div>
-      </div>
        {% endblock prop_data_footer %}
       <!-- -->
-      <div class="clearfix"></div>
     </div>
   </div>
 </div>

@@ -2749,7 +2749,6 @@ a.link {
     background-image:none;
     padding-left:30px;
     display: inline-block;
-    font-size: @BaseFontSize;
     margin-top:-2px;
     &:before{
         .icon-font();
@@ -2807,8 +2806,91 @@ a.link {
     left: -15px;
     position: absolute;
   }
+  
+  
 }
-
+.branch-links{
+  a{
+    margin-right: 5px;
+    float: left;
+  }
+  .branch-icon{
+    width: 32px;
+    height: 32px;
+    box-sizing: border-box;
+    display: inline-block;
+    line-height: 32px;
+    vertical-align: bottom;
+    text-align: center;
+    &.icon-facebook{
+      background:#3b5998;
+      &:before{
+        .icon-font();
+        width: 0;
+        height: 0;
+        content:"\f09a";
+        color: #ffffff;
+        line-height: 32px;
+        font-size: 24px;
+        position: relative;
+        left: 3px;
+      }
+      &:hover{
+        background: lighten(#3b5998, 5%);
+      }
+    }
+    &.icon-linkedin{
+      background:#007bb6;
+      &:before{
+        .icon-font();
+        width: 0;
+        height: 0;
+        content:"\f0e1";
+        color: #ffffff;
+        line-height: 32px;
+        font-size: 24px;
+        position: relative;
+        left: 1px;
+      }
+      &:hover{
+        background: lighten(#007bb6, 5%);
+      }
+    }
+    &.icon-twitter{
+      background:#00aced;
+      &:before{
+        .icon-font();
+        width: 0;
+        height: 0;
+        content:"\f099";
+        color: #ffffff;
+        line-height: 32px;
+        font-size: 24px;
+        position: relative;
+      }
+      &:hover{
+        background: lighten(#00aced, 5%);
+      }
+    }
+    &.icon-youtube{
+      background:#bb0000;
+      &:before{
+        .icon-font();
+        width: 0;
+        height: 0;
+        content:"\f167";
+        color: #ffffff;
+        line-height: 32px;
+        font-size: 24px;
+        position: relative;
+        left: 1px;
+      }
+      &:hover{
+        background: lighten(#bb0000, 5%);
+      }
+    }
+  }
+}
 .meta-section{
   border-top: @ContentBlocksBorder;
   padding-top: 15px;
@@ -2837,9 +2919,9 @@ h5                            { font-family:@FontFamily; font-size:0.83em; color
 /* text
 ------------------------------------------------------------ */
 /*.quote                        { font-family:@FontFamily; font-size:17px; font-weight:600; color:@Color2; } /* Slogan Text */
-.headings                     { font-family:@FontFamily; font-size:1.5em; color:@HeadingsColor; display: block; width: 100%; line-height:1; font-weight: 400;}
-.sub-headings                 { font-family:@FontFamily; font-size:1.125em; color:@SubHeadingsColor; display: block; width: 100%; line-height:1em; font-weight: 400;}
-.sub-headings-alt             { color:@HeadingsColor; font-size:1.125em; font-weight: 400; }
+.headings                     { font-family:@FontFamily; font-size:1.6em; color:@HeadingsColor; display: block; width: 100%; line-height:1; font-weight: 400;}
+.sub-headings                 { font-family:@FontFamily; font-size:1.325em; color:@SubHeadingsColor; display: block; width: 100%; line-height:1em; font-weight: 400;}
+.sub-headings-alt             { color:@HeadingsColor; font-size:1.325em; font-weight: 400; }
 .article-headings             { font-family:@FontFamily; font-size:1em; color: @ArticleHeadingsColor; font-weight: 400;}
 h2#email                      { font-family:@FontFamily; font-size:19px; color:@HeadingsColor; display: block; width: 100%; line-height: 36px;}
 /* ----// END //---- */
@@ -3074,17 +3156,17 @@ a:hover.currency-converter    { color: @LinkActive; background-image:url(/eos/im
 /* Footer
 ------------------------------------------------------------ */
 
-.footer-content               { color:@FooterTextColor; font-size:0.7em; }
+.footer-content               { color:@FooterTextColor; font-size:100%; }
 #footer-top                   { background: #e1e1e1; line-height: 1; }
 #footer-bottom                { .gradient(#0c3c60, #225c96); }
 #footer-copyright             { background: #225c96;}
 
-.footer-content h1            { color:@FooterTextColor; font-size: 2em;}
+.footer-content h1            { color:@FooterTextColor; }
 .footer-content a             { color:@FooterTextColor;}
 .footer-content a:hover,
 .footer-content a:active,
 .footer-content a:focus       { color:@FooterlinkHover;}
-.footer-divider               { border: 0; border-bottom: 1px solid rgba(255,255,255,0.8);}
+.footer-divider               { border: 0; border-bottom: 1px solid rgba(255,255,255,0.8); margin: 20px auto;}
 #footer-heading > .footer-divider  { border: 0; border-bottom: 1px solid rgba(255,255,255,0);}
 #footer-logos,
 #footer-logos-1,
@@ -3092,6 +3174,7 @@ a:hover.currency-converter    { color: @LinkActive; background-image:url(/eos/im
 ul.footer-logos               { list-style-type:none; padding: 0;}
 ul.footer-logos li            { display: inline-block; margin-left: 5px;}
 #footer-logos                 { top: 13px; }
+#pd-footer                    { font-size: 80%;}
 
 .pd-icon:before   { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; position: absolute; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
 .pd-icon:before   { content: "\e60e"; font-size: 39px; line-height: 40px; position: relative; color: @FooterTextColor; }
