@@ -1,1 +1,15 @@
-{% extends "eos_base.html" %}
+{% extends "base.html" %}
+{% block seo %}
+{% if company_profile.meta_tags %}
+    {{ company_profile.meta_tags|safe }}
+{% endif %}
+{% endblock seo %}
+{% block title %}{% if company_profile.seo_page_title %}{{ company_profile.seo_page_title }}{% else %}Company Profile{% endif %}{% endblock title %}
+{% block page-title %}{% if company_profile.seo_page_title %}{{ company_profile.seo_page_title }}{% else %}Company Profile{% endif %}{% endblock page-title %}
+{% block breadcrumb %}{% if company_profile.seo_page_title %}{{ company_profile.seo_page_title }}{% else %}Company Profile{% endif %}{% endblock breadcrumb %}
+{% block activetab %}about_us_tab{% endblock activetab %}
+{% block current-page %}profile{% endblock current-page %}
+{% block quote %}{{ site_quote }}{% endblock quote %}
+{% block content %}
+    {{ company_profile.content|safe }}
+{% endblock content %}

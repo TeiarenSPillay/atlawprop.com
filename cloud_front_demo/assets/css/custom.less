@@ -96,7 +96,9 @@
 @FeatureText: #333333;
 
 @ButtonPrimaryBG: @PrimaryColour;
+@ButtonPrimaryHover:lighten(@ButtonPrimaryBG, 5%);
 @ButtonPrimaryText: #FFFFFF;
+@ButtonPrimaryHoverText: #FFFFFF;
 
 @FeaturedPropertyBorder: #BDBDBD;
 @ListingHoverShadow: rgba(0,0,0,0.05);
@@ -130,11 +132,12 @@
 /* Main Background
 ------------------------------------------------------------ */
 html                  { font-family: @FontFamily; font-size: @BaseFontSize;}
-body                  { background:#FFFFFF;}
+body                  { background:#FFFFFF; font-size: 80%; }
 .container            { width:100%;}
 .heading-margin       { padding-left:25px;}
 .email .heading-margin{ padding-left:0px; margin: 0 0 10px!important;}
 .clear                { display: block; width:100%; clear:both;}
+
 /* ----// END //---- */
 
 
@@ -168,7 +171,7 @@ body                  { background:#FFFFFF;}
 .menu-bg ul                                  { margin:0 0 0 0; padding:0; list-style:none;}
 .menu-bg li                                  { position:relative; text-transform:uppercase; font-weight:bold;}
 .menu-bg > ul > li                           { display:inline; padding:0; float:left; position: relative; z-index:1000; }
-.menu-bg > ul > li > a                       { color:#FFFFFF; background-color:#AF0D18; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; padding: 0 12px; font-size:0.7em; line-height: 3em; position: relative; z-index:1000;}
+.menu-bg > ul > li > a                       { color:#FFFFFF; background-color:#AF0D18; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; font-size: 90%; padding: 0 12px; line-height: 3em; position: relative; z-index:1000;}
 .menu-bg > ul > li:hover > a                 { color:#FFFFFF; background-color:#990000;}
 .menu-bg > ul > li.active > a                { color:#FFFFFF; background-color:#990000; display:block; border-left:1px solid #CE0D1A; border-right:1px solid #9E0A16; }
 
@@ -188,7 +191,7 @@ body                  { background:#FFFFFF;}
 .fadeIn .menu-bg > ul > li:hover > ul                { height: auto; opacity:1;}
 
 .menu-bg > ul > li > ul > li                 { width: 100%; white-space: nowrap; }
-.menu-bg > ul > li > ul > li a               { color:#FFFFFF; background:#990000; padding: 0 1.2em; font-size: 0.7em; line-height: 2.5em; display:block; border-bottom: 1px solid #AD3333;}
+.menu-bg > ul > li > ul > li a               { color:#FFFFFF; background:#990000; padding: 0 1.2em; font-size: 80%; line-height: 2.5em; display:block; border-bottom: 1px solid #AD3333;}
 .menu-bg > ul > li > ul > li a:hover         { color:#FFFFFF; background:#B0000D; }
 
 .width64      { width:74px;}
@@ -211,38 +214,37 @@ body                  { background:#FFFFFF;}
 
 
 
-.adv_search_container                                              { background: @SearchBg; font-size: @BaseFontSize; .gradient(#ffffff, #e1e1e1); z-index:1100; position: relative;}
+.adv_search_container                                              { background: @SearchBg; font-size: @BaseFontSize; .gradient(#ffffff, #e1e1e1); z-index:1100; position: relative; font-size:100%}
 .adv_search_box1                                                   { background: @SearchBackBg;}
 .select2-container span,
-.select2-container input,
-.select2-drop                                                      { font-size: 0.8em;}
+.select2-container input                                           { font-size: 100%;}
 .select2-drop .select2-results                                     { padding: 0; margin: 0;}
 .select2-container .select2-choice,
 .select2-container-multi .select2-choices                          { background: #ffffff; border: 1px solid @SearchBorders !important; min-height: 32px !important; width: auto; box-sizing: border-box; }
 .select2-container-multi .select2-choices                          { padding: 0px;}
 .select2-container-multi.select2-container-active .select2-choices { border: 1px solid #aaaaaa; box-shadow: none; outline: medium none;}
 .select2-drop                                                      { border: 1px solid @SearchBorders; border-width: 0 1px 1px; box-shadow: none; color: #000000;}
-.select2-container-multi .select2-choices .select2-search-choice   { font-size: 0.8em; -moz-user-select: none; background-clip: padding-box; background-color: #f0f0f0; background-image: linear-gradient(to top, #f0f0f0 20%, #f0f0f0 50%, #f0f0f0 52%, #f0f0f0 100%); border: 1px solid #f0f0f0; border-radius: 0px; box-shadow: none; color: #333333; cursor: default; line-height: 20px; height: 21px; padding: 0px 5px 0px 18px; position: relative; box-sizing: border-box; display: inline-block; vertical-align: middle;}
+.select2-container-multi .select2-choices .select2-search-choice   {  -moz-user-select: none; background-clip: padding-box; background-color: #f0f0f0; background-image: linear-gradient(to top, #f0f0f0 20%, #f0f0f0 50%, #f0f0f0 52%, #f0f0f0 100%); border: 1px solid #f0f0f0; border-radius: 0px; box-shadow: none; color: #333333; cursor: default; line-height: 20px; height: 21px; padding: 0px 5px 0px 18px; position: relative; box-sizing: border-box; display: inline-block; vertical-align: middle;}
 .select2-container .select2-choice abbr                            { background: @SearchDropdownButtons}
 .select2-container .select2-choice .select2-arrow                  { border-left: none; width: 30px; line-height: 30px;}
 .select2-container .select2-choice .select2-arrow b                { background: @SearchDropdownButtons; text-align: center; font-size: 12px;}
 .select2-container .select2-choice .select2-arrow b:before         { position: relative; color: @SearchDropdownTextColor; content:"\f107";  .icon-font; font-size: 18px; line-height:1; display: inline-block; vertical-align: middle; top:-1px;}
-.select2-search input                                              { background: #fff url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px; background: url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee)); background: url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%); background: url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%); background: url(/assets/img/custom/layout/select2.png) no-repeat 100% -22px, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;}
+.select2-search input                                              { background: #fff 100% -22px; background: 100% -22px, -webkit-gradient(linear, left bottom, left top, color-stop(0.85, #fff), color-stop(0.99, #eee)); background: 100% -22px, -webkit-linear-gradient(center bottom, #fff 85%, #eee 99%); background: 100% -22px, -moz-linear-gradient(center bottom, #fff 85%, #eee 99%); background: 100% -22px, linear-gradient(to bottom, #fff 85%, #eee 99%) 0 0;}
 .select2-search-choice-close                                       { background: none;}
 .select2-container-multi .select2-choices .select2-search-choice   { border: 1px solid #f0f0f0!important;}
 .select2-search-choice-close:before                                { .icon-font; position: relative; content: "\f00d"; margin-left: 0px; font-size: 12px; margin-top: -10px; z-index: 0; top: 1px; }
 
 .id_neighbouring_suburbs                                           { margin-top: 20px; }
-.id_neighbouring_suburbs a                                         { font-size: 0.8em;}
+.id_neighbouring_suburbs a                                         { }
 #id_extra_suburbs                                                  { margin: 0; padding: 0;}
 
 fieldset p                                                         { margin-bottom: 8px;}
 fieldset p > input[type="checkbox"]                                { display: none; }
-fieldset p > input[type="checkbox"] + label                        { position: relative; font-size: 0.8em;}
+fieldset p > input[type="checkbox"] + label                        { position: relative;}
 fieldset p > input[type="checkbox"] + label:before                 { content: " "; background: #ffffff; width:14px; height: 14px; border: 1px solid #d6d6d6; display: inline-block; position: relative; left: 0; top: 3px; margin-right: 4px;}
 fieldset p > input[type="checkbox"]:checked + label:after          { .icon-font; content: "\f00c"; font-size: 14px; top: 1px; left: 2px; color: @SearchTicks;font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; position: absolute; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
 fieldset p > input[type="checkbox"] + label:hover                  { cursor: pointer;}
-.adv_search_heading                                                { color: @SearchTextColor1; font-size: 0.8em}
+.adv_search_heading                                                { color: @SearchTextColor1;}
 .adv_search_types input:not(.select2-input)                        { box-sizing: border-box; width: 100%; min-height:32px }
 .adv_search_types .select                                          { box-sizing: border-box; width: 100%; min-height:32px }
 
@@ -256,8 +258,8 @@ fieldset p > input[type="checkbox"] + label:hover                  { cursor: poi
 .web_ref_search_link a:before                                      { margin-right: 4px;.icon-font; position:relative; content: "\f0e2"; color: @SearchWebRef; margin-top: -1px; font-size: 13px; z-index: 0;}
 .adv_search_webref_back_link a:before                              { margin-right: 4px;.icon-font; position:relative; content: "\f0e2"; color: @SearchWebRef; ;margin-top: -1px; font-size: 13px; z-index: 0;}
 
-.adv_search_bottom                                                 { margin-top:8px; font-size: 0.8em;}
-#id_web_ref_search_form                                            { font-size: 0.8em; height: 72px;}
+.adv_search_bottom                                                 { margin-top:8px;}
+#id_web_ref_search_form                                            { height: 72px;}
 #id_web_ref_search_form input:not(.select2-input)                  { box-sizing: border-box; min-height:32px }
 
 .adv_search_call                                                   { float: right;}
@@ -317,20 +319,24 @@ input:-ms-input-placeholder                                        { color: #999
   height: 32px;
   min-height: 32px;
   line-height: 32px;
-  padding: 0 8px;
-  font-size: 0.8em;
+  padding: 0 12px;
+  display: inline-block;
 }
 
 .primary-button{
   background: @ButtonPrimaryBG;
   color: @ButtonPrimaryText;
+  &:hover{
+  background: @ButtonPrimaryHover;
+  color: @ButtonPrimaryHoverText;
+  }
 }
 
 
 /* Page: Top - Breadcrumbs */
 
 .breadcrumbs{
-  font-size: 0.7em;
+  font-size: 85%;
 }
 
 .breadcrumbs .breadcrumbs-dark { 
@@ -403,7 +409,6 @@ h1.page-heading {
   margin-left: 10px;
   height: 32px;
   box-sizing: border-box;
-  font-size: 0.8em;
   display: inline-block;
   vertical-align: middle;
 }
@@ -428,7 +433,7 @@ h1.page-heading {
   vertical-align: middle;
   font-size: 20px;
   line-height: 34px;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 .sticky-header .filter-submit .icon-sticky-filter:before{
   .icon-font;
@@ -446,7 +451,6 @@ h1.page-heading {
   background: @ActionButtonBG;
   color: @ActionButtonText;
   height: 50px;
-  font-size: 0.8em;
   position:relative;
   z-index: 901;
 }
@@ -501,7 +505,6 @@ h1.page-heading {
   border-bottom: @FilterBorders;
   height: 50px;
   line-height: 31px;
-  font-size: 0.8em;
 }
 .header-bordered .paging-current{
   font-size: 1.1em;
@@ -510,15 +513,17 @@ h1.page-heading {
   font-size: 1.1em;
 }
 #results-filter{
-  font-size: @BaseFontSize;
+  font-size: 100%;
 }
 #results-filter .vSelectField .select2-choice .select2-arrow b,
-#sidebar-contact-form .vSelectField .select2-choice .select2-arrow b{
+#sidebar-contact-form .vSelectField .select2-choice .select2-arrow b,
+.header-bordered .vSelectField .select2-choice .select2-arrow b{
   background: @ActionFilterDropdownBG;
   line-height: 32px;
 }
 #results-filter .vSelectField .select2-choice .select2-arrow b:before,
-#sidebar-contact-form .vSelectField .select2-choice .select2-arrow b{
+#sidebar-contact-form .vSelectField .select2-choice .select2-arrow b:before,
+.header-bordered .vSelectField .select2-choice .select2-arrow b:before{
   .icon-font;
   color: @ActionFilterDropdownIcon;
   content: "\f0dc";
@@ -589,12 +594,10 @@ h1.page-heading {
   height: 32px;
   box-sizing: border-box;
   padding: 4px 8px;
-  font-size: 0.8em;
   border: none;
   margin-right: 10px;
 }
 .results-alerts-mini span{
-  font-size: 0.8em;
 }
 
 #results-favourites{
@@ -708,7 +711,6 @@ h1.page-heading {
     border-right:@ContentBlocksBorder;
     border-bottom:@ContentBlocksBorder;
     .property-list-description{
-      font-size: 0.8em;
       .results-content{
         line-height: 1.1em;
       }
@@ -721,7 +723,6 @@ h1.page-heading {
     position: absolute;
     bottom: 15px;
     left: 15px;
-    font-size: 0.8em;
   }
 }
 
@@ -918,7 +919,6 @@ h1.page-heading {
 
 #sidebar-pdf{
   box-sizing: border-box;
-  font-size: 0.8em;
 }
 
 #sidebar-pdf .icon-sidebar-pdf{
@@ -937,7 +937,6 @@ h1.page-heading {
 
 #sidebar-print{
   box-sizing: border-box;
-  font-size: 0.8em;
 }
 
 #sidebar-print .icon-sidebar-print{
@@ -957,7 +956,6 @@ h1.page-heading {
 
 #sidebar-scan{
   box-sizing: border-box;
-  font-size: 0.8em;
 }
 
 #sidebar-scan .icon-sidebar-scan{
@@ -977,7 +975,6 @@ h1.page-heading {
 
 #sidebar-share{
   box-sizing: border-box;
-  font-size: 0.8em;
 }
 
 #sidebar-share .icon-sidebar-share{
@@ -1014,7 +1011,6 @@ h1.page-heading {
   color:#333333;
 }
 .sidebar-qr-code .qr-code-content{
-  font-size: 0.8em;
   padding-left: 10px;
   line-height: 1em;
 }
@@ -1085,7 +1081,6 @@ h1.page-heading {
   padding: 5px;
 }
 .sidebar-social-sharing .sidebar-sharing span{
-  font-size: 0.8em;
   position: absolute;
   bottom: 3px;
   right: 5px;
@@ -1158,7 +1153,6 @@ h1.page-heading {
   color: @ContentBlocksText;;
   border: @ContentBlocksBorder;
   padding: 20px;
-  font-size: @BaseFontSize;
 }
 .sidebar-email-friend{
   padding: 0;
@@ -1170,7 +1164,7 @@ h1.page-heading {
   top:1px;
 }
 .sidebar-contact .show-number{
-  font-size: 0.8em;
+
 }
 .sidebar-contact h2{
   font-size: 2em;
@@ -1196,7 +1190,6 @@ h1.page-heading {
   width: 100%;
   border: @SidebarInputBorder;
   box-sizing: border-box;
-  font-size: 0.8em;
 }
 .sidebar-input{
   padding: 4px 8px 3px;
@@ -1209,7 +1202,6 @@ h1.page-heading {
   resize: none;
 }
 .sidebar-contact p{
-  font-size: 1em;
   line-height: 1em;
 }
 .date-input{
@@ -1310,7 +1302,6 @@ h1.page-heading {
     display: inline-block;
     vertical-align: top;
     margin-left: 8px;
-    font-size: 0.8em;
     h4{
       font-weight: 600;
     }
@@ -1353,9 +1344,6 @@ h1.page-heading {
 
 
 /* Results: Results List */
-#results-list{
-  font-size: @BaseFontSize;
-}
 
 #results-list .property-list-item {
   background: @ContentBlocksBG;
@@ -1426,13 +1414,11 @@ h1.page-heading {
 }
 #results-list .property-list-item .property-list-description{
   height: 108px;
-  font-size: 0.8em;
   line-height: 1.1em;
 }
 #results-list .property-list-item .property-list-webref{
   position: absolute;
   bottom: 0px;
-  font-size: 0.8em;
   line-height:1;
   vertical-align: bottom;
 }
@@ -1508,7 +1494,6 @@ h1.page-heading {
 }
 #results-list .block-content{
   color: @ContentBlocksText;
-  font-size: 0.8em;
   line-height: 1.1em;
   display: inline-block;
   width: 502px;
@@ -1569,7 +1554,6 @@ h1.page-heading {
 #results-list .property-list-news-article-box .news-article-content{
   display: inline-block;
   width: 502px;
-  font-size: 0.8em;
   position: relative;
   padding-bottom: 30px;
 }
@@ -1589,11 +1573,13 @@ h1.page-heading {
 
 .results-email-alerts-box{
   padding: 20px;
+  p, input {
+  }
+  button{
+    padding: 0 8px;
+  }
 }
 
-.results-email-alerts-box p{
-  font-size: 0.8em;
-}
 .results-email-alerts-box .icon-email-alerts{
   margin-right: 10px;
   height: 100%;
@@ -1644,15 +1630,14 @@ h1.page-heading {
   height: 30px;
   border: 0;
   box-sizing: border-box;
-  font-size: 0.8em;
   padding: 4px 8px 3px;
   line-height: 30px;
 }
 /* Results: Results List Extras - Disclaimer*/
 
 
-.disclaimer-text{
-  font-size: 0.7em;
+p.disclaimer-text{
+  font-size: 80%;
 }
 
 
@@ -1679,7 +1664,6 @@ h1.page-heading {
 .content-block {
   padding: 20px;
   position: relative;
-  font-size: @BaseFontSize;
   background: @ContentBlocksBG;
   border: @ContentBlocksBorder;
   color: @ContentBlocksText;
@@ -1719,7 +1703,6 @@ h1.page-heading {
 }
 
 .content-block .bond-assumptions, .content-block .holiday-rates, .content-block .holiday-notes{
-  font-size: 0.8em;
   color: #666666;
   b, strong {
     color: #333333;
@@ -1732,28 +1715,28 @@ h1.page-heading {
   }
 }
 .content-block .property-list-meta{
-  font-size: 0.8em;
+  font-size: 80%;
 }
 #details-list .property-list-meta .property-list-land-size{
   text-align: right;
   margin-top: 17px;
 }
-#details-list .property-list-meta .property-list-beds,
-#details-list .property-list-meta .property-list-baths,
-#details-list .property-list-meta .property-list-garages{
+.property-list-meta .property-list-beds,
+.property-list-meta .property-list-baths,
+.property-list-meta .property-list-garages{
   text-align: center;
 }
 #details-list .property-list-meta span{
   display: inline-block;
   width: 17px;
 }
-#details-list .property-list-meta .icon-beds,
-#details-list .property-list-meta .icon-baths,
-#details-list .property-list-meta .icon-garages{
+.property-list-meta .icon-beds,
+.property-list-meta .icon-baths,
+.property-list-meta .icon-garages{
   margin-right: 4px;
   color: @FeatureIcon;
 }
-#details-list .property-list-meta .icon-beds:before{
+.property-list-meta .icon-beds:before{
   .icon-font;
   content: "\e606";
   position:relative;
@@ -1761,7 +1744,7 @@ h1.page-heading {
   left:0px;
   font-size:22px;
 }
-#details-list .property-list-meta .icon-baths:before{
+.property-list-meta .icon-baths:before{
   .icon-font;
   content: "\e605";
   position:relative;
@@ -1769,7 +1752,7 @@ h1.page-heading {
   left:0px;
   font-size:22px;
 }
-#details-list .property-list-meta .icon-garages:before{
+.property-list-meta .icon-garages:before{
   .icon-font;
   content: "\e609";
   position:relative;
@@ -1987,7 +1970,6 @@ h1.page-heading {
 }
 
 .listing-description p{
-  font-size: 0.8em;
   line-height: 1.1em;
   margin: 0;
   color: #666666;
@@ -1997,7 +1979,6 @@ h1.page-heading {
   color: #000000;
 }
 .listing-features-content dl{
-  font-size: 0.8em;
   margin-top:0;
   line-height: 1em;
   color: #666666;
@@ -2013,7 +1994,6 @@ h1.page-heading {
 }
 
 .listing-on-show .on-show-meta{
-  font-size: 0.8em;
   line-height: 20px;
 }
 
@@ -2044,7 +2024,6 @@ h1.page-heading {
   margin: 0;
 }
 .listing-on-show .on-show-directions p{
-  font-size: 0.8em;
   margin: 0;
 }
 .listing-on-show .on-show-get-directions{
@@ -2054,7 +2033,6 @@ h1.page-heading {
   margin: 0 0 5px 0;
 }
 .listing-on-show .on-show-get-directions .directions-input{
-  font-size: 0.8em;
   width: 277px;
   line-height: 32px;
   padding: 0px 8px;
@@ -2079,7 +2057,6 @@ h1.page-heading {
 }
 .listing-downloads .document-table td{
   padding: 6px 8px;
-  font-size: 0.8em;
   box-sizing: border-box;
 }
 .listing-downloads .document-table .col-document-name{
@@ -2194,7 +2171,6 @@ h1.page-heading {
   background: rgba(0,0,0,0.7);
   color: #ffffff;
   padding: 0px 8px;
-  font-size: 0.8em;
   .icons{
     padding: 0px 8px;
     height: 30px;
@@ -2285,7 +2261,6 @@ h1.page-heading {
 .transparent-red.top-left{
   background: #c4151e;
   padding: 0px 8px;
-  font-size: 0.8em;
   color: #ffffff;
   position: absolute;
   height: 30px;
@@ -2343,7 +2318,6 @@ h1.page-heading {
 }
 
 .listing-area-content{
-  font-size: 0.8em;
   line-height: 1.1em;
 }
 
@@ -2352,7 +2326,6 @@ a.link {
   display: inline-block;
 }
 .make-an-offer-meta span{
-  font-size: 0.8em;
   line-height: 1.1em;
 }
 #make-an-offer-form .half.first{
@@ -2367,7 +2340,6 @@ a.link {
   width: 100%;
   border: 0;
   box-sizing: border-box;
-  font-size: 0.8em;
   padding: 0px 8px;
   line-height: 30px;
   height: 30px;
@@ -2554,7 +2526,6 @@ a.link {
     & label{
       display: block;
       width: 100%;
-      font-size: 0.8em;
       margin: 0 0 10px;
     }
     & .currency-placeholder{
@@ -2563,7 +2534,6 @@ a.link {
       position: absolute;
       left: 8px;
       font-style:normal;
-      font-size: 0.8em;
       line-height: 31px;
     }
     & .percentage-placeholder{
@@ -2571,12 +2541,10 @@ a.link {
       position: absolute;
       left: 100px;
       font-style:normal;
-      font-size: 0.8em;
       line-height: 32px;
     }
     & .detail-more{
       display: inline-block;
-      font-size: 0.8em;
       line-height: 30px;
       position: relative;
       margin-left: 15px;
@@ -2601,7 +2569,6 @@ a.link {
       width: 100%;
       border: 0;
       box-sizing: border-box;
-      font-size: 0.8em;
       padding: 4px 8px 3px 25px;
       height: 30px;
       &.price-input{
@@ -2653,7 +2620,6 @@ a.link {
     }
   }
   .calctable{
-    font-size: 0.8em;
     .col1{
       width: 230px;
     }
@@ -2720,19 +2686,15 @@ a.link {
 }
 
 
-.container_12 p{
-  font-size: 0.8em;
-}
-
 .form-section{
   border-top: @ContentBlocksBorder;
   padding-top: 20px;
   b{
-    font-size: 0.8em;
   }
   .pull-left {
-    &:not(.last), &:not(.full){
     padding-right: 2%;
+    &.last, &.full,&:last-child{
+    padding-right: 0%;
     }
     input[type='text']:not(.select2-input), input[type='email'], input[type='number']{
       background: @SidebarInputBG;
@@ -2740,23 +2702,20 @@ a.link {
       width: 100%;
       border: @SidebarInputBorder;
       box-sizing: border-box;
-      font-size: 0.8em;
       padding: 4px 8px 3px;
       height: 30px;
     }
     .vSelectField {
       width:100%;
     }
-    &:last-child{
-      padding-right: 0;
-    }
+    
     #ask-price-meters{
-    font-size: 0.8em;
     height: 30px;
     line-height: 30px;
     margin-top: 1.5em;
     }
     textarea{
+      box-sizing: border-box;
       background: @SidebarInputBG;
       color: @SidebarInputText;
       border: @SidebarInputBorder;
@@ -2785,13 +2744,90 @@ a.link {
   }
 }
 
+.quick-search{
+    background-color: none;
+    background-image:none;
+    padding-left:30px;
+    display: inline-block;
+    font-size: @BaseFontSize;
+    margin-top:-2px;
+    &:before{
+        .icon-font();
+        color: @ButtonIconColor;
+        content: "\f002";
+        left: -26px;
+        font-size: 17px;
+        float:left;
+        position: relative;
+        top: 17px;
+    }
+}
+
+.agent-quick-search{
+  width: 100%;
+}
+
+.agent-search-box{
+  font-size: 100%;
+  
+  .agent-image{
+    float: left;
+    margin-right: 15px;
+    width: 100px;
+    height: 150px;
+  }
+  .agent-meta{
+    width: 303px;
+  }
+  .agent-links a{
+    font-size: 100%;
+  }
+  
+  .agent-table{
+    margin: 26px 0 20px;
+    line-height: 1.5em;
+  }
+}
+
+.branch-meta{
+  .border-left{
+    position: relative;
+  }
+  b{
+    font-size: 100%;
+  }
+  .border-left:before{
+    content: "";
+    width: 0px;
+    height: 100%;
+    border-right: @ContentBlocksBorder;
+    border-style: none  dotted none none;
+    display: block;
+    top: 0;
+    left: -15px;
+    position: absolute;
+  }
+}
+
+.meta-section{
+  border-top: @ContentBlocksBorder;
+  padding-top: 15px;
+}
+
+.errorlist{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: #ce000f;
+}
+
 /* Headings
 ------------------------------------------------------------ */
 h1                            { font-family:@FontFamily; font-size: 2em; line-height: 1; color:@H1Color; font-weight:300; }
 
-h2                            { font-family:@FontFamily; font-size:15px; color:@Color2; font-weight:600; text-transform: uppercase;}
-#calc-heading-bond h2         { font-family:@FontFamily; font-size:15px; color:@Color2; font-weight:600; text-transform: uppercase;}
-h3                            { font-family:@FontFamily; font-size:15px; color:@Color1; font-weight:600; margin-top:0px; padding-top:0px; margin-bottom:10px;}
+h2                            { font-family:@FontFamily; font-size:1.8em; color:@Color2; font-weight:300; text-transform: uppercase;}
+#calc-heading-bond h2         { font-family:@FontFamily; font-size:1.8em; color:@Color2; font-weight:600; text-transform: uppercase;}
+h3                            { font-family:@FontFamily; font-size:1.5em; color:@Color1; font-weight:600; margin-top:0px; padding-top:0px; margin-bottom:10px;}
 h5                            { font-family:@FontFamily; font-size:0.83em; color:#333333; font-weight:600; margin-top:0px; padding-top:0px; margin-bottom:10px;}
 .heading                      { font-family:Arial, Helvetica, sans-serif; font-size:19px; font-weight:normal; color:#013667; }
 .heading-icon                 { display: none !important; }
@@ -2800,7 +2836,7 @@ h5                            { font-family:@FontFamily; font-size:0.83em; color
 
 /* text
 ------------------------------------------------------------ */
-.quote                        { font-family:@FontFamily; font-size:17px; font-weight:600; color:@Color2; } /* Slogan Text */
+/*.quote                        { font-family:@FontFamily; font-size:17px; font-weight:600; color:@Color2; } /* Slogan Text */
 .headings                     { font-family:@FontFamily; font-size:1.5em; color:@HeadingsColor; display: block; width: 100%; line-height:1; font-weight: 400;}
 .sub-headings                 { font-family:@FontFamily; font-size:1.125em; color:@SubHeadingsColor; display: block; width: 100%; line-height:1em; font-weight: 400;}
 .sub-headings-alt             { color:@HeadingsColor; font-size:1.125em; font-weight: 400; }
@@ -2827,7 +2863,7 @@ h2#email                      { font-family:@FontFamily; font-size:19px; color:@
 .bullets-addition ul li:before { position: absolute; left: -2.14285714em; width: 2.14285714em; text-align: center; content: ""; line-height: 20px; top: -3px; color: @Color1; font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 25px; position: absolute; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
 
 .bullets            { padding-left: 0; margin-left: 2.14285714em; list-style-type: none;}
-.bullets li         { position: relative; list-style-image:none; list-style-type:0; background-image:none; background-repeat:no-repeat; padding-left:0px; font: 12px/20px @FontFamily;}
+.bullets li         { position: relative; list-style-image:none; list-style-type:0; background-image:none; background-repeat:no-repeat; padding-left:0px; font-size: 100%; line-height: 1.4em;}
 .bullets li:before  { position: absolute; left: -2.14285714em; width: 2.14285714em; text-align: center; content: ""; line-height: 20px; top: 0; color: @Color1;}
 .calc-bullets:before  {content: ""; font-size: 15px; color: #666666; position: relative; line-height: 15px; margin-right: 3px;}
 /* ----// END //---- */
@@ -2935,7 +2971,7 @@ div.email .search-button-popup        { margin-top: 5px;}
 .more-info2:before        { color: @ButtonIconColor2; content: "\f05a"; margin-left: -19px; font-size: 18px; }
 .brochure:before          { color: @ButtonIconColor2; content: "\f15c"; margin-left: -19px; font-size: 17px; }
 
-.print:before, .email:before, .bookmark:before, .share:before, .feed:before, .add-property-favourites:before, .sort-by:before, .quick-search:before {
+.print:before, .email:before, .bookmark:before, .share:before, .feed:before, .add-property-favourites:before, .sort-by:before {
     font-family: 'icomoon';
     speak: none;
     font-style: normal;
@@ -2954,7 +2990,6 @@ div.email .search-button-popup        { margin-top: 5px;}
 .print:before                    { color: @ButtonIconColor; content: "\f02f"; margin-left: -24px; font-size: 17px; }
 .sort-by:before                  { color: @ButtonIconColor; content: "\f074"; margin-left: -24px; font-size: 17px; margin-top: -2px;}
 .add-property-favourites:before  { color: @ButtonIconColor; content: "\e601"; margin-left: -24px; font-size: 19px; }
-.quick-search:before             { color: @ButtonIconColor; content: "\f002"; margin-left: -24px; font-size: 17px; margin-top: -4px;}
 .feed:before                     { color: @ButtonIconColor; content: "\f09f"; margin-left: -24px; font-size: 17px; }
 /* Button Set 1 */
 .feed                            { background-color: @ButtonBgColor; background-image:none; height:30px; line-height: 30px; width:37px; padding-top:0px; padding-left:34px;}
@@ -2963,7 +2998,6 @@ div.email .search-button-popup        { margin-top: 5px;}
 .email                           { background-color: @ButtonBgColor; background-image:none; height:30px; line-height: 30px; width:36px; padding-top:0px; padding-left:30px;}
 .print                           { background-color: @ButtonBgColor; background-image:none; height:30px; line-height: 30px; width:32px; padding-top:0px; padding-left:34px;}
 .sort-by                         { background-color: none; background-image:none; width:180px; height:26px; padding-top:4px; padding-left:30px; margin-right:5px;}
-.quick-search                    { background-color: none; background-image:none; width:280px; height:26px; padding-left:30px; padding-top:4px;}
 .add-property-favourites         { background-color: @ButtonBgColor; background-image:none; width:110px; display:block; height:30px; line-height: 30px; padding-top:0px; padding-left:34px;}
 /* Button Set 2 */
 .favourites                      { background-color: @ButtonBgColor2; background-image: none; width:110px; height:25px; line-height: 25px; padding-top:0px; padding-left:27px; font-size:11px; display:block; float:left; margin-right:5px;}
@@ -3113,8 +3147,8 @@ ul.as-selections                        { background-color: #FFFFFF; border: 1px
 #facebook-overview .listing-buttons     { font-size: 1em;}
 .listed                                 { color:#666666;}
 .facebook-browse-suburb                 { padding:16px 13px;}
-.facebook-browse-suburb a               { font-size: 0.8em;}
-.facebook-address                       { font-size: 0.8em;  }
+.facebook-browse-suburb a               { font-size: 80%;}
+.facebook-address                       { font-size: 80%;  }
 .call                                   { font-family:Arial, Helvetica, sans-serif; color:#000; font-size:15px;}
 .facebook-more-info                     { background:url(/assets/img/custom/facebook/more-info.gif) no-repeat; width:52px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left; margin-right:5px;}
 .facebook-map-property                  { background:url(/assets/img/custom/facebook/map-property.gif) no-repeat; width:71px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left;}
@@ -3173,3 +3207,38 @@ ul.as-selections                        { background-color: #FFFFFF; border: 1px
   transform:         @value;
 }
 
+.pd_modal_mini{
+  background: @ContentBlocksBG;
+  border: @ContentBlocksBorder;
+  padding-bottom: 42px;
+  position: relative;
+  box-sizing: border-box;
+  .button{
+    font-size: 100%;
+    margin-right: 2px;
+  }
+  .pd_modal_title{
+    float: none;
+    padding: 15px 50px 15px 15px;
+    border-bottom: @ContentBlocksBorder;
+  }
+  p{
+    padding: 15px;
+  }
+  .pd_modal_close{
+    position: absolute; 
+    top:0;
+    right: 0;
+    &:before{
+      padding: 0;
+      top: 3px;
+    }
+  }
+  .pd_modal_buttons,.pp_details{
+    width: 100%;
+    height: 32px;
+    display: block;
+    position: absolute;
+    bottom: 0;
+  }
+}
