@@ -565,7 +565,6 @@ h1.page-heading {
 }
 
 .results-alerts-mini{
-  font-size: @BaseFontSize;
   z-index: 0;
   box-sizing: border-box;
   position: relative;
@@ -595,7 +594,7 @@ h1.page-heading {
   box-sizing: border-box;
   padding: 4px 8px;
   border: none;
-  margin-right: 10px;
+  margin-right: 0px;
 }
 .results-alerts-mini span{
 }
@@ -1531,6 +1530,10 @@ h1.page-heading {
   font-size:57px;
   vertical-align: bottom;
 }
+#results-list .property-list-on-show-box .on-show-content{
+  width: 100%;
+  display: block;
+}
 
 
 /* Results: Results List Extras - News Article */
@@ -1558,6 +1561,7 @@ h1.page-heading {
   width: 502px;
   position: relative;
   padding-bottom: 30px;
+  color: @ContentBlocksText;
 }
 #results-list .property-list-news-article-box .article-meta{
   color: #333333;
@@ -2310,6 +2314,10 @@ p.disclaimer-text{
   line-height: 30px;
   z-index: 50;
 }
+.transparent-red.top-left + .transparent-black.top-left{
+  right: 10px;
+  left: auto;;
+}
 
 .transparent-black.top-right{
   position: absolute;
@@ -2472,6 +2480,10 @@ a.link {
   margin-right: 19px;
   line-height: 105px;
   vertical-align: top;
+  &.disabled{
+    visibility: hidden !important;
+    cursor: default;
+  }
 }
 .navigation-thumbnails .thumbs-next{
   position: relative;
@@ -2481,6 +2493,10 @@ a.link {
   line-height: 105px;
   vertical-align: top;
   float: right;
+  &.disabled{
+    visibility: hidden !important;
+    cursor: default;
+  }
 }
 .navigation-thumbnails li{
   width:155px;
@@ -2824,7 +2840,7 @@ a.link {
   }
   
   .agent-table{
-    margin: 26px 0 20px;
+    margin: 20px 0 20px;
     line-height: 1.5em;
   }
   .agent-bio{
@@ -2861,6 +2877,9 @@ a.link {
   a{
     margin-right: 5px;
     float: left;
+  }
+  .branch-icons{
+    float: right;
   }
   .branch-icon{
     width: 32px;
@@ -2937,6 +2956,41 @@ a.link {
         background: lighten(#bb0000, 5%);
       }
     }
+    &.icon-googleplus{
+      background:#dd4b39;
+      &:before{
+        .icon-font();
+        width: 0;
+        height: 0;
+        content:"\f0d5";
+        color: #ffffff;
+        line-height: 34px;
+        font-size: 22px;
+        position: relative;
+        left: 1px;
+      }
+      &:hover{
+        background: lighten(#dd4b39, 5%);
+      }
+    }
+    &.icon-pinterest{
+      background:#ffffff;
+      border: 1px solid #d6d6d6;
+      &:before{
+        .icon-font();
+        width: 0;
+        height: 0;
+        content:"\f0d2";
+        color: #bd071d;
+        line-height: 30px;
+        font-size: 24px;
+        position: relative;
+        left: 2px;
+      }
+      &:hover{
+        background: darken(#ffffff, 5%);
+      }
+    }
   }
 }
 .meta-section{
@@ -2970,7 +3024,7 @@ h5                            { font-family:@FontFamily; font-size:1.1em; color:
 .headings                     { font-family:@FontFamily; font-size:1.6em; color:@HeadingsColor; display: block; width: 100%; line-height:1; font-weight: 400;}
 .sub-headings                 { font-family:@FontFamily; font-size:1.325em; color:@SubHeadingsColor; display: block; width: 100%; line-height:1em; font-weight: 400;}
 .sub-headings-alt             { color:@HeadingsColor; font-size:1.325em; font-weight: 400; }
-.article-headings             { font-family:@FontFamily; font-size:1em; color: @ArticleHeadingsColor; font-weight: 400;}
+.article-headings             { font-family:@FontFamily; font-size:1.325em; color: @ArticleHeadingsColor; font-weight: 400;}
 h2#email                      { font-family:@FontFamily; font-size:19px; color:@HeadingsColor; display: block; width: 100%; line-height: 36px;}
 /* ----// END //---- */
 
@@ -3373,6 +3427,25 @@ ul.as-selections                        { background-color: #FFFFFF; border: 1px
   float: none;
   padding: 15px 50px 15px 15px;
   border-bottom: @ContentBlocksBorder;
+}
+.captcha-background{
+  background: #f9f9f9;
+  width: 100%;
+  border: @ContentBlocksBorder;
+  height: 74px;
+  margin-top:10px;
+}
+.captcha-content{
+  max-width: 144px;
+  width: 144px;
+  height: 74px;
+  max-height: 74px;
+  overflow: hidden;
+}
+.captcha-content iframe{
+  max-width: 258px;
+  width: 258px;
+  .transform(translate(-2px,-1px));
 }
 #pp_full_res{
   overflow: hidden;
