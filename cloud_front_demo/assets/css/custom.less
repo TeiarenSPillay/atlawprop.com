@@ -2113,7 +2113,12 @@ p.disclaimer-text{
   width: 100%;
 }
 
-.document-table tr:nth-child(2n+1), .listing-downloads .document-table tr:not(.alt){
+.listing-downloads .document-table tr:not(.alt){
+  background: none;
+}
+
+.listing-downloads .document-table tr:nth-child(2n+2),
+.listing-downloads .document-table tr.alt{
   background: @SidebarInputBG;
 }
 .document-table td{
