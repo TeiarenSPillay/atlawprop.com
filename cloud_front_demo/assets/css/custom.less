@@ -77,7 +77,7 @@
 @SidebarInputBG: #f1f1f1;
 @SidebarInputText: #333333;
 @SidebarInputPlaceholder: #333333;
-@SidebarInputBorder: @ContentBlocksBorder;
+@SidebarInputBorder: none;
 
 
 @OSText: #666666;
@@ -241,9 +241,14 @@ body                  { background:#FFFFFF; font-size: 80%; }
 fieldset p                                                         { margin-bottom: 8px;}
 fieldset p > input[type="checkbox"]                                { display: none; }
 fieldset p > input[type="checkbox"] + label                        { position: relative;}
-fieldset p > input[type="checkbox"] + label:before                 { content: " "; background: #ffffff; width:14px; height: 14px; border: 1px solid #d6d6d6; display: inline-block; position: relative; left: 0; top: 3px; margin-right: 4px;}
-fieldset p > input[type="checkbox"]:checked + label:after          { .icon-font; content: "\f00c"; font-size: 14px; top: 1px; left: 2px; color: @SearchTicks;font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; position: absolute; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
 fieldset p > input[type="checkbox"] + label:hover                  { cursor: pointer;}
+fieldset p > input[type="checkbox"] + label:before                 { background: @SidebarInputBG;; content: " "; width:18px; height: 18px; border: @SidebarInputBorder; display: inline-block; position: relative; left: 0; top: 3px; margin-right: 4px;}
+fieldset p > input[type="checkbox"]:checked + label:after          { .icon-font; content: "\f00c"; font-size: 14px; top: 1px; left: 2px;font-family: 'icomoon'; color: @SidebarButtonText; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; position: absolute; line-height: 1; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
+#adv_search_properties {
+  fieldset p > input[type="checkbox"] + label:before               { background: #ffffff; width:14px; height: 14px; border: 1px solid #d6d6d6;}
+  fieldset p > input[type="checkbox"]:checked + label:after        {  color: @SearchTicks; }
+}
+
 .adv_search_heading                                                { color: @SearchTextColor1;}
 .adv_search_types input:not(.select2-input)                        { box-sizing: border-box; width: 100%; min-height:32px }
 .adv_search_types .select                                          { box-sizing: border-box; width: 100%; min-height:32px }
@@ -814,12 +819,12 @@ h1.page-heading {
   margin-top: 125px;
   .transition(margin 0.2s ease-in-out);
 }
-#sidebar-quick-links.stick{
+#sidebar-quick-links.stick, #sidebar.stick{
   position: fixed;
   top: 90px;
   z-index: 900;
 }
-#sidebar-quick-links.unstick{
+#sidebar-quick-links.unstick, #sidebar.unstick{
   position: absolute;
   top: auto;
   right: 0 !important;
@@ -1156,6 +1161,15 @@ h1.page-heading {
 .sidebar-email-friend{
   padding: 0;
 }
+.sidebar-email-friend fieldset p > input[type="checkbox"] + label:before,
+.sidebar-contact fieldset p > input[type="checkbox"] + label:before
+{
+  background: @SidebarInputBG;
+  border: @SidebarInputBorder;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+}
 .sidebar-email-friend fieldset p > input[type="checkbox"]:checked + label:after {
   top:1px;
 }
@@ -1232,7 +1246,7 @@ h1.page-heading {
     top: 7px;
   }
 }
-#sidebar-contact-form .vSelectField{
+#sidebar-contact-form .vSelectField, #make-an-offer-form .vSelectField, .form-section .vSelectField {
   width: 120px;
   margin-right: 15px;
   height: 30px;
@@ -1258,6 +1272,10 @@ h1.page-heading {
       line-height: 32px;
     }
   }
+}
+#make-an-offer-form .vSelectField{
+  width: 100%;
+  margin-top: 10px;
 }
 .sidebar-dropdown{
     background: @SidebarInputBG !important;
@@ -1856,6 +1874,10 @@ p.disclaimer-text{
   max-height: 349px;
   border: 1px solid rgba(0,0,0,0.05);
   overflow:hidden;
+  .transparent-black.bottom{
+    padding: 0px 8px;
+    line-height: 30px;
+  }
 }
 .gallery-viewport img{
   max-width: 100%;
@@ -1886,6 +1908,7 @@ p.disclaimer-text{
   margin-right: 19px;
   box-sizing: border-box;
   border: 1px solid rgba(0,0,0,0.05);
+  vertical-align: top;
   &.loader{
     background-size: 32px 32px !important;
     background-position: center center !important;
@@ -1983,12 +2006,16 @@ p.disclaimer-text{
 }
 .listing-features-content{
   .grid{
-  -moz-column-count: 2;
-  -moz-column-gap: 0px;
-  -webkit-column-count: 2;
-  -webkit-column-gap: 0px;
-  column-count: 2;
-  column-gap: 0px;
+    -moz-column-count: 2;
+    -moz-column-gap: 0px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 0px;
+    column-count: 2;
+    column-gap: 0px;
+  }
+  .grid-item {
+      margin: 0 0 10px;
+      width: 100%;
   }
   .full{
     width: 578px;
@@ -2082,28 +2109,28 @@ p.disclaimer-text{
   vertical-align: bottom;
 }
 
-.listing-downloads .document-table{
+.document-table{
   width: 100%;
 }
 
-.listing-downloads .document-table tr:nth-child(2n+1), .listing-downloads .document-table tr:not(.alt){
+.document-table tr:nth-child(2n+1), .listing-downloads .document-table tr:not(.alt){
   background: @SidebarInputBG;
 }
-.listing-downloads .document-table td{
+.document-table td{
   padding: 6px 8px;
   box-sizing: border-box;
 }
-.listing-downloads .document-table .col-document-name{
+.document-table .col-document-name{
   width: 400px;
 }
-.listing-downloads .document-table .col-document-size{
+.document-table .col-document-size{
   width: 50px;
 }
-.listing-downloads .document-table .col-document-type{
+.document-table .col-document-type{
   width: 32px;
   padding: 0;
 }
-.listing-downloads .document-table .col-document-link{
+.document-table .col-document-link{
 }
 
 .listing-downloads .icon-xls:before{
@@ -2877,6 +2904,9 @@ a.link {
   a{
     margin-right: 5px;
     float: left;
+    &:last-child{
+      margin-right: 0;
+    }
   }
   .branch-icons{
     float: right;
@@ -3004,6 +3034,118 @@ a.link {
   list-style-type: none;
   color: #ce000f;
 }
+
+.issue-bubble{
+  background: @SecondaryColour;
+  display: block;
+  width: 139px;
+  height: 100px;
+  position: absolute;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 13px;
+  font-size: 110%;
+  color: #ffffff;
+  line-height: 1.2em;
+  z-index: 10;
+  left: 240px;
+  top: 160px;
+  &:hover, &:active, &:focus{
+    color: #ffffff;
+  }
+  &:after{
+    border-color: @SecondaryColour rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 20px 20px 0 0;
+    bottom: -20px;
+    content: "";
+    display: block;
+    left: 50px;
+    position: absolute;
+    width: 0;
+  }
+  .issue-bubble-date{
+    font-weight: bold;
+    margin-top:5px;
+    display :block;
+  }
+  .issue-bubble-view{
+    position: absolute;
+    bottom: 12px;
+  }
+}
+
+
+/* News Results */
+
+.sort-by:before                  { content: "\f074"; font-size: 17px;}
+.divider-line                    { border:@ContentBlocksBorder; border-top: 0;}
+
+#sidebar-categories .category-list{
+  list-style-type: none;
+  margin: 37px 0 15px;
+  padding: 0;
+  border-top: @ContentBlocksBorder;
+  li{
+    line-height: 30px;
+    height: 30px;
+    display: block;
+    border-bottom: @ContentBlocksBorder;
+  }
+}
+
+
+.article-block{
+  
+  .article-image{
+    padding: 15px;
+    margin: 0 20px 20px 0;
+    text-align: center;
+    border: @ContentBlocksBorder;
+    img{
+      max-width: 100%;
+    }
+    figcaption{
+      font-style: italic;
+      margin-top: 10px;
+    }
+  }
+  
+}
+
+.comments-block{
+  
+  border-radius: 10px;
+  &:after{
+    border-color: @ContentBlocksBG rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 20px 0 0 20px;
+    bottom: -20px;
+    content: "";
+    display: block;
+    left: 50px;
+    position: absolute;
+    width: 0;
+  }
+  &:before{
+    border-color: rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-top: @ContentBlocksBorder;
+    border-width: 22px 0 0 22px;
+    bottom: -22px;
+    content: "";
+    display: block;
+    left: 49px;
+    position: absolute;
+    width: 0;
+  }
+}
+.comments-meta{
+  display: inline-block;
+  .transform(translate(80px, -20px));
+}
+
+
 
 /* Headings
 ------------------------------------------------------------ */
@@ -3155,7 +3297,7 @@ div.email .search-button-popup        { margin-top: 5px;}
 .more-info2:before        { color: @ButtonIconColor2; content: "\f05a"; margin-left: -19px; font-size: 18px; }
 .brochure:before          { color: @ButtonIconColor2; content: "\f15c"; margin-left: -19px; font-size: 17px; }
 
-.print:before, .email:before, .bookmark:before, .share:before, .feed:before, .add-property-favourites:before, .sort-by:before {
+.print:before, .email:before, .bookmark:before, .share:before, .feed:before, .add-property-favourites:before {
     font-family: 'icomoon';
     speak: none;
     font-style: normal;
@@ -3172,7 +3314,7 @@ div.email .search-button-popup        { margin-top: 5px;}
 .share:before                    { color: @ButtonIconColor; content: "\f1e0"; margin-left: -21px; font-size: 17px; }
 .email:before                    { color: @ButtonIconColor; content: "\f0e0"; margin-left: -22px; font-size: 17px; }
 .print:before                    { color: @ButtonIconColor; content: "\f02f"; margin-left: -24px; font-size: 17px; }
-.sort-by:before                  { color: @ButtonIconColor; content: "\f074"; margin-left: -24px; font-size: 17px; margin-top: -2px;}
+
 .add-property-favourites:before  { color: @ButtonIconColor; content: "\e601"; margin-left: -24px; font-size: 19px; }
 .feed:before                     { color: @ButtonIconColor; content: "\f09f"; margin-left: -24px; font-size: 17px; }
 /* Button Set 1 */
@@ -3181,7 +3323,6 @@ div.email .search-button-popup        { margin-top: 5px;}
 .bookmark                        { background-color: @ButtonBgColor; background-image:none; height:30px; line-height: 30px; width:57px; padding-top:0px; padding-left:30px;}
 .email                           { background-color: @ButtonBgColor; background-image:none; height:30px; line-height: 30px; width:36px; padding-top:0px; padding-left:30px;}
 .print                           { background-color: @ButtonBgColor; background-image:none; height:30px; line-height: 30px; width:32px; padding-top:0px; padding-left:34px;}
-.sort-by                         { background-color: none; background-image:none; width:180px; height:26px; padding-top:4px; padding-left:30px; margin-right:5px;}
 .add-property-favourites         { background-color: @ButtonBgColor; background-image:none; width:110px; display:block; height:30px; line-height: 30px; padding-top:0px; padding-left:34px;}
 /* Button Set 2 */
 .favourites                      { background-color: @ButtonBgColor2; background-image: none; width:110px; height:25px; line-height: 25px; padding-top:0px; padding-left:27px; font-size:11px; display:block; float:left; margin-right:5px;}
@@ -3190,8 +3331,6 @@ div.email .search-button-popup        { margin-top: 5px;}
 .more-info                       { background-color: @ButtonBgColor2; background-image: none; width:52px; height:25px; line-height: 25px; padding-top:0px; padding-left:24px; font-size:11px; display:block; float:left; margin-right:5px;}
 .more-info2                      { background-color: @ButtonBgColor2; background-image: none; width:55px; height:20px; line-height: 20px; margin-top:5px; padding-top:4px; padding-left:28px; font-size:11px!important; display:block; float:left; margin-right:5px;}
 .floor-plans                     { background-color: @ButtonBgColor2; background-image: none; width:58px; height:25px; line-height: 25px; padding-top:0px; padding-left:25px; font-size:11px; display:block; float:left; margin-right:5px;}
-.previous                        { background-color: @ButtonBgColor2; background-image: none; width:36px; height:25px; line-height: 25px; margin-top:0px; padding-left:25px; font-size:11px; padding-top:0px; display:block;}
-.next                            { background-color: @ButtonBgColor2; background-image: none; width:46px; height:25px; line-height: 25px; margin-top:0px; padding-left:15px; font-size:11px; padding-top:0px; display:block;}
 .brochure                        { background-color: @ButtonBgColor2; background-image: none; width:53px; height:25px; line-height: 25px; padding-top:0px; padding-left:28px; font-size:11px; display:block; float:left; margin-right:5px;}
 .virtual-tour                    { background-color: @ButtonBgColor2; background-image: none; width:63px; height:25px; line-height: 25px; padding-top:0px; padding-left:27px; font-size:11px; display:block; float:left; margin-right:5px;}
 .video                           { background-color: @ButtonBgColor2; background-image: none; width:34px; height:25px; line-height: 25px; padding-top:0px; padding-left:27px; font-size:11px; display:block; float:left; margin-right:5px;}
