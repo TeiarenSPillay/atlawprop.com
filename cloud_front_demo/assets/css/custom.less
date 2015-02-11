@@ -1855,6 +1855,26 @@ p.disclaimer-text{
   font-size:32px;
 }
 
+#details-list .development-details{
+  padding-left: 20px;
+}
+
+.new-dev-banners{
+  border: @ContentBlocksBorder;
+  padding: 0 10px;
+  line-height: 50px;
+  height: 50px;
+  text-align: center;
+  h3, span{
+    display: inline-block;
+    vertical-align: top;
+    width: auto;
+    margin: 0;
+    line-height: 49px;
+    margin-right: 10px;
+  }
+}
+
 .tab-content, .tab-content.hide{
   top: -1px;
   display: none;
@@ -2005,20 +2025,31 @@ p.disclaimer-text{
   color: #000000;
 }
 .listing-features-content{
-  .grid{
-    -moz-column-count: 2;
-    -moz-column-gap: 0px;
-    -webkit-column-count: 2;
-    -webkit-column-gap: 0px;
-    column-count: 2;
-    column-gap: 0px;
-  }
-  .grid-item {
-      margin: 0 0 10px;
-      width: 100%;
-  }
   .full{
     width: 578px;
+  }
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li{
+      width: 50%;
+      box-sizing: border-box;
+      padding-left:  2.14285714em;
+      float: left;
+      position: relative;
+      &:before {
+        .icon-font;
+        position: absolute;
+        left: 0;
+        width: 2.14285714em;
+        text-align: center;
+        content: "\f00c"; 
+        line-height: 20px;
+        top: 0;
+        color: @PrimaryColour;
+      }
+    }
   }
 }
 .listing-features-content dl{
@@ -2851,7 +2882,7 @@ a.link {
     }
 }
 
-.agent-quick-search{
+.quick-search .vSelectField{
   width: 100%;
 }
 .branch-agents{
@@ -2893,7 +2924,7 @@ a.link {
   }
 }
 
-.branch-meta{
+.branch-meta, .area-profile-properies{
   .border-left{
     position: relative;
   }
@@ -2911,8 +2942,6 @@ a.link {
     left: -15px;
     position: absolute;
   }
-  
-  
 }
 .branch-links{
   a{
@@ -3159,6 +3188,15 @@ a.link {
   .transform(translate(80px, -20px));
 }
 
+.area-profile-meta{
+  position: relative;
+}
+.area-profile-buttons{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 
 
 /* Headings
@@ -3261,7 +3299,7 @@ a.social:before               { color: @SocialIconsLink;}
 .make-an-offer-bg                     { background-color: @SectionBgColor; background-image: none; width:851px; height:300px; margin-top:0px; padding:13px; padding-top:10px; }
 .downloads-bg                         { background-color: @SectionBgColor; background-image: none; width:851px; min-height:116px; margin-top:0px; padding:13px; padding-top:10px; padding-bottom:20px;}
 .property-features-holiday-letting-bg { background-color: @SectionBgColor; background-image: none; width:351px; min-height:620px; height: auto; padding:13px; padding-top:10px; margin-top:0px;}
-.area-summary                         { background-color: @SectionBgColor; background-image: none; width:847px; height:195px; margin-bottom:15px; margin-top:5px; padding:15px; padding-top:7px;}
+
 .area-map-bg                          { background-color: @SectionBgColor; background-image: none; width:435px; height:305px; padding:13px; padding-top:10px;}
 .area-property-bg                     { background-color: @SectionBgColor; background-image: none; min-height:286px; padding-left:13px; padding-right:13px; width:851px; padding-top:10px; margin-top:0px;}
 .registration-bg-top                  { background-color: @SectionBgColor; background-image: none; width:389px; padding:15px; padding-top:10px; padding-bottom:0px;}

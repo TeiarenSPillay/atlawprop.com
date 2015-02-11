@@ -46,15 +46,20 @@ a{
 
 #results-list{
   width:15cm;
-  height: 27cm;
+  max-height: 27cm;
   left: 5.8cm;
   position: relative;
   top: 1.01cm;
   box-sizing: border-box;
-  padding: 0.8cm;
+  page-break-inside: auto;
 }
 .main-content{
   counter-increment: pageNum;
+  page-break-inside: avoid;
+  font-size: 7pt;
+}
+.padding8{
+  padding: 0.8cm;
 }
 
 [class^="grid_"] .sixth, [class*="grid_"] .sixth{
@@ -159,6 +164,12 @@ a{
 }
 .margin-top10{
   margin-top: 3mm;
+}
+.margin-top15{
+  margin-top: 5mm;
+}
+.margin-top20{
+  margin-top: 8mm;
 }
 
 .grey {
@@ -359,6 +370,16 @@ a{
   left:0pt;
   font-size:12pt;
   display: inline-block;
+}
+
+.icon-yes{
+  &:before{
+    .icon-font();
+    content:"\f00c";
+    color: @PrimaryColor;
+    position: relative;
+    left: -2pt;
+  }
 }
 
 .transparent-black{
@@ -652,6 +673,19 @@ a{
     width: 100%;
   }
 }
+.listing-map{
+  position: relative;
+  height: 8.6cm;
+  max-height: 8.6cm;
+  width: 13.4cm;
+  overflow:hidden;
+  font-size: 7pt;
+  img{
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+  }
+}
 
 .listing-details{
    font-size: 7pt;
@@ -708,6 +742,78 @@ a{
   }
 }
 
+
+h2{
+    color: @PrimaryColor;
+    font-size: 13pt;
+    font-weight: 300;
+    line-height: 12pt;
+    margin: 0;
+    text-indent: -0.3mm;
+    &.section-heading{
+    text-indent: -0.5mm;
+    }
+}
+
+h5{
+  font-size: 7pt;
+  font-weight: 600;
+  margin:0;
+}
+
+.listing-features-content dl{
+  margin-top:0;
+  font-size: 6.5pt;
+  color: #666666;
+  width: 3.3cm;
+  float :left;
+  &.sublist{
+    margin-left: 15pt;
+    dt{
+      margin-right: 15pt;
+    }
+  }
+}
+.listing-features-content dt, .listing-features-content dd{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+}
+.listing-features-content dd{
+  width: 30%;
+}
+
+.listing-features-content dt{
+  font-weight: 400;
+  color: #333333;
+  width: 60%;
+}
+
+.listing-on-show .icon-on-show-times,
+.listing-on-show .icon-on-show-dates{
+  position: relative;
+  margin-right: 3pt;
+}
+.listing-on-show .icon-on-show-dates{
+  margin-left: 10pt;
+}
+.listing-on-show .icon-on-show-times:before{
+  position: relative;
+  .icon-font;
+  content: "\f017";
+  font-size: 14pt;
+  vertical-align: middle;
+  top: -1pt;
+  left: 1pt;
+}
+.listing-on-show .icon-on-show-dates:before{
+  position: relative;
+  .icon-font;
+  content: "\f133";
+  font-size: 14pt;
+  vertical-align: middle;
+  top: -1pt;
+}
 .headings {
     color: @PrimaryColor;
     display: block;
@@ -727,6 +833,14 @@ a{
 }
 #footer_content{
   color: @PrimaryColor;
+}
+
+.seperator{
+  border-top: @ContentBlocksBorder;
+  width: 100%;
+  display: block;
+  height: 0px;
+  page-break-inside: avoid;
 }
 
 .clearfix:before,
