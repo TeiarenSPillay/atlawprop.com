@@ -2271,6 +2271,94 @@ p.disclaimer-text{
   top: 0px;
   font-size:25px;
 }
+
+#id_amenities_info{
+  .item{
+    float: left;
+    display: inline-block;
+    width: 50%;
+  }
+  ul{
+    margin: 0 0 15px;
+    padding: 0;
+    list-style-type: none;
+  }
+  li{
+    margin: 0;
+    padding: 0 0 0 20px;
+    position: relative;
+    margin-top: 5px;
+  }
+  .amenity-icon:before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    display: block;
+  }
+  .school:before{
+    background: url(/assets/img/custom/listing-details/school.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .university:before{
+    background: url(/assets/img/custom/listing-details/university.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .church:before{
+    background: url(/assets/img/custom/listing-details/church.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .synagogue:before{
+    background: url(/assets/img/custom/listing-details/synagogue.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .mosque:before{
+    background: url(/assets/img/custom/listing-details/mosque.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .hindu_temple:before{
+    background: url(/assets/img/custom/listing-details/hindu_temple.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .grocery_or_supermarket:before{
+    background: url(/assets/img/custom/listing-details/grocery_or_supermarket.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .shopping_mall:before{
+    background: url(/assets/img/custom/listing-details/shopping_mall.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .airport:before{
+    background: url(/assets/img/custom/listing-details/airport.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .hospital:before{
+    background: url(/assets/img/custom/listing-details/hospital.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .courthouse:before{
+    background: url(/assets/img/custom/listing-details/courthouse.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .police:before{
+    background: url(/assets/img/custom/listing-details/police.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .park:before{
+    background: url(/assets/img/custom/listing-details/park.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .library:before{
+    background: url(/assets/img/custom/listing-details/library.png) no-repeat;
+    background-size: 16px 16px;
+  }
+  .post_office:before{
+    background: url(/assets/img/custom/listing-details/post_office.png) no-repeat;
+    background-size: 16px 16px;
+  }
+}
+
 .transparent-black{
   box-sizing: border-box;
   background: rgba(0,0,0,0.7);
@@ -2886,6 +2974,8 @@ a.link {
   width: 100%;
 }
 .branch-agents{
+  -ms-column-count: 2;
+  -ms-column-gap: 0px;
   -moz-column-count: 2;
   -moz-column-gap: 0px;
   -webkit-column-count: 2;
