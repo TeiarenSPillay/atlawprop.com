@@ -714,11 +714,6 @@ h1.page-heading {
     width: 300px;
     border-right:@ContentBlocksBorder;
     border-bottom:@ContentBlocksBorder;
-    .property-list-description{
-      .results-content{
-        line-height: 1.1em;
-      }
-    }
     .property-list-land-size{
       white-space: nowrap;
     }
@@ -730,6 +725,11 @@ h1.page-heading {
   }
 }
 
+.property-list-description{
+  .results-content{
+    line-height: 1.1em;
+  }
+}
 #results-map-details:before{
   content:"";
   width: 0; 
@@ -1253,9 +1253,9 @@ h1.page-heading {
   &.last{
     margin-right: 0px;
   }
-  .select2-choice{
-    background: @SidebarInputBG;
-    color: @SidebarInputText;
+  .select2-choice, .select2-choices{
+    background: @SidebarInputBG !important;
+    color: @SidebarInputText !important;
     border: 0 !important;
     min-height: 30px !important;
   }
@@ -3312,6 +3312,15 @@ a.link {
 
 .area-profile-meta{
   position: relative;
+}
+.area-profile-results-image{
+  overflow: hidden;
+  width: 225px;
+  height: 169px;
+  img{
+    width: 110%;
+    height: auto;
+  }
 }
 .area-profile-buttons{
   position: absolute;
