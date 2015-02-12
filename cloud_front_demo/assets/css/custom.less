@@ -703,8 +703,8 @@ h1.page-heading {
     position: relative;
     float: none;
     img{
-      width: 300px;
-      height: 225px;
+      width: 320px;
+      height: 240px;
     }
   }
   .property-list-details{
@@ -1420,6 +1420,10 @@ h1.page-heading {
 #results-list .property-list-item .property-list-image-thumb{
   padding-right: 10px;
   position: relative;
+  width: 280px;
+  height: 210px;
+  overflow: hidden;
+  
   .transparent-black{
     width: 280px;
   }
@@ -3364,6 +3368,8 @@ a.link {
   .property-list-image-thumb, .property-list-details{
     position: relative;
     width: 280px;
+    height: 210px;
+    overflow: hidden;
   }
   .property-list-details{
     float: right;
@@ -3630,7 +3636,7 @@ a:hover.currency-converter    { color: @LinkActive; background-image:url(/eos/im
 ------------------------------------------------------------ */
 
 .footer-content               { color:@FooterTextColor; font-size:100%; }
-#footer-top                   { background: #e1e1e1; line-height: 1; }
+#footer-top                   { background: #e1e1e1; line-height: 0; }
 #footer-bottom                { .gradient(#0c3c60, #225c96); }
 #footer-copyright             { background: #225c96;}
 
@@ -3647,7 +3653,7 @@ a:hover.currency-converter    { color: @LinkActive; background-image:url(/eos/im
 ul.footer-logos               { list-style-type:none; padding: 0;}
 ul.footer-logos li            { display: inline-block; margin-left: 5px;}
 #footer-logos                 { top: 13px; }
-#footer-social                { float: right;}
+#footer-social                { float: right;color: #666666; line-height: 1;}
 ul.footer-social-links        { list-style-type:none; padding: 0;}
 ul.footer-social-links li     { display: inline-block; margin-left: 5px;}
 ul.footer-logos li            { display: inline-block; margin-left: 5px;}
