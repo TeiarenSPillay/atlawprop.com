@@ -819,12 +819,12 @@ h1.page-heading {
   margin-top: 125px;
   .transition(margin 0.2s ease-in-out);
 }
-#sidebar-quick-links.stick, #sidebar.stick{
+#sidebar-quick-links.stick, #sidebar.stick, #sidebar-contact.stick{
   position: fixed;
   top: 90px;
   z-index: 900;
 }
-#sidebar-quick-links.unstick, #sidebar.unstick{
+#sidebar-quick-links.unstick, #sidebar.unstick, #sidebar-contact.unstick{
   position: absolute;
   top: auto;
   right: 0 !important;
@@ -1373,17 +1373,17 @@ h1.page-heading {
 #results-list .property-list-item.featured {
   border: 4px solid @FeaturedPropertyBorder;
 }
-#results-list .property-list-item .property-list-favourite{
+.property-list-item .property-list-favourite{
   position: absolute;
   top: 0;
   right: 0;
   z-index:30;
 }
-#results-list .property-list-item .property-list-favourite a{
+.property-list-item .property-list-favourite a{
   display: block;
   padding: 20px 20px 15px 15px;
 }
-#results-list .property-list-item .property-list-favourite .icon-favourite:before{
+.property-list-item .property-list-favourite .icon-favourite:before{
   .icon-font;
   content: "\f004";
   position:relative;
@@ -1391,7 +1391,7 @@ h1.page-heading {
   left:0px;
   font-size:20px;
 }
-#results-list .property-list-item .property-list-favourite .icon-favourite-open:before{
+.property-list-item .property-list-favourite .icon-favourite-open:before{
   .icon-font;
   content: "\f08a";
   position:relative;
@@ -1732,6 +1732,16 @@ p.disclaimer-text{
     color: #333333;
   }
 }
+
+.to-let-list{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  li{
+    width: 50%;
+    float: left;
+  }
+}
 .content-block .holiday-notes{
   color: #333333;
   & + .property-list-meta{
@@ -1806,7 +1816,7 @@ p.disclaimer-text{
   left:0px;
   font-size:32px;
 }
-#details-list .icon-video{
+#details-list .action-button .icon-video{
   color: @ActionButtonIcon;
   display: inline-block;
   font-size: 32px;
@@ -1814,7 +1824,7 @@ p.disclaimer-text{
   margin-right: 10px;
   vertical-align: middle;
 }
-#details-list .icon-video:before{
+#details-list .action-button .icon-video:before{
   .icon-font;
   content: "\f16a";
   position:relative;
@@ -1929,6 +1939,7 @@ p.disclaimer-text{
   box-sizing: border-box;
   border: 1px solid rgba(0,0,0,0.05);
   vertical-align: top;
+  overflow: hidden;
   &.loader{
     background-size: 32px 32px !important;
     background-position: center center !important;
@@ -1958,7 +1969,7 @@ p.disclaimer-text{
   height: 100%;
 }
 .thumb-navigation li img{
-  width: 100%;
+  width: 120%;
   height: auto;
   visibility: hidden;
   box-sizing: border-box;
@@ -2210,13 +2221,21 @@ p.disclaimer-text{
   top: -1px;
 }
 .map-viewport{
-  width: 100%;
+  width: 578px;
   height: 350px;
+  display: block;
+  &.loader{
+    display: none;
+  }
 }
 
 
 #details-list .listing-map-tabs .action-button{
   text-align: center;
+}
+#details-list .listing-map-tabs .action-button.loader{
+  background-size: 20px 20px !important;
+  color: transparent !important;
 }
 #details-list .listing-map-tabs .action-button.active a{
   border-bottom: 1px solid @ContentBlocksBG;
@@ -2278,22 +2297,31 @@ p.disclaimer-text{
     display: inline-block;
     width: 50%;
   }
-  ul{
+  table{
     margin: 0 0 15px;
     padding: 0;
     list-style-type: none;
+    width: 95%;
   }
-  li{
+  td:first-child{
     margin: 0;
-    padding: 0 0 0 20px;
+    padding: 5px 5px 5px 25px;
+    vertical-align: top;
     position: relative;
     margin-top: 5px;
+    width: 80%
+  }
+  td{
+    vertical-align: top;
+    padding: 5px;
   }
   .amenity-icon:before{
     content: "";
     width: 20px;
     height: 20px;
     position: absolute;
+    top: 50%;
+    margin-top: -8px;
     left: 0;
     display: block;
   }
@@ -2728,7 +2756,7 @@ a.link {
     &.expense-inputs, &.income-inputs{
       width: 100%;
       & input{
-        width:280px;
+        width:280px !important;
       }
     }
     & label{
@@ -2802,12 +2830,12 @@ a.link {
     }
   }
   .income-table, .expense-table{
-    font-size: @BaseFontSize;
     td{
       padding: 3px;
       position: relative;
     }
-    input[type="text"]:not(.select2-input){
+    input[type="text"]:not(.select2-input),
+    input[type="number"]:not(.select2-input){
       width: 100%;
       box-sizing: border-box;
       background: @SidebarInputBG;
@@ -3287,6 +3315,68 @@ a.link {
   right: 0;
 }
 
+.weather-forecast-box{
+  .forecast-day{
+    div{
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+.area-profile-listings-box{
+  position: relative;
+  border: @ContentBlocksBorder;
+  & > h3{
+    padding: 20px;
+    margin: 0;
+  }
+  .area-profile-property-links{
+    padding: 0 20px 20px;
+    a{
+      white-space: nowrap;
+    }
+    a:after{
+      position: relative;
+      content:"";
+      width: 1px;
+      height: 1em;
+      background:@ContentBlocksText;
+      display: inline-block;
+      margin: 0 5px;
+      top: 2px;
+    }
+    a:last-child:after{
+      background: none;
+    }
+  }
+}
+.area-profile-property-box{
+  position: relative;
+  .property-list-favourite{
+    margin-top: -20px;
+  }
+  .property-list-link{
+    color: inherit;
+  }
+  .property-list-item{
+    padding: 0 20px 20px;
+  }
+  .property-list-image-thumb, .property-list-details{
+    position: relative;
+    width: 280px;
+  }
+  .property-list-details{
+    float: right;
+    height: 210px;
+    .property-list-land-size{
+      margin-top: 0 !important;
+    }
+  }
+  .property-list-webref{
+    position: absolute;
+    bottom: 0;
+  }
+}
 
 
 /* Headings
@@ -3557,6 +3647,10 @@ a:hover.currency-converter    { color: @LinkActive; background-image:url(/eos/im
 ul.footer-logos               { list-style-type:none; padding: 0;}
 ul.footer-logos li            { display: inline-block; margin-left: 5px;}
 #footer-logos                 { top: 13px; }
+#footer-social                { float: right;}
+ul.footer-social-links        { list-style-type:none; padding: 0;}
+ul.footer-social-links li     { display: inline-block; margin-left: 5px;}
+ul.footer-logos li            { display: inline-block; margin-left: 5px;}
 #pd-footer                    { font-size: 80%;}
 
 .pd-icon:before   { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; position: absolute; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}

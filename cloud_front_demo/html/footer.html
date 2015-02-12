@@ -5,16 +5,16 @@
      {% include 'includes/eos_base_footer_logos.html' %}
       </div>
       <div class="grid_4">
-        <div id="footer-logos">
+        <div id="footer-social">
       {% block social %}
           {% if twitter or facebook or linkedin or youtube %}
               <b>Follow us on...</b>
               <div class="clearfix"></div>
-              <ul class="footer-logos">
-                {% if facebook %}<li><a href="{{ facebook }}" target="_blank"><i class="social facebook_button-icon"></i></a></li>{% endif %}    
-          {% if twitter %}<li><a href="{{ twitter }}" target="_blank"><i class="social twitter_button-icon"></i></a></li>{% endif %}
-          {% if linkedin %}<li><a href="{{ linkedin }}" target="_blank"><i class="social linkedin_button-icon"></i></a></li>{% endif %}
-          {% if youtube %}<li><a href="{{ youtube }}" target="_blank"><i class="social youtube_button-icon"></i></a></li>{% endif %}
+              <ul class="footer-social-links">
+              {% if facebook %}<li><a href="{{ facebook }}" target="_blank"><i class="social facebook_button-icon"></i></a></li>{% endif %}    
+              {% if twitter %}<li><a href="{{ twitter }}" target="_blank"><i class="social twitter_button-icon"></i></a></li>{% endif %}
+              {% if linkedin %}<li><a href="{{ linkedin }}" target="_blank"><i class="social linkedin_button-icon"></i></a></li>{% endif %}
+              {% if youtube %}<li><a href="{{ youtube }}" target="_blank"><i class="social youtube_button-icon"></i></a></li>{% endif %}
               </ul>
           {% endif %}
       {% endblock social %}

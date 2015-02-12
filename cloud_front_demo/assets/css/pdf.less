@@ -170,6 +170,9 @@ a{
 }
 .margin-top20{
   margin-top: 8mm;
+  &.property-list-item, &.results-content{
+    margin-top: 0mm;
+  }
 }
 
 .grey {
@@ -208,7 +211,7 @@ a{
   color: @ContentBlocksText;
   position: relative;
   box-sizing: border-box;
-  font-size: 80%;
+  font-size: 7pt;
   margin-bottom: 0.5cm;
 }
 #results-list .property-list-item.featured {
@@ -656,21 +659,23 @@ a{
 }
 
 .gallery-thumbnails{
-  margin-top: 0mm;
+  margin-top: 2mm;
   width: 13.4cm;
   height: 2.5cm;
   .item{
+    box-sizing: border-box;
     width: 3.19cm;
     margin-right: 2mm;
     height: 2.5cm;
+    overflow: hidden;
   }
   .last{
     margin-right: 0;
   }
   img{
-    max-width: 100%;
+    max-width: 4cm;
     height: auto;
-    width: 100%;
+    width: 4cm;
   }
 }
 .listing-map{
@@ -814,6 +819,94 @@ h5{
   vertical-align: middle;
   top: -1pt;
 }
+
+
+#id_amenities_info{
+  .item{
+    float: left;
+    width: 5cm;
+  }
+  ul{
+    margin: 0 0 10pt;
+    padding: 0;
+    list-style-type: none;
+  }
+  li{
+    margin: 0;
+    padding: 0 0 0 16pt;
+    position: relative;
+    margin-top: 5pt;
+  }
+  .amenity-icon:before{
+    content: "";
+    width: 12pt;
+    height: 12pt;
+    position: absolute;
+    left: 0;
+    display: block;
+  }
+  .school:before{
+    background: url(/assets/img/custom/listing-details/school.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .university:before{
+    background: url(/assets/img/custom/listing-details/university.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .church:before{
+    background: url(/assets/img/custom/listing-details/church.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .synagogue:before{
+    background: url(/assets/img/custom/listing-details/synagogue.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .mosque:before{
+    background: url(/assets/img/custom/listing-details/mosque.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .hindu_temple:before{
+    background: url(/assets/img/custom/listing-details/hindu_temple.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .grocery_or_supermarket:before{
+    background: url(/assets/img/custom/listing-details/grocery_or_supermarket.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .shopping_mall:before{
+    background: url(/assets/img/custom/listing-details/shopping_mall.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .airport:before{
+    background: url(/assets/img/custom/listing-details/airport.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .hospital:before{
+    background: url(/assets/img/custom/listing-details/hospital.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .courthouse:before{
+    background: url(/assets/img/custom/listing-details/courthouse.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .police:before{
+    background: url(/assets/img/custom/listing-details/police.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .park:before{
+    background: url(/assets/img/custom/listing-details/park.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .library:before{
+    background: url(/assets/img/custom/listing-details/library.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+  .post_office:before{
+    background: url(/assets/img/custom/listing-details/post_office.png) no-repeat top left;
+    background-size: 9pt 9pt;
+  }
+}
+
 .headings {
     color: @PrimaryColor;
     display: block;
