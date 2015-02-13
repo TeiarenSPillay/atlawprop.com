@@ -824,18 +824,24 @@ h5{
 #id_amenities_info{
   .item{
     float: left;
-    width: 5cm;
+    width: 6.4cm;
   }
-  ul{
-    margin: 0 0 10pt;
+  table{
+    margin: 0 0 0.5cm 0;
     padding: 0;
     list-style-type: none;
+    width: 6.4cm;
   }
-  li{
+  td:first-child{
     margin: 0;
-    padding: 0 0 0 16pt;
+    padding: 0;
+    vertical-align: middle;
     position: relative;
-    margin-top: 5pt;
+  }
+  td{
+    vertical-align: top;
+    padding: 1.5mm;
+    box-sizing: border-box
   }
   .amenity-icon:before{
     content: "";

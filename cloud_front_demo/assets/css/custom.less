@@ -1754,7 +1754,6 @@ p.disclaimer-text{
 }
 #details-list .property-list-meta .property-list-land-size{
   text-align: right;
-  margin-top: 17px;
 }
 .property-list-meta .property-list-beds,
 .property-list-meta .property-list-baths,
@@ -2662,7 +2661,6 @@ a.link {
   position: relative;
   vertical-align: top;
   height: 105px;
-  font-size: 0;
 }
 .navigation-thumbnails .thumbs-prev{
   position: relative;
@@ -2692,6 +2690,30 @@ a.link {
 }
 .navigation-thumbnails li{
   width:155px;
+  position: relative;
+  .transparent-black{
+    z-index: 10;
+    line-height: 30px;
+    padding: 0 8px;
+    .icon-beds{
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      position: relative;
+      &:before{
+        content: "\e606";
+        width: 0;
+        height: 0;
+        .icon-font();
+        display: inline-block;
+        font-size: 16px;
+        color: #ffffff;
+        position: relative;
+        left: -12px;
+        top: 1px;
+      }
+    }
+  }
 }
 #listing-navigation-thumbs .caroufredsel_wrapper{
   min-width: 505px;
@@ -2723,6 +2745,7 @@ a.link {
 #sticky-details .sticky-details-meta .icon-garages{
   margin-right: 4px;
   color: @StickyTextColor;
+  vertical-align: top;
 }
 #sticky-details .sticky-details-meta .icon-beds:before{
   .icon-font;
@@ -3019,7 +3042,13 @@ a.link {
   font-size: 100%;
   display: inline-block;
   float: none;
-  
+  .transition(all 1s ease-in-out);
+  box-shadow: 0 0 20px rgba(0,0,0,0.0);
+  &.active{
+    z-index: 100;
+    .transform(scale(1.1));
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
   .agent-image{
     float: left;
     margin-right: 15px;
@@ -3313,10 +3342,11 @@ a.link {
 .area-profile-meta{
   position: relative;
 }
-.area-profiles-results-image{
+.area-profile-results-image{
   overflow: hidden;
-  width: 225px;
-  height: 169px;
+  width: 208px;
+  height: 156px;
+  display: block;
   img{
     width: 110%;
     height: auto;
