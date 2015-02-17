@@ -1,36 +1,48 @@
-      <table bordercolor="#FFFFFF" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0">
-          <tr>
-              <td class="border-bottom3">
-                  <p class="last"><strong>Regards</strong><br />
-                  <strong class="name">{{ trading_name|upper }}</strong></p>
-              </td>
-          </tr>
-          {% if head_office_contact_number or head_office_fax_number %}
-          <tr>
-              <td class="border-bottom3">
-                  <table cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF">
+<table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+	<tbody>
+        <tr>
+            <td valign="top" style="-webkit-text-size-adjust: none; min-width:420px;">
+                <table class="BoxWrap" width="600" align="center" cellpadding="0" cellspacing="0" border="0">
+                    <tbody> 
+     
                       <tr>
-                          {% if head_office_contact_number %}<td><b>Tel</b> {{ head_office_contact_number }}</td>{% endif %}
-                          <td width="25"></td>
-                          {% if head_office_fax_number %}<td><b>Fax</b> {{ head_office_fax_number }}</td>{% endif %}
+                          <td>
+                              <strong class="name">{{ trading_name|upper }}</strong>
+                          </td>
                       </tr>
-                  </table>
-              </td>
-          </tr>
-          {% endif %}
-          <tr>
-              <td class="border-bottom3">
-                  <table cellpadding="0" cellspacing="0" bordercolor="#FFFFFF" bgcolor="#FFFFFF">
                       <tr>
-                          <td><b>Web</b>&nbsp;<a href="{{ site_url }}?utm_source={{ source }}&utm_medium={{ format }}&utm_campaign={{ campaign|slugify }}{% if content %}&content={{ content }}{% endif %}">{{ site_url|cut:"http://" }}&nbsp;&nbsp;</a></td>
-                          <td width="25"></td>
-                          <td><b>Email</b>&nbsp;<a href="mailto:{{ default_email_from }}">{{ default_email_from }}</a></td>
+                      	  <td height="20"></td>
                       </tr>
-                  </table>
-              </td>
-          </tr>
-          </tr>
-      </table>
-    </td>
-  </tr>
+                      {% if head_office_contact_number or head_office_fax_number %}
+                          {% if head_office_contact_number %}
+                          <tr>
+                              <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Office Number</b> {{ head_office_contact_number }}</td>
+                          </tr>
+                          {% endif %}
+                          {% if head_office_fax_number %}
+                          <tr>
+                              <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Fax Number</b> {{ head_office_fax_number }}</td>
+                          </tr>
+                          {% endif %}
+                      {% endif %}
+                      <tr>
+                          <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Email Address</b>&nbsp;<a href="mailto:{{ default_email_from }}">{{ default_email_from }}</a></td>
+                      </tr>
+                      <tr>
+                          <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Web Address</b>&nbsp;<a href="{{ site_url }}?utm_source={{ source }}&utm_medium={{ format }}&utm_campaign={{ campaign|slugify }}{% if content %}&content={{ content }}{% endif %}">{{ site_url|cut:"http://" }}&nbsp;&nbsp;</a></td>
+                      </tr> 
+                      <tr>
+                      	  <td height="20" width="100%"></td>
+                      </tr>
+                      <tr>
+                      	  <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;">
+                          	 <b>Physical Address</b><Br />
+                             {{ head_office_physical_address }}
+                          </td>
+                      </tr>
+                      </tbody>
+            	</table>
+    		</td>
+        </tr>
+    </tbody>
 </table>
