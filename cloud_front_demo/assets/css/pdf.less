@@ -1,8 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
-
-
-
 body{
   font-family: 'Source Sans Pro', sans-serif;
 }
@@ -40,7 +37,7 @@ a{
   width:15cm;
   height: 1.3cm;
   right: 0;
-  bottom: 0;
+  bottom: -20px;
   position: fixed;
   box-sizing: border-box;
   padding: 0.3cm 0.8cm;
@@ -163,6 +160,15 @@ a{
 
 .margin-bottom0{
   margin-bottom:0;
+}
+.margin-bottom5{
+  margin-bottom: 3mm;
+}
+.margin-bottom15{
+  margin-bottom: 5mm;
+}
+.margin-bottom20{
+  margin-bottom: 8mm;
 }
 .margin-top5{
   margin-top: 3mm;
@@ -708,6 +714,13 @@ a{
     float: left;
     margin-right: 5mm;
   }
+  #listing-price{
+    color: @PrimaryColor;
+    font-size: 22pt;
+    font-weight: 300;
+    text-indent: -1mm;
+    margin-bottom: 3mm;
+  }
   .bond-assumptions{
     margin-top: 4.8mm;
     font-size: 7pt;
@@ -770,19 +783,19 @@ h5{
   font-weight: 600;
   margin:0;
 }
-
+.listing-features-content .half{
+  width: 6.4cm;
+}
 .listing-features-content dl{
   margin-top:0;
-  margin-bottom:0;
+  margin-bottom:3mm;
   margin-right:2mm;
   font-size: 6.5pt;
   color: #666666;
-  max-width: 3.3cm;
-  float :left;
   &.sublist{
-    margin-left: 15pt;
+    margin-left: 2pt;
     dt{
-      margin-right: 15pt;
+      margin-right: 2pt;
     }
   }
 }
@@ -799,6 +812,51 @@ h5{
   font-weight: 400;
   color: #333333;
   width: 60%;
+}
+
+
+.listing-features-content{
+  .full{
+    width: 578px;
+  }
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li{
+      width: 50%;
+      box-sizing: border-box;
+      padding-left:  2.14285714em;
+      float: left;
+      position: relative;
+      &:before {
+        .icon-font;
+        position: absolute;
+        left: 0;
+        width: 2.14285714em;
+        text-align: center;
+        content: "\f00c"; 
+        line-height: 14pt;
+        top: -3pt;
+        color: @PrimaryColor;
+      }
+    }
+  }
+}
+.development-logo{
+  width: 3.3cm;
+  float: left;
+}
+.development-types{
+  width: 10cm;
+  float: left;
+  margin-bottom:0;
+}
+.development-types .half {
+  width: 5cm;
+  float: left;
+  margin-right: 0;
+  margin-bottom:0;
 }
 
 .listing-on-show .icon-on-show-times,
@@ -830,7 +888,6 @@ h5{
 
 #id_amenities_info{
   .item{
-    float: left;
     width: 6.4cm;
   }
   table{
@@ -919,7 +976,16 @@ h5{
     background-size: 9pt 9pt;
   }
 }
-
+.holiday-rates{
+  width:15cm;
+  .fifth{
+    width: 2cm !important;
+    float: left;
+  }
+  .fourth{
+    width: 2.3cm !important;
+  }
+}
 .headings {
     color: @PrimaryColor;
     display: block;

@@ -583,13 +583,13 @@ h1.page-heading {
   font-size: 100%;
 }
 #results-filter .vSelectField .select2-choice .select2-arrow b,
-#sidebar-contact-form .vSelectField .select2-choice .select2-arrow b,
+.sidebar-contact-form .vSelectField .select2-choice .select2-arrow b,
 .header-bordered .vSelectField .select2-choice .select2-arrow b{
   background: @ActionFilterDropdownBG;
   line-height: 32px;
 }
 #results-filter .vSelectField .select2-choice .select2-arrow b:before,
-#sidebar-contact-form .vSelectField .select2-choice .select2-arrow b:before,
+.sidebar-contact-form .vSelectField .select2-choice .select2-arrow b:before,
 .header-bordered .vSelectField .select2-choice .select2-arrow b:before{
   .icon-font;
   color: @ActionFilterDropdownIcon;
@@ -1314,7 +1314,7 @@ h1.page-heading {
     top: 7px;
   }
 }
-#sidebar-contact-form .vSelectField, #make-an-offer-form .vSelectField, .form-section .vSelectField {
+.sidebar-contact-form .vSelectField, #make-an-offer-form .vSelectField, .form-section .vSelectField {
   width: 120px;
   margin-right: 15px;
   height: 30px;
@@ -1804,6 +1804,9 @@ p.disclaimer-text{
   b, strong {
     color: #333333;
   }
+  .eighth{
+    margin-right: 10px;
+  }
 }
 
 .to-let-list{
@@ -2070,6 +2073,7 @@ p.disclaimer-text{
   margin-right: 19px;
   line-height: 105px;
   vertical-align: top;
+  cursor: pointer;
 }
 .gallery-thumbnails .thumbs-next{
   position: relative;
@@ -2080,6 +2084,7 @@ p.disclaimer-text{
   line-height: 105px;
   vertical-align: top;
   float: right;
+  cursor: pointer;
 }
 .gallery-thumbnails i{
   line-height: 0;
@@ -2561,7 +2566,7 @@ p.disclaimer-text{
   content:", ";
   display: inline-block;
 }
-.listing-tag:last-child:after{
+.listing-tag:last-of-type:after{
   content:"" !important;
   display: inline-block;
 }
@@ -3315,11 +3320,76 @@ a.link {
   padding-top: 15px;
 }
 
+.input-container{
+  position: relative;
+}
+
+
 .errorlist{
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  color: #ce000f;
+  display: block;
+  visibility: hidden;
+  width: 200px;
+  position: absolute;
+  padding: 8px;
+  margin: 0 0 0 4px;
+  opacity: 0;
+  left: -40px;
+  top: 80px;
+  border: 1px solid #d6d6d6;
+  border-radius: 0 2px 2px 2px;
+  background: #fefefe;
+  font-size: 12px;
+  box-shadow: 0 1px 2px -1px rgba(0,0,0,0.3);
+  z-index: 999;
+  color: #c90d1b;
+  .transition(all 0.3s ease-in-out);
+  &:before{
+    bottom: 100%;
+    left: 20%;
+    border: solid transparent; 
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom-color: #d6d6d6;
+    border-width: 10px;
+    margin-left: -10px;
+  }
+  &:after{
+    bottom: 100%;
+    left: 20%;
+    border: solid transparent; 
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom-color: #fefefe;
+    border-width: 8px;
+    margin-left: -8px;
+  }
+}
+.errorlist.error, input + .errorlist.error{
+  display:block;
+  opacity: 1;
+  top: 43px;
+  visibility: visible;
+}
+.input-container.pull-left .errorlist{
+  left: 0;
+  max-width: 108px;
+  top: 30px;
+}
+.captcha-errors{
+  left: -21px;
+}
+
+.captcha-errors.error{
+  left: -21px;
+  top: 60px;
 }
 
 .issue-bubble{
@@ -3529,6 +3599,8 @@ a.link {
     bottom: 0;
   }
 }
+
+
 
 
 /* Headings
