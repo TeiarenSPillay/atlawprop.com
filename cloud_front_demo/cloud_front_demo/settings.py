@@ -6,7 +6,7 @@ DEV_MODE = False
 if DEV_MODE:
     DEBUG = True
 else:
-    DEBUG = True
+    DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
 CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__), '..'))
@@ -67,12 +67,19 @@ MIDDLEWARE_CLASSES += (
     'eos.lib.analytics.GoogleAnalyticsMiddleware',
 )
 
-MEDIA_ROOT = '%s/assets' % CURRENT_DIRECTORY
 ROOT_URLCONF = 'cloud_front_demo.urls'
+
+
+# Static configs
+COMPRESS_ROOT = MEDIA_ROOT = '%s/assets' % CURRENT_DIRECTORY
+STATIC_URL = "/static/"
+STATICFILES_DIRS = (
+    path.join(CURRENT_DIRECTORY, 'assets'),
+    path.join(EOS_DIRECTORY, 'assets'),
+)
 
 TEMPLATE_DIRS += (
     '%s/html' % CURRENT_DIRECTORY,
 )
 
 #SENTRY_SITE = "abcrealestate.co.za"
-
