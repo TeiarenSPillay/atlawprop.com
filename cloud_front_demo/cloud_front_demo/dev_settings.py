@@ -34,7 +34,17 @@ DOCUMENTS_ADDON = True
 NEW_DEVELOPMENT_ADDON = True
 OFFERS_ADDON = True
 
-S3_FOLDER_NAME = "durrestates.co.za"
+S3_FOLDER_NAME = "demo"
 
 WEBSITE_URL = "http://moe.int.propdata.net:8000"
 SENTRY_DSN = None
+MOBI_URL = "http://127.0.0.1:8000"
+
+if MOBI_URL:
+    MIDDLEWARE_CLASSES += (
+        'eos.lib.mobi_middleware.MobiMiddleware',
+    )
+
+
+PP_FEED_USERNAME = "propdatauser"
+PP_FEED_PASSWORD = "smartcat"
