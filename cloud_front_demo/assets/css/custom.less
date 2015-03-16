@@ -1,6 +1,30 @@
 /* Less
 ------------------------------------------------------------ */
-@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,300,900);
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCP2LEk6lMzYsRqr3dHFImA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMVNtom4QlEDNJaqqqzqdSs.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMzFoXZ-Kj537nB_-9jJhlA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCmgpmuQqK2I-L2S9cF65Ek.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGIq-Fb0zf838trI74uojZQY.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGC7eGk4PJkA83J1AXCmgUfc.woff) format('woff');
+}
+
 @FontFamily: "Source Sans Pro", Helvetica, sans-serif;
 @BaseFontSize: 17px;
 
@@ -111,7 +135,7 @@
 @ArticleHeadingsColor:@PrimaryColour;
 @H1Color: #212121;           // H1
 
-@FooterBgColor: url(/assets/img/custom/layout/footer-bg.jpg) repeat-x top #225C96;    // Sections, Footer
+@FooterBgColor: url(/static/img/custom/layout/footer-bg.jpg) repeat-x top #225C96;    // Sections, Footer
 @FooterTextColor: #ffffff;   // Footer Text Colour
 @FooterlinkHover: #7A98B2;   // Hover Link Colour
 
@@ -146,7 +170,7 @@ body                  { background:#FFFFFF; font-size: 80%; }
 /* Header
 ------------------------------------------------------------ */
 .header               { width:100%; }
-.header-content       { z-index:1200; position: relative; background-image:url(/assets/img/custom/layout/header-bg.jpg); background-repeat:repeat-x;}
+.header-content       { z-index:1200; position: relative; background-image:url(/static/img/custom/layout/header-bg.jpg); background-repeat:repeat-x;}
 /* ----// END //---- */
 
 
@@ -1378,7 +1402,7 @@ h1.page-heading {
     width: 90px;
     height: auto;
     display: inline-block;
-    max-hieght: 120px;
+    max-height: 120px;
     vertical-align: top;
   }
   .show-number{
@@ -2426,63 +2450,63 @@ p.disclaimer-text{
     display: block;
   }
   .school:before{
-    background: url(/assets/img/custom/listing-details/school.png) no-repeat;
+    background: url(/static/img/custom/listing-details/school.png) no-repeat;
     background-size: 16px 16px;
   }
   .university:before{
-    background: url(/assets/img/custom/listing-details/university.png) no-repeat;
+    background: url(/static/img/custom/listing-details/university.png) no-repeat;
     background-size: 16px 16px;
   }
   .church:before{
-    background: url(/assets/img/custom/listing-details/church.png) no-repeat;
+    background: url(/static/img/custom/listing-details/church.png) no-repeat;
     background-size: 16px 16px;
   }
   .synagogue:before{
-    background: url(/assets/img/custom/listing-details/synagogue.png) no-repeat;
+    background: url(/static/img/custom/listing-details/synagogue.png) no-repeat;
     background-size: 16px 16px;
   }
   .mosque:before{
-    background: url(/assets/img/custom/listing-details/mosque.png) no-repeat;
+    background: url(/static/img/custom/listing-details/mosque.png) no-repeat;
     background-size: 16px 16px;
   }
   .hindu_temple:before{
-    background: url(/assets/img/custom/listing-details/hindu_temple.png) no-repeat;
+    background: url(/static/img/custom/listing-details/hindu_temple.png) no-repeat;
     background-size: 16px 16px;
   }
   .grocery_or_supermarket:before{
-    background: url(/assets/img/custom/listing-details/grocery_or_supermarket.png) no-repeat;
+    background: url(/static/img/custom/listing-details/grocery_or_supermarket.png) no-repeat;
     background-size: 16px 16px;
   }
   .shopping_mall:before{
-    background: url(/assets/img/custom/listing-details/shopping_mall.png) no-repeat;
+    background: url(/static/img/custom/listing-details/shopping_mall.png) no-repeat;
     background-size: 16px 16px;
   }
   .airport:before{
-    background: url(/assets/img/custom/listing-details/airport.png) no-repeat;
+    background: url(/static/img/custom/listing-details/airport.png) no-repeat;
     background-size: 16px 16px;
   }
   .hospital:before{
-    background: url(/assets/img/custom/listing-details/hospital.png) no-repeat;
+    background: url(/static/img/custom/listing-details/hospital.png) no-repeat;
     background-size: 16px 16px;
   }
   .courthouse:before{
-    background: url(/assets/img/custom/listing-details/courthouse.png) no-repeat;
+    background: url(/static/img/custom/listing-details/courthouse.png) no-repeat;
     background-size: 16px 16px;
   }
   .police:before{
-    background: url(/assets/img/custom/listing-details/police.png) no-repeat;
+    background: url(/static/img/custom/listing-details/police.png) no-repeat;
     background-size: 16px 16px;
   }
   .park:before{
-    background: url(/assets/img/custom/listing-details/park.png) no-repeat;
+    background: url(/static/img/custom/listing-details/park.png) no-repeat;
     background-size: 16px 16px;
   }
   .library:before{
-    background: url(/assets/img/custom/listing-details/library.png) no-repeat;
+    background: url(/static/img/custom/listing-details/library.png) no-repeat;
     background-size: 16px 16px;
   }
   .post_office:before{
-    background: url(/assets/img/custom/listing-details/post_office.png) no-repeat;
+    background: url(/static/img/custom/listing-details/post_office.png) no-repeat;
     background-size: 16px 16px;
   }
 }
@@ -3642,7 +3666,7 @@ h2#email                      { font-family:@FontFamily; font-size:19px; color:@
 
 /* NEWS
 ------------------------------------------------------------ */
-.comments-bottom { background-image: url(/assets/img/custom/news/comments-bottom.png); padding-left:46px; height:10px; padding-top:23px; background-repeat:no-repeat; width:818px;}
+.comments-bottom { background-image: url(/static/img/custom/news/comments-bottom.png); padding-left:46px; height:10px; padding-top:23px; background-repeat:no-repeat; width:818px;}
 /* ----// END //---- */
 
 
@@ -3674,8 +3698,8 @@ a.more-info, a.more-info2, a.gallery, a.favourites, a.favourites-remove, a.broch
 
 a:focus, a:hover              { color: @LinkHover; }
 a                             { color: @LinkActive; text-decoration: none; }
-a.homepage                    { background-image:url(/assets/img/custom/navigation/property-search.png); display:block; height:34px; width:146px;}
-a:hover.homepage              { background-image:url(/assets/img/custom/navigation/property-search-over.png); display:block;}
+a.homepage                    { background-image:url(/static/img/custom/navigation/property-search.png); display:block; height:34px; width:146px;}
+a:hover.homepage              { background-image:url(/static/img/custom/navigation/property-search-over.png); display:block;}
 
 .blue a:hover                 { color: @LinkHover; }
 .blue a                       { color: @LinkActive; text-decoration: none; }
@@ -3829,9 +3853,9 @@ a:hover.map                   { color: @LinkActive; background-image:url(/eos/im
 .details                      { color: @LinkActive; display:block; width:50px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/details-over.jpg);}
 a.details                     { color: @TabLinkHover; display:block; width:50px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/property-search/navigation/details.jpg);}
 a:hover.details               { color: @LinkActive; background-image:url(/eos/img/property-search/navigation/details-over.jpg); }
-.my-favourites                { color: @LinkActive; display:block; width:109px; height:25px; font-size:12px; font-weight:bold; padding-left:30px; padding-top:7px; float:left; margin-right:3px; background-image:url(/assets/img/custom/property-search/navigation/favourites-over.jpg);}
-a.my-favourites               { color: @TabLinkHover; display:block; width:109px; height:25px; font-size:12px; font-weight:bold; padding-left:30px; padding-top:7px; float:left; margin-right:3px; background-image:url(/assets/img/custom/property-search/navigation/favourites.jpg);}
-a:hover.my-favourites         { color: @LinkActive; background-image:url(/assets/img/custom/property-search/navigation/favourites-over.jpg);}
+.my-favourites                { color: @LinkActive; display:block; width:109px; height:25px; font-size:12px; font-weight:bold; padding-left:30px; padding-top:7px; float:left; margin-right:3px; background-image:url(/static/img/custom/property-search/navigation/favourites-over.jpg);}
+a.my-favourites               { color: @TabLinkHover; display:block; width:109px; height:25px; font-size:12px; font-weight:bold; padding-left:30px; padding-top:7px; float:left; margin-right:3px; background-image:url(/static/img/custom/property-search/navigation/favourites.jpg);}
+a:hover.my-favourites         { color: @LinkActive; background-image:url(/static/img/custom/property-search/navigation/favourites-over.jpg);}
 .bond-transfer-cost           { color: @LinkActive; display:block; width:195px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/bond-transfer-cost-over.jpg);}
 a.bond-transfer-cost          { color: @TabLinkHover; display:block; width:195px; height:25px; font-size:12px; font-weight:bold; padding-left:15px; padding-top:7px; float:left; margin-right:3px; background-image:url(/eos/img/calculators/navigation/bond-transfer-cost.jpg);}
 a:hover.bond-transfer-cost    { color: @LinkActive; background-image:url(/eos/img/calculators/navigation/bond-transfer-cost-over.jpg); }
@@ -3947,8 +3971,8 @@ ul.as-selections                        { background-color: #FFFFFF; border: 1px
 .facebook-browse-suburb a               { font-size: 80%;}
 .facebook-address                       { font-size: 80%;  }
 .call                                   { font-family:Arial, Helvetica, sans-serif; color:#000; font-size:15px;}
-.facebook-more-info                     { background:url(/assets/img/custom/facebook/more-info.gif) no-repeat; width:52px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left; margin-right:5px;}
-.facebook-map-property                  { background:url(/assets/img/custom/facebook/map-property.gif) no-repeat; width:71px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left;}
+.facebook-more-info                     { background:url(/static/img/custom/facebook/more-info.gif) no-repeat; width:52px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left; margin-right:5px;}
+.facebook-map-property                  { background:url(/static/img/custom/facebook/map-property.gif) no-repeat; width:71px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left;}
 /* ----// END //---- */
 
 .gradient (@startColor: #eee, @endColor: white) {

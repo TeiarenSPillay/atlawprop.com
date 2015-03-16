@@ -1,2 +1,4 @@
-
 *.pyc
+*/assets/CACHE
+*/assets/temp
+*/assets/uploads
