@@ -61,7 +61,7 @@ a{
   font-size: 7pt;
 }
 .padding8{
-  padding: 0.8cm;
+  padding: 0.8cm 0.8cm 0.5cm;
 }
 
 [class^="grid_"] .sixth, [class*="grid_"] .sixth{
@@ -416,6 +416,14 @@ a{
     height: 5mm;
     line-height: 5mm;
   }
+  .listing-tag:after{
+    content:", ";
+    display: inline-block;
+  }
+  span:last-of-type:after{
+    content:"" !important;
+    display: inline-block;
+  }
   .icon-photos{
     display:inline-block;
     margin-right: 3px;
@@ -486,7 +494,6 @@ a{
 }
 #branch-contact, #area-profile, #on-show, #news-article, #make-an-offer{
   border-bottom: @ContentBlocksBorder;
-  padding: 0 0.8cm 0.8cm;
   position:relative;
   font-size: 7pt;
   h2{
@@ -508,6 +515,27 @@ a{
     white-space: normal;
     margin-top: 0;
   }
+}
+
+#branch-contact{
+  .logo{
+  padding: 0.4cm 0 0 0 ;
+  }
+  .contact{
+  padding: 0 0.8cm 0.8cm 0.5cm;
+  }
+  .agent-name{
+    font-size: 8pt;
+    font-weight: 300;
+  }
+  .agent-number{
+    font-size: 8.5pt;
+    font-weight: 300;
+    color: #666666;
+  }
+}
+#make-an-offer{
+  padding: 0.5cm 0.8cm 0.5cm 0.5cm;
 }
 #qr-code{
   padding: 0.8cm;
@@ -702,6 +730,17 @@ a{
     width: 100%;
   }
 }
+.area-profile-text{
+  padding-top: 0.3cm;
+}
+.area-profile-title{
+  position: absolute;
+  top: -0.9cm;
+  width: 15cm;
+  left: 0.8cm;
+  background: #000000;
+  color: #ffffff;
+}
 
 .listing-details{
    font-size: 7pt;
@@ -768,7 +807,7 @@ a{
 
 h2{
     color: @PrimaryColor;
-    font-size: 13pt;
+    font-size: 14pt;
     font-weight: 300;
     line-height: 12pt;
     margin: 0;
@@ -776,21 +815,30 @@ h2{
     &.section-heading{
     text-indent: -0.5mm;
     }
+    &.red{
+     color: @PrimaryColor;
+    }
 }
 
+.section-heading{
+  &.red{
+  font-size: 14pt !important;
+   color: @PrimaryColor !important;
+  }
+}
 h5{
-  font-size: 7pt;
+  font-size: 6pt;
   font-weight: 600;
   margin:0;
 }
-.listing-features-content .half{
-  width: 6.4cm;
+.listing-features-content .fourth{
+  width: 3.3cm;
 }
 .listing-features-content dl{
   margin-top:0;
   margin-bottom:3mm;
   margin-right:2mm;
-  font-size: 6.5pt;
+  font-size: 6pt;
   color: #666666;
   &.sublist{
     margin-left: 2pt;
@@ -811,7 +859,7 @@ h5{
 .listing-features-content dt{
   font-weight: 400;
   color: #333333;
-  width: 60%;
+  width: 70%;
 }
 
 
