@@ -1335,8 +1335,34 @@ h1.page-heading {
     content: "\f133";
     position: relative;
     font-size: 20px;
-    top: 7px;
+    top: 10px;
   }
+}
+.calendar{
+  position: relative;
+  display: inline-block;
+  &:before{
+    content:"";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+}
+.calendar .icon-sidebar-date{
+  position: relative;
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  &:before{
+    top: -1px;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.calendar span{
+  display: inline-block;
+  vertical-align: middle;
 }
 .sidebar-contact-form .vSelectField, #make-an-offer-form .vSelectField, .form-section .vSelectField {
   width: 120px;
@@ -1855,7 +1881,7 @@ p.disclaimer-text{
   }
 }
 .content-block .holiday-notes{
-  color: #333333;
+  color: #666666;
   & + .property-list-meta{
     margin-top: 15px;
   }
