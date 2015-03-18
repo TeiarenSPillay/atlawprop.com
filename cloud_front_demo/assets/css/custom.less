@@ -24,7 +24,6 @@
   font-weight: 900;
   src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGIq-Fb0zf838trI74uojZQY.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGC7eGk4PJkA83J1AXCmgUfc.woff) format('woff');
 }
-
 @FontFamily: "Source Sans Pro", Helvetica, sans-serif;
 @BaseFontSize: 17px;
 
@@ -163,7 +162,6 @@ body                  { background:#FFFFFF; font-size: 80%; }
 .heading-margin       { padding-left:25px;}
 .email .heading-margin{ padding-left:0px; margin: 0 0 10px!important;}
 .clear                { display: block; width:100%; clear:both;}
-
 /* ----// END //---- */
 
 
@@ -1549,9 +1547,11 @@ h1.page-heading {
 }
 .property-list-item .icon-beds,
 .property-list-item .icon-baths,
-.property-list-item .icon-garages{
+.property-list-item .icon-garages,
+.property-list-item .icon-openparking{
   margin-right: 4px;
   color: @FeatureIcon;
+  float: none;
 }
 .property-list-item .icon-beds:before{
   .icon-font;
@@ -1576,6 +1576,14 @@ h1.page-heading {
   top: 3px;
   left:0px;
   font-size:22px;
+}
+.property-list-item .icon-openparking:before{
+  .icon-font;
+  content: "\e612";
+  position:relative;
+  top: 5px;
+  left:0px;
+  font-size:20px;
 }
 
 
@@ -1830,6 +1838,7 @@ p.disclaimer-text{
   color: #666666;
   b, strong {
     color: #333333;
+    white-space: nowrap;
   }
   .eighth{
     margin-right: 10px;
@@ -1853,20 +1862,39 @@ p.disclaimer-text{
 }
 #details-list .property-list-meta .property-list-land-size{
   text-align: right;
+  font-size: @BaseFontSize;
+  line-height: 0.9rem;
+}
+#details-list .property-list-meta{
+  font-size: 0%;
+  text-align:right;
+  white-space: nowrap;
+}
+#details-list .padding-bottom-external{
+  padding-bottom: 45px;
+}
+#details-list .price-box .external-link{
+  position: absolute; 
+  bottom: -1px;
+  right: -1px;
 }
 .property-list-meta .property-list-beds,
 .property-list-meta .property-list-baths,
-.property-list-meta .property-list-garages{
+.property-list-meta .property-list-garages,
+.property-list-meta .property-list-openparking{
   text-align: right;
-  
+  float: none !important;
+  display: inline-block;
 }
 #details-list .property-list-meta span{
   display: inline-block;
+  font-size: 0.8rem;
   font-style: normal !important;
 }
 .property-list-meta .icon-beds,
 .property-list-meta .icon-baths,
-.property-list-meta .icon-garages{
+.property-list-meta .icon-garages,
+.property-list-meta .icon-openparking{
   color: @FeatureIcon;
   &:before{
     margin-right: 4px;
@@ -1895,6 +1923,14 @@ p.disclaimer-text{
   top: 3px;
   left:0px;
   font-size:24px;
+}
+.property-list-meta .icon-openparking:before{
+  .icon-font;
+  content: "\e612";
+  position:relative;
+  top: 4px;
+  left:0px;
+  font-size:22px;
 }
 #details-list .listing-media-tabs .action-button{
   text-align: center;
@@ -1968,6 +2004,14 @@ p.disclaimer-text{
   top: 2px;
   left:0px;
   font-size:32px;
+}
+
+#details-list .listing-features-content{
+  font-size: 0;
+  *{
+    font-size: 0.8rem;
+    vertical-align: top;
+  }
 }
 
 #details-list .development-details{
@@ -2819,6 +2863,7 @@ a.link {
   margin-right: 19px;
   line-height: 105px;
   vertical-align: top;
+  cursor: pointer;
   &.disabled{
     visibility: hidden !important;
     cursor: default;
@@ -2832,6 +2877,7 @@ a.link {
   line-height: 105px;
   vertical-align: top;
   float: right;
+  cursor: pointer;
   &.disabled{
     visibility: hidden !important;
     cursor: default;
@@ -2881,21 +2927,36 @@ a.link {
   float: none;
   line-height: 0;
   vertical-align: middle;
+  white-space: nowrap;
 }
 #sticky-details .sticky-details-meta{
   display: inline-block;
   float: none;
   line-height: 1em;
   vertical-align: middle;
+  text-align: right;
+  & > div {
+    display: inline-block;
+  }
 }
 
 #sticky-details .sticky-details-meta .icon-beds,
 #sticky-details .sticky-details-meta .icon-baths,
-#sticky-details .sticky-details-meta .icon-garages{
+#sticky-details .sticky-details-meta .icon-garages,
+#sticky-details .sticky-details-meta .icon-openparking{
   margin-right: 4px;
   color: @StickyTextColor;
-  vertical-align: top;
+  vertical-align: bottom;
+  line-height: 1;
+  &:before{
+    margin-right: 4px;
+  }
 }
+#sticky-details .sticky-details-meta span{
+  display: inline-block;
+  font-style: normal !important;
+}
+
 #sticky-details .sticky-details-meta .icon-beds:before{
   .icon-font;
   content: "\e606";
@@ -2916,9 +2977,17 @@ a.link {
   .icon-font;
   content: "\e609";
   position:relative;
-  top: 3px;
+  top: 2px;
   left:0px;
-  font-size:30px;
+  font-size:29px;
+}
+#sticky-details .sticky-details-meta .icon-openparking:before{
+  .icon-font;
+  content: "\e612";
+  position:relative;
+  top: 4px;
+  left:0px;
+  font-size:28px;
 }
 #sticky-details .sticky-details-meta .property-list-land-size{
   line-height: 1em;
