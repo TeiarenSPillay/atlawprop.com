@@ -348,15 +348,22 @@ a{
 #results-list .property-list-webref{
   color: @FeatureText;
 }
+
 .property-list-item .icon-beds,
 .property-list-item .icon-baths,
-.property-list-item .icon-garages{
+.property-list-item .icon-garages,
+.property-list-item .icon-openparking{
   margin-right: 4px;
   color: @FeatureIcon;
   position: relative;
   display: inline-block;
   width: 15pt;
   float: left;
+  font-style: normal !important;
+  span{
+    font-size: 7pt;
+    font-style: normal !important;
+  }
 }
 .property-list-item .icon-beds:before{
   .icon-font;
@@ -383,6 +390,15 @@ a{
   top: 3pt;
   left:0pt;
   font-size:12pt;
+  display: inline-block;
+}
+.property-list-item .icon-openparking:before{
+  .icon-font;
+  content: "\e612";
+  position:relative;
+  top: 4pt;
+  left:0pt;
+  font-size:11pt;
   display: inline-block;
 }
 
@@ -568,7 +584,9 @@ a{
   vertical-align: bottom;
 }
 
-
+#news-article{
+  padding: 0cm 0.8cm 0.5cm 0.5cm;
+}
 /* Results: Results List Extras - On Show */
 
 
@@ -775,8 +793,16 @@ a{
   }
   .icon-beds,
   .icon-baths,
-  .icon-garages{
+  .icon-garages,
+  .icon-openparking{
     margin-right: 2mm;
+    span{
+      font-size: 9pt;
+      font-style: normal !important;
+    }
+    &:before{
+      margin-right: 1pt;
+    }
   }
   .icon-beds:before{
     .icon-font;
@@ -797,6 +823,14 @@ a{
   .icon-garages:before{
     .icon-font;
     content: "\e609";
+    position:relative;
+    top: 3pt;
+    left:0pt;
+    font-size:22pt;
+  }
+  .icon-openparking:before{
+    .icon-font;
+    content: "\e612";
     position:relative;
     top: 3pt;
     left:0pt;

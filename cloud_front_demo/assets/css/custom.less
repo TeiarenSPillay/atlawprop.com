@@ -1567,6 +1567,15 @@ h1.page-heading {
 }
 #results-list .property-list-meta{
   color: @FeatureText;
+  font-size: 0;
+  text-align: left;
+  white-space: nowrap;
+  & > div {
+    font-size: 0.8rem;
+    text-align: left;
+    float: none;
+    display: inline-block;
+  }
 }
 #results-list .property-list-webref{
   color: @FeatureText;
@@ -1578,6 +1587,9 @@ h1.page-heading {
   margin-right: 4px;
   color: @FeatureIcon;
   float: none;
+  span{
+    font-style: normal !important;
+  }
 }
 .property-list-item .icon-beds:before{
   .icon-font;
@@ -2802,7 +2814,6 @@ a.link {
   box-sizing: border-box;
   font-size: 1.525em;
   padding: 0px 8px;
-  line-height: 50px;
   height: 50px;
 }
 #make-an-offer-form fieldset p > input[type="checkbox"] + label:before{
