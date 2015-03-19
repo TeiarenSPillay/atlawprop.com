@@ -1623,7 +1623,35 @@ h1.page-heading {
   font-size:20px;
 }
 
-
+#results-list .expand-tags{
+  display: none;
+  margin-top:-15px;
+}
+#results-list .toggle-expand{
+  padding: 0 8px;
+  margin-right: -8px;
+  height: 100%;
+}
+#results-list .icon-expand-tags-up{
+  float: right;
+  &:before{
+    .icon-font;
+    content: "\f077";
+    position:relative;
+    left:0px;
+    font-size:12px;
+  }
+}
+#results-list .icon-expand-tags-down{
+  float: right;
+  &:before{
+    .icon-font;
+    content: "\f078";
+    position:relative;
+    left:0px;
+    font-size:12px;
+  }
+}
 /* Results: Results List Extras */
 
 
@@ -2615,8 +2643,14 @@ p.disclaimer-text{
     padding: 0px 8px;
     height: 30px;
     line-height: 30px;
-    font-size: 0.95em;
+    font-size: 0;
     margin-right: 3px;
+    *{
+      font-size:0.8rem;
+    }
+    .listing-tag{
+      margin-right: 3px;
+    }
   }
   .icon-photos{
     display:inline-block;
