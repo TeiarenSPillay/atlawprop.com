@@ -36,6 +36,7 @@
 @AltAccentColour: #333333;
 
 @ContentBlocksBG: #ffffff;
+@ContentBlocksHoverBG: #f5f5f5;
 @ContentBlocksText: #333333;
 @ContentBlocksBorder: 1px solid #d6d6d6;
 @ContentBlocksAltBG: #f1f1f1;
@@ -320,7 +321,8 @@ input:-ms-input-placeholder                                        { color: #999
 #adv_search_more_less_container a:hover.less_search_options_link   { color: @SearchlinkHover; }
 #adv_search_more_less_container a.less_search_options_link         { color: @SearchlinkActive; text-decoration: none; }
 
-.property_count                                                    { float: right;}
+.property_count                                                    { float: right; font-size: 0.8rem;}
+#sticky-filters .property_count                                    { font-size: 1rem; margin-top: 14px;}
 .form_end                                                          { float: right; width:500px;}
 #adv_search_suburbs label                                          { color: @SearchTextColor1; font-weight: normal; }
 #adv_search_properties label                                       { color: @SearchTextColor1; font-weight: normal; }
@@ -448,11 +450,22 @@ h1.page-heading {
   vertical-align: middle;
   max-width: 100%;
 }
-
+#sticky-filters-form{
+  font-size: 0;
+}
 #sticky-filters-form > div{
   padding-left: 10px;
+  line-height: 1;
+  font-size: 0.8rem;
+  display: inline-block;
+  float: none;
+  vertical-align: middle;
 }
-
+#sticky-filters-form label{
+  color: @FilterText;
+  display: block;
+  margin-bottom: 4px;
+}
 .sticky-header .maxi-select{
   width: 100%;
   .select2-input{
@@ -498,6 +511,7 @@ h1.page-heading {
 .sticky-header .filter-submit{
   position: relative;
   height: 32px;
+  margin-top:14px;
   background: @FilterButtonBG;
   color: @FilterButtonText;
   display: inline-block;
@@ -755,10 +769,11 @@ h1.page-heading {
     background: @ContentBlocksBG;
     position: absolute;
     z-index:10;
-    width: 20px;
-    height: 20px;
-    top: 15px;
-    right: 15px;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    box-sizing: border-box;
+    right: 0;
     border:@ContentBlocksBorder;
     text-align: center;
     &:before{
@@ -769,10 +784,9 @@ h1.page-heading {
       text-transform: none;
       content: "";
       color: #D6D6D6;
-      font-size: 20px;
+      font-size: 21px;
       line-height: 0;
       position: relative;
-      top: -1px;
       vertical-align: middle;
     }
   }
@@ -799,6 +813,16 @@ h1.page-heading {
     border-bottom:@ContentBlocksBorder;
     .property-list-land-size{
       white-space: nowrap;
+      display: inline-block;
+    }
+    .property-list-meta {
+      font-size: 0;
+      *{
+        float: none;
+        font-size: 0.8rem;
+        text-align: left;
+      }
+      
     }
   }
   .property-list-webref{
@@ -899,7 +923,7 @@ h1.page-heading {
   .transition(margin 0.2s ease-in-out);
 }
 #sidebar-quick-links.open{
-  margin-top: 125px;
+  margin-top: 120px;
   .transition(margin 0.2s ease-in-out);
 }
 #sidebar-quick-links.stick, #sidebar.stick, #sidebar-contact.stick{
@@ -1527,7 +1551,7 @@ h1.page-heading {
   padding: 20px;
 }
 #results-list .property-list-item .property-list-link:hover{
-  .inner-shadow(0, 0, 60px, 0, @ListingHoverShadow);
+  background: @ContentBlocksHoverBG;
 }
 #results-list .property-list-item.featured .property-list-link{
   display: block;
@@ -1864,6 +1888,7 @@ p.disclaimer-text{
   background: @ContentBlocksBG;
   border: @ContentBlocksBorder;
   color: @ContentBlocksText;
+  page-break-inside: avoid;
 }
 
 .content-block .property-list-favourite{
@@ -1951,7 +1976,7 @@ p.disclaimer-text{
   float: none !important;
   display: inline-block;
 }
-#details-list .property-list-meta span{
+.property-list-meta span{
   display: inline-block;
   font-size: 0.8rem;
   font-style: normal !important;
@@ -3807,7 +3832,17 @@ a.link {
   }
 }
 
+#dragtomove{
+  position: fixed;
+  background: rgba(255,255,255,0.9);
+  color: #333333;
+  padding: 0 3px;
+  z-index:100000000;
+}
 
+.terms-conditions{
+  padding-left: 15px;
+}
 
 
 /* Headings
@@ -4276,9 +4311,40 @@ div.pp_pic_holder{
     background: #ffffff;
     }
     background: #ffffff;
+    height: 90px;
   }
-  .print-hide, #adv_search_container, #results-action-sub, #details-action-sub, #sidebar-quick-links, #results-action-sub-bottom, .sticky-header{
+  .transparent-black{
+    background: #000000;
+  }
+  .transparent-red{
+    background: @Color2;
+  }
+  #logo img{
+    opacity: 0;
+  }
+  #pfv_logo{
+    display: block !important; 
+    max-height: 90px;
+    width: auto;
+  }
+  #gallery-thumbnails li:nth-child(2){
     display: none !important;
+  }
+  .print-hide, .transparent-black.top-right, .sidebar-button, .sidebar-contact-form, .external-link, .counter-overlay, #adv_search_container, #listing-actions, #results-actions, #results-action-sub, #details-action-sub, #results-action-sub-bottom, .sticky-header, #results-email-alerts-box, #details-action-sub-bottom{
+    display: none !important;
+  }
+  .sidebar-quick-links{
+    right: 0 !important;
+    left: auto !important;
+    top: 0 !important;
+    position: absolute !important;
+  }
+  .sidebar-qr-code{
+    display: block !important;
+    position: relative;
+    right: 0 !important;
+    left: auto !important;
+    top: 0;
   }
   .transparent-black{
     background: #000000;
