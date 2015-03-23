@@ -7,39 +7,90 @@
      
                       <tr>
                           <td>
-                              <strong class="name">{{ trading_name|upper }}</strong>
+                              <strong class="name">{{ website_settings.trading_name|upper }}</strong>
                           </td>
                       </tr>
                       <tr>
                       	  <td height="20"></td>
                       </tr>
-                      {% if head_office_contact_number or head_office_fax_number %}
-                          {% if head_office_contact_number %}
+                      {% if website_settings.head_office_contact_number or website_settings.head_office_fax_number %}
+                          {% if website_settings.head_office_contact_number %}
                           <tr>
-                              <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Office Number</b> {{ head_office_contact_number }}</td>
+                              <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Office Number</b> {{ website_settings.head_office_contact_number }}</td>
                           </tr>
                           {% endif %}
-                          {% if head_office_fax_number %}
+                          {% if website_settings.head_office_fax_number %}
                           <tr>
-                              <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Fax Number</b> {{ head_office_fax_number }}</td>
+                              <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Fax Number</b> {{ website_settings.head_office_fax_number }}</td>
                           </tr>
                           {% endif %}
                       {% endif %}
                       <tr>
-                          <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Email Address</b>&nbsp;<a href="mailto:{{ default_email_from }}">{{ default_email_from }}</a></td>
+                          <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Email Address</b>&nbsp;<a href="mailto:{{ default_email_from }}">{{ website_settings.default_email_from }}</a></td>
                       </tr>
                       <tr>
                           <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;"><b>Web Address</b>&nbsp;<a href="{{ site_url }}?utm_source={{ source }}&utm_medium={{ format }}&utm_campaign={{ campaign|slugify }}{% if content %}&content={{ content }}{% endif %}">{{ site_url|cut:"http://" }}&nbsp;&nbsp;</a></td>
                       </tr> 
+                      {% if website_settings.company_details_physical_address %}
                       <tr>
                       	  <td height="20" width="100%"></td>
                       </tr>
                       <tr>
                       	  <td style="font-size:12px; line-height:16px; color:#333333; font-weight:normal; font-family:Verdana, Geneva, sans-serif;">
                           	 <b>Physical Address</b><Br />
-                             {{ head_office_physical_address|linebreaksbr }}
+                             {{ website_settings.company_details_physical_address|linebreaksbr }}
                           </td>
                       </tr>
+                      {% endif %}
+                      {% if website_settings.facebook_url or website_settings.twitter_url or website_settings.linkedin_url or website_settings.youtube_url or website_settings.google_plus_url or website_settings.pinterest_url %}
+                      <tr>
+                      	  <td height="40" width="100%"></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table width="100%" align="center" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                              {% if website_settings.facebook_url %}
+                              <td>
+                                <a href="{{ website_settings.facebook_url }}" target="_blank"><img src="{{ site_url }}/static/img/custom/emails/layout/facebook.gif" width="32" height="32" /></a>
+                              </td>
+                              <td width="5"><img src="{{ site_url }}/static/img/custom/emails/layout/spacer.gif" width="5" height="32" /></td>
+                              {% endif %}
+                              {% if website_settings.twitter_url %}
+                              <td>
+                                <a href="{{ website_settings.twitter_url }}" target="_blank"><img src="{{ site_url }}/static/img/custom/emails/layout/twitter.gif" width="32" height="32" /></a>
+                              </td>
+                              <td width="5"><img src="{{ site_url }}/static/img/custom/emails/layout/spacer.gif" width="5" height="32" /></td>
+                              {% endif %}
+                              {% if website_settings.linkedin_url %}
+                              <td>
+                                <a href="{{ website_settings.linkedin_url }}" target="_blank"><img src="{{ site_url }}/static/img/custom/emails/layout/linkedin.gif" width="32" height="32" /></a>
+                              </td>
+                              <td width="5"><img src="{{ site_url }}/static/img/custom/emails/layout/spacer.gif" width="5" height="32" /></td>
+                              {% endif %}
+                              {% if website_settings.youtube_url %}
+                              <td>
+                                <a href="{{ website_settings.youtube_url }}" target="_blank"><img src="{{ site_url }}/static/img/custom/emails/layout/youtube.gif" width="32" height="32" /></a>
+                              </td>
+                              <td width="5"><img src="{{ site_url }}/static/img/custom/emails/layout/spacer.gif" width="5" height="32" /></td>
+                              {% endif %}
+                              {% if website_settings.google_plus_url %}
+                              <td>
+                                <a href="{{ website_settings.google_plus_url }}" target="_blank"><img src="{{ site_url }}/static/img/custom/emails/layout/google_plus.gif" width="32" height="32" /></a>
+                              </td>
+                              <td width="5"><img src="{{ site_url }}/static/img/custom/emails/layout/spacer.gif" width="5" height="32" /></td>
+                              {% endif %}
+                              {% if website_settings.pinterest_url %}
+                              <td>
+                                <a href="{{ website_settings.pinterest_url }}" target="_blank"><img src="{{ site_url }}/static/img/custom/emails/layout/pinterest.gif" width="32" height="32" /></a>
+                              </td>
+                              {% endif %}
+                              <td width="100%"></td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      {% endif %}
                       </tbody>
             	</table>
     		</td>
