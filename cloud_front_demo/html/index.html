@@ -1,1 +1,69 @@
 {% extends 'eos_index.html' %}
+{% load latest_news %}
+{% block content %}
+<div id="breadcrumbs" class="container_12">
+  <div id="home-breadcrumbs-navigation" class='grid_12 breadcrumbs'>
+    <span class="breadcrumbs-dark">You are here:</span>
+    <span class="breadcrumbs-light">
+      <a href="/" class="other">{{ site_name }}</a>
+      {% block breadcrumb %}<a href="{{request.path}}" class="other" id='current-path'>Homepage</a>{% endblock breadcrumb %}
+    </span>
+  </div>
+  <div id="home-breadcrumbs-heading" class="grid_12">
+      <h1 id="page-heading" class="page-heading">{{ site_name }}</h1>
+  </div>
+</div>
+
+<div id="home-sub-heading" class="container_12">
+  <div class="grid_10 border-box header-bordered"><h2 class="quote">{{ site_quote }}</div>
+  <div id="sidebar-quick-links" class="sidebar-quick-links grid_2 pull-right"></h2></div>
+  <div id="sidebar-print" class="grid_1 sidebar-button">
+    <a href="#1" class="border-box"><i class="icon-sidebar-print"></i><span>PRINT</span></a>
+  </div>
+  <div id="sidebar-share" class="grid_1 last sidebar-button">
+    <a href="#1" data-id='sidebar-social-sharing' class="border-box"><i class="icon-sidebar-share"></i><span>SHARE</span></a>
+  </div>
+  <div id="sidebar-social-sharing" class="grid_4 first last sidebar-social-sharing border-box" style='display: none;'>
+    <div class="clearfix">
+      <div class="fourth sidebar-sharing border-box"><a href="#1" id="sidebar-social-facebook" class="sidebar-sharing-link"><i class="icon-sidebar-facebook"></i><span>LIKE</span></a></div>
+      <div class="fourth sidebar-sharing border-box"><a href="#1" id="sidebar-social-twitter" class="sidebar-sharing-link"><i class="icon-sidebar-twitter"></i><span>TWEET</span></a></div>
+      <div class="fourth sidebar-sharing border-box"><a href="#1" id="sidebar-social-pinterest" class="sidebar-sharing-link"><i class="icon-sidebar-pinterest"></i><span>PIN IT</span></a></div>
+      <div class="fourth sidebar-sharing border-box"><a href="#1" id="sidebar-social-google" class="sidebar-sharing-link"><i class="icon-sidebar-google"></i><span>PLUS 1</span></a></div>
+    </div>
+  </div>
+</div>
+<div class="container_12 margin-top30 margin-bottom30">
+{% if profile.live %}
+  <div class="grid_12 homepage-profile">
+      {{ profile.content|safe }}
+      <a class="button primary-button pull-right margin-top15" href="/profile/">More Info</a>
+  </div>
+{% endif %}
+{% if featured %}
+  <div class="grid_12 margin-top30">
+  <h2 class="main-headings">Featured Properties</h2>
+  <div class=" featured-properties-2 margin-top30">
+      {% include "includes/std-2-featured-properties.html" %}
+  </div>
+  </div>
+{% endif %}
+{% get_latest_articles 2 %}
+{% if featured_articles %}
+  <div class="grid_12 margin-top30">
+  <h2 class="main-headings margin-top30">Latest News</h2>
+  <div class=" featured-articles-2 margin-top30">
+      {% include "includes/std-2-news-articles.html" %}
+  </div>
+  </div>
+{% endif %}
+  <div class="grid_4 margin-top30 content-block border-box" style="background: #cfcfcf">
+    &nbsp;<br />&nbsp;
+  </div>
+  <div class="grid_4 margin-top30 content-block border-box" style="background: #cfcfcf">
+    &nbsp;<br />&nbsp;
+  </div>
+  <div class="grid_4 margin-top30 content-block border-box" style="background: #cfcfcf">
+    &nbsp;<br />&nbsp;
+  </div>
+</div>
+{% endblock content %}

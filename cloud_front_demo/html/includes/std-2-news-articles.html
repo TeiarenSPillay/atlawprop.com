@@ -1,0 +1,23 @@
+{% load image_tags %}
+{% for article in featured_articles %}
+<div id="news-summary-{{article.id}}" class="grid_6 content-block {% cycle first,last %} border-box margin-bottom20 article-list-item">
+  <div class="news-summary-image two-fifths first last pull-left">
+    <a href="/news/{{ article.slug }}/">
+      <div class="centered">
+        <img src="{% if article.photo %}{% get_image_url 'news' 250 250 article.photo %}{% else %}/eos/img/property-search/results/no-img.jpg{% endif %}" />
+      </div>
+    </a>
+  </div>
+  <div class="news-summary-content three-fifths  first last pull-left">
+      <h3 class="sub-headings"><a href="/news/{{ article.slug }}" class="news-heading-link" >{{ article.title }}</a></h3>
+      <div id="news-summary-article-content">
+        <p>{{ article.summary }}</p>
+      </div>
+    <div class="clearfix"></div>
+    <div class="meta-section article-meta clearfix">
+      <span><b>Submitted</b> {{ article.date_added|date:"d M y" }}</span>
+      <a class="button primary-button pull-right" href="/news/{{ article.slug }}/">&nbsp;Read More</a>
+    </div>
+  </div>
+</div>
+{% endfor %}
