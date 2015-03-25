@@ -1,6 +1,7 @@
 {% load image_tags %}
 {% for article in featured_articles %}
 <div id="news-summary-{{article.id}}" class="grid_6 content-block {% cycle first,last %} border-box margin-bottom20 article-list-item">
+  {% if article.photo %}
   <div class="news-summary-image two-fifths first last pull-left">
     <a href="/news/{{ article.slug }}/">
       <div class="centered">
@@ -8,7 +9,8 @@
       </div>
     </a>
   </div>
-  <div class="news-summary-content three-fifths  first last pull-left">
+  {% endif %}
+  <div class="news-summary-content {% if article.photo %}three-fifths{% else %}full{% endif %}  first last pull-left">
       <h3 class="sub-headings"><a href="/news/{{ article.slug }}" class="news-heading-link" >{{ article.title }}</a></h3>
       <div id="news-summary-article-content">
         <p>{{ article.summary }}</p>
