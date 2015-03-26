@@ -1,5 +1,5 @@
 {% extends 'eos_index.html' %}
-{% load latest_news %}
+{% load latest_news image_tags %}
 {% block content %}
 <div id="breadcrumbs" class="container_12">
   <div id="home-breadcrumbs-navigation" class='grid_12 breadcrumbs'>
@@ -25,10 +25,10 @@
   </div>
   <div id="sidebar-social-sharing" class="grid_4 first last sidebar-social-sharing border-box" style='display: none;'>
     <div class="clearfix">
-      <div class="fourth sidebar-sharing border-box"><a href="#1" id="sidebar-social-facebook" class="sidebar-sharing-link"><i class="icon-sidebar-facebook"></i><span>LIKE</span></a></div>
-      <div class="fourth sidebar-sharing border-box"><a href="#1" id="sidebar-social-twitter" class="sidebar-sharing-link"><i class="icon-sidebar-twitter"></i><span>TWEET</span></a></div>
-      <div class="fourth sidebar-sharing border-box"><a href="#1" id="sidebar-social-pinterest" class="sidebar-sharing-link"><i class="icon-sidebar-pinterest"></i><span>PIN IT</span></a></div>
-      <div class="fourth sidebar-sharing border-box"><a href="#1" id="sidebar-social-google" class="sidebar-sharing-link"><i class="icon-sidebar-google"></i><span>PLUS 1</span></a></div>
+      <div class="fourth sidebar-sharing border-box"><a href="#1" onclick="bookmark('facebook');" id="sidebar-social-facebook" class="sidebar-sharing-link"><i class="icon-sidebar-facebook"></i><span>LIKE</span></a></div>
+      <div class="fourth sidebar-sharing border-box"><a href="#1"  onclick="bookmark('twitter');" id="sidebar-social-twitter" class="sidebar-sharing-link"><i class="icon-sidebar-twitter"></i><span>TWEET</span></a></div>
+      <div class="fourth sidebar-sharing border-box"><a href="https://www.pinterest.com/pin/create/button/?url={{ website_url }}{{ request.path }}&media=http:{% get_image_url 'settings' 320 240 company_logo %}" target="_blank" id="sidebar-social-pinterest" class="sidebar-sharing-link"><i class="icon-sidebar-pinterest"></i><span>PIN IT</span></a></div>
+      <div class="fourth sidebar-sharing border-box"><a href="#1" onclick="bookmark('gplus')" id="sidebar-social-google" class="sidebar-sharing-link"><i class="icon-sidebar-google"></i><span>PLUS 1</span></a></div>
     </div>
   </div>
 </div>
