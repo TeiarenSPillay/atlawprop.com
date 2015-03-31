@@ -322,7 +322,7 @@ input:-ms-input-placeholder                                        { color: #999
 #adv_search_more_less_container a.less_search_options_link         { color: @SearchlinkActive; text-decoration: none; }
 
 .property_count                                                    { float: right; font-size: 0.8rem;}
-#sticky-filters .property_count                                    { font-size: 1rem; margin-top: 14px;}
+#sticky-filters .property_count                                    { font-size: 1rem; margin-top: 7px;}
 .form_end                                                          { float: right; width:500px;}
 #adv_search_suburbs label                                          { color: @SearchTextColor1; font-weight: normal; }
 #adv_search_properties label                                       { color: @SearchTextColor1; font-weight: normal; }
@@ -453,7 +453,16 @@ h1.page-heading {
 #sticky-filters-form{
   font-size: 0;
 }
-#sticky-filters-form > div{
+#sticky-filters-form button{
+  font-size: 0.8rem;
+}
+#sticky-filters-form > div:not(.two-thirds) {
+  display: inline-block;
+  float: none;
+  vertical-align: middle;
+  margin-top:0;
+}
+#sticky-filters-form > div > div{
   padding-left: 10px;
   line-height: 1;
   font-size: 0.8rem;
@@ -511,7 +520,7 @@ h1.page-heading {
 .sticky-header .filter-submit{
   position: relative;
   height: 32px;
-  margin-top:14px;
+  margin-top:7px;
   background: @FilterButtonBG;
   color: @FilterButtonText;
   display: inline-block;
@@ -2082,6 +2091,22 @@ p.disclaimer-text{
   left:7px;
   font-size:25px;
 }
+#details-list .icon-progress{
+  color: @ActionButtonIcon;
+  display: inline-block;
+  font-size: 32px;
+  line-height: 1;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+#details-list .icon-progress:before{
+  .icon-font;
+  content: "\f0ae";
+  position:relative;
+  top: 0px;
+  left:0px;
+  font-size:25px;
+}
 #details-list .icon-floorplan{
   color: @ActionButtonIcon;
   display: inline-block;
@@ -2153,7 +2178,6 @@ p.disclaimer-text{
   position: relative;
   height: 349px;
   max-height: 349px;
-  border: 1px solid rgba(0,0,0,0.05);
   overflow:hidden;
   .transparent-black.bottom{
     padding: 0px 8px;
@@ -2188,7 +2212,6 @@ p.disclaimer-text{
   display: inline-block;
   margin-right: 19px;
   box-sizing: border-box;
-  border: 1px solid rgba(0,0,0,0.05);
   vertical-align: top;
   overflow: hidden;
   &.loader{
@@ -3798,8 +3821,13 @@ a.link {
   position: relative;
   border: @ContentBlocksBorder;
   & > h3{
-    padding: 20px;
+    padding: 20px 20px 0;
     margin: 0;
+  }
+  & > h4{
+    padding: 0 20px 0px;
+    margin: 0;
+    font-weight: 400;
   }
   .area-profile-property-links{
     padding: 0 20px 20px;
@@ -3823,9 +3851,6 @@ a.link {
 }
 .area-profile-property-box{
   position: relative;
-  .property-list-favourite{
-    margin-top: -20px;
-  }
   .property-list-link{
     color: inherit;
   }
@@ -4275,9 +4300,42 @@ ul.as-selections                        { background-color: #FFFFFF; border: 1px
   }
 }
 
+.pd_nav_left, .pd_nav_right{
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 105px;
+  display: block;
+  background: none repeat scroll 0% 0% #F1F1F1;
+  margin-top: -53px;
+  line-height: 105px;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  color: inherit;
+  &:hover{
+    color: inherit;
+  }
+  &.disabled{
+    display: none !important;
+  }
+}
+
+.pd_nav_left{
+  left: 0;
+}
+.pd_nav_right{
+  right: 0;
+}
 .pd_modal_controls{
   float: right;
   margin: 10px;
+}
+.pd_modal_controls .counter{
+  line-height: 25px;
+  margin-right: 5px;
+  display: inline-block;
+  vertical-align: bottom;
 }
 .pd_modal_title{
   float: none;
