@@ -404,7 +404,10 @@ h1.page-heading {
   font-family:@FontFamily; 
   font-size: 2em; 
   font-weight:300;
-  color:@H1Color; 
+  color:@H1Color;
+}
+.heading-price{
+  color: @PrimaryColour;
 }
 
 /* Results: Sticky Header */
@@ -843,7 +846,7 @@ h1.page-heading {
 
 .property-list-description{
   .results-content{
-    line-height: 1.1em;
+    line-height: 1.1rem;
   }
 }
 #results-map-details:before{
@@ -865,22 +868,27 @@ h1.page-heading {
 }
 
 /* Results: Navigation */
-
+.top-nav-counter{
+  text-align: center;
+}
 .top-nav-counter-list {
   list-style-type: none;
-  margin: 0;
+  margin: 3px 0;
   padding: 0;
   text-align: center;
+  height: 25px;
 }
 .top-nav-counter-list li{
   display: inline-block;
   width: 25px;
   height: 25px;
+  line-height: 25px;
   text-align: center;
   border-radius: 2px;
+  vertical-align: top;
 }
 .top-nav-counter-list li span{
-  line-height: 25px;
+  vertical-align: middle;
 }
 .top-nav-counter-list li.pre-3{
 }
@@ -904,17 +912,43 @@ h1.page-heading {
 .results-top-navigation .grid_2, .details-top-navigation .grid_2{
   display: block;
 }
+.results-top-navigation a{
+  display: inline-block;
+  vertical-align: middle;
+  &:before{
+    content:"";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+  }
+}
+.results-top-navigation i{
+  display: inline-block;
+  vertical-align: middle;
+}
 .results-top-navigation .icon-arrow-left:before, .details-top-navigation .icon-arrow-left:before {
   .icon-font;
   content: "\f104";
   font-size: 40px;
   vertical-align: middle;
+  display: inline-block;
 }
 .results-top-navigation .icon-arrow-right:before, .details-top-navigation .icon-arrow-right:before {
   .icon-font;
   content: "\f105";
   font-size: 40px;
   vertical-align: middle;
+  display: inline-block;
+}
+.results-top-navigation .icon-arrow-left:before,
+.results-top-navigation .icon-arrow-right:before{
+  margin-top: -10px;
+}
+
+.details-top-navigation .icon-arrow-left:before,
+.details-top-navigation .icon-arrow-right:before{
+  margin-top: -8px;
 }
 .results-top-navigation .top-nav-next, .details-top-navigation .top-nav-next {
   text-align: right;
@@ -958,7 +992,7 @@ h1.page-heading {
   text-align: center;
   overflow: hidden;
   position: relative;
-  z-index: 0;
+  z-index: 1001;
 }
 
 .sidebar-button a{
@@ -1030,9 +1064,6 @@ h1.page-heading {
   opacity:0;
 }
 
-.sidebar-button.active{
-  z-index:3;
-}
 .sidebar-button.active a{
   border-bottom: 1px solid @SidebarButtonBG;
 }
@@ -1125,8 +1156,9 @@ h1.page-heading {
   position: relative;
   border-top: 1px solid @ContentBlocksBorder;
   top:-1px;
-  z-index:1;
+  z-index:1000;
   float:right;
+  overflow: hidden;
 }
 .sidebar-qr-code h4{
   font-size: 1.1em;
@@ -2303,7 +2335,7 @@ p.disclaimer-text{
 }
 
 .listing-description p{
-  line-height: 1.1em;
+  line-height: 1.1rem;
   margin: 0;
   color: #666666;
 }
@@ -2604,6 +2636,9 @@ p.disclaimer-text{
     padding: 5px;
     a{
       color: inherit;
+      &:hover{
+        color: @LinkActive;
+      }
     }
   }
   .amenity-icon:before{
@@ -2990,6 +3025,7 @@ a.link {
   margin-right: 19px;
   line-height: 105px;
   vertical-align: top;
+  background: @ContentBlocksAltBG;
   cursor: pointer;
   &.disabled{
     visibility: hidden !important;
@@ -3004,6 +3040,7 @@ a.link {
   line-height: 105px;
   vertical-align: top;
   float: right;
+  background: @ContentBlocksAltBG;
   cursor: pointer;
   &.disabled{
     visibility: hidden !important;
@@ -3011,8 +3048,15 @@ a.link {
   }
 }
 .navigation-thumbnails li{
-  width:155px;
+  width:140px;
   position: relative;
+  &.current{
+    border-top: 6px solid @PrimaryColour;
+    .transparent-black{
+      text-align: center;
+      font-weight: 600;
+    }
+  }
   .transparent-black{
     z-index: 10;
     line-height: 30px;
@@ -3036,9 +3080,6 @@ a.link {
       }
     }
   }
-}
-#listing-navigation-thumbs .caroufredsel_wrapper{
-  min-width: 505px;
 }
 
 #sticky-details{
@@ -4306,7 +4347,7 @@ ul.as-selections                        { background-color: #FFFFFF; border: 1px
   width: 40px;
   height: 105px;
   display: block;
-  background: none repeat scroll 0% 0% #F1F1F1;
+  background: @ContentBlocksAltBG;
   margin-top: -53px;
   line-height: 105px;
   text-align: center;
@@ -4336,11 +4377,13 @@ ul.as-selections                        { background-color: #FFFFFF; border: 1px
   margin-right: 5px;
   display: inline-block;
   vertical-align: bottom;
+  color:@ContentBlocksText;
 }
 .pd_modal_title{
   float: none;
   padding: 15px 50px 15px 15px;
   border-bottom: @ContentBlocksBorder;
+  color:@H1Color;
 }
 .captcha-background{
   background: #f9f9f9;
