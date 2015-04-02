@@ -688,7 +688,7 @@ h1.page-heading {
   border: @ActionButtonBorder;
   -webkit-transform: translate(0, -50px);
   transform: translate(0, -50px);
-  height: 150px;
+  height: 160px;
 }
 
 .results-alerts-mini .results-alerts-mini-content{;
@@ -1333,7 +1333,7 @@ h1.page-heading {
 .sidebar-contact fieldset p > input[type="checkbox"]:checked + label:after {
   top:1px;
 }
-.sidebar-contact .show-number{
+.show-number{
   & + .agent-number{
     margin-left: 19px;
     font-size: 1.3em;
@@ -1502,33 +1502,6 @@ h1.page-heading {
   .show-number{
     font-size: inherit;
   }
-  .sidebar-agent-details{
-    width: 155px;
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 8px;
-    h4{
-      font-weight: 600;
-    }
-    a{
-      display: block;
-      color: inherit;
-      i{
-        margin-right: 8px;
-        display: inline-block;
-      }
-      .icon-agent-phone:before{
-        .icon-font();
-        color: @PrimaryColour;
-        content: "\f095";
-      }
-      .icon-agent-search:before{
-        .icon-font();
-        color: @PrimaryColour;
-        content: "\f002";
-      }
-    }
-  }
 }
 
 /* Results: Map Canvas */
@@ -1545,19 +1518,48 @@ h1.page-heading {
   z-index: 0;
   position: relative;
 }
+.sidebar-agent-details{
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+  h4{
+    font-weight: 600;
+  }
+  a{
+    display: block;
+    color: inherit;
+  }
+}
+.icon-agent-phone, .icon-agent-search{
+  margin-right: 8px;
+  display: inline-block;
+  top: 1px;
+}
+.icon-agent-phone:before{
+  .icon-font();
+  color: @PrimaryColour;
+  content: "\f095";
+}
+.icon-agent-search:before{
+  .icon-font();
+  color: @PrimaryColour;
+  content: "\f002";
+}
 
 
 
 /* Results: Results List */
 
-#results-list .property-list-item {
+#results-list .property-list-item,
+#nofavourites .property-list-item{
   background: @ContentBlocksBG;
   border:@ContentBlocksBorder;
   color: @ContentBlocksText;;
   position: relative;
   page-break-inside: avoid;
 }
-#results-list .property-list-item.featured {
+#results-list .property-list-item.featured,
+#nofavourites .property-list-item.featured {
   border: 4px solid @FeaturedPropertyBorder;
 }
 .property-list-item .property-list-favourite{
@@ -1587,7 +1589,8 @@ h1.page-heading {
   font-size:20px;
 }
 
-#results-list .property-list-item .property-list-link{
+#results-list .property-list-item .property-list-link,
+#nofavourites .property-list-item .property-list-link{
   display: block;
   width: 100%;
   height: 100%;
@@ -1604,8 +1607,9 @@ h1.page-heading {
   color: inherit;
   padding: 16px;
 }
-#results-list .property-list-item .property-list-image-thumb{
-  padding-right: 10px;
+#results-list .property-list-item .property-list-image-thumb,
+#nofavourites .property-list-item .property-list-image-thumb{
+  border-right: 10px solid @ContentBlocksBG;
   position: relative;
   width: 280px;
   height: 210px;
@@ -1615,24 +1619,28 @@ h1.page-heading {
     width: 280px;
   }
 }
-#results-list .property-list-item .property-list-details{
+#results-list .property-list-item .property-list-details,
+#nofavourites .property-list-item .property-list-details{
   padding-left: 10px;
   display: inline-block;
   position: relative;
   height: 210px;
   z-index:20;
 }
-#results-list .property-list-item .property-list-description{
+#results-list .property-list-item .property-list-description,
+#nofavourites .property-list-item .property-list-description{
   height: 108px;
   line-height: 1.1em;
 }
-#results-list .property-list-item .property-list-webref{
+#results-list .property-list-item .property-list-webref,
+#nofavourites .property-list-item .property-list-webref{
   position: absolute;
   bottom: 0px;
   line-height:1;
   vertical-align: bottom;
 }
-#results-list .property-list-meta{
+#results-list .property-list-meta,
+#nofavourites .property-list-meta{
   color: @FeatureText;
   font-size: 0;
   text-align: left;
@@ -1644,7 +1652,8 @@ h1.page-heading {
     display: inline-block;
   }
 }
-#results-list .property-list-webref{
+#results-list .property-list-webref,
+#nofavourites .property-list-webref{
   color: @FeatureText;
 }
 .property-list-item .icon-beds,
@@ -1691,16 +1700,19 @@ h1.page-heading {
   font-size:20px;
 }
 
-#results-list .expand-tags{
+#results-list .expand-tags,
+#nofavourites .expand-tags{
   display: none;
   margin-top:-15px;
 }
-#results-list .toggle-expand{
+#results-list .toggle-expand,
+#nofavourites .toggle-expand{
   padding: 0 8px;
   margin-right: -8px;
   height: 100%;
 }
-#results-list .icon-expand-tags-up{
+#results-list .icon-expand-tags-up,
+#nofavourites .icon-expand-tags-up{
   float: right;
   &:before{
     .icon-font;
@@ -1710,7 +1722,8 @@ h1.page-heading {
     font-size:12px;
   }
 }
-#results-list .icon-expand-tags-down{
+#results-list .icon-expand-tags-down,
+#nofavourites .icon-expand-tags-down{
   float: right;
   &:before{
     .icon-font;
@@ -1722,6 +1735,36 @@ h1.page-heading {
 }
 /* Results: Results List Extras */
 
+
+#nofavourites .property-list-link{
+  filter: blur(3px);
+  position: relative;
+  &:before{
+    content:"";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 999999;
+    visibility: visible;
+  }
+}
+
+#nofavourites .property-list-favourite{
+  &:before{
+    background: #ffffff;
+    content:"";
+    width: 55px;
+    height: 55px;
+    border-radius: 100px;
+    position: absolute;
+    top: -3px;
+    left: -2px;
+    border: @PrimaryColour;
+  }
+}
 
 #results-list .property-list-inject{
   background: @ContentBlocksBG;
@@ -1837,12 +1880,35 @@ h1.page-heading {
 
 
 .results-email-alerts-box{
+  position: relative;
   padding: 20px;
   p, input {
   }
   button{
     padding: 0 8px;
   }
+  .edit-alerts{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+}
+
+.icon-edit{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+.icon-edit:before{
+  .icon-font;
+  content: "\f013";
+  position: relative;
+  vertical-align: middle;
+  height: 100%;
+  display: inline-block;
+  font-size:18px;
+  top: -2px;
 }
 
 .results-email-alerts-box .icon-email-alerts{
@@ -2161,6 +2227,18 @@ p.disclaimer-text{
   *{
     font-size: 0.8rem;
     vertical-align: top;
+  }
+  .label{
+    color: #666666;
+    strong{
+      color: #333333;
+    }
+    display: inline-block;
+    margin-right: 8px;
+  }
+  .value{
+    color: #666666;
+    display: inline-block;
   }
 }
 
@@ -3473,6 +3551,7 @@ a.link {
 .branch-meta, .area-profile-properies{
   .border-left{
     position: relative;
+    padding-right: 30px;
   }
   b{
     font-size: 100%;
