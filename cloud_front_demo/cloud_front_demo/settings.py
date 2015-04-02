@@ -57,18 +57,18 @@ DATABASES = {
 #RECAPTCHA_PUBLIC_KEY = '6LfyycISAAAAAB2PddDRop69fIS3nmk9iqLltHIs'
 #RECAPTCHA_PRIVATE_KEY = '6LfyycISAAAAAIuVa0HI-P6WH_uCp88MG_aJ7TmF'
 
-S3_FOLDER_NAME = 'demo'
+S3_FOLDER_NAME = 'test'
 
 ALLOWED_HOSTS = ['.aws-staging.propdata.net']
 
 TIME_ZONE = 'Africa/Johannesburg'
 SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
 
-#if not DEV_MODE:
-#    ANALYTICS_ID = 'UA-13148074-26'
-#    MIDDLEWARE_CLASSES += (
-#        'eos.lib.analytics.GoogleAnalyticsMiddleware',
-#    )
+ANALYTICS_ID = 'UA-13148074-26'
+
+MIDDLEWARE_CLASSES += (
+    'eos.lib.analytics.GoogleAnalyticsMiddleware',
+)
 
 ROOT_URLCONF = 'cloud_front_demo.urls'
 
