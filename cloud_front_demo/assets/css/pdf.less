@@ -10,7 +10,7 @@ a{
 #header_content{
   width: 15cm;
   height: 1.3cm;
-  position: fixed;
+  position: absolute;
   right: 0cm;
   width:15cm;
   bottom: 28.45cm;
@@ -23,15 +23,12 @@ a{
   line-height: 1.3cm;
 }
 #sidebar_frame{
-  border-right-color: #d6d6d6;
-  border-right-style: solid;
-  border-right-width: 1pt;
   height: 29.7cm;
   width: 5.968cm;
   left: 0pt;
   bottom: 0;
   box-sizing: border-box;
-  position: fixed;
+  position: absolute;
 }
 #footer_content{
   width:15cm;
@@ -48,10 +45,14 @@ a{
 
 #results-list{
   width:15cm;
-  max-height: 27cm;
-  left: 5.8cm;
+  max-height: 28.5cm;
+  min-height: 28.5cm;
+  border-left-color: #d6d6d6;
+  border-left-style: solid;
+  border-left-width: 1pt;
+  left: 5.78cm;
   position: relative;
-  top: 1.01cm;
+  top: 1.05cm;
   box-sizing: border-box;
   page-break-inside: auto;
 }
@@ -343,13 +344,15 @@ a{
 #results-list .property-list-meta{
   color: @FeatureText;
   white-space: nowrap;
-  width: 6.5cm;
+  width: 7cm;
   margin: 0 0 10pt 0;
 }
 #results-list .property-list-webref{
   color: @FeatureText;
 }
-
+#results-list .property-list-meta > div{
+  float: left;
+}
 .property-list-item .icon-beds,
 .property-list-item .icon-baths,
 .property-list-item .icon-garages,
@@ -402,6 +405,10 @@ a{
   left:0pt;
   font-size:11pt;
   display: inline-block;
+}
+.property-list-item .results-content{
+  margin-top: 0.1mm;
+  line-height: 10pt;
 }
 
 .icon-yes{
@@ -767,11 +774,12 @@ a{
 }
 .area-profile-title{
   position: absolute;
-  top: -0.9cm;
+  top: -0.95cm;
   width: 15cm;
   left: 0.8cm;
   background: #000000;
   color: #ffffff;
+  display: block;
 }
 
 .listing-details{
@@ -1136,4 +1144,7 @@ h5{
 
 .clearfix:after {
     clear: both;
+}
+.listing-amenities table tr{
+  page-break-inside: avoid;
 }
