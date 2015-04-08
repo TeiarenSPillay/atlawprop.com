@@ -26,6 +26,8 @@ urlpatterns = patterns('',
     (r'^email/news-details/$',                    'urls.direct_to_template', {'template': 'emails/news-details.html'}),
     (r'^email/newsletter/$',                      'urls.direct_to_template', {'template': 'emails/newsletter.html'}),
     (r'^pdf-test/$',                      'urls.direct_to_template', {'template': 'pdftest.html'}),
+    (r'^loaderio-0d1144837ada862ac89adb17cc035e1c.txt$',                      'urls.direct_to_template', {'template': 'loaderio-0d1144837ada862ac89adb17cc035e1c.txt'}),
+
 )
 
 urlpatterns += eos_urlpatterns
