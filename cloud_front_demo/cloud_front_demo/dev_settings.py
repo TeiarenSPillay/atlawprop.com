@@ -49,4 +49,7 @@ CACHES = {
     }
 }
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_REDIS_UNIX_DOMAIN_SOCKET_PATH = None
+
 ANALYTICS_ID = "UA-XXXX-XX"

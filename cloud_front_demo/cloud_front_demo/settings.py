@@ -79,19 +79,20 @@ SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
 
 ANALYTICS_ID = 'UA-13148074-26'
 
-SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
-
 CLIENT_MIDDLEWARE = ()
 
 if not DEV_MODE:
 
-    CACHES = {
-        'default': {
-            'BACKEND': 'redis_cache.RedisCache',
-            'LOCATION': 'db-2.aws.propdata.net',
-            'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1]
-        }
-    }
+    #CACHES = {
+    #    'default': {
+    #        'BACKEND': 'redis_cache.RedisCache',
+    #        'LOCATION': 'db-2.aws.propdata.net',
+    #        'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1]
+    #    }
+    #}
+
+    SESSION_ENGINE = 'redis_sessions.session'
+    SESSION_REDIS_UNIX_DOMAIN_SOCKET_PATH = 'db-2.aws.propdata.net:6379'
 
     CLIENT_MIDDLEWARE += (
         'eos.lib.analytics.GoogleAnalyticsMiddleware',
