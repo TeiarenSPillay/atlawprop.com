@@ -3,25 +3,16 @@ from settings import *
 DEBUG = True
 DEV_MODE = True
 
-#DATABASE_ENGINE = 'postgresql_psycopg2'
-#DATABASE_NAME = 'abc_search'
-#DATABASE_USER = 'root'
-#DATABASE_PASSWORD = ''
-#DATABASE_HOST = '192.168.0.10'
-#DATABASE_PORT = ''
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'cloudfront_demo',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cloudfront_demo',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': '192.168.0.10',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'HOST': '192.168.0.10',
+        'PORT': '',
     }
 }
-
 
 
 REGION_PROFILES_ADDON = True
@@ -34,17 +25,28 @@ DOCUMENTS_ADDON = True
 NEW_DEVELOPMENT_ADDON = True
 OFFERS_ADDON = True
 
-S3_FOLDER_NAME = "demo"
-
-WEBSITE_URL = "http://moe.int.propdata.net:8000"
+WEBSITE_URL = "http://moe.int.propdata.net:8001"
 SENTRY_DSN = None
-MOBI_URL = "http://127.0.0.1:8000"
 
-if MOBI_URL:
-    MIDDLEWARE_CLASSES += (
-        'eos.lib.mobi_middleware.MobiMiddleware',
-    )
+#MOBI_URL = "http://127.0.0.1:8001"
+
+#if MOBI_URL:
+#    MIDDLEWARE_CLASSES += (
+#        'eos.lib.mobi_middleware.MobiMiddleware',
+#    )
 
 
 PP_FEED_USERNAME = "propdatauser"
 PP_FEED_PASSWORD = "smartcat"
+
+# Uncomment below lines to run django debug toolbar - update INTERNAL_IPS with your own
+#INSTALLED_APPS += ('debug_toolbar',)
+#INTERNAL_IPS = ('127.0.0.1', '192.168.0.116',)
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'
+    }
+}
+
+ANALYTICS_ID = "UA-XXXX-XX"

@@ -11,18 +11,31 @@ else:
 TEMPLATE_DEBUG = DEBUG
 CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__), '..'))
 
+
+def combine_middleware():
+    middleware_list = ('django.middleware.cache.UpdateCacheMiddleware',)
+    for em in EOS_MIDDLEWARE:
+        middleware_list += (em,)
+
+    for cm in CLIENT_MIDDLEWARE:
+        middleware_list += (cm,)
+
+    middleware_list += ('django.middleware.cache.FetchFromCacheMiddleware',)
+
+    return middleware_list
+
 ### Site specifics ###
 SERVER_EMAIL = 'django@propdata.net'
-WEB_STATS    = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=cloudfront-demo.aws-staging.propdata.net"
-WEBSITE_URL  = "http://cloudfront-demo.aws-staging.propdata.net"
+WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=cloudfront-demo.aws-staging.propdata.net"
+WEBSITE_URL = "http://cloudfront-demo.aws-staging.propdata.net"
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
-BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0] # Top heading - first part
-BROCHURE_TITLE_P2 = [0.0, 0.0, 0.0] # Top heading - second part
-BROCHURE_DATE     = [0.80, 0.80, 0.80] # Date
-BROCHURE_HEADINGS = [0.0, 0.0, 0.0] # Section headings
-BROCHURE_PRICE    = [0.0, 0.0, 0.0] # Price
-BROCHURE_WEBSITE  = [0.82, 0.55, 0.0] # Website address (bottom)
+BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]  # Top heading - first part
+BROCHURE_TITLE_P2 = [0.0, 0.0, 0.0]    # Top heading - second part
+BROCHURE_DATE = [0.80, 0.80, 0.80]     # Date
+BROCHURE_HEADINGS = [0.0, 0.0, 0.0]    # Section headings
+BROCHURE_PRICE = [0.0, 0.0, 0.0]       # Price
+BROCHURE_WEBSITE = [0.82, 0.55, 0.0]   # Website address (bottom)
 
 # This controls the clients add-ons
 COMMERCIAL_ADDON = True
@@ -41,16 +54,16 @@ WINDOW_DISPLAY_ADDON = {
 }
 FACEBOOK_ADDON = True
 FACEBOOK_BRANCH_IDS = [5376]
+
 ### Database details ###
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'cloudfront_demo',                      # Or path to database file if using sqlite3.
-        # The following settings are not used with sqlite3:
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'cloudfront_demo',
         'USER': 'durr_estates',
         'PASSWORD': 'ujl8rse5zw',
-        'HOST': 'db-1',                      # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',                      # Set to empty string for default.
+        'HOST': 'db-1',
+        'PORT': '',
     }
 }
 #GMAPS_KEY  = "ABQIAAAAZ7M1Fg4tth4J3zE3SdNNGhQopxaNlSGf-D4ne8JrgGl4on9aCxR8lLOa8U7yfvsm-aaXkQRoyD8rlw" # *.abcrealestate.co.za
@@ -66,9 +79,25 @@ SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
 
 ANALYTICS_ID = 'UA-13148074-26'
 
-MIDDLEWARE_CLASSES += (
-    'eos.lib.analytics.GoogleAnalyticsMiddleware',
-)
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
+
+CLIENT_MIDDLEWARE = ()
+
+if not DEV_MODE:
+
+    CACHES = {
+        'default': {
+            'BACKEND': 'redis_cache.RedisCache',
+            'LOCATION': 'db-2.aws.propdata.net',
+            'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1]
+        }
+    }
+
+    CLIENT_MIDDLEWARE += (
+        'eos.lib.analytics.GoogleAnalyticsMiddleware',
+    )
+
+MIDDLEWARE_CLASSES = combine_middleware()
 
 ROOT_URLCONF = 'cloud_front_demo.urls'
 
