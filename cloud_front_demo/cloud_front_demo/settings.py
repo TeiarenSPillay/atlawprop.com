@@ -11,23 +11,11 @@ else:
 TEMPLATE_DEBUG = DEBUG
 CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__), '..'))
 
-
-def combine_middleware():
-    middleware_list = ('django.middleware.cache.UpdateCacheMiddleware',)
-    for em in EOS_MIDDLEWARE:
-        middleware_list += (em,)
-
-    for cm in CLIENT_MIDDLEWARE:
-        middleware_list += (cm,)
-
-    middleware_list += ('django.middleware.cache.FetchFromCacheMiddleware',)
-
-    return middleware_list
-
 ### Site specifics ###
 SERVER_EMAIL = 'django@propdata.net'
 WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=cloudfront-demo.aws-staging.propdata.net"
 WEBSITE_URL = "http://cloudfront-demo.aws-staging.propdata.net"
+SESSION_REDIS_PREFIX = CURRENT_DIRECTORY.split("/")[-1]
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]  # Top heading - first part
@@ -79,26 +67,10 @@ SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
 
 ANALYTICS_ID = 'UA-13148074-26'
 
-CLIENT_MIDDLEWARE = ()
-
 if not DEV_MODE:
-
-    #CACHES = {
-    #    'default': {
-    #        'BACKEND': 'redis_cache.RedisCache',
-    #        'LOCATION': 'db-2.aws.propdata.net',
-    #        'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1]
-    #    }
-    #}
-
-    SESSION_ENGINE = 'redis_sessions.session'
-    SESSION_REDIS_UNIX_DOMAIN_SOCKET_PATH = 'db-2.aws.propdata.net:6379'
-
-    CLIENT_MIDDLEWARE += (
+    MIDDLEWARE_CLASSES += (
         'eos.lib.analytics.GoogleAnalyticsMiddleware',
     )
-
-MIDDLEWARE_CLASSES = combine_middleware()
 
 ROOT_URLCONF = 'cloud_front_demo.urls'
 

@@ -43,13 +43,5 @@ PP_FEED_PASSWORD = "smartcat"
 #INSTALLED_APPS += ('debug_toolbar',)
 #INTERNAL_IPS = ('127.0.0.1', '192.168.0.116',)
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'
-    }
-}
-
 SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
-SESSION_REDIS_UNIX_DOMAIN_SOCKET_PATH = None
-
 ANALYTICS_ID = "UA-XXXX-XX"
