@@ -17,6 +17,19 @@ WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=cloudfront-
 WEBSITE_URL = "http://cloudfront-demo.aws-staging.propdata.net"
 SESSION_REDIS_PREFIX = CURRENT_DIRECTORY.split("/")[-1]
 
+
+def combine_middleware():
+    middleware_list = ('django.middleware.cache.UpdateCacheMiddleware',)
+    for em in EOS_MIDDLEWARE:
+        middleware_list += (em,)
+
+    for cm in CLIENT_MIDDLEWARE:
+        middleware_list += (cm,)
+
+    middleware_list += ('django.middleware.cache.FetchFromCacheMiddleware',)
+
+    return middleware_list
+
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]  # Top heading - first part
 BROCHURE_TITLE_P2 = [0.0, 0.0, 0.0]    # Top heading - second part
@@ -43,6 +56,14 @@ WINDOW_DISPLAY_ADDON = {
 FACEBOOK_ADDON = True
 FACEBOOK_BRANCH_IDS = [5376]
 
+CACHES = {
+    'default': {
+        'BACKEND': 'redis_cache.RedisCache',
+        'LOCATION': 'db-2.aws.propdata.net:6379',
+        'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1]
+    },
+}
+
 ### Database details ###
 DATABASES = {
     'default': {
@@ -67,10 +88,13 @@ SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
 
 ANALYTICS_ID = 'UA-13148074-26'
 
+CLIENT_MIDDLEWARE = ()
 if not DEV_MODE:
-    MIDDLEWARE_CLASSES += (
+    CLIENT_MIDDLEWARE += (
         'eos.lib.analytics.GoogleAnalyticsMiddleware',
     )
+
+MIDDLEWARE_CLASSES = combine_middleware()
 
 ROOT_URLCONF = 'cloud_front_demo.urls'
 
