@@ -45,4 +45,4 @@ PP_FEED_PASSWORD = "smartcat"
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 ANALYTICS_ID = "UA-XXXX-XX"
-CACHES = {'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'}}
+#CACHES = {'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'}}
