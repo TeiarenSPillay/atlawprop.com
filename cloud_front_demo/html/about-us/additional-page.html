@@ -1,1 +1,8 @@
 {% extends "eos_additional_page.html" %}
+{% block content %}
+  <div class='container_12 margin-top30 margin-bottom30'>
+    <div class='grid_12'>
+      {{ obj.content|safe }}
+    </div>
+  </div>
+{% endblock content %}
