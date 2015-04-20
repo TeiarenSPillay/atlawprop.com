@@ -28,6 +28,8 @@ urlpatterns = patterns('',
     (r'^pdf-test/$',                      'urls.direct_to_template', {'template': 'pdftest.html'}),
     (r'^loaderio-0d1144837ada862ac89adb17cc035e1c.txt$',                      'urls.direct_to_template', {'template': 'loaderio-0d1144837ada862ac89adb17cc035e1c.txt'}),
 
+    
+    (r'^grid/$',                      'urls.direct_to_template', {'template': 'eos_grid.html'}),
 )
 
 urlpatterns += eos_urlpatterns
