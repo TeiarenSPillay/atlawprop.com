@@ -9,7 +9,7 @@ else:
     DEBUG = False
 
 TEMPLATE_DEBUG = DEBUG
-CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__), '..'))
+CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__)))
 
 ### Site specifics ###
 SERVER_EMAIL = 'django@propdata.net'
@@ -99,16 +99,16 @@ if not DEV_MODE:
 ROOT_URLCONF = 'cloud_front_demo.urls'
 
 # Static configs
-MEDIA_ROOT = '%s/assets' % CURRENT_DIRECTORY
-STATIC_ROOT = "%s/static" % CURRENT_DIRECTORY
+MEDIA_ROOT = '%s/../assets' % CURRENT_DIRECTORY
+STATIC_ROOT = "%s/../static" % CURRENT_DIRECTORY
 STATIC_URL = "/static/"
 STATICFILES_DIRS = (
-    path.join(CURRENT_DIRECTORY, 'assets'),
+    path.join(CURRENT_DIRECTORY, '../assets'),
     path.join(EOS_DIRECTORY, 'assets'),
 )
 
 TEMPLATE_DIRS += (
-    '%s/html' % CURRENT_DIRECTORY,
+    '%s/../html' % CURRENT_DIRECTORY,
 )
 
 #SENTRY_SITE = "abcrealestate.co.za"
