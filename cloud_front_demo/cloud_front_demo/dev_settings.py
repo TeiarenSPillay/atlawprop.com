@@ -6,7 +6,7 @@ DEV_MODE = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cloudfront_demo',
+        'NAME': 'julian_s3',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': '192.168.0.10',
@@ -25,8 +25,9 @@ DOCUMENTS_ADDON = True
 NEW_DEVELOPMENT_ADDON = True
 OFFERS_ADDON = True
 
-WEBSITE_URL = "http://moe.int.propdata.net:8001"
+WEBSITE_URL = "http://dev.int.propdata.net:24002"
 SENTRY_DSN = None
+S3_FOLDER_NAME = 'test'
 
 #MOBI_URL = "http://127.0.0.1:8001"
 
@@ -45,4 +46,12 @@ PP_FEED_PASSWORD = "smartcat"
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 ANALYTICS_ID = "UA-XXXX-XX"
-#CACHES = {'default': {'BACKEND': 'django.core.cache.backends.locmem.LocMemCache'}}
+
+
+RECAPTCHA_PUBLIC_KEY = "6LeVBQETAAAAACcHL0MLw-HL5KgE6jLykWQaK5IY"
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+    }
+}

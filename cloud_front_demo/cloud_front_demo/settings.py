@@ -15,20 +15,6 @@ CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__)))
 SERVER_EMAIL = 'django@propdata.net'
 WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=cloudfront-demo.aws-staging.propdata.net"
 WEBSITE_URL = "http://cloudfront-demo.aws-staging.propdata.net"
-SESSION_REDIS_PREFIX = CURRENT_DIRECTORY.split("/")[-1]
-
-
-'''def combine_middleware():
-    middleware_list = ('django.middleware.cache.UpdateCacheMiddleware',)
-    for em in EOS_MIDDLEWARE:
-        middleware_list += (em,)
-
-    for cm in CLIENT_MIDDLEWARE:
-        middleware_list += (cm,)
-
-    middleware_list += ('django.middleware.cache.FetchFromCacheMiddleware',)
-
-    return middleware_list'''
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]  # Top heading - first part
@@ -56,13 +42,24 @@ WINDOW_DISPLAY_ADDON = {
 FACEBOOK_ADDON = True
 FACEBOOK_BRANCH_IDS = [5376]
 
-'''CACHES = {
-    'default': {
-        'BACKEND': 'redis_cache.RedisCache',
-        'LOCATION': 'db-2.aws.propdata.net:6379',
-        'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1]
-    },
-}'''
+CACHING_ADDON = True
+
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://db-2.aws.propdata.net:6379",
+        'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1],
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+# Sesson config
+SESSION_ENGINE = 'redis_sessions.session'
+SESSION_REDIS_HOST = 'db-2.aws.propdata.net'
+SESSION_REDIS_PORT = 6379
+SESSION_REDIS_PREFIX = CURRENT_DIRECTORY.split("/")[-1]
 
 ### Database details ###
 DATABASES = {
