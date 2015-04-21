@@ -1,7 +1,22 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
+@PrimaryColor: #c90d1b;
+@HeaderBG: #002e5a;
+
+@SubHeadingsColor: #212121;
+
+@ContentBlocksBG: #ffffff;
+@ContentBlocksText: #333333;
+@ContentBlocksBorder: 0.8pt solid #d6d6d6;
+@ContentBlocksAltBG: #f1f1f1;
+@ContentBlocksAltText: #666666;
+@ContentBlocksAltBorder: 1px solid #f1f1f1;
+
+@FeaturedPropertyBorder: #BDBDBD;
+
 body{
   font-family: 'Source Sans Pro', sans-serif;
+  background: url(/static/img/custom/brochures/background.jpg) no-repeat center center;
 }
 
 *{
@@ -13,15 +28,14 @@ a{
   color: @PrimaryColor;
 }
 #header_content{
-  width: 15cm;
-  height: 1.3cm;
-  position: absolute;
-  right: 0cm;
-  width:15cm;
-  bottom: 28.45cm;
+  width: 100%;
+  height: 3cm;
+  position: relative;
+  left: 0cm;
+  top: 0cm;
   background-color: #000000;
   color: #ffffff;
-  font-weight: 300;
+  font-weight: 400;
   display: inline-block;
   box-sizing: border-box;
   padding: 0 0.8cm;
@@ -114,19 +128,6 @@ a{
   box-sizing: border-box;
   width: 100%;
 }
-
-@PrimaryColor: #c90d1b;
-
-@SubHeadingsColor: #212121;
-
-@ContentBlocksBG: #ffffff;
-@ContentBlocksText: #333333;
-@ContentBlocksBorder: 0.8pt solid #d6d6d6;
-@ContentBlocksAltBG: #f1f1f1;
-@ContentBlocksAltText: #666666;
-@ContentBlocksAltBorder: 1px solid #f1f1f1;
-
-@FeaturedPropertyBorder: #BDBDBD;
 
 .icon-font(){
   font-family: 'homeicon';
