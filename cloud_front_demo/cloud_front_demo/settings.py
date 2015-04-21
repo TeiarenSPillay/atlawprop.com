@@ -15,7 +15,6 @@ CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__)))
 SERVER_EMAIL = 'django@propdata.net'
 WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=cloudfront-demo.aws-staging.propdata.net"
 WEBSITE_URL = "http://cloudfront-demo.aws-staging.propdata.net"
-SESSION_REDIS_PREFIX = CURRENT_DIRECTORY.split("/")[-1]
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]  # Top heading - first part
@@ -56,10 +55,11 @@ CACHES = {
     }
 }
 
-
 # Sesson config
-SESSION_ENGINE = "django.contrib.sessions.backends.cache"
-SESSION_CACHE_ALIAS = "default"
+SESSION_ENGINE = 'redis_sessions.session'
+SESSION_REDIS_HOST = 'db-2.aws.propdata.net'
+SESSION_REDIS_PORT = 6379
+SESSION_REDIS_PREFIX = CURRENT_DIRECTORY.split("/")[-1]
 
 ### Database details ###
 DATABASES = {
