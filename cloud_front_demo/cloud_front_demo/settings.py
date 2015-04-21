@@ -44,13 +44,18 @@ FACEBOOK_ADDON = True
 FACEBOOK_BRANCH_IDS = [5376]
 
 CACHING_ADDON = True
+
 CACHES = {
-    'default': {
-        'BACKEND': 'redis_cache.RedisCache',
-        'LOCATION': 'db-2.aws.propdata.net:6379',
-        'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1]
-    },
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://db-2.aws.propdata.net:6379",
+        'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1],
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
 }
+
 
 # Sesson config
 SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'
