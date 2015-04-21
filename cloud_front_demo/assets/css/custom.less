@@ -1617,7 +1617,7 @@ h1.page-heading {
 }
 #results-list .property-list-item .property-list-image-thumb,
 #nofavourites .property-list-item .property-list-image-thumb{
-  border-right: 10px solid @ContentBlocksBG;
+  margin-right: 8px;
   position: relative;
   width: 280px;
   height: 210px;
@@ -1815,12 +1815,6 @@ h1.page-heading {
     border: 15px solid transparent;
     border-right: 15px solid @PrimaryColor;
   }
-}
-
-.temp-overlayed{
-  position: fixed;
-  left: 50%;
-  .transform(translate(-50%,0));
 }
 
 #results-list .property-list-inject{
@@ -2279,24 +2273,18 @@ p.disclaimer-text{
   font-size:32px;
 }
 
-#details-list .listing-features-content{
-  font-size: 0;
-  *{
-    font-size: 0.8rem;
-    vertical-align: top;
+
+.label{
+  color: #333333;
+  display: inline-block;
+  margin-right: 8px;
+  strong{
+    color: #333333;
   }
-  .label{
-    color: #666666;
-    strong{
-      color: #333333;
-    }
-    display: inline-block;
-    margin-right: 8px;
-  }
-  .value{
-    color: #666666;
-    display: inline-block;
-  }
+}
+.value{
+  color: #666666;
+  display: inline-block;
 }
 
 #details-list .development-details{
@@ -2454,12 +2442,14 @@ p.disclaimer-text{
   content: "\f104";
   font-size: 30px;
   vertical-align: middle;
+  height: 0;
 }
 .thumbs-next .icon-arrow-right:before {
   .icon-font;
   content: "\f105";
   font-size: 30px;
   vertical-align: middle;
+  height: 0;
 }
 .video-frame{
   display: block;
