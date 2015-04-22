@@ -4568,6 +4568,66 @@ div.pp_pic_holder{
     overflow: hidden;
   }
 }
+
+
+/* 
+** HOMEPAGE - 3 FEATURED PROPERTIES
+*/
+
+.featured-properties-3 {
+  a{
+    display: block;
+    float: left;
+    padding-bottom: 2px;
+  }
+  .property-image-thumb{
+    position: relative;
+    width: 100%;
+    height: 205px;
+    overflow: hidden;
+  }
+  .property-description{
+    .content-block;
+    padding-top: 15px;
+    border-top: 0;
+  }
+}
+
+/* 
+** HOMEPAGE - 3 FEATURED PROPERTIES SLIDER
+*/
+
+.property-nav{
+  position: absolute;
+  top: 50%;
+  height: 0;
+  display: block;
+  width: 100%;
+  .slide-prev, .slide-next{
+    width: 44px;     // Change this to your image width
+    height: 85px;    // Change this to your image Hieght
+    display: block;
+    position: absolute;
+    top: -20px;
+    &.disabled{
+      display: none !important;
+    }
+  }
+  .slide-prev{
+    background: url(/assets/img/custom/slider/assets/prev.png) no-repeat;
+    left: -60px;
+  }
+  .slide-next{
+    background: url(/assets/img/custom/slider/assets/next.png) no-repeat;
+    right: -60px;
+  }
+}
+
+
+/* 
+** HOMEPAGE - 2 FEATURED NEWS ARTICLES
+*/
+
 .featured-articles-2 {
   .news-summary-image a{
     width: 150px;
