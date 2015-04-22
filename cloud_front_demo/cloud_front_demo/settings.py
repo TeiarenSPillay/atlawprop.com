@@ -47,17 +47,18 @@ CACHING_ADDON = True
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://db-2.aws.propdata.net:6379",
+        "LOCATION": "redis://172.16.20.42:6379",
         'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1],
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            "CONNECTION_POOL_KWARGS": {"max_connections": 5}
         }
     }
 }
 
 # Sesson config
 SESSION_ENGINE = 'redis_sessions.session'
-SESSION_REDIS_HOST = 'db-2.aws.propdata.net'
+SESSION_REDIS_HOST = '172.16.20.42'
 SESSION_REDIS_PORT = 6379
 SESSION_REDIS_PREFIX = CURRENT_DIRECTORY.split("/")[-1]
 
@@ -72,6 +73,7 @@ DATABASES = {
         'PORT': '',
     }
 }
+
 #GMAPS_KEY  = "ABQIAAAAZ7M1Fg4tth4J3zE3SdNNGhQopxaNlSGf-D4ne8JrgGl4on9aCxR8lLOa8U7yfvsm-aaXkQRoyD8rlw" # *.abcrealestate.co.za
 #RECAPTCHA_PUBLIC_KEY = '6LfyycISAAAAAB2PddDRop69fIS3nmk9iqLltHIs'
 #RECAPTCHA_PRIVATE_KEY = '6LfyycISAAAAAIuVa0HI-P6WH_uCp88MG_aJ7TmF'
