@@ -16,7 +16,7 @@
         </div>
       {% endif %}
       <div class="centered">
-        <img src="{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 640 480 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" width="640" height="480" />
+        <img src="{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 320 240 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" />
       </div>
       <div class="transparent-black bottom">
         {% if listing.on_show or listing.bank_reposessed or listing.distressed or listing.sole_mandate or listing.quick_sell_options or listing.public_tender or show_private_seller_icon or listing.student_accommodation %}
@@ -97,6 +97,79 @@
   });
 </script> -->
 {# endblock footer-js #}
+
+<!-- Goes into Custom -->
+
+<!-- 
+/* 
+** HOMEPAGE - 3 FEATURED ARTICLES
+*/
+.featured-articles-3{
+  .news-summary-image{
+    position: relative;
+  }
+  .news-summary-image a{
+    width: 100%;
+    height: 200px;
+  }
+  .date-overlay{
+    width: 52px;
+    height: 58px;
+    background: rgba(0,0,0,0.73);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    left: 20px;
+    z-index: 10;
+  }
+  .news-summary-content{
+    .content-block;
+    padding-top: 15px;
+    border-top: 0;
+    padding-bottom: 40px;
+    .sub-headings{
+      height: 38px;
+    }
+  }
+  .news-summary-article-content{
+    height: 90px;
+  }
+  .primary-button{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+/* 
+** HOMEPAGE - 3 FEATURED PROPERTIES SLIDER
+*/
+
+.property-nav{
+  position: absolute;
+  top: 50%;
+  height: 0;
+  display: block;
+  width: 100%;
+  .slide-prev, .slide-next{
+    width: 44px;     // Change this to your image width
+    height: 85px;    // Change this to your image Hieght
+    display: block;
+    position: absolute;
+    top: -42px;
+    &.disabled{
+      display: none !important;
+    }
+  }
+  .slide-prev{
+    background: url(/assets/img/custom/slider/assets/prev.png) no-repeat;
+    left: -60px;
+  }
+  .slide-next{
+    background: url(/assets/img/custom/slider/assets/next.png) no-repeat;
+    right: -60px;
+  }
+}-->
 
 
 <!-- / -->
