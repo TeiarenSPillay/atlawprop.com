@@ -428,7 +428,7 @@ h1.page-heading {
   position: fixed;
   top: 0;
   z-index: 999;
-  .transition(all 0.3s ease-in 0s);
+  .transition(max-height 0.3s ease-in 0s);
 }
 
 .sticky-header .sticky-logo{
@@ -971,11 +971,9 @@ h1.page-heading {
 #sidebar-quick-links{
   position: absolute;
   right: 0;
-  .transition(margin 0.2s ease-in-out);
 }
 #sidebar-quick-links.open{
   margin-top: 220px;
-  .transition(margin 0.2s ease-in-out);
 }
 #sidebar-quick-links.stick, #sidebar.stick, #sidebar-contact.stick{
   position: fixed;
@@ -2091,8 +2089,8 @@ p.disclaimer-text{
     color: #333333;
     white-space: nowrap;
   }
-  .eighth{
-    margin-right: 10px;
+  .pull-left{
+    margin-right: 30px;
   }
 }
 
@@ -3550,22 +3548,14 @@ a.link {
 .quick-search .vSelectField{
   width: 100%;
 }
-.branch-agents{
-  -ms-column-count: 2;
-  -ms-column-gap: 0px;
-  -moz-column-count: 2;
-  -moz-column-gap: 0px;
-  -webkit-column-count: 2;
-  -webkit-column-gap: 0px;
-  column-count: 2;
-  column-gap: 0px;
-}
 .agent-search-box{
   font-size: 100%;
   display: inline-block;
-  float: none;
   .transition(all 1s ease-in-out);
   box-shadow: 0 0 20px rgba(0,0,0,0.0);
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
   &.active{
     z-index: 100;
     .transform(scale(1.1));
@@ -4076,7 +4066,7 @@ h5                            { font-family:@FontFamily; font-size:1.1em; color:
 .quote                        { font-size: 150%; } /* Slogan Text */
 .headings                     { font-family:@FontFamily; font-size:1.4rem; color:@HeadingsColor; display: block; width: 100%; line-height:1; font-weight: 400;}
 .main-headings                { font-family:@FontFamily; font-size:1.4rem; color:@HeadingsColor; display: block; width: 100%; line-height:1; font-weight: 300; text-transform: none; }
-.sub-headings                 { font-family:@FontFamily; font-size:1.1rem; color:@SubHeadingsColor; display: block; width: 100%; line-height:1em; font-weight: 400;}
+.sub-headings                 { font-family:@FontFamily; font-size:1.125rem; color:@SubHeadingsColor; display: block; width: 100%; line-height:1em; font-weight: 400;}
 .sub-headings-alt             { color:@HeadingsColor; font-size:1.1rem; font-weight: 400; }
 .article-headings             { font-family:@FontFamily; font-size:1.325rem; color: @ArticleHeadingsColor; font-weight: 400;}
 h2#email                      { font-family:@FontFamily; font-size:19px; color:@HeadingsColor; display: block; width: 100%; line-height: 36px;}
@@ -4130,10 +4120,10 @@ a:hover.fb-link               { color: @HeadingsColor; }
 a.fb-link                     { color: @HeadingsColor; text-decoration: none; font-size: 13px; line-height: 36px;}
 a:hover.rss_button-icon       { color: @HeadingsColor; }
 a.rss_button-icon             { color: @HeadingsColor;}
-a:hover.social,
-a:hover.social:before         { color: @SocialIconsLinkHover; }
-a.social,
-a.social:before               { color: @SocialIconsLink;}
+.social,
+.social:before               { color: @SocialIconsLink;}
+.social:hover,
+.social:hover:before               { color: @SocialIconsLinkHover; }
 /* ----// END //---- */
 
 
@@ -4298,12 +4288,12 @@ a:hover.currency-converter    { color: @LinkActive; background-image:url(/static
 .rss_button-icon:before, .facebook_button-icon2:before, .facebook_button-icon:before, .twitter_button-icon:before, .linkedin_button-icon:before, .youtube_button-icon:before  {
     font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; position: relative; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
 .rss_button-icon:before        { content: "\f09e"; font-size: 18px; margin-left: 40px; line-height: 36px; }
-.facebook_button-icon:before   { content: "\f09a"; font-size: 35px; line-height: 40px; position: relative; color: #666666; }
-.twitter_button-icon:before    { content: "\f099"; font-size: 44px; line-height: 40px; position: relative; color: #666666; top:2px; }
-.linkedin_button-icon:before   { content: "\f0e1"; font-size: 39px; line-height: 40px; position: relative; color: #666666; }
-.youtube_button-icon:before    { content: "\f167"; font-size: 33px; line-height: 40px; position: relative; color: #666666; top:-2px; }
+.facebook_button-icon:before   { content: "\f09a"; font-size: 35px; line-height: 40px; position: relative; }
+.twitter_button-icon:before    { content: "\f099"; font-size: 44px; line-height: 40px; position: relative; top:2px; }
+.linkedin_button-icon:before   { content: "\f0e1"; font-size: 39px; line-height: 40px; position: relative; }
+.youtube_button-icon:before    { content: "\f167"; font-size: 33px; line-height: 40px; position: relative; top:-2px; }
 .googleplus_button-icon:before { .icon-font(); content: "\f0d5"; font-size: 33px; line-height: 40px; position: relative; top:2px; }
-.pinterest_button-icon:before { .icon-font(); content: "\f0d2"; font-size: 39px; line-height: 40px; position: relative; top:-1px; }
+.pinterest_button-icon:before  { .icon-font(); content: "\f0d2"; font-size: 39px; line-height: 40px; position: relative; top:-1px; }
 .facebook_button-icon2:before  { content: "\f082"; font-size: 18px; line-height: 36px; position: relative; color: @HeadingsColor;}
 /* ----// END //---- */
 
@@ -4325,7 +4315,7 @@ a:hover.currency-converter    { color: @LinkActive; background-image:url(/static
 #footer-heading > .footer-divider  { border: 0; border-bottom: 1px solid rgba(255,255,255,0);}
 #footer-logos,
 #footer-logos-1,
-#footer-logos-2               { position: relative; color: #666666; display: inline-block; vertical-align: top; line-height: 1; width:100%;}
+#footer-logos-2               { position: relative; display: inline-block; vertical-align: top; line-height: 1; width:100%;}
 ul.footer-logos               { list-style-type:none; padding: 0;}
 ul.footer-logos li            { display: inline-block; margin-left: 5px;}
 #footer-logos                 { top: 13px; }
