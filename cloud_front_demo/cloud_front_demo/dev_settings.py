@@ -55,3 +55,8 @@ CACHES = {
         'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
     }
 }
+
+COMPRESS_PRECOMPILERS = []
+COMPRESS_CSS_FILTERS = []
+COMPRESS_JS_FILTERS = []
+COMPRESS_YUI_BINARY = None
