@@ -1,0 +1,156 @@
+{% load new_development_helpers humanize property_cart image_tags string_filters %}
+{% for listing in featured %}
+  {% if listing %}
+  <div id="featured-prop-{{ forloop.counter }}" data-count="{{ forloop.counter }}" class="featured-item clearfix">
+    <div class="featured-images">
+      {% if listing.featured %}<div class="transparent-red top-left">
+        FEATURED
+      </div>{% endif %}
+      {% if listing.is_new or listing.is_sold or listing.is_rented %}
+        <div class="transparent-black top-left">
+          {% if listing.is_new %}NEW{% endif %}
+          {% if listing.is_sold %}SOLD{% endif %}
+          {% if listing.is_rented %}RENTED{% endif %}
+        </div>
+      {% endif %}
+      <a href="{{ listing.get_absolute_url }}"><div class="main-image">
+        <div class="centered">
+          <img data-src="{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 640 480 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" />
+        </div>
+        </div></a>
+      <div class="transparent-black bottom">
+        {% if listing.on_show or listing.bank_reposessed or listing.distressed or listing.sole_mandate or listing.quick_sell_options or listing.public_tender or show_private_seller_icon or listing.student_accommodation %}
+        <div class="tags">
+        {% if listing.on_show %}<span class="listing-tag on-show-tag">ON SHOW</span>{% endif %}
+        {% if listing.bank_reposessed %}<span class="listing-tag bank-repo-tag">BANK REPO</span>{% endif %}
+        {% if listing.distressed %}<span class="listing-tag distressed-tag">DISTRESSED</span>{% endif %}
+        {% if listing.sole_mandate %}<span class="listing-tag sole-mandate-tag">SOLE MANDATE</span>{% endif %}
+        {% if listing.quick_sell_options %}<span class="listing-tag fnb-quicksell-tag">FNB QUICKSELL</span>{% endif %}
+        {% if listing.public_tender %}<span class="listing-tag tender-tag">TENDER</span>{% endif %}
+        {% if listing.show_private_seller_icon %}<span class="listing-tag private-sale-tag">PRIVATE SALE</span>{% endif %}
+        {% if listing.student_accommodation %}<span class="listing-tag student-accommodation-tag">STUDENT ACCOMMODATION</span>{% endif %}
+        {% if listing.enable_offers %}<span class="listing-tag accepting-offers-tag">ACCEPTING OFFERS</span>{% endif %}
+        </div>
+        {% endif %}
+        <div class="clear"></div>
+        <div class="icons {% if listing.on_show or listing.bank_reposessed or listing.distressed or listing.sole_mandate or listing.quick_sell_options or listing.public_tender or show_private_seller_icon or listing.student_accommodation %}bordered{% endif %}">
+          {% if listing.get_photo_count == 1 %}<i class="icon-photos"></i><span>{{listing.get_photo_count}} Photo</span>{% elif listing.get_photo_count > 1%}<i class="icon-photos"></i><span>{{listing.get_photo_count}} Photos</span>{% endif %}
+          {% if listing.map_x_position and listing.map_y_position %}<i class="icon-mapped"></i><span>Mapped</span>{% endif %}
+          {% if listing.floorplangallery.count > 0 %}<i class="icon-floorplan"></i><span>Plans</span>{% endif %}
+          {% if listing.video_id %}<i class="icon-video"></i><span>Video</span>{% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="featured-content">
+      <h3 class="home-price">{{ listing.render_price|safe }}</h1>
+      <h3 class="sub-headings header-bordered" style="padding: 15px 0;">{{ listing.get_heading|safe }}</h3>
+      <table id="featured-table" class="line-height15 margin-top20 featured-table" cellpadding="0" cellspacing="0">
+        {% ifequal listing.get_main_type 'Residential' %}
+        {% ifnotequal listing.property_type_slug 'vacant-land' %}
+        <tr>
+          <th width="85">Bedrooms</th>
+          <td>{{ listing.bedrooms|default:"-"|floatformat }}</td>
+        </tr>
+        <tr>
+          <th>Bathrooms</th>
+          <td>{{ listing.bathrooms|default:"-"|floatformat }}</td>
+        </tr>
+        {% if listing.garages %}
+        <tr>
+          <th>Garages</th>
+          <td>{{ listing.garages|floatformat }}</td>
+        </tr>
+        {% endif %}
+        {% if listing.building_size %}
+        <tr>
+          <th>Floor Size</th>
+          <td>{{ listing.building_size|intcomma }}{% if usa_metric %}{{ listing.get_measurement_type }}{% else %}m&sup2;{% endif %}</td>
+        </tr>
+        {% endif %}
+        {% endifnotequal %}
+        {% if listing.land_size %}
+        <tr>
+          <th width="85">Land Size</th>
+          <td>{{ listing.land_size|intcomma }}{{ listing.get_measurement_type }}</td>
+        </tr>
+        {% endif %}
+        {% endifequal %}
+        {% ifequal listing.get_main_type 'Commercial' %}
+        {%  if listing.gross_monthly_rental %}
+        <tr>
+          <th width="85">Gross Rental</th>
+          <td>{{ currency_symbol }}{{ listing.gross_monthly_rental|intcomma }}</td>
+        </tr>
+        {% endif %}
+
+        {% if listing.zoning %}
+        <tr style="padding-top:3px">
+          <th width="105">Zoning</th>
+          <td>{{ listing.zoning }}</td>
+        </tr>
+        {% endif %}
+        {% if listing.building_size %}
+        <tr>
+          <th>Floor Size</th>
+          <td>{{ listing.building_size|intcomma }}m&sup2;</td>
+        </tr>
+        {% endif %}
+        {% if listing.land_size %}
+        <tr>
+          <th>Land Size</th>
+          <td>{{ listing.land_size|intcomma }}{{ listing.get_measurement_type }}</td>
+        </tr>
+        {% endif %}
+        {% ifnotequal obj.property_type_slug 'vacant-land' %}
+        {% if listing.open_parking_bays %}
+        <tr>
+          <th>Open Parkings</th>
+          <td>{{ listing.open_parking_bays|floatformat }}</td>
+        </tr>
+        {% endif %}
+        {% if listing.covered_parking_bays %}
+        <tr>
+          <th>Covered Parkings</th>
+          <td>{{ listing.covered_parking_bays|floatformat }}</td>
+        </tr>
+        {% endif %}
+        {% endifnotequal %}
+        {% endifequal %}
+        {% ifequal listing.get_main_type 'Holiday' %}
+        <tr>
+          <th width="105">Bedrooms</th>
+          <td>{{ listing.bedrooms|default:"0.0"|floatformat }}<br></td>
+        </tr>
+        <tr>
+          <th>Sleeps</th>
+          <td>{{ listing.sleeps|default:"0.0"|floatformat }}<br></td>
+        </tr>
+        {% if not listing.poa %}
+        <tr>
+          <th>Rates From</th>
+          <td>{{ currency_symbol }}{{ listing.out_of_season|intcomma }} pn<br></td>
+        </tr>
+        <tr>
+          <th>Rates To</th>
+          <td>{{ currency_symbol }}{{ listing.peak_season|intcomma }} pn</td>
+        </tr>
+        {% else %}
+        <tr>
+          <th>Rates From</th>
+          <td>POA pn<br></td>
+        </tr>
+        {% endif %}
+        {% endifequal %}
+      </table>
+      {% if listing.description %}
+      <div class="featured-description margin-top20">
+        {{ listing.description|max_word_limit:"230"|safe  }}
+      </div>
+      {% endif %}
+      <div class="featured-buttons">
+        <a href="{{ listing.get_absolute_url }}" class="button primary-button rounded">More about this property</a>
+      </div>
+    </div>
+  </div>
+{% endif %}
+{% endfor %}

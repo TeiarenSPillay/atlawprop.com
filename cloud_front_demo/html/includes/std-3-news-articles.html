@@ -1,0 +1,23 @@
+{% load image_tags string_filters %}
+{% for article in featured_articles %}
+<a href="/news/{{ article.slug }}/" class="grid_4 border-box margin-bottom20 article-list-item">
+  <div id="news-summary-{{article.id}}">
+    {% if article.photo %}
+    <div class="news-summary-image full first last">
+      <div class="date-overlay border-box">{{ article.date_added|date:"d" }}<br/>{{ article.date_added|date:"M" }}</div>
+        <div class="centered">
+          <img src="{% if article.photo %}{% get_image_url 'news' 320 240 article.photo %}{% else %}/eos/img/property-search/results/no-img.jpg{% endif %}" />
+        </div>
+    </div>
+    {% endif %}
+    <div class="news-summary-content full first last">
+        <h3 class="sub-headings">{{ article.title }}</h3>
+        <div class="news-summary-article-content">
+          <p>{{ article.body|max_word_limit:"256"|safe|striptags|safe }}</p>
+        </div>
+      <div class="clearfix"></div>
+      <span class="button secondary-button pull-right">&nbsp;Read More</span>
+    </div>
+  </div>
+</a>
+{% endfor %}

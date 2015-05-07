@@ -159,7 +159,7 @@
 /* Main Background
 ------------------------------------------------------------ */
 html                  { font-family: @FontFamily; font-size: @BaseFontSize;}
-body                  { background:#FFFFFF; font-size: 80%; }
+body                  { background:#FFFFFF; font-size: 0.8rem; }
 .container            { width:100%;}
 .heading-margin       { padding-left:25px;}
 .email .heading-margin{ padding-left:0px; margin: 0 0 10px!important;}
@@ -217,7 +217,7 @@ body                  { background:#FFFFFF; font-size: 80%; }
 .fadeIn .menu-bg > ul > li:hover > ul                { height: auto; opacity:1;}
 
 .menu-bg > ul > li > ul > li                 { width: 100%; white-space: nowrap; }
-.menu-bg > ul > li > ul > li a               { color:#FFFFFF; background:#990000; padding: 0 1.2em; font-size: 80%; line-height: 2.5em; display:block; border-bottom: 1px solid #AD3333;}
+.menu-bg > ul > li > ul > li a               { color:#FFFFFF; background:#990000; padding: 0 1.2em; font-size: 0.8rem; line-height: 2.5em; display:block; border-bottom: 1px solid #AD3333;}
 .menu-bg > ul > li > ul > li a:hover         { color:#FFFFFF; background:#B0000D; }
 
 .width64      { width:74px;}
@@ -2017,7 +2017,7 @@ h1.page-heading {
 
 
 p.disclaimer-text{
-  font-size: 80%;
+  font-size: 0.8rem;
 }
 
 
@@ -2944,7 +2944,7 @@ p.disclaimer-text{
   display: inline-block;
 }
 .transparent-red.top-left{
-  background: #c4151e;
+  background: @PrimaryColor;
   padding: 0px 8px;
   color: #ffffff;
   position: absolute;
@@ -4443,7 +4443,6 @@ ul.as-selections                        { background-color: #FFFFFF; border: 1px
 .pd_modal_mini{
   background: @ContentBlocksBG;
   border: @ContentBlocksBorder;
-  padding-bottom: 42px;
   position: relative;
   box-sizing: border-box;
   .button{
