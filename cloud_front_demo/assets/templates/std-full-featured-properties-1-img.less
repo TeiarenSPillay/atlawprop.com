@@ -1,0 +1,63 @@
+/* 
+** HOMEPAGE - FULL WIDTH SLIDER + 1 IMAGE
+*/
+.featured-slider{
+  
+  .featured-item{
+    float: left;
+    .featured-images{
+      width: 460px;
+      margin-right: 30px;
+      float: left;
+      position: relative;
+      .main-image{
+        width: 460px;
+        height: 345px;
+        display: block;
+        overflow: hidden;
+        img{
+          width: 470px;
+        }
+      }
+    }
+    
+    .featured-content{
+      width: 405px;
+      height: 345px;
+      box-sizing: border-box;
+      padding-bottom: 40px;
+      float: right;
+      position: relative;
+    }
+    .featured-buttons{
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+.featured-navigation{
+  position: absolute;
+  height: 0;
+  width: 100%;
+  top: 50%;
+  font-size: 0;
+  .feat-prev, .feat-next{
+    width: 44px;     // Change this to your image width
+    height: 85px;    // Change this to your image Hieght
+    display: block;
+    position: absolute;
+    top: -20px;
+    &.disabled{
+      display: none !important;
+    }
+  }
+  .feat-prev{
+    background: url(/static/img/custom/slider/assets/feat-prev.png) no-repeat;
+    left: -90px;
+  }
+  .feat-next{
+    background: url(/static/img/custom/slider/assets/feat-next.png) no-repeat;
+    right: -90px;
+  }
+}

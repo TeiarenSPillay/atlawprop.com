@@ -834,6 +834,9 @@ h1.page-heading {
     .property-list-land-size{
       white-space: nowrap;
       display: inline-block;
+      .label{
+        font-weight: 600;
+      }
     }
     .property-list-meta {
       font-size: 0;
@@ -2017,7 +2020,7 @@ h1.page-heading {
 
 
 p.disclaimer-text{
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 
@@ -2111,7 +2114,10 @@ p.disclaimer-text{
 }
 #details-list .property-list-meta .property-list-land-size{
   text-align: right;
-  font-size: @BaseFontSize;
+  font-size: 0.8rem;
+  .label{
+    font-weight: 600;
+  }
   line-height: 0.9rem;
 }
 #details-list .property-list-meta{
@@ -2131,8 +2137,7 @@ p.disclaimer-text{
 .property-list-meta .property-list-baths,
 .property-list-meta .property-list-garages,
 .property-list-meta .property-list-openparking{
-  text-align: right;
-  float: none !important;
+  text-align: left;
   display: inline-block;
 }
 .property-list-meta span{
@@ -2965,7 +2970,7 @@ p.disclaimer-text{
   z-index: 50;
 }
 .transparent-red.top-left + .transparent-black.top-left{
-  right: 10px;
+  right: 0px;
   left: auto;;
 }
 
@@ -3200,7 +3205,7 @@ a.link {
         color: #ffffff;
         position: relative;
         left: -12px;
-        top: 3px;
+        top: -2px;
         vertical-align: middle;
       }
     }
@@ -4027,6 +4032,9 @@ a.link {
     height: 210px;
     .property-list-land-size{
       margin-top: 0 !important;
+      .label{
+        font-weight: 600;
+      }
     }
   }
   .property-list-webref{
