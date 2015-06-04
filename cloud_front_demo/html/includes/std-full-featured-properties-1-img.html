@@ -94,7 +94,7 @@
         {% if listing.building_size %}
         <tr>
           <th>Floor Size</th>
-          <td>{{ listing.building_size|intcomma }}m&sup2;</td>
+          <td>{{ listing.building_size|intcomma }}{% if usa_metric %}{{ listing.get_measurement_type }}{% else %}m&sup2;{% endif %}</td>
         </tr>
         {% endif %}
         {% if listing.land_size %}

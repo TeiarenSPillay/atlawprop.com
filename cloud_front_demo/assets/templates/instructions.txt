@@ -1,0 +1,17 @@
+To use these imports in your custom.less file, follow the below instrunctions:
+
+Step 1:
+Add the following to the your custom.less file:
+
+@import url("../templates/your-desired-template-name-here.less");
+
+Step 2:
+Change "your-desired-template-name-here" to the name of your template. These
+will correspond with the files in html/includes/
+
+Step 3:
+There is default styling for the templates. 
+
+You can copy any class from this less file into your custom.less after your 
+@import line and adjust the styles as desired to customize the look of these
+templates.

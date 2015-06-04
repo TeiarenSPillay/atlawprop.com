@@ -1,21 +1,22 @@
-{% load new_development_helpers humanize property_cart image_tags %}
+{% load new_development_helpers humanize property_cart image_tags string_filters %}
 {% for listing in featured %}
   {% if listing %}
+  {% get_featured_property_images listing 3 %}
   <div id="featured-prop-{{ forloop.counter }}" data-count="{{ forloop.counter }}" class="featured-item clearfix">
     <div class="featured-images">
       <div class="main-image">
         <div class="centered">
-          <img data-src="{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 640 480 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" width="480" height="320" />
+          <img data-src="{% if listing_photos.0 %}{% get_image_url 'listings' 640 480 listing_photos.0 %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" width="480" height="320" />
         </div>
       </div>
       <div class="small-image pull-left">
         <div class="centered">
-          <img data-src="{% if listing.imagegallery_set.values.1.image %}{% get_image_url 'listings' 320 240 listing.imagegallery_set.values.1.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" width="320" height="240" />
+          <img data-src="{% if listing_photos.1 %}{% get_image_url 'listings' 320 240 listing_photos.1 %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" width="320" height="240" />
         </div>
       </div>
       <div class="small-image pull-right">
         <div class="centered">
-          <img data-src="{% if listing.imagegallery_set.values.2.image %}{% get_image_url 'listings' 320 240 listing.imagegallery_set.values.2.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" width="320" height="240" />
+          <img data-src="{% if listing_photos.2 %}{% get_image_url 'listings' 320 240 listing_photos.2 %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" width="320" height="240" />
         </div>
       </div>
     </div>
@@ -72,7 +73,7 @@
         {% if listing.building_size %}
         <tr>
           <th>Floor Size</th>
-          <td>{{ listing.building_size|intcomma }}m&sup2;</td>
+          <td>{{ listing.building_size|intcomma }}{% if usa_metric %}{{ listing.get_measurement_type }}{% else %}m&sup2;{% endif %}</td>
         </tr>
         {% endif %}
         {% if listing.land_size %}
@@ -140,13 +141,12 @@
         {% load humanize property_cart new_development_helpers %}
         {% for type in listing.newdevelopmentproperty_set.values|slice:"2" %}
         <div class="pull-left half margin-top15">
-          <strong>{% if type.property_type in "Building, Investment, Office, Showroom, Warehouse, Medical Centre, Shopping Center, Apartment, Flat, House, Townhouse, Villa, Hotel Room" %}{{ type.property_type }}{{ type.number|pluralize }}{% elif type.property_type in "Factory,Mini Factory, Equestrian Property" %}{{ type.property_type|cut:"y" }}{{ type.number|pluralize:"y,ies" }}{% elif type.property_type in "Business, Duplex, Simplex" %}{{ type.property_type }}{{ type.number|pluralize:",es" }}{% else %}{{ type.property_type }}{% endif %}</strong><br />
-          {{ type.number|intcomma }} Available from 
+          <strong>{% if type.property_type in "Building, Investment, Office, Showroom, Warehouse, Medical Centre, Shopping Center, Apartment, Flat, House, Townhouse, Villa, Hotel Room" %}{{ type.property_type }}{{ type.number|pluralize }}{% elif type.property_type in "Factory,Mini Factory, Equestrian Property" %}{{ type.property_type|cut:"y" }}{{ type.number|pluralize:"y,ies" }}{% elif type.property_type in "Business, Duplex, Simplex" %}{{ type.property_type }}{{ type.number|pluralize:",es" }}{% else %}{{ type.property_type }}{% endif %} ({{ type.number|intcomma }})</strong><br />
                 {% if listing.poa %} POA {% else %}
                 {{ currency_symbol }} {{ type.priced_from|intcomma }}
-                {% ifequal listing.listing_type 'Commercial New Development' %}per m&sup2;{% endifequal %}
+                {% ifequal listing.listing_type 'Commercial New Development' %}per {% if usa_metric %}{{ listing.get_measurement_type }}{% else %}m&sup2;{% endif %}{% endifequal %}
                 {% endif %}<br />
-                Size from {{ type.size_from|intcomma }} m&sup2; to {{ type.size_to|intcomma }} m&sup2;<br />
+                Size from {{ type.size_from|intcomma }}{% if usa_metric %}{{ listing.get_measurement_type }}{% else %}m&sup2;{% endif %} to {{ type.size_to|intcomma }}{% if usa_metric %}{{ listing.get_measurement_type }}{% else %}m&sup2;{% endif %}<br />
         </div>
         {% endfor %}
       </div>
