@@ -42,8 +42,6 @@ WINDOW_DISPLAY_ADDON = {
 FACEBOOK_ADDON = True
 FACEBOOK_BRANCH_IDS = [5376]
 
-CACHING_ADDON = True
-
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
