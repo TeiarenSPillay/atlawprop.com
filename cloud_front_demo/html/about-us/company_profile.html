@@ -5,8 +5,8 @@
 {% endif %}
 {% endblock seo %}
 {% block title %}{% if company_profile.seo_page_title %}{{ company_profile.seo_page_title }}{% else %}Company Profile{% endif %}{% endblock title %}
-{% block page-title %}{% if company_profile.seo_page_title %}{{ company_profile.seo_page_title }}{% else %}Company Profile{% endif %}{% endblock page-title %}
-{% block breadcrumb %}{% if company_profile.seo_page_title %}{{ company_profile.seo_page_title }}{% else %}Company Profile{% endif %}{% endblock breadcrumb %}
+{% block page-title %}{% if company_profile.page_title %}{{ company_profile.page_title }}{% else %}Company Profile{% endif %}{% endblock page-title %}
+{% block breadcrumb %}<a href="{{request.path}}" class="other" id='current-path'>{% if company_profile.page_title %}{{ company_profile.page_title }}{% else %}Company Profile{% endif %}</a>{% endblock breadcrumb %}
 {% block activetab %}about_us_tab{% endblock activetab %}
 {% block current-page %}profile{% endblock current-page %}
 {% block quote %}<h2 class='quote'>{{ site_quote }}</h2>{% endblock quote %}
