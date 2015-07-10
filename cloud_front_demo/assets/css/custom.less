@@ -3830,7 +3830,7 @@ a.link {
   z-index: 10;
   left: 240px;
   top: 160px;
-  &:hover, &:active, &:focus{
+  &:hover{
     color: #ffffff;
   }
   &:after{
@@ -4113,7 +4113,7 @@ a.print, a.email, a.bookmark, a.share, a.feed, a.add-property-favourites { color
 a:hover.more-info, a:hover.more-info2, a:hover.gallery, a:hover.favourites, a:hover.favourites-remove, a:hover.brochure, a:hover.floor-plans, a:hover.virtual-tour, a:hover.video, a:hover.map-property, a:hover.previous, a:hover.next, a:hover.map-area { color: @Button2linkHover; filter:alpha(opacity=80); -moz-opacity:.80; opacity:.80;}
 a.more-info, a.more-info2, a.gallery, a.favourites, a.favourites-remove, a.brochure, a.floor-plans, a.virtual-tour, a.video, a.map-property, a.previous, a.next, a.map-area { color: @Button2TextColor;} 
 
-a:focus, a:hover              { color: @LinkHover; }
+a:hover              { color: @LinkHover; }
 a                             { color: @LinkActive; text-decoration: none; }
 a.homepage                    { background-image:url(/static/img/custom/navigation/property-search.png); display:block; height:34px; width:146px;}
 a:hover.homepage              { background-image:url(/static/img/custom/navigation/property-search-over.png); display:block;}
@@ -4316,9 +4316,7 @@ a:hover.currency-converter    { color: @LinkActive; background-image:url(/static
 
 .footer-content h1            { color:@FooterTextColor; }
 .footer-content a             { color:@FooterTextColor;}
-.footer-content a:hover,
-.footer-content a:active,
-.footer-content a:focus       { color:@FooterlinkHover;}
+.footer-content a:hover       { color:@FooterlinkHover;}
 .footer-divider               { border: 0; border-bottom: 1px solid rgba(255,255,255,0.8); margin: 20px auto;}
 #footer-heading > .footer-divider  { border: 0; border-bottom: 1px solid rgba(255,255,255,0);}
 #footer-logos,
