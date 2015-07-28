@@ -11,9 +11,15 @@
 {% block current-page %}profile{% endblock current-page %}
 {% block quote %}<h2 class='quote'>{{ site_quote }}</h2>{% endblock quote %}
 {% block content %}
-  <div class='container_12 margin-top20 margin-bottom30'>
-    <div class='grid_12'>
-      {{ company_profile.content|safe }}
+{% load image_tags %}
+<div class="container_12 margin-top20 margin-bottom30">
+    <div class="grid_12">
+    {% if company_profile.photo %}<div class="additional-page-image grid_6 first" style="margin-right:20px;">
+      <div class="centered">
+        <img src="{% get_image_url 'cms' 0 0 company_profile.photo %}" style="max-width: 100%; max-height: 460px " />
+      </div>
+    </div>{% endif %}
+    {{ company_profile.content|safe }}
     </div>
-  </div>
+</div>
 {% endblock content %}
