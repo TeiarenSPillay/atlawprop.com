@@ -26,33 +26,17 @@ BROCHURE_WEBSITE = [0.82, 0.55, 0.0]   # Website address (bottom)
 
 # This controls the clients add-ons
 COMMERCIAL_ADDON = True
+RESIDENTIAL_ADDON = True
 NEW_DEVELOPMENT_ADDON = True
 HOLIDAY_ADDON = True
 REGION_PROFILES_ADDON = True
 PERMISSIONS_ADDON = True
-PORTALS_ADDON = True
+PORTALS_ADDON = False
 DOCUMENTS_ADDON = True
 OFFERS_ADDON = True
-WINDOW_DISPLAY_ADDON = {
-    'residential': True,
-    'commercial': True,
-    'holiday': False,
-    'new-developments': False
-}
-FACEBOOK_ADDON = True
-FACEBOOK_BRANCH_IDS = [5376]
 
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://172.16.20.42:6379",
-        'KEY_PREFIX': CURRENT_DIRECTORY.split("/")[-1],
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "CONNECTION_POOL_KWARGS": {"max_connections": 5}
-        }
-    }
-}
+# FACEBOOK_ADDON = True
+# FACEBOOK_BRANCH_IDS = [5376]
 
 # Sesson config
 SESSION_ENGINE = 'redis_sessions.session'
@@ -83,10 +67,10 @@ ALLOWED_HOSTS = ['.aws-staging.propdata.net']
 TIME_ZONE = 'Africa/Johannesburg'
 SECRET_KEY = 'w2ny#2xq&6yn)ffow!%(g@ww2r)mi03^(f+un-8_0$h#i6xlv5'
 
-ANALYTICS_ID = 'UA-13148074-26'
 
 #CLIENT_MIDDLEWARE = ()
 if not DEV_MODE:
+    ANALYTICS_ID = 'UA-XXXX'
     MIDDLEWARE_CLASSES += (
         'eos.lib.analytics.GoogleAnalyticsMiddleware',
     )
