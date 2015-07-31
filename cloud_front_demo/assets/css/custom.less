@@ -1,4 +1,4 @@
-@import url("../../eos/assets/less/_css3");
+@import url("../../eos/assets/less/_css3.less");
 
 /* Fonts
 ------------------------------------------------------------ */
@@ -37,155 +37,153 @@
 @FontFamily: "Source Sans Pro", Helvetica, sans-serif;
 @BaseFontSize: 17px;
 
-@PrimaryColor: #c90d1b;
-@SecondaryColor: #215c96;
+@PrimaryColor: #c90d1b;                       // Primary Color
+@SecondaryColor: #215c96;                     // Secondary Color
+@SiteTextColor: #333333;                      // Website Font Color
 @AccentColor: #c90d1b;
-@AltAccentColor: #333333;
 
 
-@LinkActive: #c90d1b;        // Primary Color
-@LinkHover: #215c96;         // Secondary Color
-@TabLinkHover: #999999;      // Secondary Color
-@DefaultDropdownBG: #ffffff;
-@DefaultDropdownIcon: #333333;
-@DefaultDropdownBorder: 1px solid #d6d6d6;
-@PlaceholderColor: #999999;
+@LinkActive: @PrimaryColor;                   // Generic Link
+@LinkHover: @SecondaryColor;                  // Generic Link Hover
+@DefaultDropdownBG: #ffffff;                  // Generic Select BG
+@DefaultDropdownIcon: #333333;                // Generic Select Icon
+@DefaultDropdownBorder: 1px solid #d6d6d6;    // Generic Select Border
+@PlaceholderColor: #999999;                   // Generic Placeholder Color
 
-@HeaderBG: url(/static/img/custom/layout/header-bg.jpg) repeat-x;
+@HeaderBG: url(/static/img/custom/layout/header-bg.jpg) repeat-x;   // Header BG
+@HeaderImageHeight: 460px;
 
 // Menu Background Styling
-@MenuBG: #AF0D18;
-@MenuLinkBG: #AF0D18;
-@MenuLinkActiveBG: #990000;
-@MenuLinkHoverBG: #990000;
+@MenuBG: #AF0D18;                             // Menu Container BG
+@MenuLinkBG: #AF0D18;                         // Menu Link BG
+@MenuLinkActiveBG: #990000;                   // Menu Active Link BG
+@MenuLinkHoverBG: #990000;                    // Menu Hover Link BG
 
-@SubMenuLinkBG: #990000;
-@SubMenuLinkHoverBG: #B0000D;
+@SubMenuLinkBG: #990000;                      // Menu Dropdown BG
+@SubMenuLinkHoverBG: #B0000D;                 // Menu Dropdown Hover BG
 
 // Menu Text Styling
-@MenuLinkText: #ffffff;
-@MenuLinkHoverText: #ffffff;
-@MenuLinkActiveText: #ffffff;
-@MenuTextTransform: uppercase;
-@MenuFontWeight: bold;
-
-@SubMenuLinkText: #ffffff;
-@SubMenuLinkHoverText: #ffffff;
+@MenuLinkText: #ffffff;                       // Menu Link Text
+@MenuLinkHoverText: #ffffff;                  // Menu Hover Link Text
+@MenuLinkActiveText: #ffffff;                 // Menu Active Link Text
+@MenuTextTransform: uppercase;                // Menu Text Transform
+@MenuFontWeight: bold;                        // Menu Font Weight
+@SubMenuLinkText: #ffffff;                    // Menu Dropdown Link Text
+@SubMenuLinkHoverText: #ffffff;               // Menu Dropdown Link Hover Text
 
 // Menu Border Styling
-@MenuLinkBorderLeft: 1px solid #CE0D1A;
-@MenuLinkBorderRight: 1px solid #9E0A16;
-
-@SubMenuBorderBottom: 1px solid #AD3333;
+@MenuLinkBorderLeft: 1px solid #CE0D1A;       // Menu Link Border Left
+@MenuLinkBorderRight: 1px solid #9E0A16;      // Menu Link Border Right
+@SubMenuBorderBottom: 1px solid #AD3333;      // Dropdown Menu Bottom Border
 
 
 // Content Block Styling
-@ContentBlocksBG: #ffffff;
-@ContentBlocksHoverBG: #f5f5f5;
-@ContentBlocksText: #333333;
-@ContentBlocksBorder: 1px solid #d6d6d6;
-@ContentBlocksAltBG: #f1f1f1;
-@ContentBlocksAltText: #666666;
-@ContentBlocksAltBorder: 1px solid #f1f1f1;
+@ContentBlocksBG: #ffffff;                    // Main Content BG
+@ContentBlocksHoverBG: #f5f5f5;               // Listing Result Hover BG
+@ContentBlocksText: @SiteTextColor;           // Main Text Color
+@ContentBlocksBorder: 1px solid #d6d6d6;      // Content section Borders
+@ContentBlocksAltBG: #f1f1f1;                 // Property Email Alerts infoblock BG
+@ContentBlocksAltText: #666666;               // Property Email Alerts infoblock Text Color
+@ContentBlocksAltBorder: 1px solid #f1f1f1;   // Property Email Alerts infoblock Borders
 
 // Search Container Styling
-@SearchBg: #ffffff;          // Search Bg
-@SearchBackBg: transparent;  // Search Bg
-@SearchTicksBG: #ffffff;
-@SearchButtonBG: @PrimaryColor;           // Search Button Bg
-@SearchButtonBorderRadius: 0px;          // Search Button Border Radius
-@SearchDropdownIconBG: @PrimaryColor;     // Search Dropdown Arrow Background
-@SearchBorders: #d6d6d6;     // Search Bg
+@SearchBg: #ffffff;                           // Full Width Bg
+@SearchBackBg: transparent;                   // 960 Width Bg
+@SearchTicksBG: #ffffff;                      // Checkbox BG
+@SearchButtonBG: @PrimaryColor;               // Search Button Bg
+@SearchButtonBorderRadius: 0px;               // Search Button Border Radius
+@SearchDropdownIconBG: @PrimaryColor;         // Search Dropdown Arrow Background
+@SearchBorders: #d6d6d6;                      // Search Input Border
 
 // Search Text Styling
-@SearchLabelColor: #333333;         // Search Label Color
-@SearchButtonTextColor: #ffffff;    // Search Button Text Color
-@SearchCount: #000033;              // Search Count Text Color
-@SearchLinkColor: #00103B;          // More/Less and WebRef Links Color
-@SearchLinkHover: @PrimaryColor;    // More/Less and WebRef Links Hover Color
-@SearchAllSuburbsLinkColor: #00103B;          // All Surburbs Link Color
+@SearchLabelColor: contrast(@SearchBg, #333333, #ffffff, 55%);   // Search Label Color
+@SearchButtonTextColor: #ffffff;              // Search Button Text Color
+@SearchCount: #000033;                        // Search Count Text Color
+@SearchLinkColor: contrast(@SearchBg, #333333, #ffffff, 55%);    // More/Less and WebRef Links Color
+@SearchLinkHover: @PrimaryColor;              // More/Less and WebRef Links Hover Color
+@SearchAllSuburbsLinkColor: contrast(@SearchBg, #333333, #ffffff, 55%);          // All Surburbs Link Color
 @SearchAllSuburbsLinkHover: @PrimaryColor;    // All Surburbs Link Hover Color
 
 // Search Icon Styling
-@SearchMoreIcon: @PrimaryColor;    // More Icon Color
-@SearchLessIcon: @PrimaryColor;    // Less Icon Color
-@SearchWebRef: @PrimaryColor;      // WebRef Icon Color
-@SearchDropdownIconColor: #ffffff;  // Search Dropdown Icon Color
-@SearchTicks: @PrimaryColor;       // Tick/Check Icon Color
+@SearchMoreIcon: @PrimaryColor;               // More Icon Color
+@SearchLessIcon: @PrimaryColor;               // Less Icon Color
+@SearchWebRef: @PrimaryColor;                 // WebRef Icon Color
+@SearchDropdownIconColor: #ffffff;            // Search Dropdown Icon Color
+@SearchTicks: @PrimaryColor;                  // Tick/Check Icon Color
 
 // Sticky Header Styling
-@StickLogoAlign: center;
-@StickyLogoWidth: 100%;
-@StickyLogoVerticalAlign: bottom;
-@StickyLogoHeight: auto;
-@StickLabelText: #ffffff;
-@StickyInputBorders: 1px solid #d6d6d6;
-@StickyIcon: #ffffff;
-@StickyIconText: #ffffff;
-@StickyTick: #333333;
+@StickyHeaderBG: @HeaderBG;                   // Sticky Header BG
+@StickLogoAlign: center;                      // Sticky Logo Horizontal Alignment
+@StickyLogoVerticalAlign: bottom;             // Sticky Logo Vertical Alignment
+@StickyLogoWidth: 100%;                       // Sticky Logo Width
+@StickyLogoHeight: auto;                      // Sticky Logo Height
+@StickLabelText: #ffffff;                     // Sticky Input Labels Color
+@StickyInputBorders: 1px solid #d6d6d6;       // Sticky Input Borders
+@StickyIcon: #ffffff;                         // Sticky Details Icon Color
+@StickyTextColor: #ffffff;                    // Details Sticky Price, Icon value Text
+@StickyTick: #333333;                         // Sticky property Type Checkbox tick
 
-@FilterButtonBG: @PrimaryColor;
-@FilterButtonIcon: #ffffff;
-@FilterButtonText: #ffffff;
-@FilterButtonRadius: 0;
+@FilterButtonBG: @PrimaryColor;               // Sticky Results Filter Button BG
+@FilterButtonIcon: #ffffff;                   // Sticky Results Filter Button Icon
+@FilterButtonText: #ffffff;                   // Sticky Results Filter Button Text
+@FilterButtonRadius: 0;                       // Sticky Results Filter Button Border Radius
 
 // Page Header Styling
-@HeaderBorderColor: 1px solid #d6d6d6;
+@HeaderBorderColor: 1px solid #d6d6d6;        // Page Heading Bottom Border
 
+@FacebookSearchBG: #f2f2f2;                   // FB Search BG
 @FacebookMainHeadingBG: @PrimaryColor;        // FB Main Heading BG
-@FacebookSectionBG: #4d4c4f;            // FB Sub Section Heading BG
-@FacebookDropdownBG: #4d4c4f;           // FB Dropdown Icon BG
-@FacebookDropdownIcon: #ffffff;         // FB Dropdown Icon Color
+@FacebookSectionBG: @SecondaryColor;                  // FB Sub Section Heading BG
+@FacebookDropdownBG: @SecondaryColor;                 // FB Dropdown Icon BG
+@FacebookDropdownIcon: #ffffff;               // FB Dropdown Icon Color
 @FacebookMoreLessWebRef: @PrimaryColor;       // FB More/Less Icon Color
-@FacebookMoreLessWebRefLink: #999999;   // FB More/Less Text Color
+@FacebookMoreLessWebRefLink: #999999;         // FB More/Less Text Color
 @FacebookMoreLessWebRefHover: @PrimaryColor;  // FB More/Less Text Hover Color
-@FacebookSearch: #dd2d85;               // FB Search Button BG
-@FacebookText: #999999;                 // FB Search Button Text
+@FacebookSearch: #dd2d85;                     // FB Search Button BG
+@FacebookSearchText: #999999;                 // FB Text Color (Labels, Adv. Search Headings)
+@FacebookCount: #999999;                      // FB Search Button Text
 
-@TransparentBottom: rgba(0,0,0,0.7);       // Transparent overlay (bottom) - Sole Mandate, Photos, Videos, Student Accomm., etc.
-@TransparentTopLeft: @PrimaryColor;       // Transparent overlay (top-left) - Featured, New
-
-
-@ActionButtonBG: #ffffff;
-@ActionButtonBorder: @ContentBlocksBorder;
-@ActionButtonText: #333333;
-@ActionButtonIcon: @PrimaryColor;
-
-@ActionFilterDropdownBG: #ffffff;
-@ActionFilterDropdownIcon: #333333;
-
-@FilterBorders: @ContentBlocksBorder;
-@ActionFavouritesCount: #ffffff;
-
-@NavCounterCurrentBG: #f1f1f1;
-@GalleryIconBG: @ContentBlocksAltBG;
-
-@SidebarButtonBG: #ffffff;
-@SidebarButtonBorder: @ContentBlocksBorder;
-@SidebarButtonText: #333333;
-@SidebarButtonIcon: #999999;
-@SidebarPhoneHeading: #000000;
-@SidebarInputBG: #f1f1f1;
-@SidebarInputHover: darken(#f1f1f1, 2%);
-@SidebarInputText: #333333;
-@SidebarInputPlaceholder: #333333;
-@SidebarInputBorder: none;
+@TransparentBottom: rgba(0,0,0,0.7);          // Images Transparent overlay (bottom) - Sole Mandate, Photos, Videos, Student Accomm., etc.
+@TransparentTopLeft: @PrimaryColor;           // Images Transparent overlay (top-left) - Featured, New
 
 
-@OSText: #666666;
-@OSIcons: #666666;
+@ActionButtonBG: #ffffff;                     // Results/Details Back, Get Email Alerts, View My Favourites, Details Tabs BG
+@ActionButtonBorder: @ContentBlocksBorder;    // Results/Details Back, Get Email Alerts, View My Favourites, Details Tabs Border
+@ActionButtonText: #333333;                   // Results/Details Back, Get Email Alerts, View My Favourites, Details Tabs Text
+@ActionButtonIcon: @PrimaryColor;             // Results/Details Back, Get Email Alerts, View My Favourites, Details Tabs Icons
+@ActionFavouritesCount: #ffffff;              // Results/Details Sidebar Favourites Count
 
-@EmailAlertsIcon: @PrimaryColor;
-@EmailAlertsInputBG: #ffffff;
-@EmailAlertsInputText: #333333;
+@ActionFilterDropdownBG: #ffffff;             // Results/Details Sort By, Agent Search, Branch Search Dropdown BG
+@ActionFilterDropdownIcon: #333333;           // Results/Details Sort By, Agent Search, Branch Search Dropdown Icon
 
-@ResultsHeadings: @PrimaryColor;
-@StickyTextColor: #ffffff;
-@StickyIconColor: #ffffff;
+
+@NavCounterCurrentBG: #f1f1f1;                // Results current page number BG
+@GalleryNavBG: @ContentBlocksAltBG;           // Details Gallery Thumbnail Left/Right BG
+@GalleryNavIcon: #333333;                     // Details Gallery Thumbnail Left/Right Icon
+
+@SidebarButtonBG: #ffffff;                    // Results/Details PDF, Print, Scan, Share BG
+@SidebarButtonBorder: @ContentBlocksBorder;   // Results/Details PDF, Print, Scan, Share Border
+@SidebarButtonText: #333333;                  // Results/Details PDF, Print, Scan, Share Text
+@SidebarButtonIcon: #999999;                  // Results/Details PDF, Print, Scan, Share Icon
+@SidebarInputBG: #f1f1f1;                     // Forms Input BG
+@SidebarInputBorder: none;                    // Forms Input Border
+@SidebarInputText: #333333;                   // Forms Input Text
+@SidebarInputPlaceholder: #333333;            // Forms Input Placeholder
+@SidebarInputHover: darken(#f1f1f1, 2%);      // Currency swap button BG
+
+
+@OSText: #666666;                             // QR Code Text
+@OSIcons: #666666;                            // QR Code Icons
+
+@EmailAlertsIcon: @PrimaryColor;              // Results/Details bottom Email Alerts Icon
+@EmailAlertsInputBG: #ffffff;                 // Results/Details bottom Email Alerts Input BG
+@EmailAlertsInputText: #333333;               // Results/Details bottom Email Alerts Input Text
+
+@ResultsHeadings: @PrimaryColor;              // Details page-title price
 @MakeAnOfferArrowBG: @PrimaryColor;
 @MakeAnOfferArrowIcon: #ffffff;
 
-@FeatureIcon: #333333;
+@FeatureIcon: @PrimaryColor;
 @FeatureText: #333333;
 
 @ButtonPrimaryBG: @PrimaryColor;
@@ -204,9 +202,10 @@
 
 @FooterBgColor: url(/static/img/custom/layout/footer-bg.jpg) repeat-x top #225C96;    // Sections, Footer
 @FooterTextColor: #ffffff;   // Footer Text Color
-@FooterlinkHover: #7A98B2;   // Hover Link Color
+@FooterLinkHover: #7A98B2;   // Hover Link Color
+@FooterDividerColor: rgba(255,255,255,0.8);   // Hover Link Color
 
-@SocialIconsLink: #666666;
+@SocialIconsLink: #ffffff;
 @SocialIconsLinkHover: #999999;
 
 @ButtonBgColor: #f0f0f0;     // Button Set 1 (print, bookmark...)
@@ -214,13 +213,23 @@
 @ButtonlinkHover: #215c96;   // Hover Link Color
 @ButtonIconColor: #215c96;  // Icon Color 2 (brochure, next ...)
 
-@ButtonBgColor2: @PrimaryColor;    // Button Set 2 (brochure, next ...)
-@Button2TextColor: #ffffff;  // Button Set 1 (print, bookmark...)
-@Button2linkHover: #ffffff;  // Button Set 2 (brochure, next ...)
-@ButtonIconColor2: #ffffff;  // Icon Color 2 (brochure, next ...)
-
 /* ----// END //---- */
 
+/* CSS Helpers
+------------------------------------------------------------ */
+.icon-font(){
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ----// END //---- */
 
 /* Main Background
 ------------------------------------------------------------ */
@@ -364,6 +373,43 @@ html {
 }
 /* ----// END //---- */
 
+/* Slider */
+.header-image {
+  width:100%;
+  min-height:@HeaderImageHeight;
+  z-index:9;
+  position:relative;
+  min-width: 940px;
+  overflow: hidden;
+}
+
+.resizer{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+}
+
+#rndList {
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#rndList li {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: none;
+  .background-size(cover);
+  background-position: center center;
+}
+/* ----// END //---- */
 
 /* Search
 ------------------------------------------------------------ */
@@ -374,7 +420,7 @@ html {
   font-size: @BaseFontSize;
   z-index:1100;
   position: relative;
-  font-size:100%
+  font-size:0.8rem;
 }
 .adv_search_box1 {
   background: @SearchBackBg;
@@ -535,7 +581,7 @@ input:-ms-input-placeholder{
 /* Results: Sticky Header */
 
 .sticky-header{
-  background: @HeaderBG;
+  background: @StickyHeaderBG;
 }
 
 .sticky-header .sticky-logo{
@@ -580,7 +626,7 @@ input:-ms-input-placeholder{
 
 .sticky-header .filter-submit .icon-sticky-filter:before{
   .icon-font;
-  color: @StickyIcon;
+  color: @FilterButtonIcon;
   content: "\f00e";
   position:relative;
 }
@@ -864,7 +910,10 @@ input:-ms-input-placeholder{
 .property-list-item .icon-baths,
 .property-list-item .icon-garages,
 .property-list-item .icon-openparking{
-  color: @FeatureIcon;
+  color: @FeatureText;
+  &:before{
+    color: @FeatureIcon;
+  }
 }
 
 /* Results: Results List Extras */
@@ -942,7 +991,10 @@ input:-ms-input-placeholder{
 .property-list-meta .icon-baths,
 .property-list-meta .icon-garages,
 .property-list-meta .icon-openparking{
-  color: @FeatureIcon;
+  color: @FeatureText;
+  &:before{
+    color: @FeatureIcon;
+  }
 }
 
 #details-list .listing-media-tabs .action-button.active a{
@@ -978,17 +1030,28 @@ input:-ms-input-placeholder{
 }
 
 .gallery-thumbnails .thumbs-prev{
-  background: @GalleryIconBG;
+  background: @GalleryNavBG;
+  i:before{
+    color: @GalleryNavIcon;
+  }
 }
 
 .gallery-thumbnails .thumbs-next{
-  background: @GalleryIconBG;
+  background: @GalleryNavBG;
+  i:before{
+    color: @GalleryNavIcon;
+  }
 }
 
+.listing-description p{
+  color: @ContentBlocksText;
+}
 .listing-features-content ul li:before {
   color: @PrimaryColor;
 }
-
+.listing-features h5{
+  font-size: 0.8rem;
+}
 .icon-yes{
   &:before{
     color: @PrimaryColor;
@@ -1107,7 +1170,7 @@ input:-ms-input-placeholder{
 #sticky-details .sticky-details-meta .icon-openparking{
   color: @StickyTextColor;
   &:before{
-    color: @StickyIconColor;
+    color: @StickyIcon;
   }
 }
 
@@ -1115,7 +1178,7 @@ input:-ms-input-placeholder{
   .calculator-inputs{
     .detail-more{
       .icon-info-circle:before{
-        color: @AltAccentColor;
+        color: @SiteTextColor;
       }
     }
     input:not(.select2-input){
@@ -1179,7 +1242,7 @@ input:-ms-input-placeholder{
 }
 
 .quick-search:before{
-  color: @ButtonIconColor;
+  color: @ActionFilterDropdownIcon;
 }
 
 
@@ -1369,25 +1432,26 @@ h1.page-heading {
 a {
   color: @LinkActive;
   text-decoration: none;
-}
-
-a:hover {
-  color: @LinkHover;
-}
-
-a:hover.news-heading-link {
-  color: @LinkHover;
+  &:hover {
+    color: @LinkHover;
+  }
 }
 
 a.news-heading-link {
   color: @LinkActive;
   text-decoration: none;
+  &:hover{
+    color: @LinkHover;
+  }
 }
 
-.social:before {
+#footer-social{
   color: @SocialIconsLink;
-  &:hover{
-    color: @SocialIconsLinkHover;
+  .social:before {
+    color: @SocialIconsLink;
+    &:hover{
+      color: @SocialIconsLinkHover;
+    }
   }
 }
 
@@ -1421,364 +1485,145 @@ a.news-heading-link {
 /* Footer
 ------------------------------------------------------------ */
 
-.footer-content               { color:@FooterTextColor; font-size:0.7rem; }
-#footer-top                   { background: #e1e1e1; line-height: 0; }
-#footer-bottom                { .gradient(#0c3c60, #225c96); }
-#footer-copyright             { background: #225c96;}
+.footer-content {
+  color:@FooterTextColor;
+  font-size:0.7rem;
+  background: @FooterBgColor;
+}
 
-.footer-content h1            { color:@FooterTextColor; }
-.footer-content a             { color:@FooterTextColor;}
-.footer-content a:hover       { color:@FooterlinkHover;}
-.footer-divider               { border: 0; border-bottom: 1px solid rgba(255,255,255,0.8); margin: 20px auto;}
-#footer-heading > .footer-divider  { border: 0; border-bottom: 1px solid rgba(255,255,255,0);}
-#footer-logos,
-#footer-logos-1,
-#footer-logos-2               { position: relative; display: inline-block; vertical-align: top; line-height: 1; width:100%;}
-ul.footer-logos               { list-style-type:none; padding: 0;}
-ul.footer-logos li            { display: inline-block; margin-left: 5px;}
-#footer-logos                 { top: 13px; }
-#footer-social                { float: right;color: #666666; line-height: 1;}
-ul.footer-social-links        { list-style-type:none; padding: 0;}
-ul.footer-social-links li     { display: inline-block; margin-left: 5px;}
-ul.footer-logos li            { display: inline-block; margin-left: 5px;}
-#pd-footer                    { font-size: 0.7rem;}
+.footer-content h2 {
+  color:@FooterTextColor;
+}
 
-.pd-icon:before   { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; position: absolute; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
-.pd-icon:before   { content: "\e60e"; font-size: 39px; line-height: 40px; position: relative; color: @FooterTextColor; }
+.footer-content a{
+  color:@FooterTextColor;
+  &:hover {
+    color:@FooterLinkHover;
+  }
+}
+
+.footer-divider {
+  border-bottom: 1px solid @FooterDividerColor;
+}
+
+.pd-icon:before {
+  color: @FooterTextColor;
+}
 
 /* ----// END //---- */
-
-
-/* FACEBOOK
------------------------------------------------------------- */
-.facebook-search                                                { background: @FacebookMainHeadingBG; height:33px; line-height:33px;}
-.facebook-search .adv_search_icon                               { display: none !important;}
-.facebook-search .search-icon                                   { display: inline-block;height:33px; line-height:33px; width: 28px}
-.facebook-search .search-icon:before                            { content: ""; font-size: 18px; z-index: 0;font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
-#facebook-overview .adv_search_box1                             { background: #f2f2f2; margin-bottom:25px;}
-#facebook-overview .adv_search_box2                 { margin:0 auto;}
-#facebook-overview .adv_search_suburbs              { margin-top: 8px; margin-left:20px; }
-#facebook-overview .form_end                        { float: right;}
-#facebook-overview .adv_search_content              { margin-top: 20px; margin-bottom: 20px;}
-#facebook-overview .adv_search_bottom               { margin-top:8px;}
-#facebook-overview .adv_search_webref_back_link     { padding-bottom:20px;}
-#facebook-overview .adv_search_property_types       { margin-top: 20px; margin-left:20px; margin-bottom: 20px;}
-#facebook-overview .select2-choice,
-#facebook-overview .select2-choices                 { border: solid 1px #d6d6d6; min-height: 28px}
-#facebook-overview .select2-container .select2-choice .select2-arrow b { background: @FacebookDropdownBG; display: inline-block; vertical-align: middle;}
-#facebook-overview .select2-container .select2-choice .select2-arrow b:before { line-height: 30px;}
-#facebook-overview .adv_search_heading              { color: #999999;}
-#facebook-overview #id_property_count               { margin-right: 8px; line-height: 30px; height: 30px; font-weight: 600; color: #999999;}
-#facebook-overview #adv_search_more_less_container a:hover                           { color: @FacebookMoreLessWebRefHover; background: none; padding-left: 15px;}
-#facebook-overview #adv_search_more_less_container a                                 { color: @FacebookMoreLessWebRefLink; background: none; padding-left: 15px; text-decoration: none; }
-#facebook-overview #adv_search_more_less_container a:hover.less_search_options_link  { color: @FacebookMoreLessWebRefHover; background: none; padding-left: 15px;}
-#facebook-overview #adv_search_more_less_container a.less_search_options_link        { color: @FacebookMoreLessWebRefLink; background: none; padding-left: 15px; text-decoration: none; }
-#facebook-overview #adv_search_webref_back_link a:hover                  { color: @FacebookMoreLessWebRefHover; background: none; padding-left: 15px;}
-#facebook-overview #adv_search_webref_back_link a                        { color: @FacebookMoreLessWebRefLink; background: none; padding-left: 15px; text-decoration: none; }
-#facebook-overview #id_neighbouring_suburbs a       { color: @FacebookMoreLessWebRefLink;}
-#facebook-overview .adv_search_more_less_container a:before { color: @FacebookMoreLessWebRef;}
-#facebook-overview #id_neighbouring_suburbs a:hover { color: @FacebookMoreLessWebRefHover;}
-#facebook-overview #id_web_ref_search_link a:hover  { color: @FacebookMoreLessWebRefHover;padding-left: 15px;}
-#facebook-overview .web_ref_search_link a:before    { color: @FacebookMoreLessWebRef;}
-#facebook-overview #adv_search_webref_back_link a:before    { color: @FacebookMoreLessWebRef;}
-#facebook-overview #id_web_ref_search_link a        { color: @FacebookMoreLessWebRefLink; padding-left: 15px; text-decoration: none;}
-#facebook-overview #adv_search_suburbs label        { color: @FacebookText; font-weight: normal; }
-#facebook-overview #adv_search_properties label     { color: @FacebookText; font-weight: normal; }
-.facebook-search-container              { padding:17px 13px 16px 14px; background:#f2f2f2; width:470px; color:#545158;}
-.padding-left-11                        { padding-left:11px;}
-.padding-left-34                        { padding-left:34px;}
-.facebook-heading                       { font-family:Arial, Helvetica, sans-serif; font-size:18px; color:#FFFFFF; padding-left: 10px}
-.padding-bottom-25                      { padding-bottom: 25px;}                                                                                      /* Here */
-ul.as-selections                        { background-color: #FFFFFF; border: 1px solid #809DB9; float: left; margin: 0; overflow: auto; width:550px;}
-.facebook-listings                      { background: @FacebookSectionBG; height:33px; line-height:33px;}
-.facebook-latest-listings-container     { padding:16px 13px; width:470px; box-sizing: border-box}
-#facebook-overview .listing-price h3    { font-size: 1rem; margin-bottom: 5px;}
-#facebook-overview .listing-header      { font-size: 0.76rem;}
-#facebook-overview .listing-webref      { font-size: 0.76rem;}
-#facebook-overview .listing-buttons     { font-size: 1rem;}
-.listed                                 { color:#666666;}
-.facebook-browse-suburb                 { padding:16px 13px;}
-.facebook-browse-suburb a               { font-size: 0.8rem;}
-.facebook-address                       { font-size: 0.8rem;}
-.call                                   { font-family:Arial, Helvetica, sans-serif; color:#000; font-size:15px;}
-.facebook-more-info                     { background:url(/static/img/custom/facebook/more-info.gif) no-repeat; width:52px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left; margin-right:5px;}
-.facebook-map-property                  { background:url(/static/img/custom/facebook/map-property.gif) no-repeat; width:71px; height:20px; padding-top:4px; padding-left:20px; font-size:11px; display:block; float:left;}
-/* ----// END //---- */
-
-.gradient (@startColor: #eee, @endColor: white) {
-	background-color: @startColor;
-	background: -webkit-gradient(linear, left top, left bottom, from(@startColor), to(@endColor));
-	background: -webkit-linear-gradient(top, @startColor, @endColor);
-	background: -moz-linear-gradient(top, @startColor, @endColor);
-	background: -ms-linear-gradient(top, @startColor, @endColor);
-	background: -o-linear-gradient(top, @startColor, @endColor);
-}
-
-.transition (@transition){
- -webkit-transition: @transition;
- -moz-transition: @transition;
- -o-transition: @transition;
- -ms-transition: @transition;
- transition: @transition;
-}
-
-
-
-.icon-font(){
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 0;
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.RoundBorders (@radius: 5px) {
-  border-radius: @radius;
-  -moz-border-radius: @radius;
-  -webkit-border-radius: @radius;
-}
-
-.inner-shadow ( @x: 0, @y: 0, @blur: 2px, @spread: 0, @color: rgba(0,0,0,0.25) ) {
-  -webkit-box-shadow: inset @x @y @blur @spread @color;
-  -moz-box-shadow:    inset @x @y @blur @spread @color;
-  box-shadow:         inset @x @y @blur @spread @color;
-}
-
-
-.transform(@value){
-  -webkit-transform: @value;
-  -moz-transform:    @value;
-  -ms-transform:     @value;
-  -o-transform:      @value;
-  transform:         @value;
-}
 
 .pd_modal_mini{
   background: @ContentBlocksBG;
-  border: @ContentBlocksBorder;
-  position: relative;
-  box-sizing: border-box;
-  .button{
-    font-size: 100%;
-    margin-right: 2px;
-  }
-  p{
-    padding: 15px;
-  }
-  .pd_modal_buttons,.pp_details{
-    width: 100%;
-    height: 32px;
-    display: block;
-    position: absolute;
-    bottom: 0;
-  }
+}
+.pp_close{
+  .border-radius(0);
 }
 
 .pd_nav_left, .pd_nav_right{
-  position: absolute;
-  top: 50%;
-  width: 40px;
-  height: 105px;
-  display: block;
   background: @ContentBlocksAltBG;
-  margin-top: -53px;
-  line-height: 105px;
-  text-align: center;
-  vertical-align: top;
-  cursor: pointer;
-  color: inherit;
-  &:hover{
-    color: inherit;
-  }
-  &.disabled{
-    display: none !important;
-  }
 }
 
-.pd_nav_left{
-  left: 0;
-}
-.pd_nav_right{
-  right: 0;
-}
-.pd_modal_controls{
-  float: right;
-  margin: 10px;
-}
 .pd_modal_controls .counter{
-  line-height: 25px;
-  margin-right: 5px;
-  display: inline-block;
-  vertical-align: bottom;
   color:@ContentBlocksText;
 }
+
 .pd_modal_title{
-  float: none;
-  padding: 15px 50px 15px 15px;
   border-bottom: @ContentBlocksBorder;
   color:@H1Color;
 }
+
 .captcha-background{
-  background: #f9f9f9;
-  width: 100%;
   border: @ContentBlocksBorder;
-  height: 74px;
-  margin-top:10px;
 }
-.captcha-content{
-  max-width: 144px;
-  width: 144px;
-  height: 74px;
-  max-height: 74px;
-  overflow: hidden;
+
+/* FACEBOOK
+------------------------------------------------------------ */
+.facebook-search  {
+  background: @FacebookMainHeadingBG;
 }
-.captcha-content iframe{
-  max-width: 258px;
-  width: 258px;
-  .transform(translate(-2px,-1px));
+
+#facebook-overview .adv_search_box1 {
+  background: @FacebookSearchBG;
 }
-#pp_full_res{
-  overflow: hidden;
+
+#facebook-overview .select2-container .select2-choice .select2-arrow b {
+  background: @FacebookDropdownBG;
 }
-div.pp_pic_holder{
-  top: 100%;
-  &.popup{
-    @transition: opacity 0.3s ease-in-out 1s, top 0.3s ease-in-out 1s;
-    .transition(@transition, true);
-    opacity: 1;
-  .transform(translate(0,0));
+
+#facebook-overview .adv_search_heading {
+  color: @FacebookSearchText;
+}
+
+#facebook-overview #id_property_count {
+  color: @FacebookCount;
+}
+
+#facebook-overview #adv_search_more_less_container a {
+  color: @FacebookMoreLessWebRefLink;
+  &:hover {
+    color: @FacebookMoreLessWebRefHover;
   }
 }
 
-
-/*
-** HOMEPAGE - 2 FEATURED PROPERTIES
-*/
-
-.featured-properties-2 {
-  .property-image-thumb{
-    position: relative;
-    width: 100%;
-    height: 260px;
-    overflow: hidden;
+#facebook-overview #adv_search_webref_back_link a {
+  color: @FacebookMoreLessWebRefLink;
+  &:hover {
+    color: @FacebookMoreLessWebRefHover;
+  }
+  &:before {
+    color: @FacebookMoreLessWebRef;
   }
 }
 
-
-/*
-** HOMEPAGE - 3 FEATURED PROPERTIES
-*/
-
-.featured-properties-3 {
-  a{
-    display: block;
-    float: left;
-    padding-bottom: 2px;
+#facebook-overview #id_neighbouring_suburbs a {
+  color: @FacebookMoreLessWebRefLink;
+  &:before {
+    color: @FacebookMoreLessWebRef;
   }
-  .property-image-thumb{
-    position: relative;
-    width: 100%;
-    height: 205px;
-    overflow: hidden;
-  }
-  .property-description{
-    .content-block;
-    padding-top: 15px;
-    border-top: 0;
+  &:hover {
+    color: @FacebookMoreLessWebRefHover;
   }
 }
 
-/*
-** HOMEPAGE - 3 FEATURED PROPERTIES SLIDER
-*/
-
-.property-nav{
-  position: absolute;
-  top: 50%;
-  height: 0;
-  display: block;
-  width: 100%;
-  .slide-prev, .slide-next{
-    width: 44px;     // Change this to your image width
-    height: 85px;    // Change this to your image Hieght
-    display: block;
-    position: absolute;
-    top: -20px;
-    &.disabled{
-      display: none !important;
-    }
+#facebook-overview #id_web_ref_search_link a {
+  color: @FacebookMoreLessWebRefLink;
+  &:hover {
+    color: @FacebookMoreLessWebRefHover;
   }
-  .slide-prev{
-    background: url(/assets/img/custom/slider/assets/prev.png) no-repeat;
-    left: -60px;
-  }
-  .slide-next{
-    background: url(/assets/img/custom/slider/assets/next.png) no-repeat;
-    right: -60px;
+  &:before {
+    color: @FacebookMoreLessWebRef;
   }
 }
 
-
-/*
-** HOMEPAGE - 2 FEATURED NEWS ARTICLES
-*/
-
-.featured-articles-2 {
-  .news-summary-image a{
-    width: 150px;
-    height: 145px;
-  }
+#facebook-overview #adv_search_suburbs label {
+  color: @FacebookSearchText;
 }
+
+#facebook-overview #adv_search_properties label {
+  color: @FacebookSearchText;
+}
+
+.facebook-listings {
+  background: @FacebookSectionBG;
+}
+/* ----// END //---- */
 
 
 @media print{
-
-  #header{
-    div{
-    background: #ffffff;
-    }
-    background: #ffffff;
-    height: 90px;
-  }
-  .transparent-black{
-    background: #000000;
-  }
   .transparent-red{
     background: @SecondaryColor;
   }
-  #logo img{
-    opacity: 0;
-  }
-  #pfv_logo{
-    display: block !important;
-    max-height: 90px;
-    width: auto;
-  }
-  #gallery-thumbnails li:nth-child(2){
-    display: none !important;
-  }
-  .print-hide, .transparent-black.top-right, .sidebar-button, .sidebar-contact-form, .external-link, .counter-overlay, #adv_search_container, #listing-actions, #results-actions, #results-action-sub, #details-action-sub, #results-action-sub-bottom, .sticky-header, #results-email-alerts-box, #details-action-sub-bottom{
-    display: none !important;
-  }
-  .sidebar-quick-links{
-    right: 0 !important;
-    left: auto !important;
-    top: 0 !important;
-    position: absolute !important;
-  }
-  .sidebar-qr-code{
-    display: block !important;
-    position: relative;
-    right: 0 !important;
-    left: auto !important;
-    top: 0;
-  }
-  .transparent-black{
-    background: #000000;
-  }
 }
+
+
+/*
+** HOMEPAGE - FEATURED PROPERTIES
+*/
+
+@import url("../templates/std-2-featured-properties.less");
+
+/*
+** HOMEPAGE - FEATURED NEWS ARTICLES
+*/
+
+@import url("../templates/std-2-news-articles.less");
