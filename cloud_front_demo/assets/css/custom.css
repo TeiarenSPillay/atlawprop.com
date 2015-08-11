@@ -367,6 +367,9 @@ input:-ms-input-placeholder {
 .sticky-header .input {
   border: 1px solid #d6d6d6;
 }
+.sticky-header .select2-container .select2-choice .select2-arrow b {
+  background: #c90d1b;
+}
 .sticky-header .filter-submit {
   background: #c90d1b;
   color: #ffffff;
