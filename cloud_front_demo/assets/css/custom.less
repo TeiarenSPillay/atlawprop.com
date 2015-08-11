@@ -57,6 +57,7 @@
 @MenuBG: #AF0D18;                             // Menu Container BG
 @MenuLinkBG: #AF0D18;                         // Menu Link BG
 @MenuLinkActiveBG: #990000;                   // Menu Active Link BG
+@MenuLinkActiveHoverBG: #990000;                    // Menu Hover Link BG
 @MenuLinkHoverBG: #990000;                    // Menu Hover Link BG
 
 @SubMenuLinkBG: #990000;                      // Menu Dropdown BG
@@ -66,6 +67,7 @@
 @MenuLinkText: #ffffff;                       // Menu Link Text
 @MenuLinkHoverText: #ffffff;                  // Menu Hover Link Text
 @MenuLinkActiveText: #ffffff;                 // Menu Active Link Text
+@MenuLinkActiveHoverText: #ffffff;                 // Menu Active Link Text
 @MenuTextTransform: uppercase;                // Menu Text Transform
 @MenuFontWeight: bold;                        // Menu Font Weight
 @SubMenuLinkText: #ffffff;                    // Menu Dropdown Link Text
@@ -308,6 +310,10 @@ html {
     &.active > a {
       color:@MenuLinkActiveText;
       background:@MenuLinkActiveBG;
+    }
+    &.active:hover > a {
+      color:@MenuLinkActiveHoverText;
+      background:@MenuLinkActiveHoverBG;
     }
   }
 }
