@@ -1,0 +1,65 @@
+{% extends 'mobi/eos_mobi_index.html' %}
+
+{% block js %}
+<script type="text/javascript" src="/eos/mobi/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/eos/mobi/js/jquery.mobile.custom.min.js"></script>
+{% endblock js %}
+{% block body %}
+<div class="home-banner">
+  <div id="rndList" style="position: relative; z-index: 0;">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner"  style="width: auto; height: 385px">
+      <div class="item active">
+        <img src="/assets/mobi/img/layout/home-banner.jpg" />
+      </div>
+    </div>
+  </div>
+  <script>
+
+    jQuery(document).ready(function() {
+      jQuery("#rndList .item").css({display: "block", top: 0, left: 0, position: "absolute", opacity:0});
+      jQuery("#rndList .item").each(function(e) {
+        $img = jQuery(this).find("img").attr("src");
+        jQuery(this).css({background: "url(" + $img + ") no-repeat scroll center center / cover  rgba(0,0,0,0)", "-pie-background": "url(" + $img + ") no-repeat scroll center center / cover  rgba(0,0,0,0)", width: "100%", height: "100%"})
+        jQuery(this).find("img").hide();
+      })
+      jQuery("#rndList .item:first-child").fadeIn(1500).addClass("active");
+      function myTransition() {
+        jQuery("#rndList .item").stop();
+        if (jQuery("#rndList .item.active").next().length) {
+          jQuery("#rndList .item.active").fadeOut(1500).removeClass("active").next().fadeIn(1500).addClass("active");
+        } else {
+          jQuery("#rndList .item.active").fadeOut(1500).removeClass("active");
+          jQuery("#rndList .item:first-child").fadeIn(1500).addClass("active");
+        }
+      }
+      var myslide = setInterval(function() {
+        myTransition()
+      }, 8000);
+    })
+
+  </script>
+  <div class="home-buttons col-xs-12">
+    <div class="home-button">
+      <div class="home-button-space">
+        <a href="/property-search/" class="home-search"><i class="home-search-icon"></i>Search</a>
+      </div>
+    </div>
+    <div class="home-button">
+      <div class="home-button-space">
+        <a href="/property-email-alerts/" class="home-alerts"><i class="home-alerts-icon"></i>Alerts</a>
+      </div>
+    </div>
+    <div class="home-button">
+      <div class="home-button-space">
+        <a href="/news/" class="home-news"><i class="home-news-icon"></i>News</a>
+      </div>
+    </div>
+    <div class="home-button">
+      <div class="home-button-space">
+        <a href="/contact/" class="home-contact"><i class="home-contact-icon"></i>Contact</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,29 @@
+{% extends 'mobi/base.html' %}
+{% block title %}{{ page_title|safe }}{% endblock title %}
+{% block seo %}{{ obj.meta_tags|default:""|safe }}{% endblock seo %}
+
+
+{% block services %}{% if request.path in "/asset-management/,/auctioneering/,/broking/,/corporate-real-estate-services/,/facilities-management/,/project-management/,/property-management/,/research/,/retail-leasing-and-consultancy/,/valuation-and-advisory-services/" %}nav-link-active{% else %}nav-link{% endif %}{% endblock services %}
+{% block about %}{% if request.path in "/profile/, /african-footprint/, /cbre/, /broll-academy/, /broll-foundation/" %}nav-link-active{% else %}nav-link{% endif %}{% endblock about %}
+{% block media %}{% if request.path in "/news/, /awards/, /publications/" %}nav-link-active{% else %}nav-link{% endif %}{% endblock media %}
+
+{% block pageclass %}page-{{ page_title|slugify }}{% endblock pageclass %}
+{% block body %}
+{% load image_tags %}
+<!-- About Us -->
+<div id="about-arrow">
+    <div class="arrow" align="center"><img src="/assets/mobi/img/layout/page-arrow.png" width="33" height="17" style="display:block;" /></div>
+    {% if obj.photo %}<img src="{% get_image_url 'cms' 0 0 obj.photo %}" class="img-responsive" width="100%" />{% endif %}
+</div>
+<div id="about-us" class="container-fluid page-bg">
+    <div class="row">
+        <div id="about-heading" class="col-xs-12">
+            <h1>{{ page_title|safe }}</h1>
+        </div>
+        <div id="about-text" class="col-xs-12 txt margin-top-20">
+
+        {{ obj.content|safe|default:"Awaiting content" }}
+        </div>
+    </div>
+</div>
+{% endblock body %}
