@@ -1,3 +1,4 @@
+// out: emails.css
 @PimaryColour: #1b5083;
 @SecondaryColour: #c90d1b;
 
@@ -6,7 +7,7 @@ body               { margin: 0px; }
 p                  { margin: 0 0 1em; line-height:21px; }
 p.last             { margin-bottom: 0; }
 
-a:focus, 
+a:focus,
 a:hover            { color: #000000; }
 a                  { color: #CF000F; text-decoration: none; }
 
@@ -30,7 +31,9 @@ h4                 { font-family:Arial, Helvetica, sans-serif; font-size:15px; f
 table              { line-height: 20px;}
 .width340          { width:340px;}
 
-.sub-headings-alt, .links, #details_price {
+.sub-headings-alt,
+.links,
+#details_price {
   color: @SecondaryColour;
   text-decoration:none;
 }
@@ -38,11 +41,34 @@ table              { line-height: 20px;}
   color: #333333;
   text-decoration:none;
 }
-#big_button{ background-color: @SecondaryColour; a{ border-width: 0px 172px; border-color: @SecondaryColour; border-style: solid; color: #ffffff; line-height: 61px; display: inline-block; outline: 0;}}
-#big_button_alt{ background-color: #cccccc; color: #333333; a{ border-width: 0px 172px; border-color: #cccccc; border-style: solid; color: #333333; line-height: 61px; display: inline-block; outline: 0;}}
+#big_button{
+  background-color: @SecondaryColour;
+  a{
+    border-width: 0px 172px;
+    border-color: @SecondaryColour;
+    border-style: solid;
+    color: #ffffff;
+    line-height: 61px;
+    display: inline-block;
+    outline: 0;
+  }
+}
+#big_button_alt{
+  background-color: #cccccc;
+  color: #333333;
+  a{
+    border-width: 0px 172px;
+    border-color: #cccccc;
+    border-style: solid;
+    color: #333333;
+    line-height: 61px;
+    display: inline-block;
+    outline: 0;
+  }
+}
 
 #email_heading_background,
-#details_tags { 
+#details_tags {
   background-color: @PimaryColour;
    td{
      color: #ffffff;
