@@ -127,7 +127,6 @@ table {
   background-color: #c90d1b;
 }
 #big_button a {
-  border-width: 0px 172px;
   border-color: #c90d1b;
   border-style: solid;
   color: #ffffff;
@@ -140,7 +139,6 @@ table {
   color: #333333;
 }
 #big_button_alt a {
-  border-width: 0px 172px;
   border-color: #cccccc;
   border-style: solid;
   color: #333333;
