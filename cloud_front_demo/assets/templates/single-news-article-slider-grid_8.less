@@ -1,0 +1,51 @@
+// main: ../css/custom.less
+/*
+** HOMEPAGE - 1 Featured Article Slider (grid_8)
+*/
+.featured-articles-1 {
+  position: relative;
+  overflow: hidden;
+  .news-summary-image{
+    position: relative;
+    width: 300px;
+    height: 260px;
+    float: left;
+    overflow: hidden;
+    img{
+      max-width: 120%;
+    }
+  }
+  .news-summary-content{
+    width: 250px;
+    max-height: 230px;
+    margin-left: 20px;
+  }
+  .slider-navigation{
+    position: absolute;
+    bottom: 38px;
+    width: 250px;
+    left: 340px;
+    display: inline-block;
+    text-align: center;
+    .clicker{
+      width: 20px;
+      height: 4px;
+      display: inline-block;
+      margin: 3px;
+      background: #d6d6d6;
+      &.selected{
+        background: @PrimaryColor;
+      }
+    }
+  }
+  // If you need circles instead of lines, add the class "circle-nav" to featured-articles-1
+  &.circle-nav{
+    .slider-navigation{
+      .clicker{
+        width: 16px;
+        height: 16px;
+        .border-radius(16px);
+      }
+    }
+  }
+}
