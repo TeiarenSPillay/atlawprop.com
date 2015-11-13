@@ -1334,3 +1334,6 @@ a.news-heading-link:hover {
   height: 145px;
   overflow: hidden;
 }
+.featured-articles-2 .news-summary-image img {
+  max-width: 100%;
+}
