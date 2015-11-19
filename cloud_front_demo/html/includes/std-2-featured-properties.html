@@ -2,7 +2,7 @@
 {% for listing in featured %}
   {% if listing %}
 <a href="{{ listing.get_absolute_url }}">
-  <div class="home-featured-property content-block border-box grid_6 {% cycle first,last%}">
+  <div class="home-featured-property content-block border-box grid_6">
     <div class="property-image-thumb">
       {% if listing.featured %}<div class="transparent-red top-left">
         FEATURED

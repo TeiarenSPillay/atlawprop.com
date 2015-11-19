@@ -1,6 +1,6 @@
 {% load image_tags %}
 {% for article in featured_articles %}
-<div id="news-summary-{{article.id}}" class="grid_6 content-block {% cycle first,last %} border-box margin-bottom20 article-list-item">
+<div id="news-summary-{{article.id}}" class="grid_6 content-block border-box margin-bottom20 article-list-item">
   {% if article.photo %}
   <div class="news-summary-image two-fifths first last pull-left">
     <a href="/news/{{ article.slug }}/">

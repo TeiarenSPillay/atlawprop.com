@@ -35,30 +35,36 @@
       <a class="button primary-button pull-right margin-top15" href="/profile/">More Info</a>
   </div>
 {% endif %}
+</div>
+<div class="container_12 margin-top30 margin-bottom30">
 {% if featured %}
-  <div class="grid_12 margin-top30">
-  <h2 class="main-headings">Featured Properties</h2>
-  <div class=" featured-properties-2 margin-top30">
-      {% include "includes/std-2-featured-properties.html" %}
+  <div class="grid_12">
+    <h2 class="main-headings">Featured Properties</h2>
   </div>
+  <div class="featured-properties-2 margin-top30">
+    {% include "includes/std-2-featured-properties.html" %}
   </div>
 {% endif %}
+</div>
+<div class="container_12 margin-top30 margin-bottom30">
 {% get_latest_articles 2 %}
 {% if featured_articles %}
-  <div class="grid_12 margin-top30">
-  <h2 class="main-headings margin-top30">Latest News</h2>
-  <div class=" featured-articles-2 margin-top30">
+  <div class="grid_12">
+    <h2 class="main-headings margin-top30">Latest News</h2>
+  </div>
+  <div class="featured-articles-2 margin-top30">
       {% include "includes/std-2-news-articles.html" %}
   </div>
-  </div>
 {% endif %}
-  <div class="grid_4 margin-top30 content-block border-box" style="background: #cfcfcf">
+</div>
+<div class="container_12 margin-top30 margin-bottom30">
+  <div class="grid_4 content-block border-box" style="background: #cfcfcf">
     &nbsp;<br />&nbsp;
   </div>
-  <div class="grid_4 margin-top30 content-block border-box" style="background: #cfcfcf">
+  <div class="grid_4 content-block border-box" style="background: #cfcfcf">
     &nbsp;<br />&nbsp;
   </div>
-  <div class="grid_4 margin-top30 content-block border-box" style="background: #cfcfcf">
+  <div class="grid_4 content-block border-box" style="background: #cfcfcf">
     &nbsp;<br />&nbsp;
   </div>
 </div>
