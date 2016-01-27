@@ -24,18 +24,24 @@ FACEBOOK_ADDON = True
 DOCUMENTS_ADDON = True
 NEW_DEVELOPMENT_ADDON = True
 OFFERS_ADDON = True
+UNDER_CONSTRUCTION = False
 
-WEBSITE_URL = "http://dev.int.propdata.net:24001"
+WEBSITE_URL = "http://dev.int.propdata.net:24011"
 SENTRY_DSN = None
 S3_FOLDER_NAME = 'test'
+FACEBOOK_BRANCH_IDS = [925]
 
-MOBI_URL = "http://m.dev.int.propdata.net:24001"
+MOBI_URL = "http://m.dev.int.propdata.net:24011"
 
 if MOBI_URL:
     MIDDLEWARE_CLASSES += (
         'eos.lib.mobi_middleware.MobiMiddleware',
     )
 
+if UNDER_CONSTRUCTION:
+    MIDDLEWARE_CLASSES += (
+        'eos.lib.under_construction.UnderConstructionMiddleware',
+    )
 
 PP_FEED_USERNAME = "propdatauser"
 PP_FEED_PASSWORD = "smartcat"

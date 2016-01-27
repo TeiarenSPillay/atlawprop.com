@@ -15,6 +15,7 @@ CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__)))
 SERVER_EMAIL = 'django@propdata.net'
 WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=cloudfront-demo.aws-staging.propdata.net"
 WEBSITE_URL = "http://cloudfront-demo.aws-staging.propdata.net"
+MOBI_URL = "http://m.cloudfront-demo.aws-staging.propdata.net"
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]  # Top heading - first part
@@ -34,6 +35,9 @@ PERMISSIONS_ADDON = True
 PORTALS_ADDON = False
 DOCUMENTS_ADDON = True
 OFFERS_ADDON = True
+UNDER_CONSTRUCTION = True
+
+
 
 # FACEBOOK_ADDON = True
 # FACEBOOK_BRANCH_IDS = [5376]
@@ -73,6 +77,11 @@ if not DEV_MODE:
     ANALYTICS_ID = 'UA-XXXX'
     MIDDLEWARE_CLASSES += (
         'eos.lib.analytics.GoogleAnalyticsMiddleware',
+    )
+
+if UNDER_CONSTRUCTION:
+    MIDDLEWARE_CLASSES += (
+        'eos.lib.under_construction.UnderConstructionMiddleware',
     )
 
 #MIDDLEWARE_CLASSES = combine_middleware()
