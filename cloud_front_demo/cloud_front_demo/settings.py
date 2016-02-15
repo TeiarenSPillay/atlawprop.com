@@ -13,9 +13,8 @@ CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__)))
 
 ### Site specifics ###
 SERVER_EMAIL = 'django@propdata.net'
-WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=cloudfront-demo.aws-staging.propdata.net"
-WEBSITE_URL = "http://cloudfront-demo.aws-staging.propdata.net"
-MOBI_URL = "http://m.cloudfront-demo.aws-staging.propdata.net"
+WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=PROPDATA_WEBSITE_BUILDER_PROJECT_URL.aws-staging.propdata.net"
+WEBSITE_URL = "http://PROPDATA_WEBSITE_BUILDER_PROJECT_URL.propdata.net"
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]  # Top heading - first part
@@ -52,9 +51,9 @@ SESSION_REDIS_PREFIX = CURRENT_DIRECTORY.split("/")[-1]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'cloudfront_demo',
-        'USER': 'durr_estates',
-        'PASSWORD': 'ujl8rse5zw',
+        'NAME': 'PROPDATA_WEBSITE_BUILDER_PROJECT_DATABASE_NAME',
+        'USER': 'PROPDATA_WEBSITE_BUILDER_PROJECT_USER_NAME',
+        'PASSWORD': 'PROPDATA_WEBSITE_BUILDER_PROJECT_DATABASE_PASSWORD',
         'HOST': 'db-1',
         'PORT': '',
     }
@@ -64,7 +63,7 @@ DATABASES = {
 #RECAPTCHA_PUBLIC_KEY = '6LfyycISAAAAAB2PddDRop69fIS3nmk9iqLltHIs'
 #RECAPTCHA_PRIVATE_KEY = '6LfyycISAAAAAIuVa0HI-P6WH_uCp88MG_aJ7TmF'
 
-S3_FOLDER_NAME = 'test'
+S3_FOLDER_NAME = 'PROPDATA_WEBSITE_BUILDER_PROJECT_S3_PATH'
 
 ALLOWED_HOSTS = ['.aws-staging.propdata.net']
 
@@ -86,7 +85,7 @@ if UNDER_CONSTRUCTION:
 
 #MIDDLEWARE_CLASSES = combine_middleware()
 
-ROOT_URLCONF = 'cloud_front_demo.urls'
+ROOT_URLCONF = 'PROPDATA_WEBSITE_BUILDER_PROJECT_ROOT_URLCONF.urls'
 
 # Static configs
 MEDIA_ROOT = '%s/../assets' % CURRENT_DIRECTORY
@@ -102,5 +101,3 @@ TEMPLATE_DIRS += (
 )
 
 #SENTRY_SITE = "abcrealestate.co.za"
-
-SOMETHING COOL  = $BESTPLAYER
