@@ -102,3 +102,5 @@ TEMPLATE_DIRS += (
 )
 
 #SENTRY_SITE = "abcrealestate.co.za"
+
+SOMETHING COOL  = $BESTPLAYER
