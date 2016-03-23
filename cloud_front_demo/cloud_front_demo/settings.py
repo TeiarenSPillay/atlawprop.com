@@ -14,7 +14,7 @@ CURRENT_DIRECTORY = path.abspath(path.join(path.dirname(__file__)))
 ### Site specifics ###
 SERVER_EMAIL = 'django@propdata.net'
 WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=PROPDATA_WEBSITE_BUILDER_PROJECT_URL.aws-staging.propdata.net"
-WEBSITE_URL = "http://PROPDATA_WEBSITE_BUILDER_PROJECT_URL.propdata.net"
+WEBSITE_URL = "http://PROPDATA_WEBSITE_BUILDER_PROJECT_URL.aws-staging.propdata.net"
 
 # Brochure colours - Format: [RED, GREEN, BLUE]
 BROCHURE_TITLE_P1 = [0.82, 0.55, 0.0]  # Top heading - first part
