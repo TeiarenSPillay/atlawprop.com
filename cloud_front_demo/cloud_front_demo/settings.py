@@ -23,7 +23,7 @@ DOCUMENTS_ADDON = True
 OFFERS_ADDON = True
 UNDER_CONSTRUCTION = True
 # FACEBOOK_ADDON = True
-# FACEBOOK_BRANCH_IDS = [5376]
+# FACEBOOK_BRANCH_IDS = [x, y, z]
 
 ### Site specifics ###
 SERVER_EMAIL = 'django@propdata.net'
@@ -31,7 +31,7 @@ WEB_STATS = "http://elb-1.aws.propdata.net/cgi-bin/awstats.pl?config=PROPDATA_WE
 WEBSITE_URL = "http://PROPDATA_WEBSITE_BUILDER_PROJECT_URL.aws-staging.propdata.net"
 # MOBI_URL = ""
 ALLOWED_HOSTS = ['.aws-staging.propdata.net']
-#SENTRY_SITE = "abcrealestate.co.za"
+SENTRY_SITE = "http://PROPDATA_WEBSITE_BUILDER_PROJECT_URL.aws-staging.propdata.net"
 S3_FOLDER_NAME = 'PROPDATA_WEBSITE_BUILDER_PROJECT_S3_PATH'
 
 #GMAPS_KEY  = "ABQIAAAAZ7M1Fg4tth4J3zE3SdNNGhQopxaNlSGf-D4ne8JrgGl4on9aCxR8lLOa8U7yfvsm-aaXkQRoyD8rlw" # *.abcrealestate.co.za
