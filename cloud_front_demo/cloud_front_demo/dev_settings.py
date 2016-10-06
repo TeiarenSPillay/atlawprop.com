@@ -26,12 +26,12 @@ NEW_DEVELOPMENT_ADDON = True
 OFFERS_ADDON = True
 UNDER_CONSTRUCTION = False
 
-WEBSITE_URL = "http://dev.int.propdata.net:24011"
+WEBSITE_URL = "http://dev.propdata.net:24011"
 SENTRY_DSN = None
 S3_FOLDER_NAME = 'test'
 FACEBOOK_BRANCH_IDS = [925]
 
-MOBI_URL = "http://m.dev.int.propdata.net:24011"
+MOBI_URL = "http://m.dev.propdata.net:24011"
 
 if MOBI_URL:
     MIDDLEWARE_CLASSES += (
