@@ -1,28 +1,64 @@
 /* Fonts
 ------------------------------------------------------------ */
+/* 'Source Sans Pro'-200 -  */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGFl_EbE5kujbLzdX6sKqH6g.eot');
+  /* IE9 Compat Modes */
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGFl_EbE5kujbLzdX6sKqH6g.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCVh0V6fR69OLaFLklYbiSk.woff2') format('woff2'), /* Super Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMa9awK0IKUjIWABZIchFI8.woff') format('woff'), /* Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGEMbjGELOEJD5J8DUmxkO-A.ttf') format('truetype'), /* Safari, Android, iOS */ url('https://fonts.gstatic.com/l/font?kit=toadOcfmlt9b38dHJxOBGFuXahqWP-sUHr1s2YHnD8g&skey=f7e766e587bd9f23&v=v9#SourceSansPro') format('svg');
+  /* Legacy iOS */
+}
+/* 'Source Sans Pro'-300 -  */
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 300;
-  src: url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCP2LEk6lMzYsRqr3dHFImA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMVNtom4QlEDNJaqqqzqdSs.woff) format('woff');
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGBlTL9oEQvYTI0YAW1-Ysv0.eot');
+  /* IE9 Compat Modes */
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGBlTL9oEQvYTI0YAW1-Ysv0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGOode0-EuMkY--TSyExeINg.woff2') format('woff2'), /* Super Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGNbE_oMaV8t2eFeISPpzbdE.woff') format('woff'), /* Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMw1o1eFRj7wYC6JbISqOjY.ttf') format('truetype'), /* Safari, Android, iOS */ url('https://fonts.gstatic.com/l/font?kit=toadOcfmlt9b38dHJxOBGOUS_KcVBMXUJf1HZjyEEXg&skey=e2b26fc7e9e1ade8&v=v9#SourceSansPro') format('svg');
+  /* Legacy iOS */
 }
+/* 'Source Sans Pro'-regular -  */
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 400;
-  src: url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlN0tugusXa58UbOrParLRF0.eot');
+  /* IE9 Compat Modes */
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlN0tugusXa58UbOrParLRF0.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlNV_2ngZ8dMf8fLgjYEouxg.woff2') format('woff2'), /* Super Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlBM0YzuT7MdOe03otPbuUS0.woff') format('woff'), /* Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlNzbP97U9sKh0jjxbPbfOKg.ttf') format('truetype'), /* Safari, Android, iOS */ url('https://fonts.gstatic.com/l/font?kit=ODelI1aHBYDBqgeIAH2zlADX0QHsyBtvFGhCuXSMYhM&skey=1e026b1c27170b9b&v=v9#SourceSansPro') format('svg');
+  /* Legacy iOS */
 }
+/* 'Source Sans Pro'-600 -  */
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 600;
-  src: url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGMzFoXZ-Kj537nB_-9jJhlA.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCmgpmuQqK2I-L2S9cF65Ek.woff) format('woff');
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGNanmHNzStikJN_FjplbBik.eot');
+  /* IE9 Compat Modes */
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGNanmHNzStikJN_FjplbBik.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCOFnW3Jk0f09zW_Yln67Ac.woff2') format('woff2'), /* Super Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGJ6-ys_j0H4QL65VLqzI3wI.woff') format('woff'), /* Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGNNE-IuDiR70wI4zXaKqWCM.ttf') format('truetype'), /* Safari, Android, iOS */ url('https://fonts.gstatic.com/l/font?kit=toadOcfmlt9b38dHJxOBGN6ADpNrYTvKq5lsv8A_aYs&skey=227a890402fab339&v=v9#SourceSansPro') format('svg');
+  /* Legacy iOS */
 }
+/* 'Source Sans Pro'-700 -  */
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGFV89XnfCtb1fhQGOlhyqi8.eot');
+  /* IE9 Compat Modes */
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGFV89XnfCtb1fhQGOlhyqi8.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGEo0As1BFRXtCDhS66znb_k.woff2') format('woff2'), /* Super Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGFkQc6VGVFSmCnC_l7QZG60.woff') format('woff'), /* Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGLsbIrGiHa6JIepkyt5c0A0.ttf') format('truetype'), /* Safari, Android, iOS */ url('https://fonts.gstatic.com/l/font?kit=toadOcfmlt9b38dHJxOBGDoOxVUo1xdF11_PvoexWN4&skey=84e1cdfb74260b1d&v=v9#SourceSansPro') format('svg');
+  /* Legacy iOS */
+}
+/* 'Source Sans Pro'-900 -  */
 @font-face {
   font-family: 'Source Sans Pro';
   font-style: normal;
   font-weight: 900;
-  src: url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGIq-Fb0zf838trI74uojZQY.woff2) format('woff2'), url(http://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGC7eGk4PJkA83J1AXCmgUfc.woff) format('woff');
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCDZg7i-e40o9FYYiSpZxAc.eot');
+  /* IE9 Compat Modes */
+  src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCDZg7i-e40o9FYYiSpZxAc.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGHZhYM0_6AejPZE-OqA592o.woff2') format('woff2'), /* Super Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGHiec-hVyr2k4iOzEQsW1iE.woff') format('woff'), /* Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGBPPOa1q11iOmmM9mDHHHX4.ttf') format('truetype'), /* Safari, Android, iOS */ url('https://fonts.gstatic.com/l/font?kit=toadOcfmlt9b38dHJxOBGEJ5fyyk7hbwuQs1ayp3rqc&skey=cf4dfcb31d72fb0a&v=v9#SourceSansPro') format('svg');
+  /* Legacy iOS */
 }
 /* ----// END //---- */
 /* LESS Variables
@@ -493,6 +529,9 @@ input:-ms-input-placeholder {
   background: #f1f1f1;
   font-weight: 600;
 }
+.top-nav-counter-list li span {
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
 /* Results: Sidebar */
 .sidebar-button {
   background: #ffffff;
@@ -789,7 +828,10 @@ input:-ms-input-placeholder {
 .transparent-black {
   background: rgba(0, 0, 0, 0.7);
 }
-.transparent-red.top-left {
+.transparent-red.top-left,
+.transparent-black.sold,
+.transparent-black.rented,
+.transparent-black.pending {
   background: #c90d1b;
 }
 #make-an-offer-form input.full-input {
@@ -1077,108 +1119,34 @@ a.news-heading-link:hover {
 }
 #footer-social {
   color: #ffffff;
-  /* Social Icons
-  ------------------------------------------------------------ */
   /* ----// END //---- */
 }
 #footer-social .social:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: attr(data-icon);
   color: #ffffff;
+  font-size: 36px;
+  position: relative;
+  line-height: 40px;
+  top: auto;
+  left: auto;
 }
 #footer-social .social:hover:before {
   color: #999999;
 }
-#footer-social .facebook_button-icon:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\f09a";
-  font-size: 35px;
-  line-height: 40px;
-  position: relative;
+#footer-navigation-links .footer-divider {
+  opacity: 0;
 }
-#footer-social .twitter_button-icon:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\f099";
-  font-size: 44px;
-  line-height: 40px;
-  position: relative;
-  top: 2px;
-}
-#footer-social .linkedin_button-icon:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\f0e1";
-  font-size: 39px;
-  line-height: 40px;
-  position: relative;
-}
-#footer-social .youtube_button-icon:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\f167";
-  font-size: 33px;
-  line-height: 40px;
-  position: relative;
-  top: -2px;
-}
-#footer-social .googleplus_button-icon:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\f0d5";
-  font-size: 33px;
-  line-height: 40px;
-  position: relative;
-  top: 2px;
-}
-#footer-social .pinterest_button-icon:before {
-  font-family: 'icomoon';
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  content: "\f0d2";
-  font-size: 39px;
-  line-height: 40px;
-  position: relative;
+#footer-heading {
+  display: none;
 }
 /* ----// END //---- */
 /* Buttons
