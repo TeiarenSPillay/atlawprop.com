@@ -1142,6 +1142,9 @@ a.news-heading-link:hover {
 #footer-social .social:hover:before {
   color: #999999;
 }
+ul.footer-logos li:first-of-type {
+  margin-left: 0;
+}
 #footer-navigation-links .footer-divider {
   opacity: 0;
 }
