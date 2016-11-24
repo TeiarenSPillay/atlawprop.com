@@ -3,16 +3,19 @@
 ========================================================================== */
 /* General Layout */
 
+@PrimaryColor: #cd1b31;
+@SecondaryColor: #212121;
+
 @BodyBG: #ffffff;
 @InternalPageBG: #f0f0f0;
 @MainHeadings: #000000;
-@BulletsBG: #ce0a02;
+@BulletsBG: @PrimaryColor;
 @BulletsIcon: #ffffff;
-@LinksColour: #001e4d;
-@LinksHover: #f6e90e;
+@LinksColour: @PrimaryColor;
+@LinksHover: @SecondaryColor;
 
 /* Header */
-@HeaderBGColor: #cd1b31;
+@HeaderBGColor: @PrimaryColor;
 @LogoPaddingTop:  15px;
 @LogoPaddingBottom: 20px;
 @LogoHeight:81px;
@@ -25,9 +28,9 @@
 @MenuHeadingColor: #ffffff;
 @MenuBG: #333333;
 @MenuLinkColor: #ffffff;
-@MenuLinkActive: #cd1b31;
+@MenuLinkActive: @PrimaryColor;
 @MenuLinkActiveBG: #1e1e1e;
-@MenuLinkHover: #cd1b31;
+@MenuLinkHover: @PrimaryColor;
 @MenuLinkBorder: 1px solid #606060;
 
 
@@ -35,15 +38,15 @@
 /* Search, Alerts, News, Contact */
 @HomeButtonTextColor:#ffffff;
 @HomeButtonIconColor:#ffffff;
-@HomeButtonBG: #212121;
+@HomeButtonBG: @SecondaryColor;
 /* Property Near Me, Onshow Near Me */
 @NearMeButtonColor: #ffffff;
-@NearMeButtonHover: #cd1b31;
+@NearMeButtonHover: @PrimaryColor;
 @NearMeButtonBG: #000000;
 
 
 /* Footer */
-@SocialIcons: #212121;
+@SocialIcons: @SecondaryColor;
 @PDIcon: #C6C6C6;
 @FooterBG: #FFFFFF;
 @FooterTextColor: #333333;
@@ -55,7 +58,7 @@
 /* Property Search */
 @SearchBG: #ffffff;
 @SearchDividers: 1px solid #d6d6d6;
-@SearchButtonBG: #cd1b31;
+@SearchButtonBG: @PrimaryColor;
 @SearchDisableButtonBG: #d6d6d6;
 @SearchButtonIcon: #ffffff;
 @SearchDisableButtonIcon: #ffffff;
@@ -65,12 +68,12 @@
 @DropdownIcon: #ffffff;
 @WebrefIconBG: #000000;
 @WebrefIcon: #ffffff;
-@CheckboxActive: #cd1b31;
+@CheckboxActive: @PrimaryColor;
 @CheckboxInactive: #333333;
 @PropertyCount: #000000;
-@MoreLessText: #cd1b31;
+@MoreLessText: @PrimaryColor;
 @MoreLessHover: #000000;
-@MoreLessIcon: #cd1b31;
+@MoreLessIcon: @PrimaryColor;
 
 
 /* Forms */
@@ -78,14 +81,14 @@
 @InputText: #000000;
 @InputHeadings: #000000;
 @InputLabels: #212121;
-@InputButton: #cd1b31;
+@InputButton: @PrimaryColor;
 @InputButtonText: #ffffff;
 
 
 /* Search Results */
 @ResultsIconBG: #000000;
 @ResultsIcon: #ffffff;
-@AlertsBannerBG: #cd1b31;
+@AlertsBannerBG: @PrimaryColor;
 @AlertsBannerIcon: #ffffff;
 @AlertsBannerText: #ffffff;
 @AlertsBannerButton: #000000;
@@ -93,8 +96,8 @@
 
 
 /* Listing Details */
-@HeadingColor: #cd1b31;
-@AssumptionsLink: #cd1b31;
+@HeadingColor: @PrimaryColor;
+@AssumptionsLink: @PrimaryColor;
 
 
 /* Contact Us */
@@ -216,13 +219,12 @@ a:hover, a:focus, a:active { color: @LinksHover; text-decoration: none; border:0
 /* Navigation
 ========================================================================== */
 
-
 .menu-open:before   { color: @MenuIconColor; background: @MenuIconBG; padding: 5px; font-size: 22px; text-align:center; line-height: 22px; width:33px; height:33px; display: block;}
 .menu-close:before  { color: @MenuCloseColor; content: "\e67f"; font-size: 38px; line-height: 33px; position:relative; top: 4px; width:38px; height:38px; display: block;}
 
 #navigation      { float:right;min-height: 100%; position: absolute; transform: translate(100%,0);-webkit-transform: translate(100%,0);overflow:hidden; background:#333; z-index:9999!important;right:0;transition: all 0.3s ease;-webkit-transition: all 0.3s ease;}
-#navigation.active  { transform: translate(0,0);-webkit-transform: translate(0,0);}
-#navigation.transparent { background:@MenuBG; overflow:hidden;}
+#navigation.active  { transform: translate(0,0);-webkit-transform: translate(0,0); position: absolute; top: 0; left: 0; bottom: 0; right: 0; overflow: auto;}
+#navigation.transparent { background:@MenuBG; }
 
 #sharing      { float:left;min-height: 100%; position: absolute; transform: translate(-100%,0);-webkit-transform: translate(-100%,0);overflow:hidden; background:#333; z-index:9999!important;left:0;transition: all 0.3s ease;-webkit-transition: all 0.3s ease;}
 #sharing.active  { transform: translate(0,0);-webkit-transform: translate(0,0);}
@@ -240,6 +242,8 @@ a.nav-link:hover  { font-size:13px; font-family: 'Open Sans', sans-serif; color:
 a.nav-link:active { color: @MenuLinkHover; }
 a.nav-link:focus  { color: @MenuLinkHover; }
 a.nav-link     { font-size:13px; font-family: 'Open Sans', sans-serif; color: @MenuLinkColor; font-weight:400; line-height:44px; height:44px; display:block; border-bottom:@MenuLinkBorder; background:@MenuBG; padding:0px 15px 0px 15px; text-decoration: none; z-index:99; }
+a.nav-link + .sub-menu {display: none;}
+a.nav-link-active + .sub-menu {display: block;}
 
 a:hover.nav-link-active  { font-size:13px; font-family: 'Open Sans', sans-serif; color: @MenuLinkHover; font-weight:400; line-height:44px; height:44px; display:block; border-bottom:@MenuLinkBorder; background:@MenuLinkActiveBG;}
 a.nav-link-active:active { color: @MenuLinkHover; }
@@ -279,13 +283,57 @@ a.footerpropdata     { color: @CopyrightColor; font-size:11px; text-decoration: 
 .social-icon       { width: 40px; height: 40px; display: inline-block; }
 .social-icon:before   { width: 40px; height: 40px; display: inline-block; line-height:40px; font-family: 'icomoon'; content: "\e604"; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;text-align:center;}
 
-.social-icon.facebook:before {content: "\e886";color: @SocialIcons; font-size: 38px; top:-1px; position: relative;text-indent: 13px;}
-.social-icon.twitter:before {content: "\f099";color: @SocialIcons; font-size: 52px; top:5px; position: relative; }
-.social-icon.linkedin:before {content: "\f0e1";color: @SocialIcons; font-size: 50px; top:3px; position: relative; }
-.social-icon.youtube:before {content: "\f167";color: @SocialIcons; font-size: 40px; position: relative; top:-2px;}
-.social-icon.google_plus:before { content: "\f0d5";color: @SocialIcons;  font-size: 40px; position: relative; top:1px; }
-.social-icon.pinterest:before {content: "\f0d2";color: @SocialIcons;  font-size: 50px; position: relative; top:0px; }
-.social-icon.pd-logo:before {content: "\e8e0";color: @PDIcon; font-size: 38px; position: relative; top:-5px;}
+
+@font-face {
+  font-family: 'homeicon';
+  src:url('/static/font-icons/fonts/homeicon.eot?byhruy');
+  src:url('/static/font-icons/fonts/homeicon.eot?#iefixbyhruy') format('embedded-opentype'),
+  url('/static/font-icons/fonts/homeicon.woff?byhruy') format('woff'),
+  url('/static/font-icons/fonts/homeicon.ttf?byhruy') format('truetype'),
+  url('/static/font-icons/fonts/homeicon.svg?byhruy#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.icon-font(){
+  font-family: 'homeicon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#footer-social{
+  a{
+    text-align: center;
+    height: 40px;
+    margin-right: 10px;
+    color: @SocialIcons;
+    &:hover{
+      color: inherit;
+    }
+  }
+  .social-icon{
+    width: auto;
+    &:before {
+      .icon-font();
+      font-size: 40px;
+      content: attr(data-icon);
+      top: auto;
+      left: auto;
+      vertical-align: middle;
+      line-height: 1;
+      width: auto;
+      text-indent: 0;
+    }
+    &:hover{
+      color: inherit;
+    }
+  }
+  /* ----// END //---- */
+}
 
 
 /* Homepage
@@ -529,7 +577,7 @@ a.home-button-show:before   {font-family: 'icomoon'; content: "\e604"; speak: no
 .btn-group.open .dropdown-toggle  { box-shadow: none; }
 .btn { -moz-user-select: none; background-image: none; background-repeat:no-repeat; background-position: right; border: 1px solid rgba(0, 0, 0, 0); border-radius: 0px; cursor: pointer; display: inline-block; font-size: 14px; font-weight: 400; line-height: 1.42857; margin-bottom: 0; padding: 0px 12px; height:30px; text-align: center; vertical-align: middle; white-space: nowrap;}
 
-.btn:after { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background: @DropdownIconBG; content:"\f107"; display:block; position: absolute; top:-1px; color:#ffffff; line-height:28px; font-size: 18px; right:-1px; width:30px; height: 30px;}
+.btn:after { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background: @DropdownIconBG; content:"\f107"; display:block; position: absolute; top:-1px; color:@DropdownIcon; line-height:28px; font-size: 18px; right:-1px; width:30px; height: 30px;}
 .sort-dropdown .btn:after{ content:"\e6d7"; top:0; line-height:30px;}
 
 
