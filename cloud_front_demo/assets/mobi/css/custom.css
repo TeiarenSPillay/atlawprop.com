@@ -657,6 +657,23 @@ a.footerpropdata {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
 }
+.social-icon.pd-logo:before {
+  color: #c6c6c6;
+  content: "";
+  font-size: 38px;
+  position: relative;
+  top: -5px;
+  display: inline-block;
+  font-family: "icomoon";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-transform: none;
+  width: 40px;
+}
 @font-face {
   font-family: 'homeicon';
   src: url('/static/font-icons/fonts/homeicon.eot?byhruy');
