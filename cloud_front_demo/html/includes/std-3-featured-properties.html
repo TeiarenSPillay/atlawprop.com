@@ -36,7 +36,7 @@
         <div class="icons {% if listing.on_show or listing.bank_reposessed or listing.distressed or listing.sole_mandate or listing.quick_sell_options or listing.public_tender or show_private_seller_icon or listing.student_accommodation %}bordered{% endif %}">
           {% if listing.get_photo_count == 1 %}<i class="icon-photos"></i><span>{{listing.get_photo_count}} Photo</span>{% elif listing.get_photo_count > 1%}<i class="icon-photos"></i><span>{{listing.get_photo_count}} Photos</span>{% endif %}
           {% if listing.map_x_position and listing.map_y_position %}<i class="icon-mapped"></i><span>Mapped</span>{% endif %}
-          {% if listing.floorplangallery.count > 0 %}<i class="icon-floorplan"></i><span>Plans</span>{% endif %}
+          {% if listing.floorplangallery|length > 0 %}<i class="icon-floorplan"></i><span>Plans</span>{% endif %}
           {% if listing.video_id %}<i class="icon-video"></i><span>Video</span>{% endif %}
         </div>
       </div>
@@ -56,7 +56,7 @@
 {# if featured #}
 <!-- <div class="container_12 crystals">
   <div class="margin-top20 margin-bottom20">
-    
+
       <div class="property-nav">
         <a href="#prev" class="slide-prev"></a>
         <a href="#next" class="slide-next"></a>
@@ -64,7 +64,7 @@
       <div class="carousel featured-properties-3 margin-top30">
           {# include "includes/std-3-featured-properties.html" #}
       </div>
-    
+
     <div class="clear"></div>
   </div>
 </div> -->
@@ -74,7 +74,7 @@
 <!-- <script type="text/javascript" src="/static/externals/caroufredsel/jquery.carouFredSel.6.2.1.min.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
-    
+
     $(".carousel").carouFredSel({
       auto: false,
       items: {
@@ -92,15 +92,15 @@
       next: ".property-nav .slide-next",
       prev: ".property-nav .slide-prev"
     });
-    
+
   });
 </script> -->
 {# endblock footer-js #}
 
 <!-- Goes into Custom -->
 
-<!-- 
-/* 
+<!--
+/*
 ** HOMEPAGE - 3 FEATURED PROPERTIES
 */
 .featured-properties-3 {
@@ -122,7 +122,7 @@
     min-height: 69px;
   }
 }
-/* 
+/*
 ** HOMEPAGE - 3 FEATURED PROPERTIES SLIDER
 */
 
