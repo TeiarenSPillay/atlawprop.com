@@ -36,7 +36,7 @@
         <div class="icons {% if listing.on_show or listing.bank_reposessed or listing.distressed or listing.sole_mandate or listing.quick_sell_options or listing.public_tender or show_private_seller_icon or listing.student_accommodation %}bordered{% endif %}">
           {% if listing.get_photo_count == 1 %}<i class="icon-photos"></i><span>{{listing.get_photo_count}} Photo</span>{% elif listing.get_photo_count > 1%}<i class="icon-photos"></i><span>{{listing.get_photo_count}} Photos</span>{% endif %}
           {% if listing.map_x_position and listing.map_y_position %}<i class="icon-mapped"></i><span>Mapped</span>{% endif %}
-          {% if listing.floorplangallery.count > 0 %}<i class="icon-floorplan"></i><span>Plans</span>{% endif %}
+          {% if listing.floorplangallery|length > 0 %}<i class="icon-floorplan"></i><span>Plans</span>{% endif %}
           {% if listing.video_id %}<i class="icon-video"></i><span>Video</span>{% endif %}
         </div>
       </div>

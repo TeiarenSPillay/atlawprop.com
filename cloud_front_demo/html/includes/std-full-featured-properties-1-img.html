@@ -36,7 +36,7 @@
         <div class="icons {% if listing.on_show or listing.bank_reposessed or listing.distressed or listing.sole_mandate or listing.quick_sell_options or listing.public_tender or show_private_seller_icon or listing.student_accommodation %}bordered{% endif %}">
           {% if listing.get_photo_count == 1 %}<i class="icon-photos"></i><span>{{listing.get_photo_count}} Photo</span>{% elif listing.get_photo_count > 1%}<i class="icon-photos"></i><span>{{listing.get_photo_count}} Photos</span>{% endif %}
           {% if listing.map_x_position and listing.map_y_position %}<i class="icon-mapped"></i><span>Mapped</span>{% endif %}
-          {% if listing.floorplangallery.count > 0 %}<i class="icon-floorplan"></i><span>Plans</span>{% endif %}
+          {% if listing.floorplangallery|length > 0 %}<i class="icon-floorplan"></i><span>Plans</span>{% endif %}
           {% if listing.video_id %}<i class="icon-video"></i><span>Video</span>{% endif %}
         </div>
       </div>
@@ -44,7 +44,7 @@
     <div class="featured-content">
       <h2 class="home-price main-headings margin-bottom10">{% if not listing.get_main_type == 'NewDevelopment' %}{{ listing.render_price|safe }}{% else %}{{ listing.development_name }}{% endif %}</h2>
       <h3 class="sub-headings header-bordered" style="padding: 15px 0;">{{ listing.get_heading|safe }}</h3>
-      
+
       {% if not listing.get_main_type == 'NewDevelopment' %}
       <table id="featured-table" class="line-height15 margin-top20 featured-table" cellpadding="0" cellspacing="0">
         {% ifequal listing.get_main_type 'Residential' %}
@@ -163,7 +163,7 @@
         {% for type in listing.newdevelopmentproperty_set.values|slice:"2" %}
         <div class="pull-left half margin-top15">
           <strong>{% if type.property_type in "Building, Investment, Office, Showroom, Warehouse, Medical Centre, Shopping Center, Apartment, Flat, House, Townhouse, Villa, Hotel Room" %}{{ type.property_type }}{{ type.number|pluralize }}{% elif type.property_type in "Factory,Mini Factory, Equestrian Property" %}{{ type.property_type|cut:"y" }}{{ type.number|pluralize:"y,ies" }}{% elif type.property_type in "Business, Duplex, Simplex" %}{{ type.property_type }}{{ type.number|pluralize:",es" }}{% else %}{{ type.property_type }}{% endif %}</strong><br />
-          {{ type.number|intcomma }} Available from 
+          {{ type.number|intcomma }} Available from
                 {% if listing.poa %} POA {% else %}
                 {{ currency_symbol }} {{ type.priced_from|intcomma }}
                 {% ifequal listing.listing_type 'Commercial New Development' %}per m&sup2;{% endifequal %}
