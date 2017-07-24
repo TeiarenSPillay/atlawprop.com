@@ -28,35 +28,35 @@
     </div>
   </div>
 </div>
-<div class="container_12 margin-top30 margin-bottom30">
 {% if profile.live %}
+<div class="container_12 margin-top30 margin-bottom30">
   <div class="grid_12 homepage-profile">
       {{ profile.content|safe }}
       <a class="button primary-button pull-right margin-top15" href="/profile/">More Info</a>
   </div>
-{% endif %}
 </div>
-<div class="container_12 margin-top30 margin-bottom30">
+{% endif %}
 {% if featured %}
+<div class="container_12 margin-top30 margin-bottom30">
   <div class="grid_12">
     <h2 class="main-headings">Featured Properties</h2>
   </div>
   <div class="featured-properties-2 margin-top30">
     {% include "includes/std-2-featured-properties.html" %}
   </div>
-{% endif %}
 </div>
-<div class="container_12 margin-top30 margin-bottom30">
+{% endif %}
 {% get_latest_articles 2 %}
 {% if featured_articles %}
+<div class="container_12 margin-top30 margin-bottom30">
   <div class="grid_12">
     <h2 class="main-headings margin-top30">Latest News</h2>
   </div>
   <div class="featured-articles-2 margin-top30">
       {% include "includes/std-2-news-articles.html" %}
   </div>
-{% endif %}
 </div>
+{% endif %}
 <div class="container_12 margin-top30 margin-bottom30">
   <div class="grid_4 content-block border-box" style="background: #cfcfcf">
     &nbsp;<br />&nbsp;
