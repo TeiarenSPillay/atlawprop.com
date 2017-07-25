@@ -43,7 +43,7 @@
     </div>
     <div class="property-description margin-top15">
       <h3 class="property-price-heading headings">{% if not listing.get_main_type == 'NewDevelopment' %}{{ listing.render_price|safe }}{% else %}{{ listing.development_name }}{% endif %}</h3>
-      <h4 class="property-marketing-heading clearfix sub-headings margin-bottom0">{{ listing.get_heading }}</h4>
+      <h4 class="property-marketing-heading clearfix sub-headings margin-top15 " style="margin-bottom: 0 !important;">{{ listing.get_heading }}</h4>
     </div>
   </div>
 </a>
