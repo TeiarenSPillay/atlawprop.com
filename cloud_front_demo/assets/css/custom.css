@@ -322,9 +322,13 @@ input:-ms-input-placeholder {
 .webref_button {
   color: #ffffff;
   background: #c90d1b;
+  padding: 0 12px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
+}
+.webref_button:hover {
+  background: #e10f1e;
 }
 .id_neighbouring_suburbs a {
   color: #333333;
@@ -392,7 +396,7 @@ input:-ms-input-placeholder {
   position: relative;
   max-width: 100%;
   display: inline-block;
-  vertical-align: bottom;
+  vertical-align: middle;
   height: auto;
 }
 #sticky-filters-form label {
@@ -404,7 +408,7 @@ input:-ms-input-placeholder {
   color: #333333;
 }
 .sticky-header .input {
-  border: 1px solid url(/static/img/custom/layout/header-bg.jpg) repeat-x;
+  border: 1px solid #d4d4d4;
 }
 .sticky-header .select2-container .select2-choice .select2-arrow b {
   background: #c90d1b;
@@ -415,6 +419,10 @@ input:-ms-input-placeholder {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+}
+.sticky-header .filter-submit:hover {
+  background: #e10f1e;
+  color: #ffffff;
 }
 .sticky-header .filter-submit .icon-sticky-filter {
   color: #ffffff;
@@ -1140,12 +1148,15 @@ a.news-heading-link:hover {
   left: auto;
 }
 #footer-social .social:hover:before {
-  color: #999999;
+  color: #c90d1b;
 }
 ul.footer-logos li:first-of-type {
   margin-left: 0;
 }
 #footer-navigation-links .footer-divider {
+  opacity: 1;
+}
+#footer-property-links .footer-divider {
   opacity: 0;
 }
 #footer-heading {
@@ -1188,7 +1199,7 @@ ul.footer-logos li:first-of-type {
   color: #7A98B2;
 }
 .footer-divider {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 .pd-icon:before {
   color: #ffffff;
@@ -1280,6 +1291,16 @@ ul.footer-logos li:first-of-type {
   .transparent-red {
     background: #215c96;
   }
+}
+.main-content p {
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  color: #333333;
+}
+.main-content ul li {
+  font-size: 0.8rem;
+  line-height: 1.1rem;
+  color: #333333;
 }
 /*
 ** HOMEPAGE - FEATURED PROPERTIES

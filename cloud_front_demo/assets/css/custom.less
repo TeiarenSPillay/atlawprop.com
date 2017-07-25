@@ -171,11 +171,11 @@
 // Sticky Header Styling
 @StickyHeaderBG: @HeaderBG;                   // Sticky Header BG
 @StickLogoAlign: center;                      // Sticky Logo Horizontal Alignment
-@StickyLogoVerticalAlign: bottom;             // Sticky Logo Vertical Alignment
+@StickyLogoVerticalAlign: middle;             // Sticky Logo Vertical Alignment
 @StickyLogoWidth: 100%;                       // Sticky Logo Width
 @StickyLogoHeight: auto;                      // Sticky Logo Height
 @StickLabelText: #ffffff;                     // Sticky Input Labels Color
-@StickyInputBorders: 1px solid @StickyHeaderBG;       // Sticky Input Borders
+@StickyInputBorders: 1px solid #d4d4d4;       // Sticky Input Borders
 @StickyDropdownIconBG: @SearchDropdownIconBG;
 @StickyIcon: #ffffff;                         // Sticky Details Icon Color
 @StickyTextColor: #ffffff;                    // Details Sticky Price, Icon value Text
@@ -262,10 +262,10 @@
 @FooterHeadingDisplay: none;
 @FooterTextColor: #ffffff;   // Footer Text Color
 @FooterLinkHover: #7A98B2;   // Hover Link Color
-@FooterDividerColor: rgba(255,255,255,0.8);   // Hover Link Color
+@FooterDividerColor: rgba(255,255,255,0.3);   // Hover Link Color
 
 @SocialIconsLink: #ffffff;
-@SocialIconsLinkHover: #999999;
+@SocialIconsLinkHover: @PrimaryColor;
 
 @ButtonBgColor: #f0f0f0;     // Button Set 1 (print, bookmark...)
 @ButtonTextColor: #215c96;   // Footer Color
@@ -574,7 +574,11 @@ input:-ms-input-placeholder{
 .webref_button {
   color: @SearchButtonTextColor;
   background:  @SearchButtonBG;
+  padding: 0 12px;
   .border-radius(@SearchButtonBorderRadius);
+  &:hover{
+    background: lighten(@SearchButtonBG, 5%);
+  }
 }
 
 .id_neighbouring_suburbs a {
@@ -689,6 +693,10 @@ input:-ms-input-placeholder{
   background: @FilterButtonBG;
   color: @FilterButtonText;
   .border-radius(@FilterButtonRadius);
+  &:hover {
+    background: lighten(@FilterButtonBG, 5%);
+    color: @FilterButtonText;
+  }
 }
 
 .sticky-header .filter-submit .icon-sticky-filter{
@@ -1545,9 +1553,11 @@ ul.footer-logos li:first-of-type{
 }
 
 #footer-navigation-links .footer-divider{
+  opacity: 1;
+}
+#footer-property-links .footer-divider{
   opacity: 0;
 }
-
 #footer-heading{
   display: @FooterHeadingDisplay;
 }
@@ -1713,6 +1723,20 @@ ul.footer-logos li:first-of-type{
   }
 }
 
+.main-content {
+  p {
+    font-size: 0.8rem;
+    line-height: 1.1rem;
+    color: @SiteTextColor;
+  }
+  ul {
+    li {
+      font-size: 0.8rem;
+      line-height: 1.1rem;
+      color: @SiteTextColor;
+    }
+  }
+}
 
 /*
 ** HOMEPAGE - FEATURED PROPERTIES
