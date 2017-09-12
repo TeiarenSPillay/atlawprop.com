@@ -1156,10 +1156,10 @@ ul.footer-logos li:first-of-type {
   margin-left: 0;
 }
 #footer-navigation-links .footer-divider {
-  opacity: 1;
+  opacity: 0;
 }
 #footer-property-links .footer-divider {
-  opacity: 0;
+  opacity: 1;
 }
 #footer-heading {
   display: none;
