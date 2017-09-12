@@ -72,6 +72,7 @@
 html {
   font-size: 17px;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
+  color: #333333;
 }
 .main-content {
   position: relative;
@@ -320,12 +321,12 @@ input:-ms-input-placeholder {
   border: 1px solid #d6d6d6;
 }
 .webref_button {
-  color: #ffffff;
+  color: #FFFFFF;
   background: #c90d1b;
   padding: 0 12px;
-  -webkit-border-radius: 0px;
-  -moz-border-radius: 0px;
-  border-radius: 0px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 .webref_button:hover {
   background: #e10f1e;
@@ -419,6 +420,7 @@ input:-ms-input-placeholder {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  text-transform: none;
 }
 .sticky-header .filter-submit:hover {
   background: #e10f1e;
@@ -1168,6 +1170,10 @@ ul.footer-logos li:first-of-type {
 .primary-button {
   background: #c90d1b;
   color: #FFFFFF;
+  text-transform: none;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 .primary-button:hover {
   background: #e10f1e;
@@ -1187,7 +1193,7 @@ ul.footer-logos li:first-of-type {
 .footer-content {
   color: #ffffff;
   font-size: 0.7rem;
-  background: url(/static/img/custom/layout/footer-bg.jpg) repeat-x top #225C96;
+  background: #225C96;
 }
 .footer-content h2 {
   color: #ffffff;
@@ -1246,33 +1252,60 @@ ul.footer-logos li:first-of-type {
 }
 #facebook-overview #adv_search_more_less_container a {
   color: #999999;
+  padding: 0;
+  background: 0;
+  border: 0;
 }
 #facebook-overview #adv_search_more_less_container a:hover {
+  color: #c90d1b;
+  padding: 0;
+  background: 0;
+  border: 0;
+}
+#facebook-overview #adv_search_more_less_container a:before {
   color: #c90d1b;
 }
 #facebook-overview #adv_search_webref_back_link a {
   color: #999999;
+  padding: 0;
+  background: 0;
+  border: 0;
 }
 #facebook-overview #adv_search_webref_back_link a:hover {
   color: #c90d1b;
+  padding: 0;
+  background: 0;
+  border: 0;
 }
 #facebook-overview #adv_search_webref_back_link a:before {
   color: #c90d1b;
 }
 #facebook-overview #id_neighbouring_suburbs a {
   color: #999999;
+  padding: 0;
+  background: 0;
+  border: 0;
 }
 #facebook-overview #id_neighbouring_suburbs a:before {
   color: #c90d1b;
 }
 #facebook-overview #id_neighbouring_suburbs a:hover {
   color: #c90d1b;
+  padding: 0;
+  background: 0;
+  border: 0;
 }
 #facebook-overview #id_web_ref_search_link a {
   color: #999999;
+  padding: 0;
+  background: 0;
+  border: 0;
 }
 #facebook-overview #id_web_ref_search_link a:hover {
   color: #c90d1b;
+  padding: 0;
+  background: 0;
+  border: 0;
 }
 #facebook-overview #id_web_ref_search_link a:before {
   color: #c90d1b;
@@ -1292,6 +1325,19 @@ ul.footer-logos li:first-of-type {
     background: #215c96;
   }
 }
+/* ----// ENABLE WHEN SEARCH OPENS UP //---- */
+/*
+.home-page {
+  .more_search_options_link:before {
+    content: "\f106";
+  }
+  .less_search_options_link:before {
+    content: "\f107";
+  }
+}
+
+*/
+/* ----// END //---- */
 /*
 ** HOMEPAGE - FEATURED PROPERTIES
 */
