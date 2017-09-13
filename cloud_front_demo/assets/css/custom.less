@@ -142,19 +142,20 @@
 @ContentBlocksAltBG: #f1f1f1;                 // Property Email Alerts infoblock BG
 @ContentBlocksAltText: #666666;               // Property Email Alerts infoblock Text Color
 @ContentBlocksAltBorder: 1px solid #f1f1f1;   // Property Email Alerts infoblock Borders
+@ButtonRadius: 0;                             // Button Border Radius
+@ButtonTransform: none;                       // Button Text Transform
 
 // Search Container Styling
 @SearchBg: #ffffff;                           // Full Width Bg
 @SearchBackBg: transparent;                   // 960 Width Bg
 @SearchTicksBG: #ffffff;                      // Checkbox BG
-@SearchButtonBG: @PrimaryColor;               // Search Button Bg
-@SearchButtonBorderRadius: 0px;               // Search Button Border Radius
+@SearchButtonBG: @ButtonPrimaryBG;               // Search Button Bg
 @SearchDropdownIconBG: @PrimaryColor;         // Search Dropdown Arrow Background
 @SearchBorders: #d6d6d6;                      // Search Input Border
 
 // Search Text Styling
 @SearchLabelColor: contrast(@SearchBg, #333333, #ffffff, 55%);   // Search Label Color
-@SearchButtonTextColor: #ffffff;              // Search Button Text Color
+@SearchButtonTextColor: @ButtonPrimaryText;              // Search Button Text Color
 @SearchCount: #000033;                        // Search Count Text Color
 @SearchLinkColor: contrast(@SearchBg, #333333, #ffffff, 55%);    // More/Less and WebRef Links Color
 @SearchLinkHover: @PrimaryColor;              // More/Less and WebRef Links Hover Color
@@ -184,7 +185,6 @@
 @FilterButtonBG: @PrimaryColor;               // Sticky Results Filter Button BG
 @FilterButtonIcon: #ffffff;                   // Sticky Results Filter Button Icon
 @FilterButtonText: #ffffff;                   // Sticky Results Filter Button Text
-@FilterButtonRadius: 0;                       // Sticky Results Filter Button Border Radius
 
 // Page Header Styling
 @HeaderBorderColor: 1px solid #d6d6d6;        // Page Heading Bottom Border
@@ -258,7 +258,7 @@
 @ArticleHeadingsColor:@PrimaryColor;
 @H1Color: #212121;           // H1
 
-@FooterBgColor: url(/static/img/custom/layout/footer-bg.jpg) repeat-x top #225C96;    // Sections, Footer
+@FooterBgColor: #225C96;    // Sections, Footer
 @FooterHeadingDisplay: none;
 @FooterTextColor: #ffffff;   // Footer Text Color
 @FooterLinkHover: #7A98B2;   // Hover Link Color
@@ -295,6 +295,7 @@
 html {
   font-size: @BaseFontSize;
   font-family: @FontFamily;
+  color: @SiteTextColor;
 }
 
 .main-content{
@@ -575,7 +576,7 @@ input:-ms-input-placeholder{
   color: @SearchButtonTextColor;
   background:  @SearchButtonBG;
   padding: 0 12px;
-  .border-radius(@SearchButtonBorderRadius);
+  .border-radius(@ButtonRadius);
   &:hover{
     background: lighten(@SearchButtonBG, 5%);
   }
@@ -692,7 +693,8 @@ input:-ms-input-placeholder{
 .sticky-header .filter-submit{
   background: @FilterButtonBG;
   color: @FilterButtonText;
-  .border-radius(@FilterButtonRadius);
+  .border-radius(@ButtonRadius);
+  text-transform: @ButtonTransform;
   &:hover {
     background: lighten(@FilterButtonBG, 5%);
     color: @FilterButtonText;
@@ -1553,10 +1555,10 @@ ul.footer-logos li:first-of-type{
 }
 
 #footer-navigation-links .footer-divider{
-  opacity: 1;
+  opacity: 0;
 }
 #footer-property-links .footer-divider{
-  opacity: 0;
+  opacity: 1;
 }
 #footer-heading{
   display: @FooterHeadingDisplay;
@@ -1572,6 +1574,8 @@ ul.footer-logos li:first-of-type{
 .primary-button{
   background: @ButtonPrimaryBG;
   color: @ButtonPrimaryText;
+  text-transform: @ButtonTransform;
+  .border-radius(@ButtonRadius);
   &:hover{
     background: @ButtonPrimaryHover;
     color: @ButtonPrimaryHoverText;
@@ -1668,15 +1672,30 @@ ul.footer-logos li:first-of-type{
 
 #facebook-overview #adv_search_more_less_container a {
   color: @FacebookMoreLessWebRefLink;
+  padding: 0;
+  background: 0;
+  border: 0;
   &:hover {
     color: @FacebookMoreLessWebRefHover;
+    padding: 0;
+    background: 0;
+    border: 0;
+  }
+  &:before {
+    color: @FacebookMoreLessWebRef;
   }
 }
 
 #facebook-overview #adv_search_webref_back_link a {
   color: @FacebookMoreLessWebRefLink;
+  padding: 0;
+  background: 0;
+  border: 0;
   &:hover {
     color: @FacebookMoreLessWebRefHover;
+    padding: 0;
+    background: 0;
+    border: 0;
   }
   &:before {
     color: @FacebookMoreLessWebRef;
@@ -1685,18 +1704,30 @@ ul.footer-logos li:first-of-type{
 
 #facebook-overview #id_neighbouring_suburbs a {
   color: @FacebookMoreLessWebRefLink;
+  padding: 0;
+  background: 0;
+  border: 0;
   &:before {
     color: @FacebookMoreLessWebRef;
   }
   &:hover {
     color: @FacebookMoreLessWebRefHover;
+    padding: 0;
+    background: 0;
+    border: 0;
   }
 }
 
 #facebook-overview #id_web_ref_search_link a {
   color: @FacebookMoreLessWebRefLink;
+  padding: 0;
+  background: 0;
+  border: 0;
   &:hover {
     color: @FacebookMoreLessWebRefHover;
+    padding: 0;
+    background: 0;
+    border: 0;
   }
   &:before {
     color: @FacebookMoreLessWebRef;
@@ -1723,7 +1754,19 @@ ul.footer-logos li:first-of-type{
   }
 }
 
+/* ----// ENABLE WHEN SEARCH OPENS UP //---- */
+/*
+.home-page {
+  .more_search_options_link:before {
+    content: "\f106";
+  }
+  .less_search_options_link:before {
+    content: "\f107";
+  }
+}
 
+*/
+/* ----// END //---- */
 
 /*
 ** HOMEPAGE - FEATURED PROPERTIES
