@@ -6,10 +6,10 @@ DEV_MODE = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'julian_s3',
-        'USER': 'root',
+        'NAME': 'danedb',
+        'USER': 'postgres',
         'PASSWORD': '',
-        'HOST': '192.168.0.10',
+        'HOST': 'dev.propdata.net',
         'PORT': '',
     }
 }
@@ -26,17 +26,19 @@ NEW_DEVELOPMENT_ADDON = True
 OFFERS_ADDON = True
 UNDER_CONSTRUCTION = False
 
-WEBSITE_URL = "http://dev.propdata.net:24011"
+WEBSITE_URL = "http://dev.propdata.net:25011"
 SENTRY_DSN = None
-S3_FOLDER_NAME = 'test'
+AWS_STORAGE_BUCKET_NAME = "moecdn"
+AWS_S3_CUSTOM_DOMAIN =  "https://s3.amazonaws.com/moecdn"
+S3_FOLDER_NAME = 'dane'
 FACEBOOK_BRANCH_IDS = [925]
 
-MOBI_URL = "http://m.dev.propdata.net:24011"
+MOBI_URL = "http://m.dev.propdata.net:25011"
 
-if MOBI_URL:
-    MIDDLEWARE_CLASSES += (
-        'eos.lib.mobi_middleware.MobiMiddleware',
-    )
+#if MOBI_URL:
+    #MIDDLEWARE_CLASSES += (
+    #    'eos.lib.mobi_middleware.MobiMiddleware',
+    #)
 
 if UNDER_CONSTRUCTION:
     MIDDLEWARE_CLASSES += (
