@@ -744,6 +744,9 @@ input:-ms-input-placeholder {
   color: #c90d1b;
 }
 /* Details: Listing Sections */
+.property-marketing-heading {
+  margin-top: 10px;
+}
 .content-block {
   background: #ffffff;
   border: 1px solid #d6d6d6;
