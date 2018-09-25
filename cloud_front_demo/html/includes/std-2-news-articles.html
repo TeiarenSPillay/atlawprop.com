@@ -13,7 +13,7 @@
   <div class="news-summary-content {% if article.photo %}three-fifths{% else %}full{% endif %}  first last pull-left">
       <h3 class="sub-headings"><a href="/news/{{ article.slug }}" class="news-heading-link" >{{ article.title }}</a></h3>
       <div id="news-summary-article-content">
-        <p>{{ article.summary|safe }}</p>
+        <p style="min-height: 90px;">{{ article.summary|safe }}</p>
       </div>
     <div class="clearfix"></div>
     <div class="meta-section article-meta clearfix">

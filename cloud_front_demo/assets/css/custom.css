@@ -752,6 +752,12 @@ input:-ms-input-placeholder {
   border: 1px solid #d6d6d6;
   color: #333333;
 }
+.home-featured-property {
+  min-height: 369px;
+}
+.article-list-item {
+  min-height: 222.59px;
+}
 .content-block h1#listing-price {
   color: #c90d1b;
 }
