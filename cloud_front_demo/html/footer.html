@@ -4,21 +4,6 @@
       <div class="grid_8">&nbsp;
      {% include 'includes/eos_base_footer_logos.html' %}
       </div>
-      <div class="grid_4 pull-right">
-        <div id="footer-social">
-        {% block social %}
-            {% if social_media_list %}
-                <b>Follow us on...</b>
-                <div class="clearfix"></div>
-                <ul class="footer-social-links">
-                {% for platform in social_media_list %}
-                    <li><a href="{{ platform.url }}" target="_blank"><i data-icon="{{ platform.icon|safe }}" class="social {{ platform.name }}_button-icon"></i></a></li>
-                {% endfor %}
-                </ul>
-             {% endif %}
-        {% endblock social %}
-      </div>
-      </div>
     </div>
   </div>
   <div class="clearfix"></div>
@@ -33,12 +18,27 @@
     <div class="container_12">
       <!-- Prop Data footer -->
        {% block prop_data_footer %}
-          <div id="pd-footer" class="margin-bottom20 clearfix">
-              <div class="grid_6">
-                  <div class="grid_1 first last"><a href="http://www.propdata.net/" target="_blank" class="pd-icon"></a></div>
-                  <div class="grid_5 first last margin-top5">Website Powered by <a href="http://www.propdata.net" target="_blank">Prop Data</a><br />Copyright &copy; {% now "Y" %} {{ site_name }}</div>
-              </div>
+        <div id="pd-footer" class="margin-bottom80 clearfix">
+          <div class="grid_6">
+            <div class="grid_1 first last"><a href="http://www.propdata.net/" target="_blank" class="pd-icon"></a></div>
+            <div class="grid_5 first last margin-top5">Website Powered by <a href="http://www.propdata.net" target="_blank">Prop Data</a><br />Copyright &copy; {% now "Y" %} {{ site_name }}</div>
           </div>
+          <div class="grid_6 pull-right">
+            <div id="footer-social">
+              {% block social %}
+              {% if social_media_list %}
+              <ul class="footer-social-links" style="margin: 0;">
+                {% for platform in social_media_list %}
+                <li>
+                  <a href="{{ platform.url }}" target="_blank"><i data-icon="{{ platform.icon|safe }}" class="social {{ platform.name }}_button-icon"></i></a>
+                </li>
+                {% endfor %}
+              </ul>
+              {% endif %}
+              {% endblock social %}
+            </div>
+          </div>
+        </div>
        {% endblock prop_data_footer %}
       <!-- -->
     </div>

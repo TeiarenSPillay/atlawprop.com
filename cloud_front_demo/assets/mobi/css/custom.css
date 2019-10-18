@@ -1,3 +1,5 @@
+/* COLOR Variables
+------------------------------------------------------------ */
 /* LESS Properties
 ========================================================================== */
 /* General Layout */
@@ -117,7 +119,7 @@ h2 {
 }
 .headings,
 #contact-details-heading h1 {
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 .heading-border {
   border-bottom: solid 1px #eeeeee;
@@ -141,7 +143,7 @@ ul.bullets {
   content: "\e6d5";
   position: absolute;
   left: 0;
-  background: #cd1b31;
+  background: #4F4F4F;
   color: #ffffff;
   width: 14px;
   height: 14px;
@@ -228,14 +230,14 @@ a.contact-no {
   text-decoration: none;
 }
 a {
-  color: #cd1b31;
+  color: #4F4F4F;
   text-decoration: none;
   border: 0;
 }
 a:hover,
 a:focus,
 a:active {
-  color: #212121;
+  color: #828282;
   text-decoration: none;
   border: 0;
 }
@@ -367,8 +369,8 @@ a:active {
 /* Navigation
 ========================================================================== */
 .menu-open:before {
-  color: #000000;
-  background: #ffffff;
+  color: #ffffff;
+  background: #4F4F4F;
   padding: 5px;
   font-size: 22px;
   text-align: center;
@@ -445,7 +447,7 @@ a:active {
 a:hover.nav-heading {
   font-size: 18px;
   font-family: 'Open Sans', sans-serif;
-  color: #cd1b31;
+  color: #4F4F4F;
   font-weight: 600;
 }
 a.nav-heading {
@@ -472,7 +474,7 @@ a.nav-heading {
 a.nav-link:hover {
   font-size: 13px;
   font-family: 'Open Sans', sans-serif;
-  color: #cd1b31;
+  color: #4F4F4F;
   font-weight: 400;
   line-height: 44px;
   height: 44px;
@@ -482,10 +484,10 @@ a.nav-link:hover {
   z-index: 99;
 }
 a.nav-link:active {
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 a.nav-link:focus {
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 a.nav-link {
   font-size: 13px;
@@ -510,7 +512,7 @@ a.nav-link-active + .sub-menu {
 a:hover.nav-link-active {
   font-size: 13px;
   font-family: 'Open Sans', sans-serif;
-  color: #cd1b31;
+  color: #4F4F4F;
   font-weight: 400;
   line-height: 44px;
   height: 44px;
@@ -519,10 +521,10 @@ a:hover.nav-link-active {
   background: #1e1e1e;
 }
 a.nav-link-active:active {
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 a.nav-link-active:focus {
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 a.nav-link-active {
   font-size: 13px;
@@ -554,7 +556,7 @@ a.nav-link-active {
 /* Header
 ========================================================================== */
 #header {
-  background: #cd1b31;
+  background: #ffffff;
   padding-top: 2%;
 }
 #logo {
@@ -688,7 +690,7 @@ a.footerpropdata {
   text-align: center;
   height: 40px;
   margin-right: 10px;
-  color: #212121;
+  color: #4F4F4F;
 }
 #footer-social a:hover {
   color: inherit;
@@ -706,7 +708,7 @@ a.footerpropdata {
   line-height: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 40px;
+  font-size: 36px;
   content: attr(data-icon);
   top: auto;
   left: auto;
@@ -765,7 +767,7 @@ a.footerpropdata {
 }
 .home-button a {
   width: 100%;
-  background: #212121;
+  background: #4F4F4F;
 }
 .home-button a:hover {
   color: #ffffff;
@@ -929,7 +931,7 @@ a.footerpropdata {
   color: #ffffff;
   border: none;
   height: 44px;
-  background: #cd1b31;
+  background: #4F4F4F;
   margin: 0px;
   position: relative;
   line-height: 44px;
@@ -1004,7 +1006,7 @@ a.footerpropdata {
   padding-left: 15px;
 }
 #adv_search_webref_back_link a {
-  color: #cd1b31;
+  color: #4F4F4F;
   text-decoration: none;
   background: url(/assets/mobi/img/layout/adv_search_arrow.png) left no-repeat !important;
   padding-left: 15px;
@@ -1152,7 +1154,7 @@ a.footerpropdata {
   background: none;
 }
 #adv_search_more_less_container a {
-  color: #cd1b31;
+  color: #4F4F4F;
   background: none;
   text-decoration: none;
   float: left;
@@ -1163,14 +1165,14 @@ a.footerpropdata {
   background: none;
 }
 #adv_search_more_less_container a.less_search_options_link {
-  color: #cd1b31;
+  color: #4F4F4F;
   background: none;
   text-decoration: none;
   float: left;
   line-height: 23px;
 }
 #adv_search_more_less_container a:before {
-  color: #cd1b31;
+  color: #4F4F4F;
   font-size: 19px;
   content: "\f107";
   display: inline-block;
@@ -1187,7 +1189,7 @@ a.footerpropdata {
   -moz-osx-font-smoothing: grayscale;
 }
 #adv_search_more_less_container a.less_search_options_link:before {
-  color: #cd1b31;
+  color: #4F4F4F;
   font-size: 19px;
   content: "\f106";
   display: inline-block;
@@ -1333,7 +1335,7 @@ p:not(#foo) > input[type="checkbox"]:checked + label:before {
   content: "\e8e2";
   line-height: 9px;
   font-size: 20px;
-  color: #cd1b31;
+  color: #4F4F4F;
   border: 2px solid transparent;
   text-indent: -4px;
 }
@@ -1432,23 +1434,23 @@ fieldset {
 }
 a:hover.home-button-find {
   width: 100%;
-  background: #000000;
+  background: #828282;
   height: 55px;
   text-decoration: none;
   text-align: center;
   line-height: 55px;
   display: block;
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 a:active.home-button-find {
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 a:focus.home-button-find {
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 a.home-button-find {
   width: 100%;
-  background: #000000;
+  background: #828282;
   height: 55px;
   text-decoration: none;
   text-align: center;
@@ -1477,24 +1479,24 @@ a.home-button-find:before {
 }
 a:hover.home-button-show {
   width: 100%;
-  background: #000000;
+  background: #828282;
   height: 55px;
   text-decoration: none;
   text-align: center;
   line-height: 55px;
   display: block;
-  color: #cd1b31;
+  color: #4F4F4F;
   margin-bottom: 0;
 }
 a:active.home-button-show {
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 a:focus.home-button-show {
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 a.home-button-show {
   width: 100%;
-  background: #000000;
+  background: #828282;
   height: 55px;
   text-decoration: none;
   text-align: center;
@@ -1593,7 +1595,7 @@ a.home-button-show:before {
   width: 100%;
 }
 .dev-banner:hover {
-  color: #212121;
+  color: #828282;
 }
 .dev-banner-inner {
   display: inline-block;
@@ -1649,7 +1651,7 @@ a.home-button-show:before {
   vertical-align: middle;
 }
 .results-banner-content {
-  background: #cd1b31;
+  background: #4F4F4F;
   margin: 0 auto;
   padding: 10px;
   color: #ffffff;
@@ -1668,7 +1670,7 @@ a.home-button-show:before {
   vertical-align: middle;
 }
 .news-banner-content {
-  background: #212121;
+  background: #828282;
   margin: 0 auto;
   padding: 10px;
   color: #1F1E1F;
@@ -1859,7 +1861,7 @@ button {
   background-repeat: no-repeat;
   background-position: right;
   color: #ffffff;
-  background: #cd1b31;
+  background: #4F4F4F;
   border: 1px solid rgba(0, 0, 0, 0);
   border-radius: 0px;
   cursor: pointer;
@@ -1928,7 +1930,7 @@ button {
   height: 32px;
   line-height: 32px;
   text-align: center;
-  color: #cd1b31;
+  color: #4F4F4F;
 }
 .calculator-icon {
   display: inline-block;
@@ -2549,13 +2551,13 @@ a:hover.details-button-video {
   text-align: center;
   line-height: 55px;
   display: block;
-  color: #212121;
+  color: #828282;
 }
 a:active.details-button-video {
-  color: #212121;
+  color: #828282;
 }
 a:focus.details-button-video {
-  color: #212121;
+  color: #828282;
 }
 a.details-button-video {
   width: 100%;
@@ -2593,13 +2595,13 @@ a:hover.details-button-tour {
   text-align: center;
   line-height: 55px;
   display: block;
-  color: #212121;
+  color: #828282;
 }
 a:active.details-button-tour {
-  color: #212121;
+  color: #828282;
 }
 a:focus.details-button-tour {
-  color: #212121;
+  color: #828282;
 }
 a.details-button-tour {
   width: 100%;
@@ -2705,7 +2707,7 @@ a.details-button-tour {
 }
 .website-map a:hover,
 .website-map a:focus {
-  color: #212121;
+  color: #828282;
   text-decoration: none;
 }
 #contact-us .btn:after {
