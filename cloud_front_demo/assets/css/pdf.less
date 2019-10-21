@@ -1,9 +1,11 @@
 // out: pdf.css
 
+@import "colors.less";
+
 /* LESS Variables
 ------------------------------------------------------------ */
-@PrimaryColor: #c90d1b;
-@TopBar: #000000;
+@PrimaryColorPDF: @PrimaryColor;
+@TopBar: @SecondaryColor;
 
 @SubHeadingsColor: #212121;
 
@@ -26,7 +28,7 @@ body{
 
 a{
   text-decoration: none;
-  color: @PrimaryColor;
+  color: @PrimaryColorPDF;
 }
 #header_content{
   width: 15cm;
@@ -257,7 +259,7 @@ a{
   display: block;
 }
 #results-list .property-list-item .property-list-favourite .icon-favourite:before{
-  color: @PrimaryColor;
+  color: @PrimaryColorPDF;
   .icon-font;
   content: "\f004";
   position:relative;
@@ -266,7 +268,7 @@ a{
   font-size:4.4mm;
 }
 #results-list .property-list-item .property-list-favourite .icon-favourite-open:before{
-  color: @PrimaryColor;
+  color: @PrimaryColorPDF;
   .icon-font;
   content: "\f08a";
   position:relative;
@@ -313,7 +315,7 @@ a{
     }
   }
   .transparent-red{
-    background: @PrimaryColor;
+    background: @PrimaryColorPDF;
     position: absolute;
     color: #ffffff;
     padding: 0 2pt;
@@ -423,7 +425,7 @@ a{
   &:before{
     .icon-font();
     content:"\f00c";
-    color: @PrimaryColor;
+    color: @PrimaryColorPDF;
     position: relative;
     left: -2pt;
   }
@@ -713,7 +715,7 @@ a{
     line-height: 5.5mm;
   }
   .transparent-red.top-left{
-    background: @PrimaryColor;
+    background: @PrimaryColorPDF;
     padding: 0pt 4pt;
     color: #ffffff;
     position: absolute;
@@ -794,7 +796,7 @@ a{
    font-size: 7pt;
    color: #333333;
   .price{
-    color: @PrimaryColor;
+    color: @PrimaryColorPDF;
     font-size: 22pt;
     font-weight: 300;
     text-indent: -1mm;
@@ -802,7 +804,7 @@ a{
     margin-right: 5mm;
   }
   #listing-price{
-    color: @PrimaryColor;
+    color: @PrimaryColorPDF;
     font-size: 22pt;
     font-weight: 300;
     text-indent: -1mm;
@@ -873,7 +875,7 @@ a{
 
 
 h2{
-    color: @PrimaryColor;
+    color: @PrimaryColorPDF;
     font-size: 14pt;
     font-weight: 300;
     line-height: 12pt;
@@ -883,14 +885,14 @@ h2{
     text-indent: -0.5mm;
     }
     &.red{
-     color: @PrimaryColor;
+     color: @PrimaryColorPDF;
     }
 }
 
 .section-heading{
   &.red{
    font-size: 14pt !important;
-   color: @PrimaryColor !important;
+   color: @PrimaryColorPDF !important;
   }
 }
 h5{
@@ -964,7 +966,7 @@ h5{
         content: "\f00c";
         line-height: 14pt;
         top: -3pt;
-        color: @PrimaryColor;
+        color: @PrimaryColorPDF;
       }
     }
   }
@@ -1116,7 +1118,7 @@ h5{
   }
 }
 .headings {
-    color: @PrimaryColor;
+    color: @PrimaryColorPDF;
     display: block;
     font-family: "Source Sans Pro",Helvetica,sans-serif;
     font-size: 15pt;
@@ -1133,7 +1135,7 @@ h5{
     margin: 10pt 0;
 }
 #footer_content{
-  color: @PrimaryColor;
+  color: @PrimaryColorPDF;
 }
 
 .seperator{

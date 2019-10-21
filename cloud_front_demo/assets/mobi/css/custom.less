@@ -1,10 +1,12 @@
 // out: custom.css
+
+@import url("../../../eos/assets/less/_css3.less");
+@import url("../../css/colors.less");
+
 /* LESS Properties
 ========================================================================== */
 /* General Layout */
 
-@PrimaryColor: #cd1b31;
-@SecondaryColor: #212121;
 
 @BodyBG: #ffffff;
 @InternalPageBG: #f0f0f0;
@@ -15,14 +17,14 @@
 @LinksHover: @SecondaryColor;
 
 /* Header */
-@HeaderBGColor: @PrimaryColor;
+@HeaderBGColor: #ffffff;
 @LogoPaddingTop:  15px;
 @LogoPaddingBottom: 20px;
 @LogoHeight:81px;
 @LogoWidth:auto;
 /* Burger Nav */
-@MenuIconColor: #000000;
-@MenuIconBG: #ffffff;
+@MenuIconColor: #ffffff;
+@MenuIconBG: @PrimaryColor;
 /* Navigation Slide Out Menu */
 @MenuCloseColor: #ffffff;
 @MenuHeadingColor: #ffffff;
@@ -38,15 +40,15 @@
 /* Search, Alerts, News, Contact */
 @HomeButtonTextColor:#ffffff;
 @HomeButtonIconColor:#ffffff;
-@HomeButtonBG: @SecondaryColor;
+@HomeButtonBG: @PrimaryColor;
 /* Property Near Me, Onshow Near Me */
 @NearMeButtonColor: #ffffff;
 @NearMeButtonHover: @PrimaryColor;
-@NearMeButtonBG: #000000;
+@NearMeButtonBG: @SecondaryColor;
 
 
 /* Footer */
-@SocialIcons: @SecondaryColor;
+@SocialIcons: @PrimaryColor;
 @PDIcon: #C6C6C6;
 @FooterBG: #FFFFFF;
 @FooterTextColor: #333333;
@@ -335,7 +337,7 @@ a.footerpropdata     { color: @CopyrightColor; font-size:11px; text-decoration: 
     width: auto;
     &:before {
       .icon-font();
-      font-size: 40px;
+      font-size: 36px;
       content: attr(data-icon);
       top: auto;
       left: auto;

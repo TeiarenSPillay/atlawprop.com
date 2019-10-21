@@ -1,25 +1,44 @@
 <div class="header-content print-hide">
   <div class="container_12">
     <div class="grid_12">
-      <a href="/" id="logo"><img src="/static/img/custom/layout/logo.svg" /></a>
+        <a href="/" id="logo"><img src="/static/img/custom/layout/logo.svg" /></a>
+    </div>
+  </div>
+  <!-- Navigation -->
+  <div class="fadeInUp print-hide ">
+    <div class="container_12">
+      <div class="grid_12">
+        {% include 'includes/eos_navigation.html' %}
+      </div>
     </div>
   </div>
 </div>
-<!-- Navigation -->
-<div class="slideDown print-hide">
-{% include 'includes/eos_navigation.html' %}
-</div>
-<div  class="header-image print-hide">
+{% if request.path == '/' %}
+<div class="header-image">
   <div class="resizer">
-      <!--<div class="nav-sides">
-         <a href="#" class="slide-prev"></a>
-         <a href="#" class="slide-next"></a>
-      </div>-->
-      <ul id="rndList">
-          <li id="item1" style="background-image: url(/static/img/custom/slider/images/header-image.jpg);display: block;">
-          </li>
-      </ul>
+    <ul id="rndList">
+      <li id="item1" style="background-image: url(/static/img/custom/slider/images/header-image.jpg);display: block;">
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+  <div class="search-wrapper">
+    {% include 'includes/eos_search.html' %}
   </div>
 </div>
+{% else %}
+<div class="internal-header-image print-hide">
+  <div class="resizer">
+    <ul id="rndList">
+      <li id="item-1" style="background-image: url(/static/img/custom/slider/images/header-image.jpg); display: block; background-position: center center;"></li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+  
+  <div class="search-wrapper">
+    <!-- Search -->
+    {% include 'includes/eos_search.html' %}
+  </div>
+</div>
+{% endif %}
 <!-- Search -->
-{% include 'includes/eos_search.html' %}

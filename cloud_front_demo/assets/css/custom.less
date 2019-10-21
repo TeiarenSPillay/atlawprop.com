@@ -1,7 +1,7 @@
 // out: custom.css
 
 @import url("../../eos/assets/less/_css3.less");
-
+@import "colors.less";
 /* Fonts
 ------------------------------------------------------------ */
 
@@ -85,18 +85,11 @@
 
 /* ----// END //---- */
 
-
 /* LESS Variables
 ------------------------------------------------------------ */
 
 @FontFamily: "Source Sans Pro", Helvetica, sans-serif;
 @BaseFontSize: 17px;
-
-@PrimaryColor: #c90d1b;                       // Primary Color
-@SecondaryColor: #215c96;                     // Secondary Color
-@SiteTextColor: #333333;                      // Website Font Color
-@AccentColor: #c90d1b;
-
 
 @LinkActive: @PrimaryColor;                   // Generic Link
 @LinkHover: @SecondaryColor;                  // Generic Link Hover
@@ -105,34 +98,33 @@
 @DefaultDropdownBorder: 1px solid #d6d6d6;    // Generic Select Border
 @PlaceholderColor: #999999;                   // Generic Placeholder Color
 
-@HeaderBG: url(/static/img/custom/layout/header-bg.jpg) repeat-x;   // Header BG
-@HeaderImageHeight: 460px;
+@HeaderBG: #ffffff;   // Header BG
+@HeaderImageHeight: 530px;
 
 // Menu Background Styling
-@MenuBG: #AF0D18;                             // Menu Container BG
-@MenuLinkBG: #AF0D18;                         // Menu Link BG
-@MenuLinkActiveBG: #990000;                   // Menu Active Link BG
-@MenuLinkActiveHoverBG: #990000;              // Menu Active Link BG Hover
-@MenuLinkHoverBG: #990000;                    // Menu Hover Link BG
+@MenuBG: transparent;                             // Menu Container BG
+@MenuLinkBG: transparent;                         // Menu Link BG
+@MenuLinkActiveBG: transparent;                   // Menu Active Link BG
+@MenuLinkActiveHoverBG: transparent;              // Menu Active Link BG Hover
+@MenuLinkHoverBG: transparent;                    // Menu Hover Link BG
+@MenuBorderBottom: @PrimaryColor;                 // Menu Hover Border Bottom
+@MenuLinkSpacing: 10px;                           // Menu Spacing between links / Subnav spacing
 
-@SubMenuLinkBG: #990000;                      // Menu Dropdown BG
-@SubMenuLinkHoverBG: #B0000D;                 // Menu Dropdown Hover BG
+@SubMenuLinkBG: @PrimaryColor;                      // Menu Dropdown BG
+@SubMenuLinkHoverBG: @SecondaryColor;    // Menu Dropdown Hover BG
 
 // Menu Text Styling
-@MenuLinkText: #ffffff;                       // Menu Link Text
-@MenuLinkHoverText: #ffffff;                  // Menu Hover Link Text
-@MenuLinkActiveText: #ffffff;                 // Menu Active Link Text
-@MenuLinkActiveHoverText: #ffffff;                 // Menu Active Link Text
-@MenuTextTransform: uppercase;                // Menu Text Transform
-@MenuFontWeight: bold;                        // Menu Font Weight
-@SubMenuLinkText: #ffffff;                    // Menu Dropdown Link Text
-@SubMenuLinkHoverText: #ffffff;               // Menu Dropdown Link Hover Text
+@MenuLinkText: @SiteTextColor;                      // Menu Link Text
+@MenuLinkHoverText: @SiteTextColor;                 // Menu Hover Link Text
+@MenuLinkActiveText: @SiteTextColor;                // Menu Active Link Text
+@MenuLinkActiveHoverText: @SiteTextColor;           // Menu Active Link Text
+@MenuTextTransform: uppercase;                      // Menu Text Transform
+@MenuFontWeight: bold;                              // Menu Font Weight
+@SubMenuLinkText: #ffffff;                        // Menu Dropdown Link Text
+@SubMenuLinkHoverText: #ffffff;                   // Menu Dropdown Link Hover Text
 
 // Menu Border Styling
-@MenuLinkBorderLeft: 1px solid #CE0D1A;       // Menu Link Border Left
-@MenuLinkBorderRight: 1px solid #9E0A16;      // Menu Link Border Right
-@SubMenuBorderBottom: 1px solid #AD3333;      // Dropdown Menu Bottom Border
-
+@SubMenuBorderBottom: 1px solid @SecondaryColor;      // Dropdown Menu Bottom Border
 
 // Content Block Styling
 @ContentBlocksBG: #ffffff;                    // Main Content BG
@@ -146,26 +138,27 @@
 @ButtonTransform: none;                       // Button Text Transform
 
 // Search Container Styling
-@SearchBg: #ffffff;                           // Full Width Bg
-@SearchBackBg: transparent;                   // 960 Width Bg
+@SearchBg: @SecondaryColor;                           // Full Width Bg
+@SearchBackBg: transparent;                     // 960 Width Bg
 @SearchTicksBG: #ffffff;                      // Checkbox BG
-@SearchButtonBG: @ButtonPrimaryBG;               // Search Button Bg
-@SearchDropdownIconBG: @PrimaryColor;         // Search Dropdown Arrow Background
+@SearchButtonBG: @ButtonPrimaryBG;              // Search Button Bg
+@SearchDropdownIconBG: @PrimaryColor;           // Search Dropdown Arrow Background
 @SearchBorders: #d6d6d6;                      // Search Input Border
+@SearchBorderColor: #ffffff;              // Search Button Border
 
-// Search Text Styling
+// Advanced Search Text Styling
 @SearchLabelColor: contrast(@SearchBg, #333333, #ffffff, 55%);   // Search Label Color
 @SearchButtonTextColor: @ButtonPrimaryText;              // Search Button Text Color
-@SearchCount: #000033;                        // Search Count Text Color
+@SearchCount: #ffffff;                        // Search Count Text Color
 @SearchLinkColor: contrast(@SearchBg, #333333, #ffffff, 55%);    // More/Less and WebRef Links Color
 @SearchLinkHover: @PrimaryColor;              // More/Less and WebRef Links Hover Color
 @SearchAllSuburbsLinkColor: contrast(@SearchBg, #333333, #ffffff, 55%);          // All Surburbs Link Color
 @SearchAllSuburbsLinkHover: @PrimaryColor;    // All Surburbs Link Hover Color
 
 // Search Icon Styling
-@SearchMoreIcon: @PrimaryColor;               // More Icon Color
-@SearchLessIcon: @PrimaryColor;               // Less Icon Color
-@SearchWebRef: @PrimaryColor;                 // WebRef Icon Color
+@SearchMoreIcon: #ffffff;               // More Icon Color
+@SearchLessIcon: #ffffff;               // Less Icon Color
+@SearchWebRef: #ffffff;                 // WebRef Icon Color
 @SearchDropdownIconColor: #ffffff;            // Search Dropdown Icon Color
 @SearchTicks: @PrimaryColor;                  // Tick/Check Icon Color
 
@@ -175,11 +168,11 @@
 @StickyLogoVerticalAlign: middle;             // Sticky Logo Vertical Alignment
 @StickyLogoWidth: 100%;                       // Sticky Logo Width
 @StickyLogoHeight: auto;                      // Sticky Logo Height
-@StickLabelText: #ffffff;                     // Sticky Input Labels Color
+@StickyLabelText: #ffffff;                     // Sticky Input Labels Color
 @StickyInputBorders: 1px solid #d4d4d4;       // Sticky Input Borders
 @StickyDropdownIconBG: @SearchDropdownIconBG;
 @StickyIcon: #ffffff;                         // Sticky Details Icon Color
-@StickyTextColor: #ffffff;                    // Details Sticky Price, Icon value Text
+@StickyTextColor: @SiteTextColor;                    // Details Sticky Price, Icon value Text
 @StickyTick: #333333;                         // Sticky property Type Checkbox tick
 
 @FilterButtonBG: @PrimaryColor;               // Sticky Results Filter Button BG
@@ -241,11 +234,12 @@
 @MakeAnOfferArrowBG: @PrimaryColor;
 @MakeAnOfferArrowIcon: #ffffff;
 
-@FeatureIcon: @PrimaryColor;
+@FeatureIcon: @SecondaryColor;
 @FeatureText: #333333;
 
+// BUTTON STYLING
 @ButtonPrimaryBG: @PrimaryColor;
-@ButtonPrimaryHover:lighten(@ButtonPrimaryBG, 5%);
+@ButtonPrimaryHover: @SecondaryColor;
 @ButtonPrimaryText: #FFFFFF;
 @ButtonPrimaryHoverText: #FFFFFF;
 
@@ -254,14 +248,14 @@
 
 @SectionBgColor: #f0f0f0;    // Sections, Footer
 @HeadingsColor: @PrimaryColor;     // Heading Font Color
-@SubHeadingsColor: #000000;
+@SubHeadingsColor: @SiteTextColor;
 @ArticleHeadingsColor:@PrimaryColor;
 @H1Color: #212121;           // H1
 
-@FooterBgColor: #225C96;    // Sections, Footer
+@FooterBgColor: @SecondaryColor;    // Sections, Footer
 @FooterHeadingDisplay: none;
 @FooterTextColor: #ffffff;   // Footer Text Color
-@FooterLinkHover: #7A98B2;   // Hover Link Color
+@FooterLinkHover: @PrimaryColor;   // Hover Link Color
 @FooterDividerColor: rgba(255,255,255,0.3);   // Hover Link Color
 
 @SocialIconsLink: #ffffff;
@@ -308,7 +302,20 @@ html {
 /* Header
 ------------------------------------------------------------ */
 .header-content {
+  position: relative;
+  width: 100%;
   background: @HeaderBG;
+  background-repeat: no-repeat;
+  .background-size(cover);
+  background-position: center center;
+  height: 120px;
+}
+
+#logo{
+  display: block;
+  position: absolute;
+  top: 15px;
+  z-index: 5;
 }
 /* ----// END //---- */
 
@@ -317,81 +324,116 @@ html {
 /* Navigation
 ------------------------------------------------------------ */
 .menu {
-  position: relative;
-  z-index:1000;
-  margin:0 auto;
-  width:100%;
+  margin: 0 auto;
+  width: 100%;
   background-color: @MenuBG;
 }
 .menu-content {
   margin: 0 auto;
-  width:960px;
 }
 .menu-bg {
   margin: 0 10px;
-  width:940px;
   ul {
-    margin:0;
-    padding:0;
-    list-style:none;
+    padding: 0;
+    list-style: none;
+    float: right;
   }
   li {
-    position:relative;
-    text-transform:@MenuTextTransform;
-    font-weight:@MenuFontWeight;
+    position: relative;
+    text-transform: @MenuTextTransform;
   }
 }
 // Main Menu Nav
 .menu-bg > ul {
+  padding: 37px 0px;
   & > li{
-    display:inline;
+    display:block;
     padding:0;
-    float:left;
+    float: left;
     position: relative;
-    z-index:1000;
+    z-index:1;
     & > a {
-      color:@MenuLinkText;
-      background:@MenuLinkBG;
+      color: @MenuLinkText;
+      background: @MenuLinkBG;
       display:block;
-      border-right:@MenuLinkBorderRight;
-      font-size: 0.8rem;
-      padding: 0 21px;
-      line-height: 2.25rem;
+      font-size: 15px;
+      margin: 0 @MenuLinkSpacing;
+      padding-bottom: 12px;
       position: relative;
       z-index:1000;
+      &:after{
+        content: "";
+        background: none;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        display: block;
+        max-height: 10px;
+        height: 1px;
+        width: 100%;
+        .transition(all 0.2s ease-in-out 0s);
+      }
     }
     // Menu Hover
     &:hover > a {
-      color:@MenuLinkHoverText;
-      background:@MenuLinkHoverBG;
+      color: @MenuLinkHoverText;
+      background: @MenuLinkHoverBG;
+      &:after {
+        content: "";
+        width: 100%;
+        height: 5px;
+        background: @MenuBorderBottom;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
     }
     // Menu Active
     &.active > a {
-      color:@MenuLinkActiveText;
-      background:@MenuLinkActiveBG;
+      color: @MenuLinkActiveText;
+      background: @MenuLinkActiveBG;
+      font-weight: 700;
+      &:after {
+        content: "";
+        width: 100%;
+        height: 5px;
+        background: @MenuBorderBottom;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
     }
     &.active:hover > a {
-      color:@MenuLinkActiveHoverText;
-      background:@MenuLinkActiveHoverBG;
+      color: @MenuLinkActiveHoverText;
+      background: @MenuLinkActiveHoverBG;
     }
   }
 }
 
-.menu-bg > ul > li > ul > li {
-  width: 100%;
-  white-space: nowrap;
-  a{
-    color:@SubMenuLinkText;
-    background:@SubMenuLinkBG;
-    padding: 0 12px;
-    font-size: 0.76rem;
-    line-height: 1.5rem;
-    display:block;
-    border-bottom:@SubMenuBorderBottom;
-  }
-  a:hover{
-    color:@SubMenuLinkHoverText;
-    background:@SubMenuLinkHoverBG;
+.menu-bg > ul > li > ul {
+  position: absolute;
+  left: 0;
+  zoom: 1;
+  min-width: 100%;
+  > li {
+    width: 100%;
+    white-space: nowrap;
+    text-align: left;
+    a{
+      color: @SubMenuLinkText;
+      background: @SubMenuLinkBG;
+      padding: 6px 22px;
+      display: block;
+      border-bottom: @SubMenuBorderBottom;
+      font-size: 13px;
+      .transition(all .3s ease-in-out);
+    }
+    a:hover{
+      color: @SubMenuLinkHoverText;
+      background: @SubMenuLinkHoverBG;
+      border-bottom: 1px solid #ffffff;
+      .transition(all .3s ease-in-out);
+    }
   }
 }
 
@@ -399,30 +441,35 @@ html {
 
 .slideDown .menu-bg > ul > li {
   & > ul {
-    height:auto;
-    opacity:1;
+    height: auto;
+    opacity: 1;
     top: -999px;
   }
   &:hover > ul{
     top: 100%;
-    opacity:1;
+    opacity: 1;
   }
 }
 
 /* Menu Animation: Fade In Up */
-
-.fadeInUp .menu-bg > ul > li {
-  & > ul {
-    height:0;
-    opacity:0;
-    top: 200%;
-  }
-  &:hover > ul {
-    height: auto;
-    top: 100%;
-    opacity:1;
+.fadeInUp {
+  .menu-bg > ul > li {
+    & > ul {
+      height: 0;
+      opacity: 0;
+      top: 200%;
+      left: @MenuLinkSpacing;
+    }
+    &:hover > ul {
+      overflow: visible;
+      height: auto;
+      top: 100%;
+      opacity: 1;
+      left: @MenuLinkSpacing;
+    }
   }
 }
+
 
 /* Menu Animation: Fade In */
 
@@ -441,12 +488,10 @@ html {
 
 /* Slider */
 .header-image {
-  width:100%;
-  min-height:@HeaderImageHeight;
-  z-index:9;
-  position:relative;
-  min-width: 940px;
-  overflow: hidden;
+  width: 100%;
+  min-height: @HeaderImageHeight;
+  position: relative;
+  width: 100%;
 }
 
 .resizer{
@@ -477,20 +522,48 @@ html {
 }
 /* ----// END //---- */
 
-/* Search
------------------------------------------------------------- */
+.search-wrapper {
+  width: 1000px;
+  padding-bottom: 60px;
+}
 
+/* Search Internal
+------------------------------------------------------------ */
+.internal-header-image {
+  position: relative;
+  width: 100%;
+  min-width: 940px;
+  min-height:400px;
+  background-position: center center;
+  background-size: cover !important;
+  .search-wrapper {
+    position: relative;
+    margin: 200px auto 0;
+  }
+}
+
+/* Search Home Page
+------------------------------------------------------------ */
+.home-page {
+  .search-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -500px;
+  }
+}
 
 .adv_search_container {
-  background: @SearchBg;
-  font-size: @BaseFontSize;
-  z-index:1100;
-  position: relative;
-  font-size:0.8rem;
+  background: @SecondaryColor;
 }
-.adv_search_box1 {
-  background: @SearchBackBg;
+
+.adv_search_box2 {
+  .adv_search_content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 }
+
 .select2-container .select2-choice,
 .select2-container-multi .select2-choices {
   border: 1px solid @SearchBorders;
@@ -546,6 +619,7 @@ fieldset p > input[type="checkbox"]:checked + label:after {
 
 .web_ref_search_link a:before {
   color: @SearchWebRef;
+  top: 1px;
 }
 
 .adv_search_webref_back_link a:before {
@@ -572,15 +646,6 @@ input:-ms-input-placeholder{
   border: 1px solid @SearchBorders;
 }
 
-.webref_button {
-  color: @SearchButtonTextColor;
-  background:  @SearchButtonBG;
-  padding: 0 12px;
-  .border-radius(@ButtonRadius);
-  &:hover{
-    background: lighten(@SearchButtonBG, 5%);
-  }
-}
 
 .id_neighbouring_suburbs a {
   color: @SearchAllSuburbsLinkColor;
@@ -589,39 +654,118 @@ input:-ms-input-placeholder{
   }
 }
 
-/* Search Buttons */
+/* START ALL SEARCH BUTTONS ON ADVANCE SEARCH */
 
+.adv_search_bottom {
+  margin-top: 12px;
+}
+
+// SEARCH BUTTON
+.webref_button {
+  height: 34px;
+  color: @SearchButtonTextColor;
+  background: @SearchButtonBG;
+  padding: 0 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  .border-radius(@ButtonRadius);
+  border: 1px solid @SearchButtonBG;
+  .transition(all 0.2s ease-in);
+  .webref_button-icon:before {
+    font-size: 16px;
+  }
+  &:hover {
+    background: unset;
+    border: 1px solid @SearchLinkColor;
+    color: @SearchLinkColor;
+  }
+}
+
+// WEB REF BUTTON BEFORE CLICKED
 #id_web_ref_search_link a {
   color: @SearchLinkColor;
   text-decoration: none;
-  &:hover{
-    color: @SearchLinkHover;
+  display: inline-block;
+  padding: 0 10px;
+  border: 1px solid @SearchBorderColor;
+  line-height: 32px;
+  .transition(all 0.2s ease-in);
+  &:before {
+    .transition(all 0.2s ease-in);
+  }
+  &:hover {
+    color: #ffffff;
+    background: @SearchButtonBG;
+    border: 1px solid @SearchButtonBG;
+    &:before {
+      color: #ffffff;
+    }
   }
 }
 
+// WEB REF BUTTON AFTER CLICKED
 #adv_search_webref_back_link a {
-  color: @SearchLinkColor;
+  color: #ffffff;
   text-decoration: none;
-  &:hover{
-    color: @SearchLinkHover;
+  background: @SearchButtonBG;
+  display: inline-block;
+  padding: 0 10px;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid @SearchButtonBG;
+  .transition(all 0.2s ease-in);
+  &:hover {
+    color: @SearchLinkColor;
+    background: unset;
+    border: 1px solid #ffffff;
+    &:before {
+      color: @SearchLinkColor;
+    }
+  }
+  &:before {
+    color: #ffffff;
+    .transition(all 0.2s ease-in);
   }
 }
 
+// MORE SEARCH OPTION BUTTON
 #adv_search_more_less_container a {
   color: @SearchLinkColor;
   text-decoration: none;
-  &.less_search_options_link{
-    color: @SearchLinkColor;
+  background: none;
+  display: inline-block;
+  border: 1px solid @SearchBorderColor;
+  padding: 0 10px;
+  height: 32px;
+  line-height: 32px;
+  .transition(all 0.2s ease-in);
+  &:before {
+    .transition(all 0.2s ease-in);
+    margin-left: 0;
+  }
+  &.less_search_options_link {
+    color          : @SearchLinkColor;
     text-decoration: none;
-    &:hover{
-      color: @SearchLinkHover;
+    &:hover {
+      color: #ffffff;
+      border: 1px solid @SearchButtonBG;
+      background: @SearchButtonBG;
+      &:before {
+        color: #ffffff;
+      }
     }
   }
-  &:hover{
-    color: @SearchLinkHover;
+  &:hover {
+    color: #ffffff;
+    border: 1px solid @SearchButtonBG;
+    background: @SearchButtonBG;
+    &:before {
+      color: #ffffff;
+    }
   }
 }
 
+/* END ALL SEARCH BUTTONS ON ADVANCE SEARCH */
 
 
 #id_property_count {
@@ -652,6 +796,15 @@ input:-ms-input-placeholder{
 
 .sticky-header{
   background: @StickyHeaderBG;
+  &:after {
+    content: "";
+    width: 100%;
+    height: 6px;
+    border-bottom: 1px solid #999999;;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .sticky-header .sticky-logo{
@@ -667,7 +820,7 @@ input:-ms-input-placeholder{
 }
 
 #sticky-filters-form label{
-  color: @StickLabelText;
+  color: @StickyLabelText;
   display: block;
   margin-bottom: 4px;
 }
@@ -681,7 +834,7 @@ input:-ms-input-placeholder{
 }
 
 .sticky-header .input {
-  border:  @StickyInputBorders;
+  border: @StickyInputBorders;
 }
 
 .sticky-header{
@@ -695,8 +848,9 @@ input:-ms-input-placeholder{
   color: @FilterButtonText;
   .border-radius(@ButtonRadius);
   text-transform: @ButtonTransform;
+  .transition(all .3s ease-in-out);
   &:hover {
-    background: lighten(@FilterButtonBG, 5%);
+    background: @SecondaryColor;
     color: @FilterButtonText;
   }
 }
@@ -713,7 +867,7 @@ input:-ms-input-placeholder{
 }
 
 .sticky-header .filter-text{
-  color: @StickLabelText;
+  color: @StickyLabelText;
 }
 
 /* Results: Actions */
@@ -803,11 +957,11 @@ input:-ms-input-placeholder{
   color: @ContentBlocksText;
   .map-details-close{
     background: @ContentBlocksBG;
-    border:@ContentBlocksBorder;
+    border: @ContentBlocksBorder;
   }
   .property-list-details{
-    border-right:@ContentBlocksBorder;
-    border-bottom:@ContentBlocksBorder;
+    border-right: @ContentBlocksBorder;
+    border-bottom: @ContentBlocksBorder;
   }
 }
 
@@ -1410,7 +1564,7 @@ h1 {
   font-size: 1.8rem;
   line-height: 1;
   color:@H1Color;
-  font-weight:300;
+  font-weight:700;
 }
 
 h2 {
@@ -1418,7 +1572,7 @@ h2 {
   font-size:1.6rem;
   line-height: 1;
   color:@SecondaryColor;
-  font-weight:300;
+  font-weight:500;
   text-transform: uppercase;
 }
 
@@ -1452,7 +1606,7 @@ h5 {
 h1.page-heading {
   font-family:@FontFamily;
   font-size: 1.8rem;
-  font-weight:300;
+  font-weight:700;
   color:@H1Color;
 }
 
@@ -1500,7 +1654,7 @@ h1.page-heading {
   display: block;
   width: 100%;
   line-height:1;
-  font-weight: 300;
+  font-weight: 500;
   text-transform: none;
 }
 
@@ -1548,11 +1702,12 @@ a.news-heading-link {
     .icon-font();
     content: attr(data-icon);
     color: @SocialIconsLink;
-    font-size: 36px;
+    font-size: 33px;
     position: relative;
     line-height: 40px;
     top: auto;
     left: auto;
+    .transition(all 0.2s ease-in);
   }
   .social:hover{
     &:before{
@@ -1566,11 +1721,17 @@ ul.footer-logos li:first-of-type{
   margin-left: 0;
 }
 
+ul.footer-social-links {
+  li {
+    margin-left: 15px;
+  }
+}
+
 #footer-navigation-links .footer-divider{
-  opacity: 0;
+  opacity: 1;
 }
 #footer-property-links .footer-divider{
-  opacity: 1;
+  opacity: 0;
 }
 #footer-heading{
   display: @FooterHeadingDisplay;
@@ -1588,9 +1749,12 @@ ul.footer-logos li:first-of-type{
   color: @ButtonPrimaryText;
   text-transform: @ButtonTransform;
   .border-radius(@ButtonRadius);
+  .transition(all 0.2s ease-in);
+  border: 1px solid @ButtonPrimaryBG;
   &:hover{
     background: @ButtonPrimaryHover;
     color: @ButtonPrimaryHoverText;
+    border: 1px solid @ButtonPrimaryHover;
   }
 }
 .secondary-button{
@@ -1767,7 +1931,7 @@ ul.footer-logos li:first-of-type{
 }
 
 /* ----// ENABLE WHEN SEARCH OPENS UP //---- */
-/*
+
 .home-page {
   .more_search_options_link:before {
     content: "\f106";
@@ -1777,7 +1941,7 @@ ul.footer-logos li:first-of-type{
   }
 }
 
-*/
+
 /* ----// END //---- */
 
 /*
