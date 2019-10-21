@@ -582,7 +582,7 @@ input:-ms-input-placeholder {
   height: auto;
 }
 #sticky-filters-form label {
-  color: #ffff f;
+  color: #ffffff;
   display: block;
   margin-bottom: 4px;
 }
@@ -629,7 +629,7 @@ input:-ms-input-placeholder {
   position: relative;
 }
 .sticky-header .filter-text {
-  color: #ffff f;
+  color: #ffffff;
 }
 /* Results: Actions */
 .action-button {
