@@ -1,7 +1,7 @@
 <div class="header-content print-hide">
   <div class="container_12">
     <div class="grid_12">
-        <a href="/" id="logo" style="z-index: 5;"><img src="/static/img/custom/layout/logo.svg" /></a>
+        <a href="/" id="logo"><img src="/static/img/custom/layout/logo.svg" /></a>
     </div>
   </div>
   <!-- Navigation -->
@@ -21,13 +21,16 @@
       </li>
     </ul>
   </div>
-  {% include 'includes/eos_search.html' %}
+  <div class="clearfix"></div>
+  <div class="search-wrapper">
+    {% include 'includes/eos_search.html' %}
+  </div>
 </div>
 {% else %}
 <div class="internal-header-image print-hide">
   <div class="resizer">
     <ul id="rndList">
-      <li id="item-1" style="background-image: url(/static/img/custom/slider/images/header-image.jpg); display: block; background-position: center center !important;"></li>
+      <li id="item-1" style="background-image: url(/static/img/custom/slider/images/header-image.jpg); display: block; background-position: center center;"></li>
     </ul>
   </div>
   <div class="clearfix"></div>

@@ -168,7 +168,7 @@
 @StickyLogoVerticalAlign: middle;             // Sticky Logo Vertical Alignment
 @StickyLogoWidth: 100%;                       // Sticky Logo Width
 @StickyLogoHeight: auto;                      // Sticky Logo Height
-@StickLabelText: #ffff;                     // Sticky Input Labels Color
+@StickyLabelText: #ffff;                     // Sticky Input Labels Color
 @StickyInputBorders: 1px solid #d4d4d4;       // Sticky Input Borders
 @StickyDropdownIconBG: @SearchDropdownIconBG;
 @StickyIcon: #ffffff;                         // Sticky Details Icon Color
@@ -315,6 +315,7 @@ html {
   display: block;
   position: absolute;
   top: 15px;
+  z-index: 5;
 }
 /* ----// END //---- */
 
@@ -323,7 +324,6 @@ html {
 /* Navigation
 ------------------------------------------------------------ */
 .menu {
-  z-index: 2;
   margin: 0 auto;
   width: 100%;
   background-color: @MenuBG;
@@ -334,13 +334,13 @@ html {
 .menu-bg {
   margin: 0 10px;
   ul {
-    padding:0;
-    list-style:none;
+    padding: 0;
+    list-style: none;
     float: right;
   }
   li {
-    position:relative;
-    text-transform:@MenuTextTransform;
+    position: relative;
+    text-transform: @MenuTextTransform;
   }
 }
 // Main Menu Nav
@@ -353,8 +353,8 @@ html {
     position: relative;
     z-index:1;
     & > a {
-      color:@MenuLinkText;
-      background:@MenuLinkBG;
+      color: @MenuLinkText;
+      background: @MenuLinkBG;
       display:block;
       font-size: 15px;
       margin: 0 @MenuLinkSpacing;
@@ -376,8 +376,8 @@ html {
     }
     // Menu Hover
     &:hover > a {
-      color:@MenuLinkHoverText;
-      background:@MenuLinkHoverBG;
+      color: @MenuLinkHoverText;
+      background: @MenuLinkHoverBG;
       &:after {
         content: "";
         width: 100%;
@@ -390,8 +390,8 @@ html {
     }
     // Menu Active
     &.active > a {
-      color:@MenuLinkActiveText;
-      background:@MenuLinkActiveBG;
+      color: @MenuLinkActiveText;
+      background: @MenuLinkActiveBG;
       font-weight: 700;
       &:after {
         content: "";
@@ -404,8 +404,8 @@ html {
       }
     }
     &.active:hover > a {
-      color:@MenuLinkActiveHoverText;
-      background:@MenuLinkActiveHoverBG;
+      color: @MenuLinkActiveHoverText;
+      background: @MenuLinkActiveHoverBG;
     }
   }
 }
@@ -420,17 +420,17 @@ html {
     white-space: nowrap;
     text-align: left;
     a{
-      color:@SubMenuLinkText;
-      background:@SubMenuLinkBG;
+      color: @SubMenuLinkText;
+      background: @SubMenuLinkBG;
       padding: 6px 22px;
-      display:block;
-      border-bottom:@SubMenuBorderBottom;
+      display: block;
+      border-bottom: @SubMenuBorderBottom;
       font-size: 13px;
       .transition(all .3s ease-in-out);
     }
     a:hover{
-      color:@SubMenuLinkHoverText;
-      background:@SubMenuLinkHoverBG;
+      color: @SubMenuLinkHoverText;
+      background: @SubMenuLinkHoverBG;
       border-bottom: 1px solid #ffffff;
       .transition(all .3s ease-in-out);
     }
@@ -441,13 +441,13 @@ html {
 
 .slideDown .menu-bg > ul > li {
   & > ul {
-    height:auto;
-    opacity:1;
+    height: auto;
+    opacity: 1;
     top: -999px;
   }
   &:hover > ul{
-    top: 150%;
-    opacity:1;
+    top: 100%;
+    opacity: 1;
   }
 }
 
@@ -455,8 +455,8 @@ html {
 .fadeInUp {
   .menu-bg > ul > li {
     & > ul {
-      height:0;
-      opacity:0;
+      height: 0;
+      opacity: 0;
       top: 200%;
       left: @MenuLinkSpacing;
     }
@@ -464,8 +464,7 @@ html {
       overflow: visible;
       height: auto;
       top: 100%;
-      opacity:1;
-      pointer-events: auto;
+      opacity: 1;
       left: @MenuLinkSpacing;
     }
   }
@@ -489,9 +488,9 @@ html {
 
 /* Slider */
 .header-image {
-  width:100%;
-  min-height:@HeaderImageHeight;
-  position:relative;
+  width: 100%;
+  min-height: @HeaderImageHeight;
+  position: relative;
   width: 100%;
 }
 
@@ -523,37 +522,40 @@ html {
 }
 /* ----// END //---- */
 
-/* Search Intenral
+.search-wrapper {
+  width: 1000px;
+  padding-bottom: 60px;
+}
+
+/* Search Internal
 ------------------------------------------------------------ */
 .internal-header-image {
-  position:relative;
-  width:100%;
+  position: relative;
+  width: 100%;
   min-width: 940px;
   min-height:400px;
   background-position: center center;
   background-size: cover !important;
-  .search-wrapper{
+  .search-wrapper {
     position: relative;
-    bottom: 0;
-    width: 100%;
     margin: 200px auto 0;
-    padding-bottom: 60px;
-    left: auto;
   }
 }
 
 /* Search Home Page
 ------------------------------------------------------------ */
 .home-page {
-  .adv_search_container {
+  .search-wrapper {
     position: absolute;
-    bottom: 53px;
+    bottom: 0;
+    left: 50%;
+    .transform(translateX(-50%));
   }
 }
 
-// .adv_search_container {
-//   background: @SecondaryColor;
-// }
+.adv_search_container {
+  background: @SecondaryColor;
+}
 
 .adv_search_box2 {
   .adv_search_content {
@@ -561,10 +563,7 @@ html {
     margin-bottom: 30px;
   }
 }
-.adv_search_box1 {
-  background: @SearchBg;        //remove this background and ADD to .adv_search_container for full BG width effect
-  padding: 0px 20px;
-}
+
 .select2-container .select2-choice,
 .select2-container-multi .select2-choices {
   border: 1px solid @SearchBorders;
@@ -664,13 +663,13 @@ input:-ms-input-placeholder{
 // SEARCH BUTTON
 .webref_button {
   height: 34px;
-  color         : @SearchButtonTextColor;
-  background    : @SearchButtonBG;
-  padding       : 0 12px;
+  color: @SearchButtonTextColor;
+  background: @SearchButtonBG;
+  padding: 0 12px;
   text-transform: uppercase;
-  font-weight   : 600;
+  font-weight: 600;
   .border-radius(@ButtonRadius);
-  border        : 1px solid @SearchButtonBG;
+  border: 1px solid @SearchButtonBG;
   .transition(all 0.2s ease-in);
   .webref_button-icon:before {
     font-size: 16px;
@@ -684,11 +683,11 @@ input:-ms-input-placeholder{
 
 // WEB REF BUTTON BEFORE CLICKED
 #id_web_ref_search_link a {
-  color          : @SearchLinkColor;
+  color: @SearchLinkColor;
   text-decoration: none;
-  display        : inline-block;
-  padding        : 0 10px;
-  border         : 1px solid @SearchBorderColor;
+  display: inline-block;
+  padding: 0 10px;
+  border: 1px solid @SearchBorderColor;
   line-height: 32px;
   .transition(all 0.2s ease-in);
   &:before {
@@ -696,8 +695,8 @@ input:-ms-input-placeholder{
   }
   &:hover {
     color: #ffffff;
-    background     : @SearchButtonBG;
-    border         : 1px solid @SearchButtonBG;
+    background: @SearchButtonBG;
+    border: 1px solid @SearchButtonBG;
     &:before {
       color: #ffffff;
     }
@@ -706,19 +705,19 @@ input:-ms-input-placeholder{
 
 // WEB REF BUTTON AFTER CLICKED
 #adv_search_webref_back_link a {
-  color          : #ffffff;
+  color: #ffffff;
   text-decoration: none;
-  background     : @SearchButtonBG;
-  display        : inline-block;
-  padding        : 0 10px;
-  height         : 32px;
-  line-height    : 32px;
-  border         : 1px solid @SearchButtonBG;
+  background: @SearchButtonBG;
+  display: inline-block;
+  padding: 0 10px;
+  height: 32px;
+  line-height: 32px;
+  border: 1px solid @SearchButtonBG;
   .transition(all 0.2s ease-in);
   &:hover {
     color: @SearchLinkColor;
-    background     : unset;
-    border         : 1px solid @SiteTextColor;
+    background: unset;
+    border: 1px solid #ffffff;
     &:before {
       color: @SearchLinkColor;
     }
@@ -731,14 +730,14 @@ input:-ms-input-placeholder{
 
 // MORE SEARCH OPTION BUTTON
 #adv_search_more_less_container a {
-  color          : @SearchLinkColor;
+  color: @SearchLinkColor;
   text-decoration: none;
-  background     : none;
-  display        : inline-block;
-  border         : 1px solid @SearchBorderColor;
-  padding        : 0 10px;
-  height         : 32px;
-  line-height    : 32px;
+  background: none;
+  display: inline-block;
+  border: 1px solid @SearchBorderColor;
+  padding: 0 10px;
+  height: 32px;
+  line-height: 32px;
   .transition(all 0.2s ease-in);
   &:before {
     .transition(all 0.2s ease-in);
@@ -749,8 +748,8 @@ input:-ms-input-placeholder{
     text-decoration: none;
     &:hover {
       color: #ffffff;
-      border         : 1px solid @SearchButtonBG;
-      background     : @SearchButtonBG;
+      border: 1px solid @SearchButtonBG;
+      background: @SearchButtonBG;
       &:before {
         color: #ffffff;
       }
@@ -758,8 +757,8 @@ input:-ms-input-placeholder{
   }
   &:hover {
     color: #ffffff;
-    border         : 1px solid @SearchButtonBG;
-    background     : @SearchButtonBG;
+    border: 1px solid @SearchButtonBG;
+    background: @SearchButtonBG;
     &:before {
       color: #ffffff;
     }
@@ -821,7 +820,7 @@ input:-ms-input-placeholder{
 }
 
 #sticky-filters-form label{
-  color: @StickLabelText;
+  color: @StickyLabelText;
   display: block;
   margin-bottom: 4px;
 }
@@ -835,7 +834,7 @@ input:-ms-input-placeholder{
 }
 
 .sticky-header .input {
-  border:  @StickyInputBorders;
+  border: @StickyInputBorders;
 }
 
 .sticky-header{
@@ -868,7 +867,7 @@ input:-ms-input-placeholder{
 }
 
 .sticky-header .filter-text{
-  color: @StickLabelText;
+  color: @StickyLabelText;
 }
 
 /* Results: Actions */
@@ -958,11 +957,11 @@ input:-ms-input-placeholder{
   color: @ContentBlocksText;
   .map-details-close{
     background: @ContentBlocksBG;
-    border:@ContentBlocksBorder;
+    border: @ContentBlocksBorder;
   }
   .property-list-details{
-    border-right:@ContentBlocksBorder;
-    border-bottom:@ContentBlocksBorder;
+    border-right: @ContentBlocksBorder;
+    border-bottom: @ContentBlocksBorder;
   }
 }
 
@@ -1722,9 +1721,9 @@ ul.footer-logos li:first-of-type{
   margin-left: 0;
 }
 
-.footer-social-links {
+ul.footer-social-links {
   li {
-    margin-left: 15px !important;
+    margin-left: 15px;
   }
 }
 
