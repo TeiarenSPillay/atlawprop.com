@@ -580,7 +580,7 @@ input:-ms-input-placeholder {
   height: auto;
 }
 #sticky-filters-form label {
-  color: #ffffff;
+  color: #333333;
   display: block;
   margin-bottom: 4px;
 }
@@ -627,7 +627,7 @@ input:-ms-input-placeholder {
   position: relative;
 }
 .sticky-header .filter-text {
-  color: #ffffff;
+  color: #333333;
 }
 /* Results: Actions */
 .action-button {
@@ -1093,7 +1093,7 @@ input:-ms-input-placeholder {
 #sticky-details .sticky-details-meta .icon-baths:before,
 #sticky-details .sticky-details-meta .icon-garages:before,
 #sticky-details .sticky-details-meta .icon-openparking:before {
-  color: #ffffff;
+  color: #333333;
 }
 #calculators .calculator-inputs .detail-more .icon-info-circle:before {
   color: #333333;
