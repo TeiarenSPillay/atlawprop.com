@@ -626,7 +626,7 @@ a {
   margin-top: 0;
 }
 #branch-contact .logo {
-  padding: 0.4cm 0 0 0 ;
+  padding: 0.4cm 0 0 0;
 }
 #branch-contact .contact {
   padding: 0 0.8cm 0.8cm 0.5cm;
@@ -1268,7 +1268,7 @@ h5 {
   margin: -5pt 0 0 0;
 }
 .sub-headings {
-  color: #212121;
+  color: #333333;
   font-weight: 300;
   font-size: 9pt;
   line-height: 10pt;
