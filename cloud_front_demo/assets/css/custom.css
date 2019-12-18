@@ -290,6 +290,7 @@ html {
 /* ----// END //---- */
 .search-wrapper {
   width: 1000px;
+  padding-bottom: 60px;
 }
 /* Search Internal
 ------------------------------------------------------------ */
@@ -309,9 +310,10 @@ html {
 /* Search Home Page
 ------------------------------------------------------------ */
 .home-page .search-wrapper {
-  position: relative;
-  margin: 300px auto 60px auto;
-  padding-bottom: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -500px;
 }
 .adv_search_container {
   background: #828282;
