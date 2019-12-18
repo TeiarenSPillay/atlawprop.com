@@ -1,4 +1,4 @@
-// out: custom.css
+// out: custom.css, autoprefixer: > 0%
 
 @import url("../../eos/assets/less/_css3.less");
 @import "colors.less";
@@ -524,7 +524,7 @@ html {
 
 .search-wrapper {
   width: 1000px;
-  padding-bottom: 60px;
+  // padding-bottom: 60px;
 }
 
 /* Search Internal
@@ -546,10 +546,17 @@ html {
 ------------------------------------------------------------ */
 .home-page {
   .search-wrapper {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    margin-left: -500px;
+    position: relative;
+    margin: 300px auto 60px auto;
+    padding-bottom: 60px;
+    
+    // position: absolute;
+    // bottom: 0;
+    // left: 50%;
+    // top: 50%;
+    // .transform(translate(-50%, -50%));
+    // margin-left: -500px;
+    // padding-bottom: 60px;
   }
 }
 
