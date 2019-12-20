@@ -62,6 +62,7 @@
   src: url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGCDZg7i-e40o9FYYiSpZxAc.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGHZhYM0_6AejPZE-OqA592o.woff2') format('woff2'), /* Super Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGHiec-hVyr2k4iOzEQsW1iE.woff') format('woff'), /* Modern Browsers */ url('https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGBPPOa1q11iOmmM9mDHHHX4.ttf') format('truetype'), /* Safari, Android, iOS */ url('https://fonts.gstatic.com/l/font?kit=toadOcfmlt9b38dHJxOBGEJ5fyyk7hbwuQs1ayp3rqc&skey=cf4dfcb31d72fb0a&v=v9#SourceSansPro') format('svg');
   /* Legacy iOS */
 }
+/* ----// Display Flex //---- */
 /* ----// END //---- */
 /* LESS Variables
 ------------------------------------------------------------ */
@@ -313,7 +314,12 @@ html {
   position: absolute;
   bottom: 0;
   left: 50%;
-  margin-left: -500px;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+   -o-transform: translateX(-50%);
+      transform: translateX(-50%);
+  padding: 0;
 }
 .adv_search_container {
   background: #828282;
@@ -967,6 +973,14 @@ input:-ms-input-placeholder {
   background: #ffffff;
   border: 1px solid #d6d6d6;
   color: #333333;
+}
+.featured-properties-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: left;
 }
 .home-featured-property {
   min-height: 369px;

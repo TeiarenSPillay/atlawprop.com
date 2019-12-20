@@ -1,8 +1,8 @@
 {% load new_development_helpers humanize property_cart image_tags %}
 {% for listing in featured %}
   {% if listing %}
-<a href="{{ listing.get_absolute_url }}">
   <div class="home-featured-property content-block border-box grid_6">
+    <a href="{{ listing.get_absolute_url }}" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></a>
     <div class="property-image-thumb">
       {% if listing.featured %}<div class="transparent-red top-left">
         FEATURED
@@ -46,6 +46,5 @@
       <h4 class="property-marketing-heading clearfix sub-headings margin-top15 " style="margin-bottom: 0 !important;">{{ listing.get_heading }}</h4>
     </div>
   </div>
-</a>
   {% endif %}
 {% endfor %}
