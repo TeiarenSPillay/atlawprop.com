@@ -324,6 +324,7 @@ html {
 }
 .adv_search_container {
   background: #828282;
+  min-height: 138px;
 }
 .adv_search_box2 .adv_search_content {
   margin-top: 30px;
