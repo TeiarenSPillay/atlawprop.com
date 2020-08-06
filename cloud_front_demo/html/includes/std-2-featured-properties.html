@@ -16,7 +16,9 @@
         </div>
       {% endif %}
       <div class="centered">
-        <img src="{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 640 480 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" />
+        <a href="{{ listing.get_absolute_url }}">
+          <img src="{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 640 480 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}" />
+        </a>
       </div>
       <div class="transparent-black bottom">
         {% if listing.on_show or listing.bank_reposessed or listing.distressed or listing.sole_mandate or listing.quick_sell_options or listing.public_tender or show_private_seller_icon or listing.student_accommodation %}
