@@ -2773,6 +2773,10 @@ a.details-button-tour {
   color: #ffffff;
   background: #000000;
 }
+.number-control-up.btn-primary,
+.number-control-down.btn-primary {
+  background-color: #828282;
+}
 /* Media Queries
 ======================================================================== */
 @media screen and (min-height: 430px) {

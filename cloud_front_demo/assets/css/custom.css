@@ -898,6 +898,9 @@ input:-ms-input-placeholder {
 .icon-agent-search:before {
   color: #4F4F4F;
 }
+.icon-whatsapp::before {
+  color: #4F4F4F;
+}
 /* Results: Results List */
 #results-list .property-list-item {
   background: #ffffff;
