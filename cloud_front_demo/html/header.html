@@ -1,3 +1,4 @@
+{% load image_tags get_images_by_category %}
 <div class="header-content print-hide">
   <div class="container_12">
     <div class="grid_12">
@@ -13,11 +14,14 @@
     </div>
   </div>
 </div>
+{% get_images_by_category 'Header Images' 'Images' %}
 {% if request.path == '/' %}
 <div class="header-image">
   <div class="resizer">
     <ul id="rndList">
-      <li id="item1" style="background-image: url(/static/img/custom/slider/images/header-image.jpg);display: block;">
+      {% for document in header_images %}
+      <li style="background-image: url('{% get_image_url 'documents' 0 0 document.document %}');display: block;"></li>
+      {% endfor %}
       </li>
     </ul>
   </div>
@@ -30,7 +34,7 @@
 <div class="internal-header-image print-hide">
   <div class="resizer">
     <ul id="rndList">
-      <li id="item-1" style="background-image: url(/static/img/custom/slider/images/header-image.jpg); display: block; background-position: center center;"></li>
+      <li style="background-image: url('{% get_image_url 'documents' 0 0 header_images.0.document %}');display: block;"></li>
     </ul>
   </div>
   <div class="clearfix"></div>

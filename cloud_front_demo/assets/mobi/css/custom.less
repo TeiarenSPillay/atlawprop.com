@@ -269,8 +269,8 @@ a.nav-link-active     { font-size:13px; font-family: 'Open Sans', sans-serif; co
 /* Footer
 ========================================================================== */
 #footer         { color: @FooterTextColor; font-family: 'Open Sans', sans-serif; background: @FooterBG; font-weight:400; padding-top:30px; z-index:9;}
-#footer-menu       { margin-top: 30px;}
-#footer-property     { margin-top: 20px;}
+#footer-menu       { margin-top: 30px; color: @FooterLinkColor;}
+#footer-property     { margin-top: 20px; color: @FooterLinkColor;}
 .footer-heading     { color: @FooterTextColor; font-size:13px;}
 a:hover.footer      { color: @FooterLinkHover; font-size:13px;}
 a.footer         { color: @FooterLinkColor; font-size:13px; text-decoration: none; }
@@ -278,7 +278,11 @@ a.footer         { color: @FooterLinkColor; font-size:13px; text-decoration: non
 a:hover.footerpropdata  { color: @FooterLinkHover; font-size:11px;}
 a.footerpropdata     { color: @CopyrightColor; font-size:11px; text-decoration: none; }
 .pd-logo         { float:left; margin-right:5px; margin-bottom:30px;}
-
+#desktop {
+  .footer {
+    color: #000000;
+  }
+}
 #footer-social      { text-align: right;}
 #footer-social a     { float:none; display:inline-block;}
 

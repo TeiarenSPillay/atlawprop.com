@@ -620,9 +620,11 @@ a.nav-link-active {
 }
 #footer-menu {
   margin-top: 30px;
+  color: #999999;
 }
 #footer-property {
   margin-top: 20px;
+  color: #999999;
 }
 .footer-heading {
   color: #333333;
@@ -654,6 +656,9 @@ a.footerpropdata {
   float: left;
   margin-right: 5px;
   margin-bottom: 30px;
+}
+#desktop .footer {
+  color: #000000;
 }
 #footer-social {
   text-align: right;

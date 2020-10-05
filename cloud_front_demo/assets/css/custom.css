@@ -75,7 +75,7 @@
 ------------------------------------------------------------ */
 html {
   font-size: 17px;
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   color: #333333;
 }
 .main-content {
@@ -259,9 +259,9 @@ html {
 /* ----// END //---- */
 /* Slider */
 .header-image {
+  width: 100%;
   min-height: 530px;
   position: relative;
-  width: 100%;
 }
 .resizer {
   position: absolute;
@@ -356,6 +356,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
+  font-size: 27px;
 }
 fieldset p > input[type="checkbox"] + label:before {
   background: #f1f1f1;
@@ -409,6 +410,7 @@ input:-ms-input-placeholder {
 }
 .id_reference_number {
   border: 1px solid #d6d6d6;
+  min-height: 34px !important;
 }
 .id_neighbouring_suburbs a {
   color: #ffffff;
@@ -519,6 +521,8 @@ input:-ms-input-placeholder {
   -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   margin-left: 0;
+  font-size: 27px;
+  top: 6px;
 }
 #adv_search_more_less_container a.less_search_options_link {
   color: #ffffff;
@@ -732,7 +736,7 @@ input:-ms-input-placeholder {
   font-weight: 600;
 }
 .top-nav-counter-list li span {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
 }
 /* Results: Sidebar */
 .sidebar-button {
@@ -1259,14 +1263,14 @@ input:-ms-input-placeholder {
 /* Headings
 ------------------------------------------------------------ */
 h1 {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.8rem;
   line-height: 1;
   color: #212121;
   font-weight: 700;
 }
 h2 {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.6rem;
   line-height: 1;
   color: #828282;
@@ -1274,7 +1278,7 @@ h2 {
   text-transform: uppercase;
 }
 h3 {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.5rem;
   color: #4F4F4F;
   line-height: 1;
@@ -1282,7 +1286,7 @@ h3 {
   margin: 0px;
 }
 h4 {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.25rem;
   color: #333333;
   line-height: 1;
@@ -1290,7 +1294,7 @@ h4 {
   margin: 0px;
 }
 h5 {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.1rem;
   color: #333333;
   line-height: 1;
@@ -1298,7 +1302,7 @@ h5 {
   margin: 0px;
 }
 h1.page-heading {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: #212121;
@@ -1307,14 +1311,18 @@ h1.page-heading {
   color: #4F4F4F;
 }
 .sub-headings {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.125rem;
-  color: #333333;
+  color: #000000;
   display: block;
   width: 100%;
   line-height: 1;
   font-weight: 400;
   margin-bottom: 10px;
+}
+.property-marketing-heading {
+  font-size: 20px;
+  color: #333333;
 }
 .sub-headings-alt {
   color: #4F4F4F;
@@ -1327,7 +1335,7 @@ h1.page-heading {
   font-size: 150%;
 }
 .headings {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.4rem;
   color: #4F4F4F;
   display: block;
@@ -1336,7 +1344,7 @@ h1.page-heading {
   font-weight: 400;
 }
 .main-headings {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.4rem;
   color: #4F4F4F;
   display: block;
@@ -1346,7 +1354,7 @@ h1.page-heading {
   text-transform: none;
 }
 .article-headings {
-  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-family: "Source Sans Pro", "Arial", Helvetica, sans-serif;
   font-size: 1.325rem;
   color: #4F4F4F;
   font-weight: 400;
@@ -1376,7 +1384,6 @@ a.news-heading-link:hover {
 }
 #footer-social {
   color: #ffffff;
-  /* ----// END //---- */
 }
 #footer-social .social:before {
   font-family: 'icomoon';
@@ -1403,6 +1410,23 @@ a.news-heading-link:hover {
 #footer-social .social:hover:before {
   color: #4F4F4F;
 }
+.instagram_button-icon:before {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f1b3";
+  font-size: 39px;
+  line-height: 40px;
+  position: relative;
+  left: 2px;
+}
+/* ----// END //---- */
 ul.footer-logos li:first-of-type {
   margin-left: 0;
 }

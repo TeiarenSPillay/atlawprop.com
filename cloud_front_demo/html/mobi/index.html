@@ -1,5 +1,5 @@
 {% extends 'mobi/eos_mobi_index.html' %}
-
+{% load image_tags get_images_by_category %}
 {% block js %}
 <script type="text/javascript" src="/static/mobi/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/mobi/js/jquery.mobile.custom.min.js"></script>
@@ -9,9 +9,12 @@
   <div id="rndList" style="position: relative; z-index: 0;">
     <!-- Wrapper for slides -->
     <div class="carousel-inner"  style="width: auto; height: 385px">
-      <div class="item active">
-        <img src="/static/mobi/img/layout/home-banner.jpg" />
-      </div>
+      {% get_images_by_category 'Header Images' 'Images' %}
+      {% for document in header_images %}
+        <div class="item">
+          <img src="{% get_image_url 'documents' 0 0 document.document %}" />
+        </div>
+      {% endfor %}
     </div>
   </div>
   <script>
