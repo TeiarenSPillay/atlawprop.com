@@ -1,75 +1,191 @@
 {% extends 'eos_index.html' %}
-{% load latest_news image_tags %}
+{% load latest_news image_tags string_filters custom_tags new_development_helpers humanize property_cart %}
 {% block content %}
-<div id="breadcrumbs" class="container_12">
-  <div id="home-breadcrumbs-navigation" class='grid_12 breadcrumbs'>
-    <span class="breadcrumbs-dark">You are here:</span>
-    <span class="breadcrumbs-light">
-      <a href="/" class="other">{{ site_name }}</a>
-      {% block breadcrumb %}<a href="{{request.path}}" class="other" id='current-path'>Homepage</a>{% endblock breadcrumb %}
-    </span>
-  </div>
-  <div class="grid_10 border-box header-bottom-bordered">
-      <h1 id="page-heading" class="page-heading">{{ site_name }}</h1>
-  </div>
-  <div id="sidebar-quick-links" class="sidebar-quick-links grid_2 pull-right"></h2></div>
-  <div id="sidebar-print" class="grid_1 sidebar-button">
-    <a href="#1" class="border-box"><i class="icon-sidebar-print"></i><span>PRINT</span></a>
-  </div>
-  <div id="sidebar-share" class="grid_1 last sidebar-button">
-    <a href="#1" data-id='sidebar-social-sharing' class="border-box"><i class="icon-sidebar-share"></i><span>SHARE</span></a>
-  </div>
-  <div id="sidebar-social-sharing" class="grid_4 first last sidebar-social-sharing border-box" style='display: none;'>
-    <div class="clearfix">
-      <div class="fourth sidebar-sharing border-box"><a href="#1" onclick="bookmark('facebook');" id="sidebar-social-facebook" class="sidebar-sharing-link"><i class="icon-sidebar-facebook"></i><span>SHARE</span></a></div>
-      <div class="fourth sidebar-sharing border-box"><a href="#1"  onclick="bookmark('twitter');" id="sidebar-social-twitter" class="sidebar-sharing-link"><i class="icon-sidebar-twitter"></i><span>TWEET</span></a></div>
-      <div class="fourth sidebar-sharing border-box"><a href="https://www.pinterest.com/pin/create/button/?url={{ website_url }}{{ request.path }}&media=http:{% get_image_url 'settings' 320 240 company_logo %}" target="_blank" id="sidebar-social-pinterest" class="sidebar-sharing-link"><i class="icon-sidebar-pinterest"></i><span>PIN IT</span></a></div>
-      <div class="fourth sidebar-sharing border-box"><a href="#1" onclick="bookmark('gplus')" id="sidebar-social-google" class="sidebar-sharing-link"><i class="icon-sidebar-google"></i><span>SHARE</span></a></div>
-    </div>
-  </div>
-</div>
 {% if profile.live %}
-<div class="container_12 margin-top30 margin-bottom30">
-  <div class="grid_12 homepage-profile">
-      {{ profile.content|safe }}
-      <a class="button primary-button pull-right margin-top15" href="/profile/">Read More</a>
+<div class="homepage-profile">
+  <div class="section-heading">
+    {% if website_slogan %}
+    {{ website_slogan }}
+    {% else %}
+    {{ site_name }}
+    {% endif %}
+  </div>
+  {{ profile.content|safe }}
+  <div class="clearfix"></div>
+  <div class="button-center margin-top20">
+    <a class="button primary-button" href="/profile/">Read More</a>
   </div>
 </div>
 {% endif %}
+<!-- Featured Properties -->
+{% get_featured_properties 'All' 'All' 'Active' 5 False %}
 {% if featured %}
-<div class="container_12 margin-top30 margin-bottom30">
-  <div class="grid_12">
-    <h2 class="main-headings">Featured Properties</h2>
-  </div>
-  <div class="featured-properties-2 margin-top30">
-    {% include "includes/std-2-featured-properties.html" %}
-  </div>
-</div>
+{% include "includes/featured-properties.html" %}
 {% endif %}
+<!-- Virtual Walkthroughs -->
+{% get_featured_properties 'All' 'All' 'Active' 15 False %}
+<div class="virtual-walkthroughs">
+  <div class="section-heading">Virtual Walkthroughs</div>
+  <div class="virtual-slider">
+    {% for listing in featured %}
+    {% if listing.eyespy360 or listing.matterport_id or listing.virtual_tour %}
+    <div class="item pull-left">
+      <a href="#1" class="image-section virtual-link" data-id="{{ listing.id }}">
+        <div class="image" style="background: url('{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 640 480 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}') center center;"></div>
+        {% include 'includes/icons/play-button.svg' %}
+      </a>
+      <div class="virtual-content">
+        <div class="content-container">
+          <div class="price">
+            {% if listing.poa %}
+            POA
+            {% elif listing.get_main_type == "Holiday" %}
+            From R{{ listing.price|intcomma }} <span style="font-size: 16px;">per night</span>
+            {% elif listing.get_main_type == 'NewDevelopment' %}
+            From {{ currency_symbol}}{{listing.get_cheapest_property_type}}
+            {% else %}
+            {{ listing.render_price|safe }}
+            {% endif %}
+          </div>
+          <div class="heading">
+            {{ listing.get_heading }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div class="virtual-navigation">
+    <div class="virtual-prev">{% include 'includes/icons/slider-arrow-red.svg' %}</div>
+    <div class="virtual-next">{% include 'includes/icons/slider-arrow-red.svg' %}</div>
+  </div>
+  <div class="virtual-dots"></div>
+</div>
+<!-- Testimonials -->
+{% get_testimonials %}
+{% if testimonials %}
+{% include 'includes/testimonials.html' %}
+{% endif %}
+<!-- News -->
 {% get_latest_articles 2 %}
 {% if featured_articles %}
-<div class="container_12 margin-top30 margin-bottom30">
-  <div class="grid_12">
-    <h2 class="main-headings margin-top30">Latest News</h2>
-  </div>
-  <div class="featured-articles-2 margin-top30">
-      {% include "includes/std-2-news-articles.html" %}
-  </div>
-</div>
+{% include 'includes/news-articles.html' %}
 {% endif %}
-
-<div id="cta-container" class="container_12 margin-top30 margin-bottom30">
-  <div class="grid_4 content-block border-box" style="background: #cfcfcf">
-    &nbsp;<br />&nbsp;
-  </div>
-  <div class="grid_4 content-block border-box" style="background: #cfcfcf">
-    &nbsp;<br />&nbsp;
-  </div>
-  <div class="grid_4 content-block border-box" style="background: #cfcfcf">
-    &nbsp;<br />&nbsp;
+<!-- Content Ads -->
+<div class="content-ads">
+  <!-- Add 'solid' class to get a solid background -->
+  <div class="ad-container">
+    <!-- image-ad.html \\ icon-ad.html -->
+    {% include 'includes/content-ads/image-ad.html' %}
   </div>
 </div>
 {% endblock content %}
 {% block footer-js %}
+
+<script id="tmpl-video-tour" type="text/html">
+  <div id="virtual-popup" class="virtual-popup">
+    <div class="loader" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></div>
+    <div class="close-popup">{% include 'includes/icons/close-button.svg' %}</div>
+    <iframe id="virtual-frame" type="text/html" width="100%" src="<%= listing.video_tour_url %>" frameborder="0"></iframe>
+    <div class="info-block">
+      <div class="price"><%= listing.price %></div>
+      <div class="heading"><%= listing.heading %></div>
+      <a class="button primary-button" href="<%= listing.url %>">Read More</a>
+    </div>
+  </div>
+</script>
+
+<link rel="stylesheet" type="text/css" href="/static/css/slick.css"/>
 <script type="text/javascript" src="/static/js/slider.js"></script>
+<script type="text/javascript" src="/static/js/forms.js"></script>
+<script src="/static/js/slick.min.js"></script>
+<script type="text/javascript">
+
+$('.featured-slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrow: true,
+  prevArrow: $('.feat-prev'),
+  nextArrow: $('.feat-next'),
+  dots: true,
+  appendDots: $('.feat-dots'),
+  autoplay: true,
+  autoplaySpeed: 8000,
+  pauseOnHover: true,
+});
+
+$('.virtual-slider').slick({
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+  arrow: true,
+  prevArrow: $('.virtual-prev'),
+  nextArrow: $('.virtual-next'),
+  dots: true,
+  appendDots: $('.virtual-dots'),
+  autoplay: true,
+  autoplaySpeed: 8000,
+  pauseOnHover: true,
+});
+
+{% get_featured_properties 'All' 'All' 'Active' 15 False %}
+var listings = [{% for listing in featured %}{% if listing.eyespy360 or listing.matterport_id or listing.virtual_tour %}{
+    id: {{ listing.id }},
+    video_tour_url: "{{ listing.virtual_tour }}",
+    price: "{{ listing.render_price }}",
+    heading: "{{ listing.get_heading }}",
+    url: "{{ listing.get_absolute_url }}"
+  }{% if not forloop.last %},{% endif %}{% endif %}{% endfor %}]
+var video_tour_template = _.template($("#tmpl-video-tour").html())
+$(".virtual-link").on("click", function(evt) {
+    evt.preventDefault()
+    var el = this
+    var listing = listings.find(function(listing) { return listing.id == $(el).data('id') })
+    console.log(listing)
+    var popup = video_tour_template({ listing: listing })
+    $("body").append(popup)
+})
+$(document).on("click", ".virtual-popup .close-popup", function() {
+    $(".virtual-popup").remove()
+})
+
+$('.close-popup').click(function() {
+  console.log('you clicked the close button!');
+  $('body').removeClass('lock');
+  $("#virtual-popup").hide();
+  $('.pd_modal_overlay').remove();
+  $('.pd_modal_page').remove();
+});
+
+$('.testimonial-slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrow: true,
+  prevArrow: $('.testimonial-prev'),
+  nextArrow: $('.testimonial-next'),
+  autoplay: true,
+  autoplaySpeed: 8000,
+  pauseOnHover: true,
+});
+
+$('.agent-contact .view-button').click(function() {
+  $('.agent-contact').toggleClass('active');
+  if ($('.agent-contact').hasClass('active')) {
+    $(this).text('Hide contact number');
+  } else {
+    $(this).text('View contact number');
+  }
+});
+
+// Check for light
+$(document).ready(function() {
+  if ($('.header-content').hasClass('light')) {
+    $('.menu-bg').addClass('light');
+  }
+});
+
+</script>
 {% endblock footer-js%}

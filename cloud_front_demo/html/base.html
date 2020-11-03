@@ -1,1 +1,14 @@
 {% extends 'eos_base.html' %}
+{% block footer-js %}
+<script type="text/javascript">
+
+$(document).ready(function() {
+  if ($('.header-content').hasClass('light')) {
+    $('.menu-bg').addClass('light');
+    $('.adv_search_container').addClass('light');
+    $('#internal-search-bottom-border').hide();
+  }
+});
+
+</script>
+{% endblock footer-js %}

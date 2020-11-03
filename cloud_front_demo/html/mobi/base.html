@@ -1,20 +1,15 @@
 {% extends 'mobi/eos_mobi_base.html' %}
-
+{% load image_tags get_images_by_category %}
 {% block head %}
+<!-- add 'center' to below for centered logo \\ add 'light' for the light version -->
 <div id="header" class="container-fluid" data-role="header">
-  <div class="col-xs-12" align="center">
-    <div class="row">
-        <div class="col-xs-11" align="center">
-          <div class="col-xs-11 col-xs-offset-1" align="center">
-            <div class="row">
-              <a id="logo" href="/" target="_self"><img src="/static/img/custom/layout/logo.svg" class="img-responsive"></a>
-            </div>
-          </div>
-        </div>
-      <div id="nav-button" class="col-xs-1 nopadding nav-button" align="right"><a href="#navigation" onclick=""><i class="icon-menu3 menu-open"></i></a></div>
-    </div>
-  </div>
+  <a href="/" style="display: block;"><img src="/static/mobi/img/layout/logo.png" alt="" id="logo"></a>
+  <div id="nav-button" class="col-xs-1 nopadding nav-button" align="right"><a href="#navigation" onclick=""><i class="icon-menu3 menu-open"></i></a></div>
 </div>
+{% if request.path == '/' %}
+<!-- search-middle.html \\ search-bottom.html -->
+{% include 'mobi/includes/headers/search-middle.html' %}
+{% endif %}
 {% endblock head %}
 
 {% block mobi-navigation %}

@@ -10,7 +10,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: #4F4F4F;
+  color: #000F3B;
 }
 #header_content {
   height: 1.3cm;
@@ -18,7 +18,7 @@ a {
   right: 0cm;
   width: 15cm;
   bottom: 28.45cm;
-  background-color: #828282;
+  background-color: #B52735;
   color: #ffffff;
   font-weight: 300;
   display: inline-block;
@@ -221,7 +221,7 @@ a {
   display: block;
 }
 #results-list .property-list-item .property-list-favourite .icon-favourite:before {
-  color: #4F4F4F;
+  color: #000F3B;
   font-family: 'homeicon';
   speak: none;
   font-style: normal;
@@ -239,7 +239,7 @@ a {
   font-size: 4.4mm;
 }
 #results-list .property-list-item .property-list-favourite .icon-favourite-open:before {
-  color: #4F4F4F;
+  color: #000F3B;
   font-family: 'homeicon';
   speak: none;
   font-style: normal;
@@ -295,7 +295,7 @@ a {
   width: auto;
 }
 #results-list .property-list-item .property-list-image-thumb .transparent-red {
-  background: #4F4F4F;
+  background: #000F3B;
   position: absolute;
   color: #ffffff;
   padding: 0 2pt;
@@ -453,7 +453,7 @@ a {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   content: "\f00c";
-  color: #4F4F4F;
+  color: #000F3B;
   position: relative;
   left: -2pt;
 }
@@ -803,7 +803,7 @@ a {
   line-height: 5.5mm;
 }
 .gallery-viewport .transparent-red.top-left {
-  background: #4F4F4F;
+  background: #000F3B;
   padding: 0pt 4pt;
   color: #ffffff;
   position: absolute;
@@ -873,7 +873,7 @@ a {
   top: -0.95cm;
   width: 15cm;
   left: 0.8cm;
-  background: #828282;
+  background: #B52735;
   color: #ffffff;
   display: block;
 }
@@ -882,7 +882,7 @@ a {
   color: #333333;
 }
 .listing-details .price {
-  color: #4F4F4F;
+  color: #000F3B;
   font-size: 22pt;
   font-weight: 300;
   text-indent: -1mm;
@@ -890,7 +890,7 @@ a {
   margin-right: 5mm;
 }
 .listing-details #listing-price {
-  color: #4F4F4F;
+  color: #000F3B;
   font-size: 22pt;
   font-weight: 300;
   text-indent: -1mm;
@@ -1000,7 +1000,7 @@ a {
   font-size: 22pt;
 }
 h2 {
-  color: #4F4F4F;
+  color: #000F3B;
   font-size: 14pt;
   font-weight: 300;
   line-height: 12pt;
@@ -1011,11 +1011,11 @@ h2.section-heading {
   text-indent: -0.5mm;
 }
 h2.red {
-  color: #4F4F4F;
+  color: #000F3B;
 }
 .section-heading.red {
   font-size: 14pt !important;
-  color: #4F4F4F !important;
+  color: #000F3B !important;
 }
 h5 {
   font-size: 7pt;
@@ -1096,7 +1096,7 @@ h5 {
   content: "\f00c";
   line-height: 14pt;
   top: -3pt;
-  color: #4F4F4F;
+  color: #000F3B;
 }
 .development-logo {
   width: 3.3cm;
@@ -1258,7 +1258,7 @@ h5 {
   width: 2.3cm !important;
 }
 .headings {
-  color: #4F4F4F;
+  color: #000F3B;
   display: block;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 15pt;
@@ -1268,14 +1268,14 @@ h5 {
   margin: -5pt 0 0 0;
 }
 .sub-headings {
-  color: #333333;
+  color: #828282;
   font-weight: 300;
   font-size: 9pt;
   line-height: 10pt;
   margin: 10pt 0;
 }
 #footer_content {
-  color: #4F4F4F;
+  color: #000F3B;
 }
 .seperator {
   border-top: 0.8pt solid #d6d6d6;

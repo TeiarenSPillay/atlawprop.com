@@ -51,20 +51,20 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 19px;
   font-weight: normal;
-  color: #4F4F4F;
+  color: #000F3B;
   margin-bottom: 15px;
 }
 h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: bold;
-  color: #4F4F4F;
+  color: #000F3B;
 }
 h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   font-weight: bold;
-  color: #828282;
+  color: #B52735;
   margin-top: 0px;
   padding-top: 0px;
   margin-bottom: 0px;
@@ -73,7 +73,7 @@ h4 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: bold;
-  color: #828282;
+  color: #B52735;
   margin-bottom: 0px!important;
   padding-bottom: 0px!important;
 }
@@ -118,7 +118,7 @@ table {
 .sub-headings-alt,
 .links,
 #details_price {
-  color: #828282;
+  color: #B52735;
   text-decoration: none;
 }
 .links-none {
@@ -126,10 +126,10 @@ table {
   text-decoration: none;
 }
 #big_button {
-  background-color: #828282;
+  background-color: #B52735;
 }
 #big_button a {
-  border-color: #828282;
+  border-color: #B52735;
   border-style: solid;
   color: #ffffff;
   line-height: 61px;
@@ -150,7 +150,7 @@ table {
 }
 #email_heading_background,
 #details_tags {
-  background-color: #4F4F4F;
+  background-color: #000F3B;
 }
 #email_heading_background td,
 #details_tags td {

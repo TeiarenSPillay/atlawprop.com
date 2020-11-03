@@ -1,0 +1,33 @@
+{% load image_tags get_images_by_category %}
+<div class="home-banner">
+  <div class="adv_search_container">
+    <div class="adv_search">
+      <div id="adv_search_block" class="adv_search_block">
+        <form class="location-search" action="/setup-search-results/" method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="buy_rent" value="Buy" />
+          <input type="hidden" name="search_listing_type" value="Residential" />
+          <input type="hidden" name="as_min_beds" value="" />
+          <input type="hidden" name="as_price_from" value="" />
+          <input type="hidden" name="as_price_to" value="" />
+          <input type="hidden" name="as_size_from" value="" />
+          <input type="hidden" name="as_size_to" value="" />
+          <input id="adv_search_mobi_for_sale" name="as_area_search" class="adv_search_mobi margin-top-10 selectpicker" />
+          <div class="errorlist" id="adv_search_mobi_errors"></div>
+          <!-- hidden area used as a placeholder -->
+          <p id="placeholderSale" style="display:none">Type Area or Suburb Name</p>
+          <a href="/property-search/" class="advanced-search-button">{% include 'includes/icons/down-arrow.svg' %}Advanced Options</a>
+          <button type="submit" class="button primary-button">
+            {% include 'includes/icons/search.svg' %} SEARCH
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="header-slider">
+    {% get_images_by_category 'Header Images' 'Headers' %}
+    {% for document in header_images %}
+    <div class="header" style="background: url('{% get_image_url 'documents' 0 0 document.document %}') center center;"></div>
+    {% endfor %}
+  </div>
+</div>

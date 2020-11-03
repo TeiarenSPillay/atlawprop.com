@@ -1,0 +1,31 @@
+{% load latest_news image_tags advanced_listings string_filters custom_tags new_development_helpers humanize property_cart %}
+<div class="news-section container-fluid">
+  <div class="section-heading">News & Advice</div>
+  <div class="article-slider">
+    {% for article in featured_articles %}
+    <a href="/news/{{ article.slug }}" class="article">
+      <div class="image-container">
+        <div class="image" style="background: url('{% if article.photo %}{% get_image_url 'news' 640 480 article.photo %}{% else %}/eos/img/property-search/results/no-img.jpg{% endif %}') center center;"></div>
+      </div>
+      <div class="article-content">
+        <div class="content-container">
+          <div class="category">
+            {{ article.category }}
+          </div>
+          <div class="article-title">
+            {{ article.title }}
+          </div>
+          <div class="article-summary">
+            {{ article.summary|striptags|safe }}
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <div class="article-navigation">
+    <div class="article-prev">{% include 'includes/icons/slider-arrow-red.svg' %}</div>
+    <div class="article-next">{% include 'includes/icons/slider-arrow-red.svg' %}</div>
+  </div>
+  <div class="article-dots"></div>
+</div>

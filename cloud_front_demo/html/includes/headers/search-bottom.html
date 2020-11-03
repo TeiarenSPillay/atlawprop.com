@@ -1,0 +1,15 @@
+{% load image_tags %}
+<div class="header-image bottom">
+  <div class="resizer">
+    <ul id="rndList">
+      {% for document in header_images %}
+      <li style="background-image: url('{% get_image_url 'documents' 0 0 document.document %}');display: block;"></li>
+      {% endfor %}
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+  <div class="search-wrapper bottom">
+    {% include 'includes/eos_search.html' %}
+  </div>
+</div>
