@@ -555,6 +555,29 @@ body {
   .calc(height, '100vh - 120px');
   min-height: @HeaderImageHeight;
   position: relative;
+  &.center {
+    .search-wrapper {
+      width: 1000px;
+      left: 50%;
+      .transform(translateX(-50%));
+      bottom: 154px;
+    }
+  }
+  &.middle {
+    .search-wrapper {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      .transform(translateY(-50%));
+    }
+  }
+  &.bottom {
+    .search-wrapper {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+  }
 }
 
 .resizer {
@@ -591,23 +614,6 @@ body {
 .search-wrapper {
   position: absolute;
   width: 100%;
-  &.center {
-    width: 1000px;
-    left: 50%;
-    .transform(translateX(-50%));
-    bottom: 154px;
-  }
-  &.middle {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    .transform(translateY(-50%));
-  }
-  &.bottom {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-  }
 }
 
 .internal-search-wrapper {

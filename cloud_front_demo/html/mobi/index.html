@@ -1,5 +1,5 @@
 {% extends 'mobi/eos_mobi_index.html' %}
-{% load latest_news image_tags get_images_by_category additional_pages string_filters custom_tags new_development_helpers humanize property_cart %}
+{% load latest_news image_tags get_images_by_category additional_pages string_filters get_article_by_category get_virtual_walkthroughs advanced_listings new_development_helpers humanize property_cart %}
 {% block search-nearby %}{% endblock search-nearby %}
 {% block body %}
 <!-- Start Template Homepage -->
@@ -13,12 +13,12 @@
   </div>
 </div>
 <!-- Featured Properties -->
-{% get_featured_properties 'All' 'All' 'Active' 5 False %}
+{% get_featured_properties 'All' 'All' 'Active' 5 %}
 {% if featured %}
 {% include "includes/featured-properties-mobi.html" %}
 {% endif %}
 <!-- Virtual Walkthroughs -->
-{% get_featured_properties 'All' 'All' 'Active' 5 False %}
+{% get_virtual_walkthroughs 'All' 'All' 'Active' 5 False %}
 <div class="virtual-walkthroughs container-fluid">
   <div class="section-heading">Virtual Walkthroughs</div>
   <div class="virtual-slider">
@@ -54,8 +54,8 @@
   <div class="virtual-dots"></div>
 </div>
 <!-- Testimonials -->
-{% get_testimonials %}
-{% if testimonials %}
+{% get_article_by_category 'testimonials' %}
+{% if articles %}
 {% include 'includes/testimonials.html' %}
 {% endif %}
 <!-- News -->
@@ -177,7 +177,11 @@ $(document).ready(function () {
         placeholder: placeholderSale,
         minimumInputLength: 3,
         ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
+        {% if default_search_status == 'Buy' %}
         url: "/ajax/location-search/for-sale/",
+        {% elif default_search_status == 'Rent' %}
+        url: "/ajax/location-search/to-let/",
+        {% endif %}
         dataType: 'json',
         type: "post",
         quietMillis: 250,

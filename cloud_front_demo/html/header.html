@@ -1,5 +1,16 @@
 {% load image_tags get_images_by_category %}
-<!-- logo-left \\ logo-right \\ logo-center // ADD 'LIGHT' FOR A WHITE HEADER VERSION -->
+{% comment %}
+  <!-- For Header Content -->
+  class="header-content logo-left" : Left Align the logo | Right aligning the navigation
+  class="header-content logo-right" : Rigth Align the logo | Left aligning the navigation
+  class="header-content logo-center" : Centering the logo (Requires an `&nbsp;` tab in the navigation to work)
+  NOTE: Adding the class 'light' after any of these will give the white header version.
+  <!-- For Header Image -->
+  class="header-image center" : Vertically align search to the middle of the header
+  class="header-image bottom" : Vertically align search to the bottom of the header
+  class="header-image" : Default search position - near the bottom and centred
+{% endcomment %}
+
 <div class="header-content logo-left print-hide">
   <a href="/" id="logo"><img src="/static/img/custom/layout/logo.png" /></a>
   <div class="fadeInUp print-hide">
@@ -8,8 +19,20 @@
 </div>
 {% get_images_by_category 'Header Images' 'Headers' %}
 {% if request.path == '/' %}
-<!-- search-middle.html \\ search-bottom.html \\ search-center.html -->
-{% include 'includes/headers/search-middle.html' %}
+<div class="header-image middle">
+  <div class="resizer">
+    <ul id="rndList">
+      {% for document in header_images %}
+      <li style="background-image: url('{% get_image_url 'documents' 0 0 document.document %}'); display: block;"></li>
+      {% endfor %}
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+  <div class="search-wrapper middle">
+    {% include 'includes/eos_search.html' %}
+  </div>
+</div>
 {% else %}
 {% include 'includes/internal-headers/standard-internal-header.html' %}
 {% endif %}

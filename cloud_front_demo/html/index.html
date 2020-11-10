@@ -1,5 +1,5 @@
 {% extends 'eos_index.html' %}
-{% load latest_news image_tags string_filters custom_tags new_development_helpers humanize property_cart %}
+{% load latest_news image_tags string_filters get_article_by_category advanced_listings get_virtual_walkthroughs new_development_helpers humanize property_cart %}
 {% block content %}
 {% if profile.live %}
 <div class="homepage-profile">
@@ -18,12 +18,12 @@
 </div>
 {% endif %}
 <!-- Featured Properties -->
-{% get_featured_properties 'All' 'All' 'Active' 5 False %}
+{% get_featured_properties 'All' 'All' 'Active' 5 %}
 {% if featured %}
 {% include "includes/featured-properties.html" %}
 {% endif %}
 <!-- Virtual Walkthroughs -->
-{% get_featured_properties 'All' 'All' 'Active' 15 False %}
+{% get_virtual_walkthroughs 'All' 'All' 'Active' 15 False %}
 <div class="virtual-walkthroughs">
   <div class="section-heading">Virtual Walkthroughs</div>
   <div class="virtual-slider">
@@ -63,8 +63,8 @@
   <div class="virtual-dots"></div>
 </div>
 <!-- Testimonials -->
-{% get_testimonials %}
-{% if testimonials %}
+{% get_article_by_category 'testimonials' %}
+{% if articles %}
 {% include 'includes/testimonials.html' %}
 {% endif %}
 <!-- News -->
@@ -130,7 +130,7 @@ $('.virtual-slider').slick({
   pauseOnHover: true,
 });
 
-{% get_featured_properties 'All' 'All' 'Active' 15 False %}
+{% get_virtual_walkthroughs 'All' 'All' 'Active' 15 False %}
 var listings = [{% for listing in featured %}{% if listing.eyespy360 or listing.matterport_id or listing.virtual_tour %}{
     id: {{ listing.id }},
     video_tour_url: "{{ listing.virtual_tour }}",

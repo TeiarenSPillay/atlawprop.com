@@ -404,11 +404,6 @@ a.footerpropdata     { color: @CopyrightColor; font-size:11px; text-decoration: 
     text-align: center;
     padding: 22px 0;
     .transform(translateY(-50%));
-    &.bottom {
-      top: unset;
-      bottom: 0;
-      transform: none;
-    }
   }
   .adv_search {
     position: relative;
@@ -1055,6 +1050,13 @@ a.details-button-tour  {width:100%; background: url(/assets/mobi/img/layout/tour
   position: relative;
   width: 100%;
   height: @HeaderHeight;
+  &.bottom {
+    .adv_search_container {
+      top: unset;
+      bottom: 0;
+      transform: none;
+    }
+  }
   .header-slider {
     position: relative;
     width: 100%;

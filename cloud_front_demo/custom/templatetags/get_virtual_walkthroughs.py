@@ -1,8 +1,8 @@
 from eos.listings.models import Commercial, Residential, NewDevelopment, Holiday, Estate
 from django.template import resolve_variable
 from django.template import Variable
-from eos.news.models import Article
 from eos.lib.db import QuerySetChain
+from django.db.models import Q
 from django import template
 import random
 
@@ -32,7 +32,7 @@ available_listing_types = [
 available_listing_statuses = ['Active', 'Archived', 'Sold', 'Rented', 'Pending']
 
 
-class GetFeatured(template.Node):
+class GetVirtualWalkThroughs(template.Node):
 
     def __init__(self, listing_modules, listing_types, listing_statuses, return_count, randomize):
         self.listing_modules = listing_modules
@@ -79,6 +79,9 @@ class GetFeatured(template.Node):
                 existing_properties = all_properties
 
             featured_properties = model.objects.filter(
+                Q(eyespy360__isnull=False) |
+                Q(matterport_id__isnull=False) |
+                Q(virtual_tour__isnull=False),
                 status__in=listing_statuses,
                 listing_type__in=listing_types,
                 featured=True,
@@ -100,6 +103,9 @@ class GetFeatured(template.Node):
                 if not needed:
                     break
                 additional_listings = model.objects.filter(
+                    Q(eyespy360__isnull=False) |
+                    Q(matterport_id__isnull=False) |
+                    Q(virtual_tour__isnull=False),
                     status__in=listing_statuses,
                     listing_type__in=listing_types,
                     featured=False,
@@ -126,30 +132,10 @@ class GetFeatured(template.Node):
         return ''
 
 
-@register.tag(name="get_featured_properties")
-def get_featured_properties(parser, token):
+@register.tag(name="get_virtual_walkthroughs")
+def get_virtual_walkthroughs(parser, token):
     try:
         tag_name, listing_modules, listing_types, listing_statuses, return_count, randomize = token.split_contents()
     except ValueError:
         raise template.TemplateSyntaxError, "%r tag requires 5 arguments: 'listing_modules, listing_types, listing statuses, return_count, randomize'" % token.contents[0]
-    return GetFeatured(listing_modules, listing_types, listing_statuses, return_count, randomize)
-
-
-
-class GetTestimonials(template.Node):
-
-    def render(self, context):
-
-        testimonials = Article.objects.filter(
-            status="Active",
-            category__category="Testimonials"
-        ).order_by('-id')
-
-        context['testimonials'] = testimonials
-
-        return ''
-
-
-@register.tag(name="get_testimonials")
-def get_testimonials(parser, token):
-    return GetTestimonials()
+    return GetVirtualWalkThroughs(listing_modules, listing_types, listing_statuses, return_count, randomize)
