@@ -10,10 +10,7 @@ import json
 def search_locations(request, listing_type):
 
     if request.method != "POST":
-        print('here')
         raise Http404
-
-    print('#######')
 
     keyword = request.POST.get('q')
     locations = []
