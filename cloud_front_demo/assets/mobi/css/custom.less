@@ -252,14 +252,14 @@ a.nav-heading     { padding-top:3px; display:block; font-size:18px; font-family:
 #navigation .row{ margin: 0;}
 #sharing .row{ margin: 0;}
 
-a.nav-link:hover  { font-size:13px; font-family: 'Open Sans', sans-serif; color: @MenuLinkHover; font-weight:400; line-height:44px; height:44px; display:block; border-bottom:@MenuLinkBorder; background:@MenuItemHover; z-index:99;}
+a.nav-link:hover  { font-size:13px; font-family: 'Open Sans', sans-serif; color: darken(#ffffff, 5%) !important; font-weight:400; line-height:44px; height:44px; display:block; border-bottom:@MenuLinkBorder; background:@MenuItemHover; z-index:99;}
 a.nav-link:active { color: @MenuLinkHover; }
 a.nav-link:focus  { color: @MenuLinkHover; }
 a.nav-link     { font-size:13px; font-family: 'Open Sans', sans-serif; color: @MenuLinkColor; font-weight:400; line-height:44px; height:44px; display:block; border-bottom:@MenuLinkBorder; background:@MenuBG; padding:0px 15px 0px 15px; text-decoration: none; z-index:99; }
 a.nav-link + .sub-menu {display: none;}
 a.nav-link-active + .sub-menu {display: block;}
 
-a:hover.nav-link-active  { font-size:13px; font-family: 'Open Sans', sans-serif; color: @MenuLinkHover; font-weight:400; line-height:44px; height:44px; display:block; border-bottom:@MenuLinkBorder; background:@MenuLinkActiveBG;}
+a:hover.nav-link-active  { font-size:13px; font-family: 'Open Sans', sans-serif; color: darken(#ffffff, 5%) !important; font-weight:400; line-height:44px; height:44px; display:block; border-bottom:@MenuLinkBorder; background: @MenuLinkActiveBG;}
 a.nav-link-active:active { color: @MenuLinkHover; }
 a.nav-link-active:focus  { color: @MenuLinkHover; }
 a.nav-link-active     { font-size:13px; font-family: 'Open Sans', sans-serif; color: @MenuLinkColor; font-weight:400; line-height:44px; height:44px; display:block; border-bottom:@MenuLinkBorder; background:@MenuLinkActiveBG; padding:0px 15px 0px 15px; text-decoration: none; }
@@ -283,21 +283,6 @@ a.nav-link-active     { font-size:13px; font-family: 'Open Sans', sans-serif; co
 #header {
   &.light {
     background: #ffffff;
-    #navigation,
-    #navigation.active,
-    #navigation.transparent,
-    a.nav-link:hover,
-    a.nav-link:active,
-    a.nav-link:focus,
-    a.nav-link,
-    a.nav-link + .sub-menu,
-    a.nav-link-active + .sub-menu,
-    a:hover.nav-link-active,
-    a.nav-link-active:active,
-    a.nav-link-active:focus,
-    a.nav-link-active {
-      color: @PrimaryColor !important;
-    }
   }
 }
 

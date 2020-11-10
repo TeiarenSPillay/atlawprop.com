@@ -617,7 +617,7 @@ a.nav-heading {
 a.nav-link:hover {
   font-size: 13px;
   font-family: 'Open Sans', sans-serif;
-  color: #B52735;
+  color: #f2f2f2 !important;
   font-weight: 400;
   line-height: 44px;
   height: 44px;
@@ -655,7 +655,7 @@ a.nav-link-active + .sub-menu {
 a:hover.nav-link-active {
   font-size: 13px;
   font-family: 'Open Sans', sans-serif;
-  color: #B52735;
+  color: #f2f2f2 !important;
   font-weight: 400;
   line-height: 44px;
   height: 44px;
@@ -732,21 +732,6 @@ a.nav-link-active {
 ========================================================================== */
 #header.light {
   background: #ffffff;
-}
-#header.light #navigation,
-#header.light #navigation.active,
-#header.light #navigation.transparent,
-#header.light a.nav-link:hover,
-#header.light a.nav-link:active,
-#header.light a.nav-link:focus,
-#header.light a.nav-link,
-#header.light a.nav-link + .sub-menu,
-#header.light a.nav-link-active + .sub-menu,
-#header.light a:hover.nav-link-active,
-#header.light a.nav-link-active:active,
-#header.light a.nav-link-active:focus,
-#header.light a.nav-link-active {
-  color: #000F3B !important;
 }
 #navigation.transparent {
   background: #000F3B;
