@@ -20,8 +20,6 @@
       <div id="adv_search_block" class="adv_search_block">
         <form class="location-search" action="/setup-search-results/" method="POST">
           {% csrf_token %}
-          <!-- <input type="hidden" name="buy_rent" value="{{ default_search_status }}" /> -->
-          <!-- <input type="hidden" name="search_listing_type" value="{{ default_search_type }}" /> -->
           <input type="hidden" name="as_min_beds" value="" />
           <input type="hidden" name="as_price_from" value="" />
           <input type="hidden" name="as_price_to" value="" />
