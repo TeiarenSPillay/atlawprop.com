@@ -1758,8 +1758,9 @@ h1.page-heading {
   width: -moz-calc(100% - 320px);
   width: calc(100% - 320px);
   height: 465px;
-  -moz-background-size: cover;
-  background-size: cover;
+  -moz-background-size: cover !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 .home-page .featured-section .featured-slider .item .image-section .tag {
   position: absolute;
@@ -1948,9 +1949,10 @@ h1.page-heading {
 }
 .home-page .featured-section .feat-dots {
   position: relative;
-  margin-top: 40px;
   text-align: center;
   height: 10px;
+  width: 800px;
+  margin: 40px auto 0 auto;
 }
 .home-page .virtual-walkthroughs {
   position: relative;

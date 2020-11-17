@@ -170,7 +170,6 @@ $(document).ready(function () {
     $(".location-search").submit(function (e) {
       var listingType = $("#buy_rent").val();
       var propertyType = $("#search_listing_type").val();
-      console.log(listingType + " + " + propertyType);
       if (!$("#adv_search_mobi_for_sale").val()) {
         e.preventDefault();
         alert("Please select an area/suburb.");
@@ -179,7 +178,6 @@ $(document).ready(function () {
 
     var listingType = $("#buy_rent").val();
     var propertyType = $("#search_listing_type").val();
-    console.log(listingType + " + " + propertyType);
 
     $("#adv_search_mobi_for_sale").select2({
         width: 'resolve',
