@@ -29,10 +29,7 @@
             <option value="buy">For Sale</option>
             <option value="rent">To Let</option>
           </select>
-          <select id="search_listing_type" name="search_listing_type">
-            <option value="residential">Residential</option>
-            <option value="commercial">Commercial</option>
-          </select>
+          <select id="id_search_listing_type" name="search_listing_type" class="" onchange="enable_search_button(this.value);"></select>
           <input id="adv_search_mobi_for_sale" name="as_area_search" class="adv_search_mobi margin-top-10 selectpicker" />
           <div class="errorlist" id="adv_search_mobi_errors"></div>
           <p id="placeholderSale" style="display:none">Type Area or Suburb Name</p>
