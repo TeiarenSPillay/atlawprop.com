@@ -1,68 +1,254 @@
 {% extends 'mobi/eos_mobi_index.html' %}
-{% load image_tags get_images_by_category %}
-{% block js %}
-<script type="text/javascript" src="/static/mobi/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/static/mobi/js/jquery.mobile.custom.min.js"></script>
-{% endblock js %}
+{% load latest_news image_tags get_images_by_category additional_pages string_filters get_article_by_category get_virtual_walkthroughs advanced_listings new_development_helpers humanize property_cart %}
+{% block search-nearby %}{% endblock search-nearby %}
 {% block body %}
-<div class="home-banner">
-  <div id="rndList" style="position: relative; z-index: 0;">
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner"  style="width: auto; height: 385px">
-      {% get_images_by_category 'Header Images' 'Images' %}
-      {% for document in header_images %}
-        <div class="item">
-          <img src="{% get_image_url 'documents' 0 0 document.document %}" />
-        </div>
-      {% endfor %}
-    </div>
+<!-- Start Template Homepage -->
+<div class="homepage-profile container-fluid">
+  <div class="section-heading">{{ website_slogan }}</div>
+  {% get_cms_page 1 %}
+  {{ cms_obj.content|safe }}
+  <div class="clearfix"></div>
+  <div class="button-center margin-top20">
+    <a class="primary-button" href="/profile/" style="margin-top: 25px;">Read More</a>
   </div>
-  <script>
-
-    jQuery(document).ready(function() {
-      jQuery("#rndList .item").css({display: "block", top: 0, left: 0, position: "absolute", opacity:0});
-      jQuery("#rndList .item").each(function(e) {
-        $img = jQuery(this).find("img").attr("src");
-        jQuery(this).css({background: "url(" + $img + ") no-repeat scroll center center / cover  rgba(0,0,0,0)", "-pie-background": "url(" + $img + ") no-repeat scroll center center / cover  rgba(0,0,0,0)", width: "100%", height: "100%"})
-        jQuery(this).find("img").hide();
-      })
-      jQuery("#rndList .item:first-child").fadeIn(1500).addClass("active");
-      function myTransition() {
-        jQuery("#rndList .item").stop();
-        if (jQuery("#rndList .item.active").next().length) {
-          jQuery("#rndList .item.active").fadeOut(1500).removeClass("active").next().fadeIn(1500).addClass("active");
-        } else {
-          jQuery("#rndList .item.active").fadeOut(1500).removeClass("active");
-          jQuery("#rndList .item:first-child").fadeIn(1500).addClass("active");
-        }
-      }
-      var myslide = setInterval(function() {
-        myTransition()
-      }, 8000);
-    })
-
-  </script>
-  <div class="home-buttons col-xs-12">
-    <div class="home-button">
-      <div class="home-button-space">
-        <a href="/property-search/" class="home-search"><i class="home-search-icon"></i>Search</a>
+</div>
+<!-- Featured Properties -->
+{% get_featured_properties 'All' 'All' 'Active' 5 %}
+{% if featured %}
+{% include "includes/featured-properties-mobi.html" %}
+{% endif %}
+<!-- Virtual Walkthroughs -->
+{% get_virtual_walkthroughs 'All' 'All' 'Active' 5 False %}
+<div class="virtual-walkthroughs container-fluid">
+  <div class="section-heading">Virtual Walkthroughs</div>
+  <div class="virtual-slider">
+    {% for listing in featured %}
+    {% if listing.eyespy360 or listing.matterport_id or listing.virtual_tour %}
+    <div class="item pull-left">
+      <a href="{% if listing.eyespy360 and listing.eyespy360 != '' %}{{ listing.eyespy360|safe }}{% elif listing.matterport_id and listing.matterport_id != '' %}https://my.matterport.com/show/?m={{ listing.matterport_id|safe }}{% elif listing.virtual_tour and listing.virtual_tour != '' %}{{ listing.virtual_tour|safe }}{% endif %}" target="_blank" class="image-section">
+        <div class="image" style="background: url('{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 640 480 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}') center center;"></div>
+        {% include 'includes/icons/play-button.svg' %}
+      </a>
+      <div class="virtual-content">
+        <div class="content-container">
+          <div class="price">
+            {% if not listing.get_main_type == 'NewDevelopment' %}
+            {{ listing.render_price|safe }}
+            {% else %}
+            {{ listing.development_name }}
+            {% endif %}
+          </div>
+          <div class="heading">
+            {{ listing.get_heading }}
+          </div>
+        </div>
       </div>
     </div>
-    <div class="home-button">
-      <div class="home-button-space">
-        <a href="/property-email-alerts/" class="home-alerts"><i class="home-alerts-icon"></i>Alerts</a>
-      </div>
-    </div>
-    <div class="home-button">
-      <div class="home-button-space">
-        <a href="/news/" class="home-news"><i class="home-news-icon"></i>News</a>
-      </div>
-    </div>
-    <div class="home-button">
-      <div class="home-button-space">
-        <a href="/contact/" class="home-contact"><i class="home-contact-icon"></i>Contact</a>
-      </div>
-    </div>
+    {% endif %}
+    {% endfor %}
+  </div>
+  <div class="virtual-navigation">
+    <div class="virtual-prev">{% include 'includes/icons/slider-arrow-red.svg' %}</div>
+    <div class="virtual-next">{% include 'includes/icons/slider-arrow-red.svg' %}</div>
+  </div>
+  <div class="virtual-dots"></div>
+</div>
+<!-- Testimonials -->
+{% get_article_by_category 'testimonials' %}
+{% if articles %}
+{% include 'includes/testimonials.html' %}
+{% endif %}
+<!-- News -->
+{% get_latest_articles 2 %}
+{% if featured_articles %}
+{% include 'includes/news-articles-mobi.html' %}
+{% endif %}
+<!-- Content Ads -->
+<div class="content-ads">
+  <div class="ad-container">
+    <!-- image-ad.html \\ icon-ad.html -->
+    {% include 'includes/content-ads/image-ad.html' %}
   </div>
 </div>
 {% endblock body %}
+{% block js %}
+<script type="text/javascript">
+  {% include 'mobi/includes/mobi-search.html' %}
+</script>
+<link href="/static/externals/select2-3.5.1/select2.css" rel="stylesheet" />
+<script src="/static/externals/select2-3.5.1/select2.js"></script>
+<script type="text/javascript" src="/static/mobi/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/static/css/slick.css"/>
+<script type="text/javascript" src="/static/js/slider.js"></script>
+<script type="text/javascript" src="/static/js/forms.js"></script>
+<script type="text/javascript" src="/static/mobi/js/jquery.mobile.custom.min.js"></script>
+<script src="/static/js/slick.min.js"></script>
+<script type="text/javascript">
+
+$('.header-slider').slick({
+  infinite: true,
+  fade: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 8000,
+  pauseOnHover: true,
+  arrows: false,
+  dots: false
+});
+
+$('.featured-slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrow: true,
+  prevArrow: $('.feat-prev'),
+  nextArrow: $('.feat-next'),
+  dots: true,
+  appendDots: $('.feat-dots'),
+  autoplay: true,
+  autoplaySpeed: 8000,
+  pauseOnHover: true,
+  adaptiveHeight: true
+});
+
+$('.virtual-slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrow: true,
+  prevArrow: $('.virtual-prev'),
+  nextArrow: $('.virtual-next'),
+  dots: true,
+  appendDots: $('.virtual-dots'),
+  autoplay: true,
+  autoplaySpeed: 8000,
+  pauseOnHover: true,
+  adaptiveHeight: true
+});
+
+$('.article-slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrow: true,
+  prevArrow: $('.article-prev'),
+  nextArrow: $('.article-next'),
+  dots: true,
+  appendDots: $('.article-dots'),
+  autoplay: true,
+  autoplaySpeed: 8000,
+  pauseOnHover: true,
+  adaptiveHeight: true
+});
+
+$('.testimonial-slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrow: true,
+  prevArrow: $('.testimonial-prev'),
+  nextArrow: $('.testimonial-next'),
+  autoplay: true,
+  autoplaySpeed: 8000,
+  pauseOnHover: true,
+  adaptiveHeight: true,
+});
+
+$('.agent-contact .view-button').click(function() {
+  $('.agent-contact').toggleClass('active');
+  if ($('.agent-contact').hasClass('active')) {
+    $(this).text('Hide contact number');
+  } else {
+    $(this).text('View contact number');
+  }
+});
+
+placeholderSale = document.getElementById("placeholderSale").innerHTML;
+
+
+$(document).ready(function () {
+    update_listing_types("{{ default_search_status }}", "id_search_listing_type");
+    $("select").selectpicker('mobile');
+
+    $(".location-search").submit(function (e) {
+      var listingType = $("#buy_rent").val();
+      var propertyType = $("#search_listing_type").val();
+      if (!$("#adv_search_mobi_for_sale").val()) {
+        e.preventDefault();
+        alert("Please select an area/suburb.");
+      }
+    })
+
+    var listingType = $("#buy_rent").val();
+    var propertyType = $("#id_search_listing_type").val();
+
+    $("#adv_search_mobi_for_sale").select2({
+        width: 'resolve',
+        theme: "classic",
+        placeholder: placeholderSale,
+        minimumInputLength: 3,
+        ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
+        url: "/ajax/location-search/" + propertyType + "/" + listingType + "/",
+        dataType: 'json',
+        type: "post",
+        quietMillis: 250,
+        headers: {
+          "X-CSRFToken": getCookie('csrftoken')
+        },
+        data: function (term, page) {
+          return {
+            q: term, // search term
+            csrfmiddlewaretoken: getCookie('csrftoken')
+          };
+        },
+        results: function (data, page) { // parse the results into the format expected by Select2.
+          // since we are using custom formatting functions we do not need to alter the remote JSON data
+          // data currently looks like [{id, region, suburb} {id, region, suburb}]
+          // Select2 needs data to look like [{id: 1, text: 'Johannesburg, Revonia'}]
+          var new_data = {};
+          var regions = _.groupBy(data, 'region');
+          var new_data = []
+          var regions_combined = _.each(regions, function (data, region) {
+            var sorted_data = []
+            var combined_ids = _.map(data, function (area) {
+              return area.id;
+            });
+            if (combined_ids.length > 1) {
+              text = region + ", All Suburbs";
+              sorted_data.push({
+                id: combined_ids.join("|"),
+                text: text
+              })
+            }
+            data = _.map(data, function (location) {
+              return {
+                id: location['id'],
+                text: location['region'] + ', ' + location['suburb']
+              }
+            });
+            sorted_data = _.uniq(_.union(data, sorted_data), false, function (item, key, a) { return item.text; });
+            sorted_data = _.sortBy(sorted_data, function (item) {
+              return -item.text.indexOf('All Suburbs');
+            });
+            new_data = _.uniq(_.union(new_data, sorted_data))
+          });
+          new_data.results = new_data
+          return new_data;
+        },
+        cache: true
+      },
+      formatResult: repoFormatResult, // omitted for brevity, see the source of this page
+      formatSelection: repoFormatSelection,  // omitted for brevity, see the source of this page
+      escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
+    });
+  });
+function repoFormatResult(location) {
+  var markup = '<div class="custom-location">' + location.text + '</div>';
+  return markup;
+}
+function repoFormatSelection(location) {
+  return location.text;
+}
+</script>
+{% endblock js %}

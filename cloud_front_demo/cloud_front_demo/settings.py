@@ -81,7 +81,13 @@ if UNDER_CONSTRUCTION:
         'eos.lib.under_construction.UnderConstructionMiddleware',
     )
 
-ROOT_URLCONF = 'PROPDATA_WEBSITE_BUILDER_PROJECT_ROOT_URLCONF.urls'
+# ROOT_URLCONF = 'PROPDATA_WEBSITE_BUILDER_PROJECT_ROOT_URLCONF.urls'
+
+# Uncomment below if you testing on template project
+ROOT_URLCONF = 'cloud_front_demo.urls'
+
+AGENT_PHOTO_SIZES.append("69x69")
+INSTALLED_APPS += ('custom',)
 
 # Static configs
 MEDIA_ROOT = '%s/../assets' % CURRENT_DIRECTORY

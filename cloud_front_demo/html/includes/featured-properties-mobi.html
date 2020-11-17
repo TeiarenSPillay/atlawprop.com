@@ -1,0 +1,65 @@
+{% load latest_news image_tags advanced_listings string_filters advanced_listings new_development_helpers humanize property_cart %}
+<div class="featured-section container-fluid">
+  <div class="section-heading">Featured Properties</div>
+  <div class="featured-slider">
+    {% for listing in featured %}
+    <div class="item pull-left">
+      <a href="{{ listing.get_absolute_url }}" class="image-section pull-left" style="background: url('{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 640 480 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}') center center;">
+        <div class="tag">
+        {% if listing.on_show %}On Show
+        {% elif listing.bank_reposessed %}BANK REPO
+        {% elif listing.distressed %}DISTRESSED
+        {% elif listing.sole_mandate %}SOLE MANDATE
+        {% elif listing.quick_sell_options %}FNB QUICKSELL
+        {% elif listing.public_tender %}TENDER
+        {% elif listing.show_private_seller_icon %}PRIVATE SALE
+        {% elif listing.student_accommodation %}STUDENT ACCOMMODATION
+        {% elif listing.enable_offers %}ACCEPTING OFFERS
+        {% elif listing.featured %}FEATURED
+        {% elif listing.is_new %}NEW
+        {% elif listing.is_sold %}SOLD
+        {% elif listing.is_rented %}RENTED
+        {% endif %}
+        </div>
+      </a>
+      <div class="featured-content pull-right">
+        <div class="content-container">
+          <div class="featured-price">
+            {% if not listing.get_main_type == 'NewDevelopment' %}
+            {{ listing.render_price|safe }}
+            {% else %}
+            {{ listing.development_name }}
+            {% endif %}
+          </div>
+          <div class="featured-heading {% if listing.get_main_type == 'NewDevelopment' and listing.development_profile or listing.get_main_type == 'Estate' and listing.estate_profile or listing.get_main_type == 'Commercial' and listing.description %}bottom-border{% endif %}">
+            {{ listing.get_heading }}
+          </div>
+          {% if listing.bedrooms or listing.bathrooms or listing.garages %}
+          <div class="features-list">
+            {% if listing.bedrooms > 0 %}<div class="feature">{% include 'includes/icons/bedrooms.svg' %}<div class="text">{{ listing.bedrooms|floatformat:"-1"|intcomma }}</div></div>{% endif %}
+            {% if listing.bathrooms > 0 %}<div class="feature">{% include 'includes/icons/bathrooms.svg' %}<div class="text">{{ listing.bathrooms|floatformat:"-1"|intcomma }}</div></div>{% endif %}
+            {% if listing.garages > 0 %}<div class="feature">{% include 'includes/icons/garages.svg' %}<div class="text">{{ listing.garages|floatformat:"-1"|intcomma }}</div></div>{% endif %}
+          </div>
+          <div class="clearfix"></div>
+          {% endif %}
+          {% if listing.agent %}
+          <div class="agent-info">
+            <div class="agent-icon" style="background: url('{% get_image_url 'agents' 100 150 listing.agent.photo %}') center top; background-size: cover;"></div>
+            <div class="agent-name">{{ listing.agent.first_name }} {{ listing.agent.last_name }}</div>
+            <div class="agent-contact">
+              <div class="view-button">View contact number</div>
+              <a href="tel:{{ listing.agent.cell_number }}" class="agent-number">{{ listing.agent.cell_number }}</a>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="featured-navigation">
+    <div class="feat-prev">{% include 'includes/icons/slider-arrow-red.svg' %}</div>
+    <div class="feat-next">{% include 'includes/icons/slider-arrow-red.svg' %}</div>
+  </div>
+  <div class="feat-dots"></div>
+</div>

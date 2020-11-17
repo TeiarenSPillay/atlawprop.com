@@ -1,37 +1,20 @@
-{% extends 'mobi/eos_mobi_base.html' %}
 {% load image_tags get_images_by_category %}
-{% block head %}
-{% comment %}
-  <!-- Logo Section -->
-  Add 'center' class under header id for centered logo
-  Add 'light' for the light/white version
-  <!-- Header image section -->
-  class="home-banner" : Default search position
-  class="home-banner bottom" : Aligning search to bottom of header section
-{% endcomment %}
-<div id="header" class="container-fluid" data-role="header">
-  <a href="/" style="display: block;"><img src="/static/mobi/img/layout/logo.png" alt="" id="logo"></a>
-  <div id="nav-button" class="col-xs-1 nopadding nav-button" align="right"><a href="#navigation" onclick=""><i class="icon-menu3 menu-open"></i></a></div>
-</div>
-{% if request.path == '/' %}
 <div class="home-banner">
   <div class="adv_search_container">
     <div class="adv_search">
       <div id="adv_search_block" class="adv_search_block">
         <form class="location-search" action="/setup-search-results/" method="POST">
           {% csrf_token %}
+          <input type="hidden" name="buy_rent" value="Buy" />
+          <input type="hidden" name="search_listing_type" value="Residential" />
           <input type="hidden" name="as_min_beds" value="" />
           <input type="hidden" name="as_price_from" value="" />
           <input type="hidden" name="as_price_to" value="" />
           <input type="hidden" name="as_size_from" value="" />
           <input type="hidden" name="as_size_to" value="" />
-          <select id="buy_rent" name="buy_rent">
-            <option value="buy">For Sale</option>
-            <option value="rent">To Let</option>
-          </select>
-          <select id="id_search_listing_type" name="search_listing_type" class="" onchange="enable_search_button(this.value);"></select>
           <input id="adv_search_mobi_for_sale" name="as_area_search" class="adv_search_mobi margin-top-10 selectpicker" />
           <div class="errorlist" id="adv_search_mobi_errors"></div>
+          <!-- hidden area used as a placeholder -->
           <p id="placeholderSale" style="display:none">Type Area or Suburb Name</p>
           <a href="/property-search/" class="advanced-search-button">{% include 'includes/icons/down-arrow.svg' %}Advanced Options</a>
           <button type="submit" class="button primary-button">
@@ -48,13 +31,3 @@
     {% endfor %}
   </div>
 </div>
-{% endif %}
-{% endblock head %}
-
-{% block mobi-navigation %}
-{% include "navigation/mobi_navigation.html" %}
-{% endblock %}
-
-{% block mobi-footer-navigation %}
-{% include "navigation/mobi_footer_navigation.html" %}
-{% endblock %}
