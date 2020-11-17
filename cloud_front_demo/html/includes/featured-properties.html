@@ -4,7 +4,7 @@
   <div class="featured-slider">
     {% for listing in featured %}
     <div class="item pull-left">
-      <a href="{{ listing.get_absolute_url }}" class="image-section pull-left" style="background: url('{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 640 480 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}') center center;">
+      <a href="{{ listing.get_absolute_url }}" class="image-section pull-left" style="background: url('{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 1280 1024 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}') center center;">
         <div class="tag">
         {% if listing.on_show %}On Show
         {% elif listing.bank_reposessed %}BANK REPO

@@ -2106,7 +2106,8 @@ h1.page-heading {
           display: inline-block;
           .calc(width, '100% - 320px');
           height: 465px;
-          .background-size(cover);
+          .background-size(cover) !important;
+          background-repeat: no-repeat !important;
           .tag {
             position: absolute;
             top: 0;
@@ -2275,9 +2276,10 @@ h1.page-heading {
     }
     .feat-dots {
       position: relative;
-      margin-top: 40px;
       text-align: center;
       height: 10px;
+      width: 800px;
+      margin: 40px auto 0 auto;
     }
   }
 
