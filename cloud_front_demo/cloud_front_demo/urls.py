@@ -29,7 +29,7 @@ urlpatterns = patterns('',
     (r'^loaderio-0d1144837ada862ac89adb17cc035e1c.txt$',                      'urls.direct_to_template', {'template': 'loaderio-0d1144837ada862ac89adb17cc035e1c.txt'}),
 
     #Mobi advanced search
-    (r'^mobi/ajax/location-search/(?P<listing_type>(for-sale|to-let)+)/$','custom.ajax.search_locations'),
+    (r'^mobi/ajax/location-search/(?P<property_type>(residential|commercial)+)/(?P<listing_type>(for-sale|to-let)+)/$','custom.ajax.search_locations'),
     
     (r'^grid/$',                      'urls.direct_to_template', {'template': 'eos_grid.html'}),
 )

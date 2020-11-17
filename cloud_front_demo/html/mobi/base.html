@@ -20,13 +20,21 @@
       <div id="adv_search_block" class="adv_search_block">
         <form class="location-search" action="/setup-search-results/" method="POST">
           {% csrf_token %}
-          <input type="hidden" name="buy_rent" value="{{ default_search_status }}" />
-          <input type="hidden" name="search_listing_type" value="{{ default_search_type }}" />
+          <!-- <input type="hidden" name="buy_rent" value="{{ default_search_status }}" /> -->
+          <!-- <input type="hidden" name="search_listing_type" value="{{ default_search_type }}" /> -->
           <input type="hidden" name="as_min_beds" value="" />
           <input type="hidden" name="as_price_from" value="" />
           <input type="hidden" name="as_price_to" value="" />
           <input type="hidden" name="as_size_from" value="" />
           <input type="hidden" name="as_size_to" value="" />
+          <select id="buy_rent" name="buy_rent">
+            <option value="buy">For Sale</option>
+            <option value="rent">To Let</option>
+          </select>
+          <select id="search_listing_type" name="search_listing_type">
+            <option value="residential">Residential</option>
+            <option value="commercial">Commercial</option>
+          </select>
           <input id="adv_search_mobi_for_sale" name="as_area_search" class="adv_search_mobi margin-top-10 selectpicker" />
           <div class="errorlist" id="adv_search_mobi_errors"></div>
           <p id="placeholderSale" style="display:none">Type Area or Suburb Name</p>

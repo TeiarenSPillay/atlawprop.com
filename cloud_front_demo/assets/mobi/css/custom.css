@@ -920,11 +920,12 @@ a.footerpropdata {
   width: 100%;
   height: 40px;
   color: #000;
-  font-size: 16px;
+  font-size: 15px;
   font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   border: none;
   float: left;
   text-align: left;
+  margin-top: 15px;
 }
 .page-home .adv_search .adv_search_block button {
   -webkit-border-radius: 0px !important;
@@ -956,11 +957,13 @@ a.footerpropdata {
   -webkit-border-radius: 0;
      -moz-border-radius: 0;
           border-radius: 0;
-  background: #ffffff;
+  color: #BDBDBD !important;
+  background: #F2F2F2;
   border: 0;
   text-align: left;
   width: 100%;
   line-height: 38px;
+  padding: 0 0 0 13px;
 }
 .page-home .adv_search .adv_search_block #s2id_adv_search_mobi_for_sale .select2-arrow,
 .page-home .adv_search .adv_search_block #s2id_adv_search_mobi_to_let .select2-arrow {
@@ -3168,6 +3171,37 @@ a.details-button-tour {
   height: 588px;
   -moz-background-size: cover !important;
   background-size: cover !important;
+}
+.page-home {
+  /* Dropdown Styling */
+}
+.page-home .btn {
+  border: 1px solid #F2F2F2 !important;
+  -webkit-border-radius: 0px !important;
+     -moz-border-radius: 0px !important;
+          border-radius: 0px !important;
+  display: inline-block !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  line-height: 40px !important;
+  padding: 0px 12px !important;
+  height: 40px !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  white-space: nowrap !important;
+  background: #F2F2F2 !important;
+  color: #BDBDBD !important;
+}
+.page-home .btn::after {
+  background: #F2F2F2 !important;
+  position: absolute !important;
+  top: 4px !important;
+  color: #000F3B !important;
+  line-height: 28px !important;
+  font-size: 34px !important;
+  right: 0 !important;
+  width: 38px !important;
+  height: 34px !important;
 }
 .page-home .container-fluid {
   padding-left: 30px;

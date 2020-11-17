@@ -165,23 +165,29 @@ placeholderSale = document.getElementById("placeholderSale").innerHTML;
 
 
 $(document).ready(function () {
+    $("select").selectpicker('mobile');
+
     $(".location-search").submit(function (e) {
+      var listingType = $("#buy_rent").val();
+      var propertyType = $("#search_listing_type").val();
+      console.log(listingType + " + " + propertyType);
       if (!$("#adv_search_mobi_for_sale").val()) {
         e.preventDefault();
         alert("Please select an area/suburb.");
       }
     })
+
+    var listingType = $("#buy_rent").val();
+    var propertyType = $("#search_listing_type").val();
+    console.log(listingType + " + " + propertyType);
+
     $("#adv_search_mobi_for_sale").select2({
         width: 'resolve',
         theme: "classic",
         placeholder: placeholderSale,
         minimumInputLength: 3,
         ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-        {% if default_search_status == 'Buy' %}
-        url: "/ajax/location-search/for-sale/",
-        {% elif default_search_status == 'Rent' %}
-        url: "/ajax/location-search/to-let/",
-        {% endif %}
+        url: "/ajax/location-search/" + propertyType + "/" + listingType + "/",
         dataType: 'json',
         type: "post",
         quietMillis: 250,

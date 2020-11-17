@@ -7,7 +7,7 @@ import json
 
 
 # Advanced search
-def search_locations(request, listing_type):
+def search_locations(request, property_type, listing_type):
 
     if request.method != "POST":
         raise Http404
@@ -33,18 +33,26 @@ def search_locations(request, listing_type):
         )
 
         # -- Grab location ids for listings that are active and website display
-        if listing_type == "for-sale":
-            valid_location_ids = list(
-                Residential.objects.filter(
+        if listing_type == "buy":
+            valid_location_ids = []
+            if property_type == "residential":
+                valid_location_ids += list(Residential.objects.filter(
                     status='Active', website_display=True, listing_type='Residential For Sale'
-                ).values_list('location', flat=True)
-            )
-        else:
-            valid_location_ids = list(
-                Residential.objects.filter(
+                ).values_list('location', flat=True))
+            else:
+                valid_location_ids += list(Commercial.objects.filter(
+                    status='Active', website_display=True, listing_type='Commercial For Sale'
+                ).values_list('location', flat=True))
+        elif listing_type == "rent":
+            valid_location_ids = []
+            if property_type == "residential":
+                valid_location_ids += list(Residential.objects.filter(
                     status='Active', website_display=True, listing_type='Residential To Let'
-                ).values_list('location', flat=True)
-            )
+                ).values_list('location', flat=True))
+            else:
+                valid_location_ids += list(Commercial.objects.filter(
+                    status='Active', website_display=True, listing_type='Commercial To Let'
+                ).values_list('location', flat=True))
 
         locations = locations.filter(id__in=valid_location_ids).values(
             'id', 'suburb', 'region').distinct()
