@@ -73,7 +73,7 @@
 {% endblock body %}
 {% block js %}
 <script type="text/javascript">
-  {% include 'includes/eos_search_js_base.html' %}
+  {% include 'mobi/includes/mobi-search.html' %}
 </script>
 <link href="/static/externals/select2-3.5.1/select2.css" rel="stylesheet" />
 <script src="/static/externals/select2-3.5.1/select2.js"></script>
@@ -181,7 +181,7 @@ $(document).ready(function () {
     })
 
     var listingType = $("#buy_rent").val();
-    var propertyType = $("#search_listing_type").val();
+    var propertyType = $("#id_search_listing_type").val();
 
     $("#adv_search_mobi_for_sale").select2({
         width: 'resolve',
