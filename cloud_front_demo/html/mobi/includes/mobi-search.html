@@ -1,0 +1,182 @@
+/* Sales counts */
+var residential_for_sale_count = {{ residential_for_sale_count}};
+var commercial_for_sale_count = {{ commercial_for_sale_count}};
+var industrial_for_sale_count = {{ industrial_for_sale_count }};
+var retail_for_sale_count = {{ retail_for_sale_count }};
+var agricultural_for_sale_count = {{ agricultural_for_sale_count }};
+var residential_new_development_count = {{ residential_new_development_count }};
+var commercial_new_development_count = {{ commercial_new_development_count }};
+var residential_estate_count = {{ residential_estate_count }};
+var commercial_estate_count = {{ commercial_estate_count }};
+var residential_vacant_land_for_sale_count = {{ residential_vacant_land_for_sale_count }};
+var commercial_vacant_land_for_sale_count = {{ commercial_vacant_land_for_sale_count }};
+var mixed_use_for_sale_count = {{ mixed_use_for_sale_count }};
+var residential_farm_and_small_holdings_for_sale_count = {{ residential_farm_and_small_holdings_for_sale_count }};
+var commercial_farm_and_small_holdings_for_sale_count = {{ commercial_farm_and_small_holdings_for_sale_count }};
+var distressed_count = {{ distressed_count }};
+
+
+/* Rental Counts */
+var residential_to_let_count = {{ residential_to_let_count}};
+var commercial_to_let_count = {{ commercial_to_let_count}};
+var industrial_to_let_count = {{ industrial_to_let_count}};
+var retail_to_let_count = {{ retail_to_let_count}};
+var agricultural_to_let_count = {{ agricultural_to_let_count}};
+var holiday_letting_count = {{ holiday_letting_count}};
+var residential_vacant_land_to_let_count = {{ residential_vacant_land_to_let_count}};
+var commercial_vacant_land_to_let_count = {{ commercial_vacant_land_to_let_count}};
+var mixed_use_to_let_count = {{ mixed_use_to_let_count}};
+var residential_farm_and_small_holdings_to_let_count = {{ residential_farm_and_small_holdings_to_let_count }};
+var commercial_farm_and_small_holdings_to_let_count = {{ commercial_farm_and_small_holdings_to_let_count }};
+
+
+/* Other counts */
+var tender_count = {{ tender_count }};
+var bank_reposessed_count = {{ bank_reposessed_count }};
+var auctions_count = {{ auctions_count }};
+var student_accommodation_count = {{ student_accommodation_count }};
+
+var package_option = "{{ package_option }}";
+
+{% load compress %}
+
+function update_listing_types(buy_rent, element_id){
+    var buy_options = new Array();
+    var rental_options = new Array();
+
+    // Sales options
+    if (residential_for_sale_count) {
+      buy_options.push("Residential");
+    }
+
+    if (residential_new_development_count && package_option != 'Lite') {
+      buy_options.push("Residential New Developments");
+    }
+    if (residential_estate_count && package_option != 'Lite') {
+      buy_options.push("Residential Estate");
+    }
+
+    if (residential_vacant_land_for_sale_count) {
+      buy_options.push("Residential Vacant Land");
+    }
+
+    if (commercial_for_sale_count && package_option != 'Lite') {
+      buy_options.push("Commercial");
+    }
+
+    if (commercial_new_development_count && package_option != 'Lite') {
+      buy_options.push("Commercial and Industrial New Developments");
+    }
+    if (commercial_estate_count && package_option != 'Lite') {
+      buy_options.push("Commercial Estate");
+    }
+
+    if (commercial_vacant_land_for_sale_count && package_option != 'Lite') {
+      buy_options.push("Commercial & Industrial Vacant Land");
+    }
+
+    if (industrial_for_sale_count && package_option != 'Lite') {
+      buy_options.push("Industrial");
+    }
+
+    if (mixed_use_for_sale_count && package_option != 'Lite') {
+      buy_options.push("Mixed Use");
+    }
+
+    if (retail_for_sale_count && package_option != 'Lite') {
+      buy_options.push("Retail");
+    }
+
+    if (package_option != 'Lite') {
+      if (residential_farm_and_small_holdings_for_sale_count || commercial_farm_and_small_holdings_for_sale_count) {
+        buy_options.push("Farms & Small Holdings");
+      }
+    }
+
+    if (tender_count && package_option != 'Lite') {
+      buy_options.push("Tenders");
+    }
+
+
+    if (bank_reposessed_count && package_option != 'Lite') {
+      buy_options.push("Bank Reposessed");
+    }
+
+    if (distressed_count && package_option != 'Lite') {
+      buy_options.push("Distressed");
+    }
+
+    if (auctions_count && package_option != 'Lite') {
+      buy_options.push("Auctions");
+    }
+
+    // Rental options
+    if (residential_to_let_count) {
+      rental_options.push("Residential");
+    }
+
+    if (residential_vacant_land_to_let_count) {
+      rental_options.push("Residential Vacant Land");
+    }
+    if (residential_estate_count && package_option != 'Lite') {
+      rental_options.push("Residential Estate");
+    }
+
+    if (commercial_to_let_count && package_option != 'Lite') {
+      rental_options.push("Commercial");
+    }
+
+    if (commercial_vacant_land_to_let_count && package_option != 'Lite') {
+      rental_options.push("Commercial & Industrial Vacant Land");
+    }
+
+    if (commercial_estate_count && package_option != 'Lite') {
+      rental_options.push("Commercial Estate");
+    }
+
+    if (industrial_to_let_count && package_option != 'Lite') {
+      rental_options.push("Industrial");
+    }
+
+
+    if (mixed_use_to_let_count && package_option != 'Lite') {
+      rental_options.push("Mixed Use");
+    }
+
+    if (retail_to_let_count && package_option != 'Lite') {
+      rental_options.push("Retail");
+    }
+
+    if (package_option != 'Lite') {
+      if (residential_farm_and_small_holdings_to_let_count || commercial_farm_and_small_holdings_to_let_count) {
+        rental_options.push("Farms & Small Holdings");
+      }
+    }
+
+    if (holiday_letting_count && package_option != 'Lite') {
+      rental_options.push("Holiday Accommodation")
+    }
+
+    if (student_accommodation_count) {
+      rental_options.push("Student Accommodation");
+    }
+
+    // Update selections based on buy_rent
+    var new_options = buy_options;
+    if (buy_rent == "Rent"){
+        new_options = rental_options;
+    }
+
+    $("#" + element_id).html("");
+    $.each(new_options, function(){
+        if (this == "Commercial and Industrial New Developments"){
+            $("#" + element_id).append($("<option></option>").attr("value", "Commercial New Developments").text("Commercial and Industrial New Developments"));
+        } else if (this == "Commercial & Industrial Vacant Land") {
+            $("#" + element_id).append($("<option></option>").attr("value", "Commercial &amp; Industrial Vacant Land").text("Commercial and Industrial Vacant Land"));
+        } else if (this == "Farms & Small Holdings") {
+            $("#" + element_id).append($("<option></option>").attr("value", "Farms &amp; Small Holdings").text("Farms & Small Holdings"));
+        } else {
+            $("#" + element_id).append($("<option></option>").attr("value", this + '').text(this + ''));
+        }
+    });
+}
