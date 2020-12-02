@@ -2674,6 +2674,12 @@ ul.footer-social-links li {
 .home-page .less_search_options_link:before {
   content: "\f107";
 }
+.svg-icon path {
+  fill: #FC495D;
+}
+.svg-icon-stroke path {
+  stroke: #FC495D;
+}
 /* ----// END //---- */
 /*
 ** HOMEPAGE - FEATURED PROPERTIES

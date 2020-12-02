@@ -3930,3 +3930,9 @@ a.details-button-tour {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+.svg-icon path {
+  fill: #FC495D;
+}
+.svg-icon-stroke path {
+  stroke: #FC495D;
+}
