@@ -72,6 +72,7 @@
 @SearchButtonBG: @ButtonPrimaryBG; // Search Button Bg
 @SearchBorders: #d6d6d6; // Search Input Border
 @SearchBorderColor: #ffffff; // Search Button Border
+@SearchInputBackgroundColor: #F2F2F2; // Search Input Background color
 
 // Advanced Search Text Styling
 @SearchLabelColor: contrast(@SearchBg, #333333, #ffffff, 55%); // Search Label Color
@@ -81,6 +82,10 @@
 @SearchLinkHover: @PrimaryColor; // More/Less and WebRef Links Hover Color
 @SearchAllSuburbsLinkColor: contrast(@SearchBg, #333333, #ffffff, 55%); // All Surburbs Link Color
 @SearchAllSuburbsLinkHover: @SecondaryColor; // All Surburbs Link Hover Color
+
+//Internal Search button stylinh
+@SearchHoverColor: #828282; 
+@SearchHoverBorder: #BDBDBD; 
 
 // Search Icon Styling
 @SearchMoreIcon: #ffffff; // More Icon Color
@@ -186,7 +191,7 @@
 @FooterBgColor: @PrimaryColor; // Sections, Footer
 @FooterHeadingDisplay: none;
 @FooterTextColor: #ffffff; // Footer Text Color
-@FooterLinkHover: @PrimaryColor; // Hover Link Color
+@FooterLinkHover: @SecondaryColor; // Hover Link Color
 @FooterDividerColor: rgba(255, 255, 255, 0.3); // Hover Link Color
 
 @SocialIconsLink: #ffffff;
@@ -658,6 +663,19 @@ body {
   }
   .select2-container .select2-choice .select2-arrow b {
     background: @InternalSearchDropdownBG;
+  }
+  .webref_button {
+    &:hover {
+      background: unset;
+      border: 1px solid @SearchHoverBorder;
+      color: @SearchHoverColor;
+    }
+  }
+  #id_as_price_search {
+    input {
+      background: @SearchInputBackgroundColor;
+      border: unset;
+    }
   }
 }
 
