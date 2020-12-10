@@ -27,9 +27,6 @@ urlpatterns = patterns('',
     (r'^email/newsletter/$',                      'urls.direct_to_template', {'template': 'emails/newsletter.html'}),
     (r'^pdf-test/$',                      'urls.direct_to_template', {'template': 'pdftest.html'}),
     (r'^loaderio-0d1144837ada862ac89adb17cc035e1c.txt$',                      'urls.direct_to_template', {'template': 'loaderio-0d1144837ada862ac89adb17cc035e1c.txt'}),
-
-    #Mobi advanced search
-    (r'^mobi/ajax/location-search/(?P<property_type>(\w|-|\s)+)/(?P<listing_type>(buy|rent)+)/$','custom.ajax.search_locations'),
     
     (r'^grid/$',                      'urls.direct_to_template', {'template': 'eos_grid.html'}),
 )

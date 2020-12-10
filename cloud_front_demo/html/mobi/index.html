@@ -54,7 +54,7 @@
   <div class="virtual-dots"></div>
 </div>
 <!-- Testimonials -->
-{% get_article_by_category 'testimonials' %}
+{% get_article_by_category 'Testimonials' %}
 {% if articles %}
 {% include 'includes/testimonials.html' %}
 {% endif %}
@@ -64,10 +64,10 @@
 {% include 'includes/news-articles-mobi.html' %}
 {% endif %}
 <!-- Content Ads -->
-<div class="content-ads">
-  <div class="ad-container">
-    <!-- image-ad.html \\ icon-ad.html -->
-    {% include 'includes/content-ads/image-ad.html' %}
+<div class="content-cta">
+  <div class="cta-container">
+    <!-- image-cta.html \\ icon-cta.html -->
+    {% include 'includes/content-cta/image-cta.html' %}
   </div>
 </div>
 {% endblock body %}
@@ -83,6 +83,7 @@
 <script type="text/javascript" src="/static/js/forms.js"></script>
 <script type="text/javascript" src="/static/mobi/js/jquery.mobile.custom.min.js"></script>
 <script src="/static/js/slick.min.js"></script>
+<script type="text/javascript" src="/static/js/text-cutter.js"></script>
 <script type="text/javascript">
 
 $('.header-slider').slick({
@@ -164,91 +165,5 @@ $('.agent-contact .view-button').click(function() {
   }
 });
 
-placeholderSale = document.getElementById("placeholderSale").innerHTML;
-
-
-$(document).ready(function () {
-    update_listing_types("{{ default_search_status }}", "id_search_listing_type");
-    $("select").selectpicker('mobile');
-
-    $(".location-search").submit(function (e) {
-      var listingType = $("#buy_rent").val();
-      var propertyType = $("#search_listing_type").val();
-      if (!$("#adv_search_mobi_for_sale").val()) {
-        e.preventDefault();
-        alert("Please select an area/suburb.");
-      }
-    })
-
-    var listingType = $("#buy_rent").val();
-    var propertyType = $("#id_search_listing_type").val();
-
-    $("#adv_search_mobi_for_sale").select2({
-        width: 'resolve',
-        theme: "classic",
-        placeholder: placeholderSale,
-        minimumInputLength: 3,
-        ajax: { // instead of writing the function to execute the request we use Select2's convenient helper
-        url: "/ajax/location-search/" + propertyType + "/" + listingType + "/",
-        dataType: 'json',
-        type: "post",
-        quietMillis: 250,
-        headers: {
-          "X-CSRFToken": getCookie('csrftoken')
-        },
-        data: function (term, page) {
-          return {
-            q: term, // search term
-            csrfmiddlewaretoken: getCookie('csrftoken')
-          };
-        },
-        results: function (data, page) { // parse the results into the format expected by Select2.
-          // since we are using custom formatting functions we do not need to alter the remote JSON data
-          // data currently looks like [{id, region, suburb} {id, region, suburb}]
-          // Select2 needs data to look like [{id: 1, text: 'Johannesburg, Revonia'}]
-          var new_data = {};
-          var regions = _.groupBy(data, 'region');
-          var new_data = []
-          var regions_combined = _.each(regions, function (data, region) {
-            var sorted_data = []
-            var combined_ids = _.map(data, function (area) {
-              return area.id;
-            });
-            if (combined_ids.length > 1) {
-              text = region + ", All Suburbs";
-              sorted_data.push({
-                id: combined_ids.join("|"),
-                text: text
-              })
-            }
-            data = _.map(data, function (location) {
-              return {
-                id: location['id'],
-                text: location['region'] + ', ' + location['suburb']
-              }
-            });
-            sorted_data = _.uniq(_.union(data, sorted_data), false, function (item, key, a) { return item.text; });
-            sorted_data = _.sortBy(sorted_data, function (item) {
-              return -item.text.indexOf('All Suburbs');
-            });
-            new_data = _.uniq(_.union(new_data, sorted_data))
-          });
-          new_data.results = new_data
-          return new_data;
-        },
-        cache: true
-      },
-      formatResult: repoFormatResult, // omitted for brevity, see the source of this page
-      formatSelection: repoFormatSelection,  // omitted for brevity, see the source of this page
-      escapeMarkup: function (m) { return m; } // we do not want to escape markup since we are displaying html in results
-    });
-  });
-function repoFormatResult(location) {
-  var markup = '<div class="custom-location">' + location.text + '</div>';
-  return markup;
-}
-function repoFormatSelection(location) {
-  return location.text;
-}
 </script>
 {% endblock js %}
