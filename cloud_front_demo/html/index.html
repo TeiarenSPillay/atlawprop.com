@@ -63,7 +63,7 @@
   <div class="virtual-dots"></div>
 </div>
 <!-- Testimonials -->
-{% get_article_by_category 'testimonials' %}
+{% get_article_by_category 'Testimonials' %}
 {% if articles %}
 {% include 'includes/testimonials.html' %}
 {% endif %}
@@ -73,11 +73,11 @@
 {% include 'includes/news-articles.html' %}
 {% endif %}
 <!-- Content Ads -->
-<div class="content-ads">
+<div class="content-cta">
   <!-- Add 'solid' class to get a solid background -->
-  <div class="ad-container">
-    <!-- image-ad.html \\ icon-ad.html -->
-    {% include 'includes/content-ads/image-ad.html' %}
+  <div class="cta-container">
+    <!-- image-cta.html \\ icon-cta.html -->
+    {% include 'includes/content-cta/image-cta.html' %}
   </div>
 </div>
 {% endblock content %}
@@ -100,6 +100,7 @@
 <script type="text/javascript" src="/static/js/slider.js"></script>
 <script type="text/javascript" src="/static/js/forms.js"></script>
 <script src="/static/js/slick.min.js"></script>
+<script type="text/javascript" src="/static/js/text-cutter.js"></script>
 <script type="text/javascript">
 
 $('.featured-slider').slick({
@@ -167,6 +168,7 @@ $('.testimonial-slider').slick({
   autoplay: true,
   autoplaySpeed: 8000,
   pauseOnHover: true,
+  adaptiveHeight: true,
 });
 
 $('.agent-contact .view-button').click(function() {

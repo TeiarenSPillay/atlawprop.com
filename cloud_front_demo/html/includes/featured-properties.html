@@ -5,9 +5,10 @@
     {% for listing in featured %}
     <div class="item pull-left">
       <a href="{{ listing.get_absolute_url }}" class="image-section pull-left" style="background: url('{% if listing.imagegallery_set.values.0.image %}{% get_image_url 'listings' 1280 1024 listing.imagegallery_set.values.0.image %}{% else %}/static/img/property-search/results/no-img.png{% endif %}') center center;">
+        {% if listing.on_show or listing.bank_repossessed or listing.distressed or listing.sole_mandate or listing.quick_sell_options or listing.sole_mandate or listing.public_tender or listing.show_private_seller_icon or listing.student_accommodation or listing.enable_offers or listing.featured or listing.is_new or listing.is_sold or listing.is_rented %}
         <div class="tag">
-        {% if listing.on_show %}On Show
-        {% elif listing.bank_reposessed %}BANK REPO
+        {% if listing.on_show %}ON SHOW
+        {% elif listing.bank_repossessed %}BANK REPO
         {% elif listing.distressed %}DISTRESSED
         {% elif listing.sole_mandate %}SOLE MANDATE
         {% elif listing.quick_sell_options %}FNB QUICKSELL
@@ -21,6 +22,7 @@
         {% elif listing.is_rented %}RENTED
         {% endif %}
         </div>
+        {% endif %}
       </a>
       <div class="featured-content pull-right">
         <div class="content-container">
@@ -59,7 +61,7 @@
           {% if listing.agent %}
           <div class="agent-info">
             <div class="agent-icon" style="background: url('{% get_image_url 'agents' 100 150 listing.agent.photo %}') center top; background-size: cover;"></div>
-            <div class="agent-name">{{ listing.agent.first_name }} {{ listing.agent.last_name }}</div>
+            <div class="agent-name">{{ listing.agent.get_full_name }}</div>
             <div class="agent-contact">
               <div class="view-button">View contact number</div>
               <a href="tel:{{ listing.agent.cell_number }}" class="agent-number">{{ listing.agent.cell_number }}</a>

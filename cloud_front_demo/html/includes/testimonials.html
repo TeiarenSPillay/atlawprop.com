@@ -5,8 +5,7 @@
       {% for testimonial in articles %}
       <div class="testimonial">
         <div class="text">
-          {{ testimonial.body|striptags|safe|max_word_limit:"200" }}
-          {% if testimonial.body|length > 200 %}<a href="/news/{{ testimonial.slug }}" class="read-more">read more</a>{% endif %}
+          {{ testimonial.body|striptags|safe }}
         </div>
         <div class="author">{{ testimonial.author }}</div>
         <div class="title">{{ testimonial.title }}</div>

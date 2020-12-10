@@ -87,7 +87,6 @@ if UNDER_CONSTRUCTION:
 ROOT_URLCONF = 'cloud_front_demo.urls'
 
 AGENT_PHOTO_SIZES.append("69x69")
-INSTALLED_APPS += ('custom',)
 
 # Static configs
 MEDIA_ROOT = '%s/../assets' % CURRENT_DIRECTORY
