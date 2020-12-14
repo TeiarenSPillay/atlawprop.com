@@ -3,7 +3,7 @@
   <div class="section-heading">News & Advice</div>
   <div class="articles">
     {% for article in featured_articles %}
-    <a href="/news/{{ article.slug }}" class="article">
+    <a href="{{ article.get_absolute_url }}" class="article">
       <div class="image-container">
         <div class="image" style="background: url('{% if article.photo %}{% get_image_url 'news' 640 480 article.photo %}{% else %}/eos/img/property-search/results/no-img.jpg{% endif %}') center center;"></div>
       </div>
