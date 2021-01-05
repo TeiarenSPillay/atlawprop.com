@@ -2232,6 +2232,11 @@ h1.page-heading {
   display: -webkit-box;
   display: -moz-box;
   display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+     -moz-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .home-page .news-section .articles .article {
   position: relative;
