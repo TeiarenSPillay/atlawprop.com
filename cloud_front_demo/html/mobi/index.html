@@ -19,6 +19,7 @@
 {% endif %}
 <!-- Virtual Walkthroughs -->
 {% get_virtual_walkthroughs 'All' 'All' 'Active' 5 False %}
+{% if featured %}
 <div class="virtual-walkthroughs container-fluid">
   <div class="section-heading">Virtual Walkthroughs</div>
   <div class="virtual-slider">
@@ -53,6 +54,7 @@
   </div>
   <div class="virtual-dots"></div>
 </div>
+{% endif %}
 <!-- Testimonials -->
 {% get_article_by_category 'Testimonials' %}
 {% if articles %}

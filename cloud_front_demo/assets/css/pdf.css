@@ -347,7 +347,7 @@ a {
 .property-list-item .icon-garages,
 .property-list-item .icon-openparking {
   margin-right: 4pt;
-  color: #333333;
+  color: #FC495D;
   position: relative;
   display: inline-block;
   font-style: normal !important;
@@ -908,7 +908,7 @@ a {
 .listing-details .property-list-baths,
 .listing-details .property-list-garages {
   margin-right: 5mm;
-  color: #333333;
+  color: #FC495D;
   display: inline-block;
   font-size: 9pt;
 }
@@ -922,6 +922,7 @@ a {
 .listing-details .icon-baths span,
 .listing-details .icon-garages span,
 .listing-details .icon-openparking span {
+  color: #828282;
   font-size: 9pt;
   font-style: normal !important;
 }

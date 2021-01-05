@@ -623,7 +623,7 @@ a.nav-link:hover {
   height: 44px;
   display: block;
   border-bottom: 1px solid #606060;
-  background: #04142B;
+  background: #FC495D;
   z-index: 99;
 }
 a.nav-link:active {
@@ -1055,7 +1055,7 @@ a.footerpropdata {
   color: #ffffff;
   border: none;
   height: 44px;
-  background: #04142B;
+  background: #FC495D;
   margin: 0px;
   position: relative;
   line-height: 44px;
@@ -1087,7 +1087,7 @@ a.footerpropdata {
   border: none;
   height: 30px;
   width: 30px;
-  background: #000000;
+  background: #04142B;
   margin: 0px;
   position: absolute;
   top: 0;
@@ -2399,7 +2399,7 @@ textarea:-ms-input-placeholder {
   width: 100%;
 }
 #id_quick_alert_email_submit {
-  background: #000000;
+  background: #FC495D;
   width: 100%;
   font-size: 12px;
   height: 30px;
@@ -2868,7 +2868,7 @@ a.details-button-tour {
 }
 #contact-us .btn:after {
   color: #ffffff;
-  background: #000000;
+  background: #04142B;
 }
 .number-control-up.btn-primary,
 .number-control-down.btn-primary {
