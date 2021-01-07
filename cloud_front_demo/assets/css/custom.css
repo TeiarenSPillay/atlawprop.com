@@ -1640,10 +1640,10 @@ h1.page-heading {
   color: #04142B;
   padding-bottom: 45px;
 }
-.pd_modal_controls {
+.home-page .pd_modal_controls {
   display: none !important;
 }
-.pd_modal_inner {
+.home-page .pd_modal_inner {
   background: transparent !important;
 }
 .virtual-popup {
