@@ -3140,7 +3140,7 @@ a.details-button-tour {
   position: relative;
   width: 100%;
   text-align: center;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 23px;
   line-height: 27px;
   color: #04142B;
@@ -3631,7 +3631,7 @@ a.details-button-tour {
   width: 100%;
   max-width: 620px;
   margin: 0 auto;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 18px;
   line-height: 21px;
   color: #ffffff;
@@ -3643,7 +3643,7 @@ a.details-button-tour {
   width: 100%;
   display: block;
   text-align: center;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   margin-top: 20px;
   font-size: 18px;
   line-height: 21px;
@@ -3770,7 +3770,7 @@ a.details-button-tour {
 }
 .page-home .news-section .article-slider .article .article-content .content-container .article-title {
   position: relative;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 28px;
   line-height: 34px;
   font-weight: 700;

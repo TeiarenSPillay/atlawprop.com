@@ -470,6 +470,10 @@ body.lock {
 .internal-search-wrapper .adv_search_content {
   margin: 46px 0 !important;
 }
+.internal-search-wrapper #id_property_count,
+.internal-search-wrapper #id_select_all_suburbs {
+  color: #828282;
+}
 .internal-search-wrapper #internal-search-bottom-border {
   position: relative;
   width: 940px;
@@ -832,7 +836,7 @@ input:-ms-input-placeholder {
   content: "";
   width: 100%;
   height: 6px;
-  border-bottom: 1px solid #999999;
+  border-bottom: 1px solid #d6d6d6;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1543,7 +1547,6 @@ h2 {
   line-height: 1;
   color: #FC495D;
   font-weight: 500;
-  text-transform: uppercase;
 }
 h3 {
   font-family: "Open Sans", "Arial", Helvetica, sans-serif;
@@ -1634,8 +1637,9 @@ h1.page-heading {
   position: relative;
   width: 100%;
   text-align: center;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 35px;
+  font-weight: bold;
   line-height: 42px;
   color: #04142B;
   padding-bottom: 45px;
@@ -2143,7 +2147,7 @@ h1.page-heading {
   width: 100%;
   max-width: 620px;
   margin: 0 auto;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 28px;
   line-height: 34px;
   color: #ffffff;
@@ -2155,7 +2159,7 @@ h1.page-heading {
   display: block;
   text-align: center;
   color: #FC495D;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 28px;
   line-height: 34px;
   margin-top: 20px;
@@ -2297,7 +2301,7 @@ h1.page-heading {
 }
 .home-page .news-section .articles .article .article-content .content-container .article-title {
   position: relative;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 28px;
   line-height: 34px;
   font-weight: 700;
@@ -2608,11 +2612,25 @@ ul.footer-social-links li {
 .facebook-search {
   background: #04142B;
 }
+#facebook-overview .adv_search_container {
+  background: #ffffff;
+}
+#facebook-overview .webref_button:hover {
+  background: unset;
+  border: 1px solid #BDBDBD;
+  color: #828282;
+}
+#facebook-overview .id_reference_number {
+  width: 386px;
+}
 #facebook-overview .adv_search_box1 {
-  background: #f2f2f2;
+  background: #ffffff;
 }
 #facebook-overview .select2-container .select2-choice .select2-arrow b {
   background: #FC495D;
+}
+#facebook-overview .select2-container .select2-choice .select2-arrow b:before {
+  color: #ffffff;
 }
 #facebook-overview .adv_search_heading {
   color: #999999;

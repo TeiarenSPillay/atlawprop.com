@@ -4,7 +4,7 @@
 {% block body %}
 <!-- Start Template Homepage -->
 <div class="homepage-profile container-fluid">
-  <div class="section-heading">{{ website_slogan }}</div>
+  <h1 class="section-heading">{{ website_slogan }}</h1>
   {% get_cms_page 1 %}
   {{ cms_obj.content|safe }}
   <div class="clearfix"></div>
@@ -21,7 +21,7 @@
 {% get_virtual_walkthroughs 'All' 'All' 'Active' 5 False %}
 {% if featured %}
 <div class="virtual-walkthroughs container-fluid">
-  <div class="section-heading">Virtual Walkthroughs</div>
+  <h2 class="section-heading">Virtual Walkthroughs</h2>
   <div class="virtual-slider">
     {% for listing in featured %}
     {% if listing.eyespy360 or listing.matterport_id or listing.virtual_tour %}
