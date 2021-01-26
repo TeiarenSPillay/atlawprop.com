@@ -3,13 +3,13 @@
 {% block content %}
 {% if profile.live %}
 <div class="homepage-profile">
-  <div class="section-heading">
+  <h1 class="section-heading">
     {% if website_slogan %}
     {{ website_slogan }}
     {% else %}
     {{ site_name }}
     {% endif %}
-  </div>
+  </h1>
   {{ profile.content|safe }}
   <div class="clearfix"></div>
   <div class="button-center margin-top20">
@@ -26,7 +26,7 @@
 {% get_virtual_walkthroughs 'All' 'All' 'Active' 15 False %}
 {% if featured %}
 <div class="virtual-walkthroughs">
-  <div class="section-heading">Virtual Walkthroughs</div>
+  <h2 class="section-heading">Virtual Walkthroughs</h2>
   <div class="virtual-slider">
     {% for listing in featured %}
     {% if listing.eyespy360 or listing.matterport_id or listing.virtual_tour %}

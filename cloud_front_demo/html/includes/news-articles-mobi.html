@@ -1,6 +1,6 @@
 {% load latest_news image_tags advanced_listings string_filters new_development_helpers humanize property_cart %}
 <div class="news-section container-fluid">
-  <div class="section-heading">News & Advice</div>
+  <h2 class="section-heading">News & Advice</h2>
   <div class="article-slider">
     {% for article in featured_articles %}
     <a href="{{ article.get_absolute_url }}" class="article">
