@@ -1639,7 +1639,7 @@ h1.page-heading {
   position: relative;
   width: 100%;
   text-align: center;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 35px;
   line-height: 42px;
   color: #04142B;
@@ -2150,7 +2150,7 @@ h1.page-heading {
   width: 100%;
   max-width: 620px;
   margin: 0 auto;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 28px;
   line-height: 34px;
   color: #ffffff;
@@ -2162,7 +2162,7 @@ h1.page-heading {
   display: block;
   text-align: center;
   color: #FC495D;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 28px;
   line-height: 34px;
   margin-top: 20px;
@@ -2300,7 +2300,7 @@ h1.page-heading {
 }
 .home-page .news-section .articles .article .article-content .content-container .article-title {
   position: relative;
-  font-family: "Cormorant Garamond", "Arial", Helvetica, sans-serif;
+  font-family: "Open Sans", "Arial", Helvetica, sans-serif;
   font-size: 28px;
   line-height: 34px;
   font-weight: 700;
@@ -2337,14 +2337,6 @@ h1.page-heading {
 .home-page .content-cta .cta-container.solid .content-cta .cta-content .content-container .cta-title,
 .home-page .content-cta .cta-container.solid .content-cta .cta-content .content-container .cta-text {
   color: #ffffff;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-.home-page .content-cta .cta-container.solid .content-cta .icon-container.subscribe-icon svg > path {
-  fill: unset !important;
-  stroke: #ffffff;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
