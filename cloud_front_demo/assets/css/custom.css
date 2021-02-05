@@ -1644,6 +1644,7 @@ h1.page-heading {
   line-height: 42px;
   color: #04142B;
   padding-bottom: 45px;
+  margin-bottom: 0;
 }
 .home-page .pd_modal_controls {
   display: none !important;
