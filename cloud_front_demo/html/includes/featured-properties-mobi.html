@@ -46,7 +46,7 @@
           {% endif %}
           {% if listing.agent %}
           <div class="agent-info">
-            <div class="agent-icon" style="background: url('{% get_image_url 'agents' 100 150 listing.agent.photo %}') center top; background-size: cover;"></div>
+            <div class="agent-icon" style="background: url('{% if listing.agent.profile_photo %}{% get_image_url 'agents' 0 0 listing.agent.profile_photo %}{% elif listing.agent.photo %}{% get_image_url 'agents' 100 150 listing.agent.photo %}{% else %}/static/img/secure/messages/no-agent-img-large.jpg{% endif %}') center top; background-size: cover;"></div>
             <div class="agent-details">
               <div class="agent-name">{{ listing.agent.get_full_name }}</div>
               <div class="agent-contact">
