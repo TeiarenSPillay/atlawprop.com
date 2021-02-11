@@ -2115,6 +2115,9 @@ button {
   text-align: left;
   vertical-align: middle;
 }
+#calculator {
+  display: none;
+}
 .arrow {
   position: absolute;
   width: 100%;
@@ -3170,6 +3173,7 @@ a.details-button-tour {
   width: 100%;
   height: 588px;
   -moz-background-size: cover !important;
+  -o-background-size: cover !important;
   background-size: cover !important;
 }
 .page-home {
@@ -3283,6 +3287,7 @@ a.details-button-tour {
   width: 100%;
   height: 225px;
   -moz-background-size: cover !important;
+  -o-background-size: cover !important;
   background-size: cover !important;
 }
 .page-home .featured-section .featured-slider .item .image-section .tag {
@@ -3519,6 +3524,7 @@ a.details-button-tour {
   height: 100%;
   z-index: 2;
   -moz-background-size: cover !important;
+  -o-background-size: cover !important;
   background-size: cover !important;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -3745,6 +3751,7 @@ a.details-button-tour {
   width: 100%;
   height: 100%;
   -moz-background-size: cover !important;
+  -o-background-size: cover !important;
   background-size: cover !important;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -3880,6 +3887,7 @@ a.details-button-tour {
   width: 100%;
   height: 100%;
   -moz-background-size: cover !important;
+  -o-background-size: cover !important;
   background-size: cover !important;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
