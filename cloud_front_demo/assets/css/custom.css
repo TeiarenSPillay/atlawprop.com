@@ -228,7 +228,7 @@ body.lock {
   position: absolute;
   top: 32px;
   left: 50px;
-  z-index: 5;
+  z-index: 0;
 }
 /* ----// END //---- */
 /* Navigation
@@ -1644,6 +1644,7 @@ h1.page-heading {
   line-height: 42px;
   color: #04142B;
   padding-bottom: 45px;
+  margin-bottom: 0;
 }
 .home-page .pd_modal_controls {
   display: none !important;
