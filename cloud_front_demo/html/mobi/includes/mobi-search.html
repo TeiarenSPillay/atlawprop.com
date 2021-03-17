@@ -32,7 +32,7 @@ var commercial_farm_and_small_holdings_to_let_count = {{ commercial_farm_and_sma
 
 /* Other counts */
 var tender_count = {{ tender_count }};
-var bank_reposessed_count = {{ bank_reposessed_count }};
+var bank_repossessed_count = {{ bank_repossessed_count }};
 var auctions_count = {{ auctions_count }};
 var student_accommodation_count = {{ student_accommodation_count }};
 
@@ -98,8 +98,8 @@ function update_listing_types(buy_rent, element_id){
     }
 
 
-    if (bank_reposessed_count && package_option != 'Lite') {
-      buy_options.push("Bank Reposessed");
+    if (bank_repossessed_count && package_option != 'Lite') {
+      buy_options.push("Bank Repossessed");
     }
 
     if (distressed_count && package_option != 'Lite') {

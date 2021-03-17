@@ -1014,6 +1014,7 @@ a.footerpropdata {
 #mobi-search {
   background: #ffffff;
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 .webref_button .webref_button-icon:before {
   color: #ffffff;
@@ -3867,6 +3868,7 @@ a.details-button-tour {
   display: inline-block;
   width: 100%;
   max-width: 315px;
+  border: 1px solid #BDBDBD;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
